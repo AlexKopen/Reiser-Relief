@@ -1,0 +1,14 @@
+{
+  "name": "reiser",
+  "version": "1.0.0",
+  "description": "Reiser Relief Website",
+  "main": "index.js",
+  "author": "Alex Kopen",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sourcemaps": "^2.2.0",
+    "gulp-uglify": "^2.0.0"
+  }
+}
