@@ -11,8 +11,8 @@ var sourcePaths = {
 };
 
 var destinationPaths = {
-  scripts: 'dist/js',
-  stylesheets: 'dist/css'
+  scripts: 'dist/resources/js',
+  stylesheets: 'dist/resources/css'
 };
 
 gulp.task('scripts', function() {
