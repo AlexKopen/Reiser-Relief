@@ -1,8 +1,9 @@
 @theme-color: #36bfbb;
 
-p {
+p, li {
 	margin: 0;
 	padding-bottom: 10px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -17,6 +18,10 @@ p {
 
 	.pure-g {
 		margin-bottom: 15px;
+	}
+
+	#right-header {
+		text-align: right;
 	}
 
 	ul {
@@ -39,19 +44,17 @@ p {
 		}
 	}
 
-	#right-header {
-	text-align: right;
-}
-
 	#magnifying-glass {
 		font-size: 22px;
 	}
 
+	@separator-rotation: 7deg;
+	
 	#vertical-separator {
 		color: @theme-color;
 		display: inline-block;
-		-ms-transform: rotate(7deg);
-		-webkit-transform: rotate(7deg);
-		transform: rotate(7deg);
+		-ms-transform: rotate(@separator-rotation);
+		-webkit-transform: rotate(@separator-rotation);
+		transform: rotate(@separator-rotation);
 	}
 }
