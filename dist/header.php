@@ -9,43 +9,40 @@
 
 </head>
 <body>
-
-<div id="home">
-	<div id="header">
-		<div class="container">
-			<div class="pure-g">
-				<div class="pure-u-1-2">
-					<img src="resources/images/logo.png" alt="logo">
+<div id="header">
+	<div class="container">
+		<div class="pure-g">
+			<div class="pure-u-1-2">
+				<img src="resources/images/logo.png" alt="Logo">
+			</div>
+			<div class="pure-u-1-2" id="right-header">
+				<div>
+					<p id="magnifying-glass">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					</p>						
 				</div>
-				<div class="pure-u-1-2" id="right-header">
-					<div>
-						<p id="magnifying-glass">
-							<i class="fa fa-search" aria-hidden="true"></i>
-						</p>						
-					</div>
-					<div>
-						<ul>
-							<li>
-								<a href="">HOME <span id="vertical-separator">|</span></a>
-							</li>
-							<li>
-								<a href="">ABOUT <span id="vertical-separator">|</span></a>
-							</li>
-							<li>
-								<a href="">EVENTS <span id="vertical-separator">|</span></a>
-							</li>
-							<li>
-								<a href="">EXPERIENCE <span id="vertical-separator">|</span></a>
-							</li>
-							<li>
-								<a href="">GIVE <span id="vertical-separator">|</span></a>
-							</li>
-							<li>
-								<a href="">CONTACT</a>
-							</li>
-						</ul>
-					</div>					
-				</div>
+				<div>
+					<ul>
+						<li>
+							<a href="">HOME <span id="vertical-separator">|</span></a>
+						</li>
+						<li>
+							<a href="">ABOUT <span id="vertical-separator">|</span></a>
+						</li>
+						<li>
+							<a href="">EVENTS <span id="vertical-separator">|</span></a>
+						</li>
+						<li>
+							<a href="">EXPERIENCE <span id="vertical-separator">|</span></a>
+						</li>
+						<li>
+							<a href="">GIVE <span id="vertical-separator">|</span></a>
+						</li>
+						<li>
+							<a href="">CONTACT</a>
+						</li>
+					</ul>
+				</div>					
 			</div>
 		</div>
 	</div>
