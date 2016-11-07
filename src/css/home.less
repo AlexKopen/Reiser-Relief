@@ -1,6 +1,39 @@
+@import "colors.less";
+
 #home {
 	.container {
 		padding: 0;
 		border-bottom: none;
+	}
+
+	#information {
+		margin-top: 25px;
+
+		.info-content {
+			border-right: 2px solid #f7f7f7;
+			padding: 0 10px;
+		}
+
+		#last-info {
+			border-right: none;
+		}
+	}
+
+	.beginning {
+		color: @theme-color;
+	}
+
+	.text-block {
+		height: 130px;
+	}
+
+	@link-height: 35px;
+
+	.link-block {
+		background: @theme-color;
+		color: #ffffff;
+		text-align: center;
+		height: @link-height;
+		line-height: @link-height;
 	}
 }
