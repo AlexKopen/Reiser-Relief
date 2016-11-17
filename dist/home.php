@@ -1,17 +1,14 @@
 <div id="home">
 	<div class="container">
-		<div id ="slide-show">
+		<div id="slide-show">
 			<img src="resources/images/bannerpic1.jpg" alt="Mission trip participants">
 		</div>
-		<div class="pure-g" id="information">
+		<div class="pure-g" id="three-block-information">
 			<div class="pure-u-1-3">
 				<div class="info-content">
 					<div class="text-block">
 						<p>
 							<span class="beginning">Mission</span> Reiser Relief aims to achieve providing relief, hope, and dignity to the poor, elderly, and homeless people of Haiti.
-						</p>
-						<p>
-							Join our mailing list today!
 						</p>
 					</div>
 					<div class="link-block">
@@ -54,6 +51,19 @@
 						</a>
 					</div>
 				</div>
+			</div>
+		</div>
+
+		<div class="pure-g" id="news-and-social">
+			<div class="pure-u-3-5" id="news-header">
+				<h1>
+					News
+				</h1>
+			</div>
+			<div class="pure-u-2-5">
+				<h1>
+					social
+				</h1>
 			</div>
 		</div>
 	</div>

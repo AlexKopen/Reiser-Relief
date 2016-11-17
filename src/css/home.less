@@ -6,12 +6,16 @@
 		border-bottom: none;
 	}
 
-	#information {
+	p {
+		line-height: 25px;
+	}
+
+	#three-block-information {
 		margin-top: 25px;
 
 		.info-content {
 			border-right: 2px solid #f7f7f7;
-			padding: 0 10px;
+			padding: 0 25px;
 		}
 
 		#last-info {
@@ -27,13 +31,30 @@
 		height: 130px;
 	}
 
-	@link-height: 35px;
+	@link-height: 48px;
 
 	.link-block {
 		background: @theme-color;
 		color: #ffffff;
 		text-align: center;
 		height: @link-height;
-		line-height: @link-height;
+
+		p {
+			line-height: @link-height;
+		}	
+	}
+
+	#news-and-social {
+		margin-top: 80px;
+
+		#news-header {
+			border-top: 1px solid @theme-color;
+			border-bottom: 1px solid @theme-color;
+		}
+
+		h1 {
+			text-align: center;
+			font-weight: normal;
+		}
 	}
 }
