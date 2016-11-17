@@ -14,7 +14,7 @@
 		margin-top: 25px;
 
 		.info-content {
-			border-right: 2px solid #f7f7f7;
+			border-right: 1px solid @separator-color;
 			padding: 0 25px;
 		}
 
@@ -45,16 +45,48 @@
 	}
 
 	#news-and-social {
-		margin-top: 80px;
+		margin-top: 40px;
 
-		#news-header {
-			border-top: 1px solid @theme-color;
-			border-bottom: 1px solid @theme-color;
+		#news {
+			padding-right: 85px;
+
+			@block-header-height: 50px;
+
+			#news-header {
+				border-bottom: 1px solid @separator-color;
+				height: @block-header-height;
+			}
+
+			h1, h2, h3 {
+				font-weight: normal;
+				margin: 0;
+			}
+
+			h1 {
+				line-height: @block-header-height;
+			}
+
+			h2 {
+				color: @theme-color;
+				margin-top: 16px;
+			}
+
+			h3 {
+				color: @separator-color;
+				margin-top: 2px;		
+			}
+
+			.news-content {
+				margin-top: 16px;
+			}
 		}
 
-		h1 {
-			text-align: center;
-			font-weight: normal;
+		#social {
+			background : @social-background-color;
+
+			a {
+				margin: 0 auto;
+			}
 		}
 	}
 }

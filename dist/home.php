@@ -55,15 +55,59 @@
 		</div>
 
 		<div class="pure-g" id="news-and-social">
-			<div class="pure-u-3-5" id="news-header">
-				<h1>
-					News
-				</h1>
+			<div class="pure-u-4-5">
+				<div id="news">
+					<div id="news-header">
+						<h1>
+							News
+						</h1>
+					</div>
+					<div class="news-post">
+						<h2>
+							Hurricane Matthew Relief
+						</h2>
+						<h3>
+							October 4, 2016
+						</h3>
+						<p class="news-content">
+							Thank you for your support. Please pray for the people who suffered damage from this devastating storm.
+						</p>
+					</div>
+					<div class="news-post">
+						<h2>
+							November 16 – Save the Date!
+						</h2>
+						<h3>
+							August 25, 2016
+						</h3>
+						<p class="news-content">
+							Our 4th annual “Give to the Max Day Kickoff Event” will be on Wednesday, November 16 at the Minneapolis Marriott Northwest in Brooklyn Park, Minnesota. More information is coming soon.
+						</p>
+					</div>
+					<div class="news-post">
+						<h2>
+							A New Website Coming Soon
+						</h2>
+						<h3>
+							November 17, 2016
+						</h3>
+						<p class="news-content">
+							The genius programmer known by the name of Alex Kopen loves run-on sentences but more importantly is making a brand new website that is really breh.
+						</p>
+					</div>
+				</div>					
 			</div>
-			<div class="pure-u-2-5">
-				<h1>
-					social
-				</h1>
+			<div class="pure-u-1-5">
+				<div id="social">
+					<ul class="soc">
+						<li><a class="soc-facebook" href="#"></a></li>
+						<li><a class="soc-twitter" href="#"></a></li>
+						<li><a class="soc-instagram" href="#"></a></li>
+						<li><a class="soc-blogger" href="#"></a></li>
+						<li><a class="soc-youtube" href="#"></a></li>
+						<li><a class="soc-mail" href="#"></a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
