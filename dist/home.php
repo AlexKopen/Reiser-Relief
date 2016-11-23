@@ -54,10 +54,10 @@
 			</div>
 		</div>
 
-		<div class="pure-g" id="news-and-social">
+		<div class="pure-g" id="news-and-blog">
 			<div class="pure-u-3-5">
 				<div id="news">
-					<div class="news-and-social-header">
+					<div class="news-and-blog-header">
 						<h1>
 							News
 						</h1>
@@ -99,9 +99,9 @@
 			</div>
 			<div class="pure-u-2-5">
 				<div id="blog">
-					<div class="news-and-social-header">
+					<div class="news-and-blog-header">
 						<h1>
-							Blog
+							Blogs
 						</h1>
 					</div>
 					<div class="pure-g blog-entry">
@@ -123,8 +123,30 @@
 								Our day began with an English speaking church service, led by Pastor Dan. This took place at Port au Prince... Read more
 							</p>
 						</div>
-					</div>				
+					</div>
 				</div>
+			</div>
+		</div>
+		
+		<div class="pure-g" id="connect">
+			<div class="pure-u-1-8">
+				<p>
+					CONNECT
+				</p>
+			</div>
+			<div class="pure-u-7-8">
+				<div id="social">
+						<ul class="soc">
+							<li><a class="soc-facebook" href="#"></a></li>
+							<li><a class="soc-twitter" href="#"></a></li>
+							<li><a class="soc-instagram" href="#"></a></li>
+							<li><a class="soc-blogger" href="#"></a></li>
+							<li><a class="soc-youtube" href="#"></a></li>
+							<li><a class="soc-mail" href="#"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
