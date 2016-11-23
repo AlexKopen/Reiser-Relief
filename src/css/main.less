@@ -11,14 +11,24 @@ a {
 	color: inherit;
 }
 
+img {
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+}
+
 .container {
 	width: 1000px;
 	margin: 0 auto;
-	border-bottom: 2px solid @theme-color;
+	padding: 0;
 }
 
 #header {
-	padding-top: 15px;	
+	padding-top: 15px;
+
+	.container {
+		border-bottom: 2px solid @light-theme-color;
+	}
 
 	.pure-g {
 		margin-bottom: 15px;
@@ -45,7 +55,7 @@ a {
 				color: #000000;
 
 				&:hover {
-					color: @theme-color;
+					color: @light-theme-color;
 				}
 			}
 
@@ -58,8 +68,8 @@ a {
 
 	@separator-rotation: 15deg;
 	
-	#vertical-separator {
-		color: @theme-color;
+	.vertical-separator {
+		color: @light-theme-color;
 		display: inline-block;
 		-ms-transform: rotate(@separator-rotation);
 		-webkit-transform: rotate(@separator-rotation);

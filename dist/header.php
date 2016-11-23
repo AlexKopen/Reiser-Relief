@@ -25,19 +25,19 @@
 				<div>
 					<ul>
 						<li>
-							<a href="">HOME <span id="vertical-separator">|</span></a>
+							<a href="">HOME <span class="vertical-separator">|</span></a>
 						</li>
 						<li>
-							<a href="">ABOUT <span id="vertical-separator">|</span></a>
+							<a href="">ABOUT <span class="vertical-separator">|</span></a>
 						</li>
 						<li>
-							<a href="">EVENTS <span id="vertical-separator">|</span></a>
+							<a href="">EVENTS <span class="vertical-separator">|</span></a>
 						</li>
 						<li>
-							<a href="">EXPERIENCE <span id="vertical-separator">|</span></a>
+							<a href="">EXPERIENCE <span class="vertical-separator">|</span></a>
 						</li>
 						<li>
-							<a href="">GIVE <span id="vertical-separator">|</span></a>
+							<a href="">GIVE <span class="vertical-separator">|</span></a>
 						</li>
 						<li>
 							<a href="">CONTACT</a>

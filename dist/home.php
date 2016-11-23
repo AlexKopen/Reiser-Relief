@@ -1,7 +1,7 @@
 <div id="home">
 	<div class="container">
 		<div id="slide-show">
-			<img src="resources/images/bannerpic1.jpg" alt="Mission trip participants">
+			<img src="resources/images/banner1.jpg" alt="Mission trip participants">
 		</div>
 		<div class="pure-g" id="three-block-information">
 			<div class="pure-u-1-3">
@@ -55,9 +55,9 @@
 		</div>
 
 		<div class="pure-g" id="news-and-social">
-			<div class="pure-u-4-5">
+			<div class="pure-u-3-5">
 				<div id="news">
-					<div id="news-header">
+					<div class="news-and-social-header">
 						<h1>
 							News
 						</h1>
@@ -97,18 +97,34 @@
 					</div>
 				</div>					
 			</div>
-			<div class="pure-u-1-5">
-				<div id="social">
-					<ul class="soc">
-						<li><a class="soc-facebook" href="#"></a></li>
-						<li><a class="soc-twitter" href="#"></a></li>
-						<li><a class="soc-instagram" href="#"></a></li>
-						<li><a class="soc-blogger" href="#"></a></li>
-						<li><a class="soc-youtube" href="#"></a></li>
-						<li><a class="soc-mail" href="#"></a></li>
-					</ul>
+			<div class="pure-u-2-5">
+				<div id="blog">
+					<div class="news-and-social-header">
+						<h1>
+							Blog
+						</h1>
+					</div>
+					<div class="pure-g blog-entry">
+						<div class="pure-u-1-2">
+							<img src="resources/images/blogpost1.jpg" alt="Blog image">
+						</div>
+						<div class="pure-u-1-2">
+							<p>
+								Last week we had our first Reiser Relief board of directors’ trip to Haiti. We had planned the trip long before Hurricane... Read more
+							</p>
+						</div>
+					</div>
+					<div class="pure-g blog-entry">
+						<div class="pure-u-1-2">
+							<img src="resources/images/blogpost2.jpg" alt="Blog image">
+						</div>
+						<div class="pure-u-1-2">
+							<p>
+								Our day began with an English speaking church service, led by Pastor Dan. This took place at Port au Prince... Read more
+							</p>
+						</div>
+					</div>				
 				</div>
-			</div>
 		</div>
 	</div>
 </div>
