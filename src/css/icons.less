@@ -1,3 +1,5 @@
+@import "colors.less";
+
 @font-face {
     font-family: 'si';
     src: url('../icons/socicon.eot');
@@ -24,6 +26,8 @@
 }
 
 .soc li {
+    display:inline-block;
+    *display:inline;
     zoom:1;
 }
 
@@ -38,38 +42,27 @@
     -ms-box-sizing:border-box;
     -o-box-sizing:border-box;
     box-sizing:border-box;
-
-    -o-transition:.1s;
-    -ms-transition:.1s;
-    -moz-transition:.1s;
-    -webkit-transition:.1s;
-    transition:.1s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-
     overflow:hidden;
     text-decoration:none;
     text-align:center;
     display:block;
     position: relative;
     z-index: 1;
-    width: 86px;
-    height: 86px;
-    line-height: 86px;
-    font-size: 47px;
+    width: 71px;
+    height: 71px;
+    line-height: 71px;
+    font-size: 39px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
-    margin-right: 10px;
-    color: #ffffff;
-    background-color: #36bfbb;
+    margin-right: 50px;
+    color: @light-theme-color;
+    background-color: @dark-theme-color;
+    width: 100%;
 }
 
-.soc a:hover {
-    z-index: 2;
-    background-color:#22aba7 !important;
+.soc-icon-last{
+    margin:0 !important;
 }
 
 .soc-facebook:before {

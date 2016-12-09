@@ -53,7 +53,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="pure-g" id="news-and-blog">
 			<div class="pure-u-3-5">
 				<div id="news">
@@ -126,8 +125,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		
+		</div>		
 		<div class="pure-g" id="connect">
 			<div class="pure-u-1-8">
 				<p>
@@ -148,5 +146,20 @@
 				</div>
 			</div>
 		</div>
+
+		<div id="ministries">
+			<div class="container">
+				<h1>Our Work</h1>
+				<div class="pure-g">
+					<div class="pure-u-1-2">
+						water
+					</div>
+					<div class="pure-u-1-2">
+						text
+					</div>				
+				</div>				
+			</div>
+		</div>
+
 	</div>
 </div>

@@ -1,5 +1,6 @@
 @import "colors.less";
 
+@sub-section-top-margin: 40px;
 #home {
 	p {
 		line-height: 25px;
@@ -40,7 +41,7 @@
 	}
 
 	#news-and-blog {
-		margin-top: 40px;
+		margin-top: @sub-section-top-margin;
 		height: 515px;
 
 		@block-header-height: 50px;
@@ -49,11 +50,6 @@
 			border-bottom: 1px solid @separator-color;
 			height: @block-header-height;
 			margin-bottom: 16px;
-		}
-
-		h1, h2, h3 {
-			font-weight: normal;
-			margin: 0;
 		}
 
 		h1 {
@@ -90,17 +86,35 @@
 	}
 
 	#connect{
-		@connect-height: 80px;
+		@connect-height: 100px;
 		background: @dark-theme-color;
 		color: #ffffff;
 		height: @connect-height;
+		margin-top: @sub-section-top-margin;
 
-		/*#social {
-			background : @social-background-color;
+		p {
+			line-height: @connect-height;
+			margin-left: 25px;
+		}
 
+		.soc {
 			a {
-				margin: 0 auto;
+				height: @connect-height;
+				line-height: @connect-height;
 			}
-		}		*/
+
+			li {
+				padding: 0;
+				margin-left: -5px;
+				width: 	16.666%;
+			}
+		}
+	}
+
+	#ministries {
+		margin-top: @sub-section-top-margin;
+		h1 {
+			text-align: center;
+		}
 	}
 }
