@@ -125,41 +125,77 @@
 					</div>
 				</div>
 			</div>
-		</div>		
+		</div>
 		<div class="pure-g" id="connect">
 			<div class="pure-u-1-8">
-				<p>
+				<p id="connect-label">
 					CONNECT
 				</p>
 			</div>
 			<div class="pure-u-7-8">
-				<div id="social">
-						<ul class="soc">
-							<li><a class="soc-facebook" href="#"></a></li>
-							<li><a class="soc-twitter" href="#"></a></li>
-							<li><a class="soc-instagram" href="#"></a></li>
-							<li><a class="soc-blogger" href="#"></a></li>
-							<li><a class="soc-youtube" href="#"></a></li>
-							<li><a class="soc-mail" href="#"></a></li>
-						</ul>
+                <div id="social">
+					<div class="pure-g">
+						<div class="pure-u-1-6">
+							<div class="social-item">
+								<p>
+									<img src="resources/images/social/facebook.png" alt="Facebook"> FACEBOOK
+								</p>
+							</div>
+						</div>
+						<div class="pure-u-1-6">
+							<div class="social-item">
+								<p>
+									<img src="resources/images/social/twitter.png" alt="Twitter"> TWITTER
+								</p>
+							</div>
+						</div>
+						<div class="pure-u-1-6">
+							<div class="social-item">
+								<p>
+									<img src="resources/images/social/instagram.png" alt="Instagram"> INSTAGRAM
+								</p>
+							</div>
+						</div>
+						<div class="pure-u-1-6">
+							<div class="social-item">
+								<p>
+									<img src="resources/images/social/blog.png" alt="Blog"> BLOG
+								</p>
+							</div>
+						</div>
+						<div class="pure-u-1-6">
+							<div class="social-item">
+								<p>
+									<img src="resources/images/social/youtube.png" alt="YouTube"> YOUTUBE
+								</p>
+							</div>	
+						</div>
+						<div class="pure-u-1-6">
+							<div class="social-item last">
+								<p>
+									<img src="resources/images/social/email.png" alt="Email"> EMAIL
+								</p>
+							</div>	
+						</div>
 					</div>
-				</div>
-			</div>
+                </div>
+            </div>
 		</div>
-
 		<div id="ministries">
 			<div class="container">
 				<h1>Our Work</h1>
 				<div class="pure-g">
-					<div class="pure-u-1-2">
+					<div class="pure-u-1-3">
 						water
 					</div>
-					<div class="pure-u-1-2">
+					<div class="pure-u-1-3">
 						text
-					</div>				
+					</div>
+					<div class="pure-u-1-3">
+						text
+					</div>										
 				</div>				
 			</div>
 		</div>
-
 	</div>
 </div>

@@ -92,23 +92,40 @@
 		height: @connect-height;
 		margin-top: @sub-section-top-margin;
 
-		p {
+		#connect-label {
 			line-height: @connect-height;
 			margin-left: 25px;
 		}
 
-		.soc {
-			a {
-				height: @connect-height;
-				line-height: @connect-height;
-			}
-
-			li {
-				padding: 0;
-				margin-left: -5px;
-				width: 	16.666%;
+		.social-image {
+			img {
+				padding: 22px 0;
 			}
 		}
+
+		.social-item {
+			@social-item-height: 20px;
+			height: @social-item-height;
+			margin-top: ((@connect-height - @social-item-height)/2);
+			text-align: center;
+			border-right: 1px solid @light-theme-color;
+
+			&.last {
+				border-right: none;
+			}
+
+			p {
+				color: @light-theme-color;				
+				padding: 0;
+				height: @social-item-height;
+				display: inline-block;			
+			}
+
+			img {
+				float: left;
+				padding-right: 5px;
+			}
+		}		
 	}
 
 	#ministries {
