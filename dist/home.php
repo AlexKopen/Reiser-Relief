@@ -14,7 +14,7 @@
 					<div class="link-block">
 						<a href="">
 							<p>
-								SIGN UP
+								LEARN MORE
 							</p>
 						</a>
 					</div>
@@ -185,15 +185,41 @@
 			<div class="container">
 				<h1>Our Work</h1>
 				<div class="pure-g">
-					<div class="pure-u-1-3">
-						water
+					<div class="pure-u-1-5">
+						<div class="ministry-block">
+							<img src="" alt="" />
+							<p>
+								Water
+							</p>
+						</div>
+						<div class="ministry-block">
+							<img src="" alt="" />
+							<p>
+								Education
+							</p>
+						</div>
+						<div class="ministry-block">
+							<img src="" alt="" />
+							<p>
+								Elder Care
+							</p>
+						</div>
+						<div class="ministry-block">
+							<img src="" alt="" />
+							<p>
+								Orphan Care
+							</p>
+						</div>
+						<div class="ministry-block">
+							<img src="" alt="" />
+							<p>
+								Food
+							</p>
+						</div>																								
 					</div>
-					<div class="pure-u-1-3">
+					<div class="pure-u-4-5">
 						text
-					</div>
-					<div class="pure-u-1-3">
-						text
-					</div>										
+					</div>									
 				</div>				
 			</div>
 		</div>
