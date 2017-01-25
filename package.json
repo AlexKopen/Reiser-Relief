@@ -1,10 +1,17 @@
 {
-  "name": "reiser",
+  "name": "reiser-relief-website",
   "version": "1.0.0",
-  "description": "Reiser Relief Website",
+  "description": "The development environment for reiserrelief.org",
   "main": "index.js",
-  "author": "Alex Kopen",
+  "author": "Alex Kopen <alexkopen@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AlexKopen/Reiser-Relief.git"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
@@ -15,9 +22,5 @@
     "gulp-uglify": "^2.0.0",
     "merge-stream": "^1.0.1",
     "typescript": "^2.1.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/AlexKopen/Reiser-Relief.git"
   }
 }
