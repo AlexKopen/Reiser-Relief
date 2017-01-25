@@ -1,6 +1,3 @@
-import { Person } from './person';
+let x = 'test';
 
-var Alex: Person;
-Alex.name = "Alex";
-
-console.log(Alex.name);
+console.log(x);
