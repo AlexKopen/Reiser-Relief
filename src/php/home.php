@@ -94,7 +94,7 @@
 							The genius programmer known by the name of Alex Kopen loves run-on sentences but more importantly is making a brand new website that is really breh.
 						</p>
 					</div>
-				</div>					
+				</div>
 			</div>
 			<div class="pure-u-2-5">
 				<div id="blog">
@@ -168,7 +168,7 @@
 								<p>
 									<img src="resources/images/social/youtube.png" alt="YouTube"> YOUTUBE
 								</p>
-							</div>	
+							</div>
 						</div>
 						<div class="pure-u-1-6">
 							<div class="social-item last">
@@ -187,40 +187,40 @@
 				<div class="pure-g">
 					<div class="pure-u-1-5">
 						<div class="ministry-block">
-							<img src="" alt="" />
+							<img src="resources/images/ministries/water-tile.jpg" alt="Water" />
 							<p>
 								Water
 							</p>
 						</div>
 						<div class="ministry-block">
-							<img src="" alt="" />
+							<img src="resources/images/ministries/education-tile.jpg" alt="Education" />
 							<p>
 								Education
 							</p>
 						</div>
 						<div class="ministry-block">
-							<img src="" alt="" />
+							<img src="resources/images/ministries/elder-tile.jpg" alt="Elder" />
 							<p>
 								Elder Care
 							</p>
 						</div>
 						<div class="ministry-block">
-							<img src="" alt="" />
+							<img src="resources/images/ministries/orphan-tile.jpg" alt="Orphan" />
 							<p>
 								Orphan Care
 							</p>
 						</div>
 						<div class="ministry-block">
-							<img src="" alt="" />
+							<img src="resources/images/ministries/food-tile.jpg" alt="Food" />
 							<p>
 								Food
 							</p>
-						</div>																								
+						</div>
 					</div>
 					<div class="pure-u-4-5">
 						text
-					</div>									
-				</div>				
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
