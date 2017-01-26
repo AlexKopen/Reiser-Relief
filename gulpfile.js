@@ -6,6 +6,7 @@ var cssmin = require('gulp-cssmin');
 var ts = require('gulp-typescript');
 var hash = require('gulp-hash');
 var merge = require('merge-stream');
+var clean = require('gulp-clean');
 
 var sourcePaths = {
 	scripts: './src/js/*.ts',
@@ -17,13 +18,16 @@ var sourcePaths = {
 
 var destinationPaths = {
 	scripts: './dist/resources/js',
+	masterScript: './dist/resources/js/all.min-*.js',
 	stylesheets: './dist/resources/css',
+	masterStylesheet: './dist/resources/css/style-*.css',
 	phpScripts: './dist',
 	iconResources: './dist/resources/icons',
-	imageResources: './dist/resources/images'
+	imageResources: './dist/resources/images',
+	assets: './dist'
 };
 
-gulp.task('typescript', function() {
+gulp.task('typescript', ['deleteMasterScript'], function() {
 	return gulp.src(sourcePaths.scripts)
         .pipe(ts({
             noImplicitAny: true,
@@ -33,10 +37,10 @@ gulp.task('typescript', function() {
 		.pipe(hash())
         .pipe(gulp.dest(destinationPaths.scripts))
 		.pipe(hash.manifest('assets.json'))
-    	.pipe(gulp.dest('./dist'));
+    	.pipe(gulp.dest(destinationPaths.assets));
 });
 
-gulp.task('less', function() {
+gulp.task('less', ['deleteMasterStylesheet'], function() {
 	return gulp.src(sourcePaths.stylesheets)
 		.pipe(less().on('error', function (err) {
 			console.log(err);
@@ -47,7 +51,7 @@ gulp.task('less', function() {
 		.pipe(hash())
 		.pipe(gulp.dest(destinationPaths.stylesheets))
 		.pipe(hash.manifest('assets.json'))
-    	.pipe(gulp.dest('./dist'));		
+    	.pipe(gulp.dest(destinationPaths.assets));		
 });
 
 gulp.task('php', function() {
@@ -63,6 +67,16 @@ gulp.task('resourceDirectories', function() {
 		.pipe(gulp.dest(destinationPaths.imageResources));
 
 	return merge(icons, images);		
+});
+
+gulp.task('deleteMasterScript', function() {
+    return gulp.src(destinationPaths.masterScript)
+        .pipe(clean({force: true}));
+});
+
+gulp.task('deleteMasterStylesheet', function() {
+    return gulp.src(destinationPaths.masterStylesheet)
+        .pipe(clean({force: true}));
 });
 
 gulp.task('watch', function() {

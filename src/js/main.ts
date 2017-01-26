@@ -1,3 +1,1 @@
-let x = 'test';
-
-console.log(x);
+console.log('js');
