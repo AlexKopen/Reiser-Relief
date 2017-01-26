@@ -29,15 +29,15 @@ var destinationPaths = {
 
 gulp.task('typescript', ['deleteMasterScript'], function() {
 	return gulp.src(sourcePaths.scripts)
-        .pipe(ts({
-            noImplicitAny: true,
-            out: 'all.min.js'
-        }))
+		.pipe(ts({
+			noImplicitAny: true,
+			out: 'all.min.js'
+		}))
 		.pipe(uglify())
 		.pipe(hash())
-        .pipe(gulp.dest(destinationPaths.scripts))
+		.pipe(gulp.dest(destinationPaths.scripts))
 		.pipe(hash.manifest('assets.json'))
-    	.pipe(gulp.dest(destinationPaths.assets));
+		.pipe(gulp.dest(destinationPaths.assets));
 });
 
 gulp.task('less', ['deleteMasterStylesheet'], function() {
@@ -51,7 +51,7 @@ gulp.task('less', ['deleteMasterStylesheet'], function() {
 		.pipe(hash())
 		.pipe(gulp.dest(destinationPaths.stylesheets))
 		.pipe(hash.manifest('assets.json'))
-    	.pipe(gulp.dest(destinationPaths.assets));		
+		.pipe(gulp.dest(destinationPaths.assets));		
 });
 
 gulp.task('php', function() {
@@ -70,13 +70,13 @@ gulp.task('resourceDirectories', function() {
 });
 
 gulp.task('deleteMasterScript', function() {
-    return gulp.src(destinationPaths.masterScript)
-        .pipe(clean({force: true}));
+	return gulp.src(destinationPaths.masterScript)
+		.pipe(clean({force: true}));
 });
 
 gulp.task('deleteMasterStylesheet', function() {
-    return gulp.src(destinationPaths.masterStylesheet)
-        .pipe(clean({force: true}));
+	return gulp.src(destinationPaths.masterStylesheet)
+		.pipe(clean({force: true}));
 });
 
 gulp.task('watch', function() {
