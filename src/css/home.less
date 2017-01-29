@@ -1,6 +1,6 @@
 @import "colors.less";
+@import "margins.less";
 
-@sub-section-top-margin: 40px;
 #home {
 	p {
 		line-height: 25px;
@@ -144,18 +144,23 @@
 		}
 
 		.ministry-block {
-			@ministry-block-height: 200px;
+			@ministry-block-height: 130px;
+			@ministry-block-width: 130px;
 			height: @ministry-block-height;
-			padding-bottom: 20px;
+			width: @ministry-block-width;
+			border-bottom: 2px solid @dark-theme-color;
 
 			p {
-				@ministry-block-paragraph-height: 20px;
+				@ministry-block-paragraph-height: @ministry-block-height;
 				position: relative;
 				text-align: center;
-				// margin-top: -((@ministry-block-height / 2) + (@ministry-block-paragraph-height / 2));
+				margin-top: -((@ministry-block-height / 2) + (@ministry-block-paragraph-height / 2));
 				height: @ministry-block-paragraph-height;
 				line-height: @ministry-block-paragraph-height;
 				padding: 0;
+				color: #ffffff;
+				background: @light-theme-color;
+				opacity: 0.8;
 			}
 		}
 	}
