@@ -136,46 +136,82 @@
                 <div id="social">
 					<div class="pure-g">
 						<div class="pure-u-1-6">
-							<div class="social-item">
-								<p>
-									<img src="resources/images/social/facebook.png" alt="Facebook"> FACEBOOK
-								</p>
-							</div>
+							<a href="https://www.facebook.com/ReiserRelief">
+								<div class = "social-link-block">
+									<div class="social-item">
+										<div class="specific-media">
+											<p>
+												<img src="resources/images/social/facebook.png" alt="Facebook"> FACEBOOK
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
 						</div>
 						<div class="pure-u-1-6">
-							<div class="social-item">
-								<p>
-									<img src="resources/images/social/twitter.png" alt="Twitter"> TWITTER
-								</p>
-							</div>
+							<a href="https://twitter.com/reiserrelief">
+								<div class = "social-link-block">
+									<div class="social-item">
+										<div class="specific-media">
+											<p>
+												<img src="resources/images/social/twitter.png" alt="Twitter"> TWITTER
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
 						</div>
 						<div class="pure-u-1-6">
-							<div class="social-item">
-								<p>
-									<img src="resources/images/social/instagram.png" alt="Instagram"> INSTAGRAM
-								</p>
-							</div>
+							<a href="https://instagram.com/reiserrelief/">
+								<div class = "social-link-block">
+									<div class="social-item">
+										<div class="specific-media">
+											<p>
+												<img src="resources/images/social/instagram.png" alt="Instagram"> INSTAGRAM
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
 						</div>
 						<div class="pure-u-1-6">
-							<div class="social-item">
-								<p>
-									<img src="resources/images/social/blog.png" alt="Blog"> BLOG
-								</p>
-							</div>
+							<a href="http://reiserreliefjournal.blogspot.com/">
+								<div class = "social-link-block">
+									<div class="social-item">
+										<div class="specific-media">
+											<p>
+												<img src="resources/images/social/blog.png" alt="Blog"> BLOG
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
 						</div>
 						<div class="pure-u-1-6">
-							<div class="social-item">
-								<p>
-									<img src="resources/images/social/youtube.png" alt="YouTube"> YOUTUBE
-								</p>
-							</div>
+							<a href="http://www.youtube.com/user/reiserrelief">
+								<div class = "social-link-block">
+									<div class="social-item">
+										<div class="specific-media">
+											<p>
+												<img src="resources/images/social/youtube.png" alt="YouTube"> YOUTUBE
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
 						</div>
 						<div class="pure-u-1-6">
-							<div class="social-item last">
-								<p>
-									<img src="resources/images/social/email.png" alt="Email"> EMAIL
-								</p>
-							</div>	
+							<a href="#">
+								<div class = "social-link-block">
+									<div class="social-item">
+										<div class="specific-media last">
+											<p>
+												<img src="resources/images/social/email.png" alt="Email"> EMAIL
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>
 						</div>
 					</div>
                 </div>
