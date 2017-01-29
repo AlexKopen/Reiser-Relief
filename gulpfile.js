@@ -12,8 +12,11 @@ var sourcePaths = {
 	scripts: './src/js/*.ts',
 	stylesheets: './src/css/*.less',
 	phpScripts: './src/php/*.php',
+	templates: './src/templates/*.twig',
 	iconResources: './src/icons/**/*',
-	imageResources: './src/images/**/*'
+	imageResources: './src/images/**/*',
+	framework: './src/php/silex/vendor/**/*',
+	htaccess: './src/php/silex/**/.*'
 };
 
 var destinationPaths = {
@@ -22,9 +25,12 @@ var destinationPaths = {
 	stylesheets: './dist/resources/css',
 	masterStylesheet: './dist/resources/css/style-*.css',
 	phpScripts: './dist',
+	templates: './dist/resources/templates',
 	iconResources: './dist/resources/icons',
 	imageResources: './dist/resources/images',
-	assets: './dist'
+	assets: './dist',
+	framework: './dist/vendor',
+	htaccess: './dist'
 };
 
 gulp.task('typescript', ['deleteMasterScript'], function() {
@@ -59,14 +65,25 @@ gulp.task('php', function() {
 		.pipe(gulp.dest(destinationPaths.phpScripts));
 });
 
-gulp.task('resourceDirectories', function() {
+gulp.task('template', function() {
+	return gulp.src(sourcePaths.templates)
+		.pipe(gulp.dest(destinationPaths.templates));
+});
+
+gulp.task('copyDirectories', function() {
 	var icons = gulp.src(sourcePaths.iconResources)
 		.pipe(gulp.dest(destinationPaths.iconResources));
 
 	var images = gulp.src(sourcePaths.imageResources)
 		.pipe(gulp.dest(destinationPaths.imageResources));
 
-	return merge(icons, images);		
+	var framework = gulp.src(sourcePaths.framework)
+		.pipe(gulp.dest(destinationPaths.framework));
+
+	var htaccess = gulp.src(sourcePaths.htaccess)
+		.pipe(gulp.dest(destinationPaths.htaccess));
+
+	return merge(icons, images, framework, htaccess);		
 });
 
 gulp.task('deleteMasterScript', function() {
@@ -83,6 +100,7 @@ gulp.task('watch', function() {
 	gulp.watch(sourcePaths.scripts, ['typescript']);
 	gulp.watch(sourcePaths.stylesheets, ['less']);
 	gulp.watch(sourcePaths.phpScripts, ['php']);
+	gulp.watch(sourcePaths.templates, ['template']);
 });
 
-gulp.task('default', ['watch', 'typescript', 'less', 'php', 'resourceDirectories']);
+gulp.task('default', ['watch', 'typescript', 'less', 'php', 'template', 'copyDirectories']);
