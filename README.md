@@ -4,12 +4,17 @@ Source code for [reiserrelief.org](http://reiserrelief.org)
 
 ### Installation
 
-Clone the repository into an environment running PHP 5.5+
+Clone the repository into an environment running PHP 7.0+
 
-Install the necessary node modules:
+Install the necessary node modules with [npm](https://www.npmjs.com/):
 
 ```
 npm install
+```
+
+Navigate to 'src/php/silex' and install the necessary php dependencies with [composer](https://getcomposer.org/):
+```
+composer install
 ```
 
 ### Usage
@@ -25,4 +30,6 @@ Ex. [http://localhost/dist/](http://localhost/dist/)
 
 ### Additional Information
 
-Gulp is used to continuously watch for changes to TypeScript, Less, and PHP files in the 'src' directory.  Any modification to these files will be immediately reflected in the 'dist' directory.
+[Silex](http://silex.sensiolabs.org/) is used for the micro-framework with [Twig](http://twig.sensiolabs.org/) as its template engine.
+
+Gulp is used to continuously watch for changes to TypeScript, Less, Twig, and PHP files in the 'src' directory.  Any modification to these files will be immediately reflected in the 'dist' directory.
