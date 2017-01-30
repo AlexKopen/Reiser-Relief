@@ -1,0 +1,51 @@
+@import "colors.less";
+
+#header {
+	padding-top: 15px;
+
+	.container {
+		border-bottom: 2px solid @light-theme-color;
+	}
+
+	.pure-g {
+		margin-bottom: 15px;
+	}
+
+	#right-header {
+		text-align: right;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		
+		li {
+			display: inline;
+
+			a {
+				text-decoration: none;
+				color: #000000;
+
+				&:hover {
+					color: @light-theme-color;
+				}
+			}
+
+		}
+	}
+
+	#magnifying-glass {
+		font-size: 22px;
+	}
+
+	@separator-rotation: 15deg;
+	
+	.vertical-separator {
+		color: @light-theme-color;
+	}
+}
