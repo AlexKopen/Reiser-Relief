@@ -116,13 +116,6 @@
 				}
 
 				p {
-
-					.social-image {
-						img {
-							padding: 22px 0;
-						}
-					}
-
 					color: @light-theme-color;				
 					padding: 0;
 					height: @social-item-height;
@@ -134,7 +127,7 @@
 					padding-right: 5px;
 				}
 			}
-		}		
+		}
 	}
 
 	#ministries {
@@ -148,7 +141,11 @@
 			@ministry-block-width: 130px;
 			height: @ministry-block-height;
 			width: @ministry-block-width;
-			border-bottom: 2px solid @dark-theme-color;
+			border-bottom: 2px solid @light-theme-color;
+
+			&.last {
+				border-bottom: none;
+			}
 
 			p {
 				@ministry-block-paragraph-height: @ministry-block-height;
@@ -159,9 +156,27 @@
 				line-height: @ministry-block-paragraph-height;
 				padding: 0;
 				color: #ffffff;
-				background: @light-theme-color;
+				background: @dark-theme-color;
 				opacity: 0.8;
+
+				&:hover {
+					background: @light-theme-color;
+					opacity: 1.0;
+					cursor: pointer;
+				}
 			}
+		}
+
+		#ministry-content {
+			padding-top: 40px;
+
+			.ministry-content-block {
+				display: none;
+			}
+
+			.first {
+				display: inline;
+			}			
 		}
 	}
 }

@@ -12,11 +12,42 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
-$app['twig']->addGlobal('RootURL', 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
+$url = 'http://localhost/Reiser-Relief/dist/';
+$app['twig']->addGlobal('RootURL', $url);
 
 $app->get('/', function () use ($app) {
     return $app['twig']->render('home.twig', array(
         'Title' => 'Home'
+    ));
+});
+
+$app->get('/about', function () use ($app) {
+    return $app['twig']->render('about.twig', array(
+        'Title' => 'About'
+    ));
+});
+
+$app->get('/events', function () use ($app) {
+    return $app['twig']->render('events.twig', array(
+        'Title' => 'Events'
+    ));
+});
+
+$app->get('/experience', function () use ($app) {
+    return $app['twig']->render('experience.twig', array(
+        'Title' => 'Experience'
+    ));
+});
+
+$app->get('/give', function () use ($app) {
+    return $app['twig']->render('give.twig', array(
+        'Title' => 'Give'
+    ));
+});
+
+$app->get('/contact', function () use ($app) {
+    return $app['twig']->render('contact.twig', array(
+        'Title' => 'Contact'
     ));
 });
 
