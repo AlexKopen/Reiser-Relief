@@ -9,28 +9,28 @@ var merge = require('merge-stream');
 var clean = require('gulp-clean');
 
 var sourcePaths = {
-	scripts: './src/js/*.ts',
-	stylesheets: './src/css/*.less',
-	phpScripts: './src/php/*.php',
-	templates: './src/templates/*.twig',
-	iconResources: './src/icons/**/*',
-	imageResources: './src/images/**/*',
-	framework: './src/php/silex/vendor/**/*',
-	htaccess: './src/php/silex/**/.*'
+	scripts: 'src/js/*.ts',
+	stylesheets: 'src/css/*.less',
+	phpScripts: 'src/php/*.php',
+	templates: 'src/templates/*.twig',
+	iconResources: 'src/icons/**/*',
+	imageResources: 'src/images/**/*',
+	framework: 'src/php/silex/vendor/**/*',
+	htaccess: 'src/php/silex/**/.*'
 };
 
 var destinationPaths = {
-	scripts: './dist/resources/js',
-	masterScript: './dist/resources/js/all.min-*.js',
-	stylesheets: './dist/resources/css',
-	masterStylesheet: './dist/resources/css/style-*.css',
-	phpScripts: './dist',
-	templates: './dist/resources/templates',
-	iconResources: './dist/resources/icons',
-	imageResources: './dist/resources/images',
-	assets: './dist',
-	framework: './dist/vendor',
-	htaccess: './dist'
+	scripts: 'dist/resources/js',
+	masterScript: 'dist/resources/js/all.min-*.js',
+	stylesheets: 'dist/resources/css',
+	masterStylesheet: 'dist/resources/css/style-*.css',
+	phpScripts: 'dist',
+	templates: 'dist/resources/templates',
+	iconResources: 'dist/resources/icons',
+	imageResources: 'dist/resources/images',
+	assets: 'dist',
+	framework: 'dist/vendor',
+	htaccess: 'dist'
 };
 
 gulp.task('typescript', ['deleteMasterScript'], function() {
@@ -97,10 +97,10 @@ gulp.task('deleteMasterStylesheet', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(sourcePaths.scripts, ['typescript']);
-	gulp.watch(sourcePaths.stylesheets, ['less']);
-	gulp.watch(sourcePaths.phpScripts, ['php']);
-	gulp.watch(sourcePaths.templates, ['template']);
+	gulp.watch(sourcePaths.scripts, {cwd: './'}, ['typescript']);
+	gulp.watch(sourcePaths.stylesheets, {cwd: './'}, ['less']);
+	gulp.watch(sourcePaths.phpScripts, {cwd: './'}, ['php']);
+	gulp.watch(sourcePaths.templates, {cwd: './'}, ['template']);
 });
 
 gulp.task('default', ['watch', 'typescript', 'less', 'php', 'template', 'copyDirectories']);
