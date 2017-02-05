@@ -3,13 +3,13 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var less = require('gulp-less');
 var cssmin = require('gulp-cssmin');
-var ts = require('gulp-typescript');
 var hash = require('gulp-hash');
 var merge = require('merge-stream');
 var clean = require('gulp-clean');
 
 var sourcePaths = {
-	scripts: 'src/js/*.ts',
+	dist: 'dist',
+	scripts: 'src/js/*.js',
 	stylesheets: 'src/css/*.less',
 	phpScripts: 'src/php/*.php',
 	templates: 'src/templates/*.twig',
@@ -33,13 +33,10 @@ var destinationPaths = {
 	htaccess: 'dist'
 };
 
-gulp.task('typescript', ['deleteMasterScript'], function() {
+gulp.task('javascript', function() {
 	return gulp.src(sourcePaths.scripts)
-		.pipe(ts({
-			noImplicitAny: true,
-			out: 'all.min.js'
-		}))
 		.pipe(uglify())
+		.pipe(concat('all.min.js'))
 		.pipe(hash())
 		.pipe(gulp.dest(destinationPaths.scripts))
 		.pipe(hash.manifest('assets.json'))
@@ -86,6 +83,11 @@ gulp.task('copyDirectories', function() {
 	return merge(icons, images, framework, htaccess);		
 });
 
+gulp.task('deleteDist', function() {
+	return gulp.src(sourcePaths.dist)
+		.pipe(clean({force: true}));
+});
+
 gulp.task('deleteMasterScript', function() {
 	return gulp.src(destinationPaths.masterScript)
 		.pipe(clean({force: true}));
@@ -97,10 +99,10 @@ gulp.task('deleteMasterStylesheet', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(sourcePaths.scripts, {cwd: './'}, ['typescript']);
+	gulp.watch(sourcePaths.scripts, {cwd: './'}, ['javascript']);
 	gulp.watch(sourcePaths.stylesheets, {cwd: './'}, ['less']);
 	gulp.watch(sourcePaths.phpScripts, {cwd: './'}, ['php']);
 	gulp.watch(sourcePaths.templates, {cwd: './'}, ['template']);
 });
 
-gulp.task('default', ['watch', 'typescript', 'less', 'php', 'template', 'copyDirectories']);
+gulp.task('default', ['watch', 'javascript', 'less', 'php', 'template', 'copyDirectories']);
