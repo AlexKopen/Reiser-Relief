@@ -1,7 +1,11 @@
 $( document ).ready(function() {
     function beginSlideShow() {
         setInterval(function() { 
-            //slide
+            $('#middle-image').animate({
+                left: "-=1000"
+            }, 2000, function() {
+                // Animation complete.
+            });
         }, 5000);
     }
 
