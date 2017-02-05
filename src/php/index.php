@@ -17,7 +17,8 @@ $app['twig']->addGlobal('RootURL', $url);
 
 $app->get('/', function () use ($app) {
     return $app['twig']->render('home.twig', array(
-        'Title' => 'Home'
+        'Title' => 'Home',
+        'SlideShowImages' => array('banner1.jpg', 'banner2.jpg', 'banner3.jpg', 'banner4.jpg')
     ));
 });
 

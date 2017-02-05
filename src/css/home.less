@@ -6,6 +6,51 @@
 		line-height: 25px;
 	}
 
+	#slide-show {
+		@banner-width: 1000px;
+		@banner-height: 321px;
+		margin: 0 auto;
+		width: 1000px;
+		height: @banner-height;
+
+		img {
+			position: relative;
+
+			&#second-image {
+				top: -@banner-height;
+				left: @banner-width;				
+			}
+		}
+
+		ul {
+			display: none;
+		}
+
+		#left-image, #middle-image, #right-image {
+			width: @banner-width;
+			height: @banner-height;
+			position: relative;
+		}
+
+		#left-image {
+			left: -@banner-width;
+			z-index: 1;
+			background: @body-background;
+		}
+
+		#middle-image {
+			top: -@banner-height;
+			z-index: -1;
+		}
+
+		#right-image {
+			top: -(@banner-height * 2);
+			left: @banner-width;
+			z-index: 1;
+			background: @body-background;
+		}
+	}
+
 	#three-block-information {
 		margin-top: 25px;
 
