@@ -3,21 +3,31 @@ $( document ).ready(function() {
         setInterval(function() { 
             $('#middle-image').animate({
                 left: "-=1000"
-            }, 2000, function() {
-                // Animation complete.
+            }, 4000, function() {
+                $('#middle-image img').get(1).setAttribute('id', '');
+                $('#middle-image img').get(0).remove();
+                $('#slide-show #middle-image').append('<img src=" ' + Images[SlideShowIndex] + '" id ="second-image">');
+                 $('#middle-image').css('left', '0');
+
+                if (++SlideShowIndex > MaxIndex) {
+                    SlideShowIndex = 0;
+                }
             });
-        }, 5000);
+        }, 9000);
     }
 
     var Images = [];
+    var SlideShowIndex = 2;
+    var MaxIndex;
 
     $('#slide-show ul li').each(function(){
         Images.push($(this).text().trim());
     });
 
     $('#slide-show ul li').promise().done(function() {
-         $('#slide-show #middle-image').append('<img src=" ' + Images[1] + '" id ="second-image">');
-         beginSlideShow();
+        MaxIndex = Images.length - 1
+        $('#slide-show #middle-image').append('<img src=" ' + Images[1] + '" id ="second-image">');
+        beginSlideShow();
     });
 
 });
