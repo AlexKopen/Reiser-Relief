@@ -3,3 +3,4 @@ dist/
 .vscode/
 src/php/silex/composer.lock
 src/php/silex/vendor
+.DS_Store
