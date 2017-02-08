@@ -1,21 +1,21 @@
 {{ include('header.twig') }}
 
 <div id="home">	
-	<div id="slide-show">
-		<div id="left-image">
+	<div class="container">
+		<div id="slide-show">
+			<ul>
+				{% for Image in SlideShowImages %}
+					{% if loop.index0 == 0 %}
+						<li>
+							<img src="{{ RootURL }}resources/images/banner/{{ Image }}">
+					{% else %}
+						<li class="hide-slide">
+							{{ RootURL }}resources/images/banner/{{ Image }}
+					{% endif %}
+						</li>
+				{% endfor %}
+			</ul>
 		</div>
-		<div id="middle-image">
-			<img src="{{ RootURL }}resources/images/banner/{{ SlideShowImages[0] }}">
-		</div>
-		<div id="right-image">
-		</div>
-		<ul>		
-			{% for Image in SlideShowImages %}
-				<li>
-					{{ RootURL }}resources/images/banner/{{ Image }}
-				</li>
-			{% endfor %}
-		</ul>
 	</div>
 	<div class="container">
 		<div class="pure-g" id="three-block-information">
@@ -115,7 +115,7 @@
 				<div id="blog">
 					<div class="news-and-blog-header">
 						<h1>
-							Blogs
+							Events
 						</h1>
 					</div>
 					<div class="pure-g blog-entry">
