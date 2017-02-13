@@ -35,7 +35,11 @@
 		.hide-slide {
 			display: none;
 		}
-	}		
+
+		img {
+			margin: 0 auto;
+		}
+	}
 
 	#three-block-information {
 		margin-top: 25px;
@@ -72,19 +76,42 @@
 
 		p {
 			line-height: @link-height;
-		}	
+		}
 	}
 
-	#news-and-blog {
+	#our-work {
 		margin-top: @sub-section-top-margin;
-		height: 515px;
+
+		.work-row{
+			margin-top: 30px;
+		}
+
+		h1 {
+			text-align: center;
+			padding-bottom: @header-padding;
+		}
+
+		img {
+			margin: 0 auto;
+			width: 220px;
+			height: 165px;
+		}
+
+		h2 {
+			text-align: center;
+			font-size: 20px;
+		}
+	}
+
+	#news-and-events {
+		margin-top: @sub-section-top-margin;
 
 		@block-header-height: 50px;
 
-		.news-and-blog-header {
+		.news-and-events-header {
 			border-bottom: 1px solid @separator-color;
 			height: @block-header-height;
-			margin-bottom: 16px;
+			margin-bottom: @header-padding;
 		}
 
 		h1 {
@@ -100,7 +127,7 @@
 
 			h3 {
 				color: @separator-color;
-				margin-top: 2px;		
+				margin-top: 2px;
 			}
 
 			.news-content {
@@ -108,14 +135,19 @@
 			}
 		}
 
-		#blog {
-			img {
-    			margin: 0 auto;
-			}
+		#events {
+			.calendar-tile {
+				@tile-height: 90px;
+				@tile-width: 90px;
+				border: 1px solid @dark-theme-color;
+				text-align: center;
+				height: @tile-height;
+				width: @tile-width;
+				margin: 0 auto;
 
-			.blog-entry {
-				height: 150px;
-				padding-bottom: 40px;
+				.date {
+					line-height: @tile-height;
+				}
 			}
 		}
 	}
@@ -134,7 +166,7 @@
 
 		.social-link-block {
 			height: @connect-height;
-			color: @light-theme-color;	
+			color: @light-theme-color;
 
 			&:hover {
 				color: #ffffff;
@@ -145,7 +177,7 @@
 				height: @social-item-height;
 				padding-top: ((@connect-height - @social-item-height) / 2);
 				text-align: center;
-				
+
 				.specific-media {
 					border-right: 1px solid @light-theme-color;
 					height: @social-item-height;
@@ -155,10 +187,10 @@
 					}
 				}
 
-				p {			
+				p {
 					padding: 0;
 					height: @social-item-height;
-					display: inline-block;			
+					display: inline-block;
 				}
 
 				img {
@@ -166,61 +198,6 @@
 					padding-right: 5px;
 				}
 			}
-		}
-	}
-
-	#ministries {
-		margin-top: @sub-section-top-margin;
-		h1 {
-			text-align: center;
-		}
-
-		.ministry-block {
-			@ministry-block-height: 130px;
-			@ministry-block-width: 130px;
-			height: @ministry-block-height;
-			width: @ministry-block-width;
-			border-bottom: 2px solid @light-theme-color;
-
-			&.last {
-				border-bottom: none;
-			}
-
-			p {
-				@ministry-block-paragraph-height: @ministry-block-height;
-				position: relative;
-				text-align: center;
-				margin-top: -((@ministry-block-height / 2) + (@ministry-block-paragraph-height / 2));
-				height: @ministry-block-paragraph-height;
-				line-height: @ministry-block-paragraph-height;
-				padding: 0;
-				color: #ffffff;
-				background: @dark-theme-color;
-				opacity: 0.8;
-
-				&:hover {
-					background: @light-theme-color;
-					opacity: 1.0;
-					cursor: pointer;
-				}
-
-				&#current-block {
-					background: @light-theme-color;
-					opacity: 1.0;
-				}
-			}
-		}
-
-		#ministry-content {
-			padding-top: 40px;
-
-			.ministry-content-block {
-				display: none;
-			}
-
-			.first {
-				display: inline;
-			}			
 		}
 	}
 }
