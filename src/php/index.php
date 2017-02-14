@@ -12,13 +12,17 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
-$url = 'http://localhost/Reiser-Relief/dist/';
-$app['twig']->addGlobal('RootURL', $url);
+$app['twig']->addGlobal('RootURL', 'http://localhost/Reiser-Relief/dist/');
 
 $app->get('/', function () use ($app) {
     return $app['twig']->render('home.twig', array(
         'Title' => 'Home',
-        'SlideShowImages' => array('banner1.jpg', 'banner2.jpg', 'banner3.jpg', 'banner4.jpg')
+        'SlideShowImages' => array(
+            array('Url' => 'banner1.jpg', 'Alt' => 'Banner 1'),
+            array('Url' => 'banner2.jpg', 'Alt' => 'Banner 2'),
+            array('Url' => 'banner3.jpg', 'Alt' => 'Banner 3'),
+            array('Url' => 'banner4.jpg', 'Alt' => 'Banner 4')
+        )
     ));
 });
 
