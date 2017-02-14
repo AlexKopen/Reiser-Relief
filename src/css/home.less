@@ -86,8 +86,16 @@
 	#our-work {
 		margin-top: @sub-section-top-margin;
 
-		.work-row{
-			margin-top: 30px;
+		.work-row {
+			margin-top: 15px;
+		}
+
+		.work-column {
+			border-right: 1px solid @separator-color;
+
+			&.last {
+				border-right: none;
+			}
 		}
 
 		h1 {
@@ -97,13 +105,18 @@
 
 		img {
 			margin: 0 auto;
-			width: 220px;
-			height: 165px;
+			width: 185px;
+			height: 135px;
 		}
 
 		h2 {
 			text-align: center;
 			font-size: 20px;
+			color: @dark-theme-color;
+		}
+
+		.work-description {
+			margin-left: 4px;
 		}
 	}
 
