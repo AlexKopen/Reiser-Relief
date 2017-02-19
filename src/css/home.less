@@ -96,11 +96,8 @@
 		}
 
 		.work-column {
-			border-right: 1px solid @separator-color;
-			height: 280px;
-
-			&.last {
-				border-right: none;
+			&:hover {
+				color: @dark-theme-color;
 			}
 		}
 
@@ -111,14 +108,11 @@
 
 		img {
 			margin: 0 auto;
-			width: 230px;
-			height: 170px;
 		}
 
 		h2 {
 			text-align: center;
 			font-size: 20px;
-			color: @dark-theme-color;
 		}
 
 		.work-description {
@@ -159,6 +153,14 @@
 		}
 
 		#events {
+			.event-entry {
+				margin-top: 20px;
+
+				&#first {
+					margin-top: 0;
+				}
+			}
+
 			.calendar-tile {
 				@tile-height: 90px;
 				@tile-width: 90px;
@@ -170,7 +172,33 @@
 
 				.date {
 					line-height: @tile-height;
+					color: @dark-theme-color;
+					font-size: 1.5em;
 				}
+
+				.month {
+					margin-top: -18px;
+				}
+
+				.day-of-week {
+					margin-top: -88px;
+				}
+			}
+
+			@detail-column-height: 92px;
+
+			.event-title, .event-details {
+				text-align: center;
+			}
+
+			.event-details {
+				@title-height: 35px;
+				@detail-height: 34px;
+				font-size: 14px;
+				padding-bottom: 0;
+				line-height: 17px;
+				background: red;
+				margin-top: ((@title-height) + (@detail-column-height - @detail-height)) - (@detail-height * 2);
 			}
 		}
 	}
