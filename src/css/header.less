@@ -1,6 +1,7 @@
 @import "colors.less";
 
 #header {
+	@header-height: 50px;
 	padding-top: 15px;
 
 	.pure-g {
@@ -11,17 +12,16 @@
 		text-align: right;
 	}
 
-	p {
-		margin: 0;
-	}
-
 	ul {
+		@nav-height: 25px;
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		margin-top: (@header-height/2) - (@nav-height/2);
 
 		li {
 			display: inline-block;
+			padding-bottom: 0;
 
 			a {
 				text-decoration: none;
