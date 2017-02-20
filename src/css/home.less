@@ -185,20 +185,19 @@
 				}
 			}
 
-			@detail-column-height: 92px;
+			.event-title {
+				color: @dark-theme-color;
+				font-size: 19px;
+			}
 
 			.event-title, .event-details {
 				text-align: center;
 			}
 
 			.event-details {
-				@title-height: 35px;
-				@detail-height: 34px;
 				font-size: 14px;
 				padding-bottom: 0;
 				line-height: 17px;
-				background: red;
-				margin-top: ((@title-height) + (@detail-column-height - @detail-height)) - (@detail-height * 2);
 			}
 		}
 	}
