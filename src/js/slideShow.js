@@ -3,11 +3,11 @@ $( document ).ready(function() {
         var ImageUrl = $(this).find('.hidden-image-url').text().trim();
         $(this).find('.hidden-image-url').remove();
         $(this).find('img').attr('src', ImageUrl);
-        $(this).css('display', 'inline');
+        $(this).css('display', 'list-item');
     });
 
     $('#slide-show .hide-slide').promise().done(function() {
-        $('#slide-show').unslider({
+        $('#slide-show .container').unslider({
             autoplay: true,
             infinite: true,
             arrows: false,
