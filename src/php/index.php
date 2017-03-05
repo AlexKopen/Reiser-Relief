@@ -22,19 +22,19 @@ $app->get('/', function () use ($app) {
                 'Url' => 'experience-slide.jpg',
                 'Alt' => 'Experience',
                 'Header' => 'Leave your Comfort Zone',
-                'Description' => 'Experience the opportunity of a lifetime'
-            ),
-            array(
-                'Url' => 'support-slide.jpg',
-                'Alt' => 'Support Us',
-                'Header' => 'Give Today',
-                'Description' => 'Help those in need with a donation'
+                'Description' => 'Experience the opportunity of a lifetime by applying for a mission trip to Haiti'
             ),
             array(
                 'Url' => 'work-slide.jpg',
                 'Alt' => 'Our Work',
                 'Header' => 'What we Do',
-                'Description' => 'Learn more about Reiser Relief'
+                'Description' => 'Learn more about Reiser Relief including our work, upcoming events, and ways you can help'
+            ),
+            array(
+                'Url' => 'support-slide.jpg',
+                'Alt' => 'Support Us',
+                'Header' => 'Give Today',
+                'Description' => 'Help those in need with a donation which will provide water, food, care, and so much more'
             )
         )
     ));

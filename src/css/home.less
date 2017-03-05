@@ -50,6 +50,7 @@
 		}
 
 		h1 {
+			height: 80px;
 			margin-top: -230px;
 			padding-left: 687px;
 			line-height: 40px;
@@ -59,7 +60,7 @@
 
 		p {
 			margin-top: 18px;
-			padding-left: 662px;
+			padding-left: 655px;
 			color: #ffffff;
 			text-align: center;
 		}
@@ -227,24 +228,27 @@
 			.calendar-tile {
 				@tile-height: 90px;
 				@tile-width: 90px;
-				border: 1px solid @dark-theme-color;
-				text-align: center;
+				@day-of-week-height: 18px;
 				height: @tile-height;
 				width: @tile-width;
 				margin: 0 auto;
+				border: 1px solid @dark-theme-color;
+				text-align: center;
+
+				.day-of-week {
+					height: @day-of-week-height;
+				}
 
 				.date {
-					line-height: @tile-height;
+					@date-height: @tile-height - (@day-of-week-height * 2);
+					height: @date-height;
+					line-height: @date-height;
 					color: @dark-theme-color;
 					font-size: 1.5em;
 				}
 
 				.month {
-					margin-top: -18px;
-				}
-
-				.day-of-week {
-					margin-top: -88px;
+					height: @day-of-week-height;
 				}
 			}
 
