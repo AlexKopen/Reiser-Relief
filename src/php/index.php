@@ -18,10 +18,24 @@ $app->get('/', function () use ($app) {
     return $app['twig']->render('home.twig', array(
         'Title' => 'Home',
         'SlideShowImages' => array(
-            array('Url' => 'banner1.jpg', 'Alt' => 'Banner 1'),
-            array('Url' => 'banner2.jpg', 'Alt' => 'Banner 2'),
-            array('Url' => 'banner3.jpg', 'Alt' => 'Banner 3'),
-            array('Url' => 'banner4.jpg', 'Alt' => 'Banner 4')
+            array(
+                'Url' => 'experience-slide.jpg',
+                'Alt' => 'Experience',
+                'Header' => 'Leave your Comfort Zone',
+                'Description' => 'Experience the opportunity of a lifetime'
+            ),
+            array(
+                'Url' => 'support-slide.jpg',
+                'Alt' => 'Support Us',
+                'Header' => 'Give Today',
+                'Description' => 'Help those in need with a donation'
+            ),
+            array(
+                'Url' => 'work-slide.jpg',
+                'Alt' => 'Our Work',
+                'Header' => 'What we Do',
+                'Description' => 'Learn more about Reiser Relief'
+            )
         )
     ));
 });
