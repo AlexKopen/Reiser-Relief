@@ -1,8 +1,9 @@
 $( document ).ready(function() {
     $('#slide-show .hide-slide').each(function(){
-        var ImageUrl = $(this).find('.hidden-image-url').text().trim();
-        $(this).find('.hidden-image-url').remove();
-        $(this).find('img').attr('src', ImageUrl);
+        var HiddenImageUrlSelector = $(this).find('.hidden-image-url');
+        var HiddenImageUrl = HiddenImageUrlSelector.text().trim();
+        HiddenImageUrlSelector.remove();
+        $(this).find('img').attr('src', HiddenImageUrl);
         $(this).css('display', 'list-item');
     });
 

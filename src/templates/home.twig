@@ -8,12 +8,14 @@
 					{% for Image in SlideShowImages %}
 						{% if loop.index0 == 0 %}
 							<li>
-								<img src="{{ RootURL }}resources/images/banner/{{ Image['Url'] }}" alt="{{ Image['Alt'] }}">
+								<img src="{{ RootURL }}resources/images/slide-show/{{ Image['Url'] }}" alt="{{ Image['Alt'] }}">
 						{% else %}
 							<li class="hide-slide">
-								<span class="hidden-image-url">{{ RootURL }}resources/images/banner/{{ Image['Url'] }}</span>
+								<span class="hidden-image-url">{{ RootURL }}resources/images/slide-show/{{ Image['Url'] }}</span>
 								<img src="" alt="{{ Image['Alt'] }}">
 						{% endif %}
+								<h1>{{ Image['Header'] }}</h1>
+								<p>{{ Image['Description'] }}</p>
 							</li>
 					{% endfor %}
 				</ul>
