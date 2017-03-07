@@ -13,24 +13,35 @@ footer {
         margin: 0 auto;
     }
 
-	ul {
+    .pure-menu {
         margin-top: 30px;
 
-		li {
-			display: inline-block;
+        ul {
+            li {
+                padding-bottom: 0;
 
-			a {
-                .vertical-separator {
-                    color: @light-theme-color;
+                a {
+                    .vertical-separator {
+                        color: @light-theme-color;
+                    }
+
+                    &.pure-menu-link {
+                        color: @light-theme-color;
+                        padding: 0;
+
+                        &:hover {
+                            background-color: @dark-theme-color;
+                        }
+                    }
+
+                    &:hover {
+                        color: #ffffff;
+                    }
                 }
 
-				&:hover {
-					color: #ffffff
-				}
-			}
-
-		}
-	}
+            }
+        }
+    }
 
     #social {
         margin: 0 auto;

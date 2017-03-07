@@ -11,7 +11,8 @@
 		}
 
 		.unslider {
-			width: 1000px;
+			width: 100%;
+			max-width: 1000px;
 			margin: 0 auto;
 		}
 
@@ -72,6 +73,12 @@
 		.info-content {
 			border-right: 1px solid @separator-color;
 			padding: 0 25px;
+
+			// @media only screen and (max-width: 768px) {
+			// 	width: 300px;
+			// 	border-right: none;
+			// 	margin: 0 auto;
+			// }
 		}
 
 		#last-info {
@@ -84,6 +91,10 @@
 
 		.text-block {
 			height: 130px;
+
+			// @media only screen and (min-width: 768px) {
+			// 	height: auto;
+			// }
 		}
 
 		@link-height: 48px;
