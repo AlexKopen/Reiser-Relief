@@ -16,7 +16,7 @@ var sourcePaths = {
 	iconResources: 'src/icons/**/*',
 	imageResources: 'src/images/**/*',
 	framework: 'src/php/silex/vendor/**/*',
-	htaccess: 'src/php/silex/**/.*'
+	htaccess: '.htaccess'
 };
 
 var destinationPaths = {

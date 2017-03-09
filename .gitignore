@@ -1,6 +1,6 @@
 node_modules/
 dist/
 .vscode/
-src/php/silex/composer.lock
-src/php/silex/vendor
+src/php/silex/
 .DS_Store
+composer.lock
