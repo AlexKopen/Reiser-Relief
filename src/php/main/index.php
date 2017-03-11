@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__.'/vendor/autoload.php';
-require_once __DIR__.'/urls.php';
+require_once __DIR__.'/php/urls.php';
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -66,7 +66,7 @@ $app->get('/give', function () use ($app) {
 
 $app->get('/contact', function () use ($app) {
     return $app['twig']->render('contact.twig', array(
-        'Title' => 'Contact'
+        'Title' => 'Contact!'
     ));
 });
 
