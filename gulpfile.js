@@ -36,7 +36,10 @@ var destinationPaths = {
 
 gulp.task('javascript', ['deleteMasterScript'], function() {
 	return gulp.src(sourcePaths.scripts)
-		.pipe(uglify())
+		.pipe(uglify().on('error', function (err) {
+			console.log(err);
+			this.emit('end');
+		}))
 		.pipe(concat('all.min.js'))
 		.pipe(hash())
 		.pipe(gulp.dest(destinationPaths.scripts))

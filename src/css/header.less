@@ -1,14 +1,25 @@
 @import "colors.less";
+@import "margins.less";
 
 header {
 	@header-height: 50px;
-	padding-top: 15px;
+	padding-top: @header-padding;
+
+	.container .pure-g {
+		padding: 0 @side-container-padding;
+
+		@media only screen and (max-width: 768px) {
+			padding: 0;
+		}
+	}
 
 	#left-header {
-		@media only screen and (max-width: 712px) {
+		@media only screen and (max-width: 768px) {
 			width: 100%;
+		}
 
-			img {
+		img {
+			@media only screen and (max-width: 768px) {
 				margin: 0 auto;
 			}
 		}
@@ -19,19 +30,71 @@ header {
 		width: 100%;
 		margin-top: -38px;
 
-		@media only screen and (max-width: 712px) {
+		@media only screen and (max-width: 768px) {
 			text-align: center;
 			width: 100%;
-			margin: 0;
+			margin: 10px 0 0;
+		}
+
+		#drop-down-menu {
+			display: none;
+			background: @dark-theme-color;
+
+			@media only screen and (max-width: 768px) {
+				display: block;
+			}
+
+			#hamburger {
+				width: 94px;
+				margin: 0 auto;
+				cursor: pointer;
+
+				p {
+					@hamburger-icon-width: image-width("../images/hamburger.jpg");
+					@hamburger-icon-height: image-width("../images/hamburger.jpg");
+					padding: 0 0 0 @hamburger-icon-width;
+					height: @hamburger-icon-height;
+					margin-top: -@hamburger-icon-height;
+					line-height: @hamburger-icon-height;
+					color: #ffffff;
+					background: @dark-theme-color;
+				}
+			}
 		}
 
 		ul {
+			@media only screen and (max-width: 768px) {
+				background: @dark-theme-color;
+				width: 100%;
+				display: none;
+			}
+
 			li {
 				padding-bottom: 0;
+
+				@media only screen and (max-width: 768px) {
+					display: list-item;
+					border-bottom: 1px solid @separator-color;
+					@menu-item-height: 40px;
+					height: @menu-item-height;
+					line-height: @menu-item-height;
+
+					&:first-child {
+						border-top: 1px solid @separator-color;
+					}
+
+					&:last-child {
+						border-bottom: none;
+					}
+				}
 
 				a {
 					.vertical-separator {
 						color: @light-theme-color;
+
+						@media only screen and (max-width: 768px) {
+							display: none;
+						}
 					}
 
 					&.pure-menu-link {
@@ -40,11 +103,23 @@ header {
 
 						&:hover {
 							background-color: #ffffff;
+
+							@media only screen and (max-width: 768px) {
+								background-color: @light-theme-color;
+							}
+						}
+
+						@media only screen and (max-width: 768px) {
+							color: #ffffff;
 						}
 					}
 
 					&:hover {
 						color: @light-theme-color;
+
+						@media only screen and (max-width: 768px) {
+							color: #000000;
+						}
 					}
 				}
 			}
