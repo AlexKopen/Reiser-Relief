@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Reiser Relief - {{ Title }}</title>
+	<link rel="shortcut icon" href="{{ RootURL}}favicon.ico" type="image/x-icon">
+	<link rel="icon" href="{{ RootURL}}resources/images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css">
 	<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -14,10 +16,18 @@
 		<div class="pure-g">
 			<div class="pure-u" id="left-header">
 				<a href="{{ RootURL }}">
-					<img src="http://localhost/Reiser-Relief/dist/resources/images/logo.png" alt="Logo">
+					<img src="{{ RootURL}}resources/images/logo.png" alt="Logo">
 				</a>
 			</div>
 			<div class="pure-u" id="right-header">
+				<div id="drop-down-menu">
+					<div id="hamburger">
+						<img src="{{ RootURL }}resources/images/hamburger.jpg" alt="Hamburger icon">
+						<p>
+							MENU
+						</p>
+					</div>
+				</div>
 				{{ include('navigation.twig') }}
 			</div>
 		</div>
