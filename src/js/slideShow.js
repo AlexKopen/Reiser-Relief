@@ -18,14 +18,22 @@ var slideShow = (function() {
                 infinite: true,
                 arrows: false,
                 speed: 1000,
-                delay: 6000
+                delay: 600000
             });
+        });
+    }
+
+    function windowResize() {
+        $('.unslider-horizontal').height($('.unslider-active img').height());
+        $(window).on('resize', function() {
+            $('.unslider-horizontal').height($('.unslider-active img').height());
         });
     }
 
     function init() {
         displayImages();
         startSlideShow();
+        windowResize();
     }
 
     var slideShowModule = {
