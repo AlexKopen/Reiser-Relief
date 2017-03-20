@@ -1,8 +1,8 @@
-var slideShow = (function() {
+var slideShow = (function () {
     'use strict';
 
-    function displayImages(){
-        $('#slide-show .hide-slide').each(function(){
+    function displayImages() {
+        $('#slide-show .hidden-slide').each(function () {
             var HiddenImageUrlSelector = $(this).find('.hidden-image-url');
             var HiddenImageUrl = HiddenImageUrlSelector.text().trim();
             HiddenImageUrlSelector.remove();
@@ -12,20 +12,20 @@ var slideShow = (function() {
     }
 
     function startSlideShow() {
-        $('#slide-show .hide-slide').promise().done(function() {
+        $('#slide-show .hidden-slide').promise().done(function () {
             $('#slide-show .container').unslider({
                 autoplay: true,
                 infinite: true,
                 arrows: false,
                 speed: 1000,
-                delay: 600000
+                delay: 6000
             });
         });
     }
 
     function windowResize() {
         $('.unslider-horizontal').height($('.unslider-active img').height());
-        $(window).on('resize', function() {
+        $(window).on('resize', function () {
             $('.unslider-horizontal').height($('.unslider-active img').height());
         });
     }
