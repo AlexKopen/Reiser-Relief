@@ -1,18 +1,18 @@
-var menu = (function() {
+var menu = (function () {
     'use strict';
 
-    function menuDrop(){
-        $('#drop-down-menu').on('click', function() {
+    function menuDrop() {
+        $('#drop-down-menu').on('click', function () {
             $('header ul').toggle();
         });
     }
 
     function windowResize() {
         var enteredFromDesktop = !Modernizr.mq('(max-width: 768px)') ? true : false;
-        $(window).on('resize', function() {
+        $(window).on('resize', function () {
             if (!Modernizr.mq('(max-width: 768px)')) {
                 enteredFromDesktop = true;
-                $('header ul').css('display', 'block');
+                $('header ul').css('display', 'inline-block');
             } else {
                 if (enteredFromDesktop) {
                     enteredFromDesktop = false;
