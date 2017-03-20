@@ -184,48 +184,88 @@
 	}
 
 	#connect{
-		@connect-height: 100px;
-		background: @dark-theme-color;
 		color: #ffffff;
-		height: @connect-height;
 		margin-top: @sub-section-top-margin;
 
-		#connect-label {
-			line-height: @connect-height;
-			margin-left: 25px;
-		}
-
-		.social-link-block {
+		#social {
+			background: @dark-theme-color;
+			@connect-height: 100px;
 			height: @connect-height;
-			color: @light-theme-color;
 
-			&:hover {
-				color: #ffffff;
+			@media only screen and (max-width: 768px) {
+				height: @connect-height * 3;
 			}
 
-			.social-item {
-				@social-item-height: 20px;
-				height: @social-item-height;
-				padding-top: ((@connect-height - @social-item-height) / 2);
-				text-align: center;
+			.social-link-block {
+				height: @connect-height;
+				border-right: 1px solid @light-theme-color;
+				background-repeat: no-repeat;
+				background-position: center;
 
-				.specific-media {
-					border-right: 1px solid @light-theme-color;
-					height: @social-item-height;
+				&:hover {
+					background: @light-theme-color;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
 
-					&#last-specific-media {
-						border-right: none;
+				@media only screen and (max-width: 768px) {
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+
+				&.md-not-last-row {
+					@media only screen and (max-width: 768px) {
+						border-bottom: 1px solid @light-theme-color;
 					}
 				}
 
-				p {
-					height: @social-item-height;
-					display: inline-block;
+				&#facebook {
+					background-image: url('../images/social/light/facebook.png');
+
+					&:hover {
+						background-image: url('../images/social/dark/facebook.png');
+					}
 				}
 
-				img {
-					float: left;
-					padding-right: 5px;
+				&#twitter {
+					background-image: url('../images/social/light/twitter.png');
+
+					&:hover {
+						background-image: url('../images/social/dark/twitter.png');
+					}
+				}
+
+				&#instagram {
+					background-image: url('../images/social/light/instagram.png');
+
+					&:hover {
+						background-image: url('../images/social/dark/instagram.png');
+					}
+				}
+
+				&#blog {
+					background-image: url('../images/social/light/blogger.png');
+
+					&:hover {
+						background-image: url('../images/social/dark/blogger.png');
+					}
+				}
+
+				&#youtube {
+					background-image: url('../images/social/light/youtube.png');
+
+					&:hover {
+						background-image: url('../images/social/dark/youtube.png');
+					}
+				}
+
+				&#last-social-link-block {
+					border-right: none;
+					background-image: url('../images/social/light/mail.png');
+
+					&:hover {
+						background-image: url('../images/social/dark/mail.png');
+					}
 				}
 			}
 		}
