@@ -286,14 +286,18 @@
 			border-bottom: 1px solid @separator-color;
 			height: @block-header-height;
 			margin-bottom: @header-padding;
-		}
 
-		h1 {
-			line-height: @block-header-height;
+			h1 {
+				line-height: @block-header-height;
+			}
 		}
 
 		#news {
 			padding-right: 85px;
+
+			@media only screen and (max-width: 768px) {
+				padding-right: 0;
+			}
 
 			h2 {
 				color: @dark-theme-color;
@@ -310,11 +314,19 @@
 		}
 
 		#events {
+			@media only screen and (max-width: 768px) {
+				margin-top: 15px;
+			}
+
 			.event-entry {
 				margin-top: 20px;
 
 				&#first {
 					margin-top: 0;
+				}
+
+				.event-entry-details-column {
+					padding-left: 15px;
 				}
 			}
 
