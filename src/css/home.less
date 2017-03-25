@@ -319,57 +319,63 @@
 			}
 
 			.event-entry {
+				@calendar-tile-height: 90px;
+				@calendar-tile-width: 90px;
 				margin-top: 20px;
+				text-align: center;
 
 				&#first {
 					margin-top: 0;
 				}
 
-				.event-entry-details-column {
-					padding-left: 15px;
-				}
-			}
+				.calendar-tile {
+					@day-of-week-height: 18px;
+					height: @calendar-tile-height;
+					width: @calendar-tile-width;
+					margin: 0 auto;
+					border: 1px solid @dark-theme-color;
 
-			.calendar-tile {
-				@tile-height: 90px;
-				@tile-width: 90px;
-				@day-of-week-height: 18px;
-				height: @tile-height;
-				width: @tile-width;
-				margin: 0 auto;
-				border: 1px solid @dark-theme-color;
-				text-align: center;
+					.day-of-week {
+						height: @day-of-week-height;
+					}
 
-				.day-of-week {
-					height: @day-of-week-height;
-				}
+					.date {
+						@date-height: @calendar-tile-height - (@day-of-week-height * 2);
+						height: @date-height;
+						line-height: @date-height;
+						color: @dark-theme-color;
+						font-size: 1.5em;
+					}
 
-				.date {
-					@date-height: @tile-height - (@day-of-week-height * 2);
-					height: @date-height;
-					line-height: @date-height;
-					color: @dark-theme-color;
-					font-size: 1.5em;
+					.month {
+						height: @day-of-week-height;
+					}
 				}
 
-				.month {
-					height: @day-of-week-height;
+				.event-description {
+					margin-top: -@calendar-tile-height;
+					margin-left: @calendar-tile-width + 15px;
+
+					@media only screen and (max-width: 768px) {
+						margin-top: 0;
+						margin-left: 15px;
+					}
+
+					.event-title {
+						color: @dark-theme-color;
+						font-size: 19px;
+					}
+
+					.event-title, .event-details {
+						text-align: center;
+					}
+
+					.event-location {
+						font-size: 14px;
+						padding-bottom: 0;
+						line-height: 17px;
+					}
 				}
-			}
-
-			.event-title {
-				color: @dark-theme-color;
-				font-size: 19px;
-			}
-
-			.event-title, .event-details {
-				text-align: center;
-			}
-
-			.event-details {
-				font-size: 14px;
-				padding-bottom: 0;
-				line-height: 17px;
 			}
 		}
 	}
