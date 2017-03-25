@@ -273,6 +273,19 @@
 						background-image: url('../images/social/dark/mail.png');
 					}
 				}
+
+				.social-link-block-table {
+					display: table;
+					width: 100%;
+
+					.social-title {
+						padding: 0;
+						height: @connect-height;
+						display: table-cell;
+						text-align: center;
+						vertical-align: bottom;
+					}
+				}
 			}
 		}
 	}
@@ -280,16 +293,13 @@
 	#news-and-events {
 		margin-top: @sub-section-top-margin;
 
-		@block-header-height: 50px;
+		h3 {
+			color: @separator-color;
+		}
 
 		.news-and-events-header {
 			border-bottom: 1px solid @separator-color;
-			height: @block-header-height;
 			margin-bottom: @header-padding;
-
-			h1 {
-				line-height: @block-header-height;
-			}
 		}
 
 		#news {
@@ -301,11 +311,6 @@
 
 			h2 {
 				color: @dark-theme-color;
-			}
-
-			h3 {
-				color: @separator-color;
-				margin-top: 2px;
 			}
 
 			.news-content {
@@ -335,6 +340,10 @@
 					margin: 0 auto;
 					border: 1px solid @dark-theme-color;
 
+					@media only screen and (max-width: 568px) {
+						display: none;
+					}
+
 					.day-of-week {
 						height: @day-of-week-height;
 					}
@@ -361,19 +370,40 @@
 						margin-left: 15px;
 					}
 
-					.event-title {
-						color: @dark-theme-color;
-						font-size: 19px;
+					@media only screen and (max-width: 568px) {
+						margin-left: 0;
 					}
 
-					.event-title, .event-details {
-						text-align: center;
+					.event-title {
+						color: @dark-theme-color;
+
+						@media only screen and (max-width: 568px) {
+							text-align: left;
+						}
+
+						@media only screen and (min-width: 568px) {
+							font-size: 19px;
+						}
+					}
+
+					.event-date {
+						display: none;
+						@media only screen and (max-width: 568px) {
+							display: block;
+							text-align: left;
+						}
 					}
 
 					.event-location {
-						font-size: 14px;
-						padding-bottom: 0;
-						line-height: 17px;
+						@media only screen and (max-width: 568px) {
+							text-align: left;
+						}
+
+						@media only screen and (min-width: 568px) {
+							font-size: 14px;
+							padding-bottom: 0;
+							line-height: 17px;
+						}
 					}
 				}
 			}
