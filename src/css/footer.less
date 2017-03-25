@@ -8,12 +8,26 @@ footer {
     background: @dark-theme-color;
     padding: 75px 0;
 
+    @media only screen and (max-width: 568px) {
+        padding: 25px 0;
+    }
+
     img {
         margin: 0 auto;
     }
 
+    #copyright {
+        @media only screen and (max-width: 568px) {
+            display: none;
+        }
+    }
+
     .pure-menu {
         margin-top: 30px;
+
+        @media only screen and (max-width: 568px) {
+            display: none;
+        }
 
         ul {
             li {
@@ -44,23 +58,64 @@ footer {
 
     #social {
         margin: 0 auto;
-        width: 490px;
+        width: 100%;
+        max-width: 490px;
+
+        @media only screen and (max-width: 568px) {
+            display: none;
+        }
 
         .social-link-block {
-            @connect-height: 100px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            height: 35px;
 
-            .social-item {
-                text-align: center;
+            &#facebook {
+                background-image: url('../images/social/light/facebook.png');
 
-                p {
-                    color: @light-theme-color;
-                    height: 25px;
-                    display: inline-block;
+                &:hover {
+                    background-image: url('../images/social/white/facebook.png');
                 }
+            }
 
-                img {
-                    float: left;
-                    padding-right: 5px;
+            &#twitter {
+                background-image: url('../images/social/light/twitter.png');
+
+                &:hover {
+                    background-image: url('../images/social/white/twitter.png');
+                }
+            }
+
+            &#instagram {
+                background-image: url('../images/social/light/instagram.png');
+
+                &:hover {
+                    background-image: url('../images/social/white/instagram.png');
+                }
+            }
+
+            &#blog {
+                background-image: url('../images/social/light/blogger.png');
+
+                &:hover {
+                    background-image: url('../images/social/white/blogger.png');
+                }
+            }
+
+            &#youtube {
+                background-image: url('../images/social/light/youtube.png');
+
+                &:hover {
+                    background-image: url('../images/social/white/youtube.png');
+                }
+            }
+
+            &#mail {
+                background-image: url('../images/social/light/mail.png');
+
+                &:hover {
+                    background-image: url('../images/social/white/mail.png');
                 }
             }
         }
