@@ -13,12 +13,25 @@
 							<span class="hidden-image-url">{{ RootURL }}resources/images/slide-show/{{ Image['Url'] }}</span>
 							<img src="" alt="{{ Image['Alt'] }}">
 					{% endif %}
-							<h1>{{ Image['Header'] }}</h1>
-							<p>{{ Image['Description'] }}</p>
+							<div class="slide-description">
+								<h1>{{ Image['Header'] }}</h1>
+								<p>{{ Image['Description'] }}</p>
+							</div>
 						</li>
 				{% endfor %}
 			</ul>
 		</div>
+		<nav class="unslider-nav">
+			<ol>
+				{% for Image in SlideShowImages %}
+					{% if loop.index0 == 0 %}
+						<li data-slide="0" class="unslider-active">1</li>
+					{% else %}
+						<li data-slide="{{ loop.index0 }}">{{ loop.index0 + 1 }}</li>
+					{% endif %}
+				{% endfor %}
+			</ol>
+		</nav>
 	</section>
 	<section id="three-block-information">
 		<div class="pure-g container">
