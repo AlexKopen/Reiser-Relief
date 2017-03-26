@@ -43,7 +43,8 @@ $app->get('/', function () use ($app) {
 
 $app->get('/about', function () use ($app) {
     return $app['twig']->render('about.twig', array(
-        'Title' => 'About'
+        'Title' => 'About',
+        'DisplayTitle' => 'About Us'
     ));
 });
 

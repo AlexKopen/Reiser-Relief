@@ -5,7 +5,6 @@ header {
 	padding-top: @header-padding;
 
 	.container {
-
 		.pure-g {
 			@media only screen and (max-width: 768px) {
 				padding: 0;
@@ -55,7 +54,7 @@ header {
 						height: @hamburger-icon-height;
 						margin-top: -@hamburger-icon-height;
 						line-height: @hamburger-icon-height;
-						color: #ffffff;
+						color: @white;
 						background: @dark-theme-color;
 					}
 				}
@@ -97,11 +96,11 @@ header {
 						}
 
 						&.pure-menu-link {
-							color: #000000;
+							color: @black;
 							padding: 0;
 
 							&:hover {
-								background-color: #ffffff;
+								background-color: @white;
 
 								@media only screen and (max-width: 768px) {
 									background-color: @light-theme-color;
@@ -109,7 +108,7 @@ header {
 							}
 
 							@media only screen and (max-width: 768px) {
-								color: #ffffff;
+								color: @white;
 							}
 						}
 
@@ -117,7 +116,7 @@ header {
 							color: @light-theme-color;
 
 							@media only screen and (max-width: 768px) {
-								color: #000000;
+								color: @black;
 							}
 						}
 					}
