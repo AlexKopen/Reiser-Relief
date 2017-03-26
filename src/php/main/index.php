@@ -12,7 +12,8 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
-$app['twig']->addGlobal('RootURL', 'http://localhost/Reiser-Relief/dist/');
+// $app['twig']->addGlobal('RootURL', 'http://localhost/Reiser-Relief/dist/');
+$app['twig']->addGlobal('RootURL', 'http://10.0.1.13/Reiser-Relief/dist/');
 
 $app->get('/', function () use ($app) {
     return $app['twig']->render('home.twig', array(
