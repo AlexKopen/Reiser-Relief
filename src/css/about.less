@@ -7,14 +7,62 @@
     }
 
     #mission-statement {
-        #mission-statement-heading {
-            color: @dark-theme-color;
-            text-align: center;
-            margin: 45px auto 0;
-            padding-bottom: 45px;
+        .statement-properties() {
             width: 100%;
-            max-width: 650px;
+            max-width: 700px;
+            text-align: center;
+            padding-bottom: 45px;
+        }
+
+        #mission-statement-heading {
+            .statement-properties();
+            color: @dark-theme-color;
+            margin: 45px auto 0;
             font-size: 25px;
+        }
+
+        #mission-statement-details {
+            .statement-properties();
+            color: @gray;
+            margin: 0 auto;
+        }
+    }
+
+    #mission {
+        #mission-list {
+            margin-left: 0;
+            padding-left: 0;
+            li {
+                padding-left: 1em;
+                text-indent: -1em;
+                padding-bottom: 10px;
+
+                &:before {
+                    content: "-";
+                    padding-right: 5px;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+
+    #board {
+        img {
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .position {
+            color: @gray;
+            text-align: center;
         }
     }
 }
