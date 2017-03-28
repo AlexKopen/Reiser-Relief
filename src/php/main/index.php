@@ -49,7 +49,8 @@ $app->get('/about', function () use ($app) {
 
 $app->get('/events', function () use ($app) {
     return $app['twig']->render('events.twig', array(
-        'Title' => 'Events'
+        'Title' => 'Events',
+        'DisplayTitle' => 'Events'
     ));
 });
 
