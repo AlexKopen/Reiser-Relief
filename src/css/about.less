@@ -6,6 +6,10 @@
         margin-bottom: @header-padding;
     }
 
+    img {
+        margin: 0 auto;
+    }
+
     #mission-statement {
         .statement-properties() {
             width: 100%;
@@ -28,8 +32,26 @@
         }
     }
 
-    img {
-        margin: 0 auto;
+    #about-navigation {
+        text-align: center;
+
+        ul {
+            padding-bottom: 45px;
+
+            li {
+                padding-right: 10px;
+
+                a {
+                    &:hover {
+                        color: @light-theme-color;
+                    }
+
+                    &#active-about{
+                        border-bottom: 1px solid @dark-theme-color;
+                    }
+                }
+            }
+        }
     }
 
     #mission {
@@ -54,10 +76,18 @@
     }
 
     #work {
-        h3 {
-            text-align: center;
-            color: @dark-theme-color;
-            padding-bottom: 15px;
+        .work-sub-section {
+            margin-top: 45px;
+
+            &#first-work-sub-section {
+                margin-top: 0;
+            }
+
+            h3 {
+                text-align: center;
+                color: @dark-theme-color;
+                padding-bottom: 15px;
+            }
         }
     }
 

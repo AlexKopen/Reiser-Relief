@@ -12,10 +12,11 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 
 $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
-$app['twig']->addGlobal('RootURL', 'http://localhost/Reiser-Relief/dist/');
+$RootURL = 'http://localhost/Reiser-Relief/dist/';
+$app['twig']->addGlobal('RootURL', $RootURL);
 
 $app->get('/', function () use ($app) {
-    return $app['twig']->render('home.twig', array(
+    return $app['twig']->render('home/home.twig', array(
         'Title' => 'Home',
         'SlideShowImages' => array(
             array(
@@ -40,40 +41,72 @@ $app->get('/', function () use ($app) {
     ));
 });
 
-$app->get('/about', function () use ($app) {
-    return $app['twig']->render('about.twig', array(
-        'Title' => 'About',
-        'DisplayTitle' => 'About Us'
+$AboutTitle = 'About';
+$AboutDisplayTitle = 'About Us';
+
+$app->get('/about', function () use ($app, $RootURL) {
+    return $app->redirect($RootURL . 'about/our-mission');
+});
+
+$app->get('/about/our-mission', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
+    return $app['twig']->render('about/our-mission.twig', array(
+        'Title' => $AboutTitle,
+        'DisplayTitle' => $AboutDisplayTitle,
+        'Active' => 'Our Mission'
+    ));
+});
+
+$app->get('/about/our-work', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
+    return $app['twig']->render('about/our-work.twig', array(
+        'Title' => $AboutTitle,
+        'DisplayTitle' => $AboutDisplayTitle,
+        'Active' => 'Our Work'
+    ));
+});
+
+$app->get('/about/our-board', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
+    return $app['twig']->render('about/our-board.twig', array(
+        'Title' => $AboutTitle,
+        'DisplayTitle' => $AboutDisplayTitle,
+        'Active' => 'Our Board'
+    ));
+});
+
+$app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
+    return $app['twig']->render('about/our-founder.twig', array(
+        'Title' => $AboutTitle,
+        'DisplayTitle' => $AboutDisplayTitle,
+        'Active' => 'Our Founder'
     ));
 });
 
 $app->get('/events', function () use ($app) {
-    return $app['twig']->render('events.twig', array(
+    return $app['twig']->render('events/events.twig', array(
         'Title' => 'Events',
         'DisplayTitle' => 'Events'
     ));
 });
 
 $app->get('/experience', function () use ($app) {
-    return $app['twig']->render('experience.twig', array(
+    return $app['twig']->render('experience/experience.twig', array(
         'Title' => 'Experience'
     ));
 });
 
 $app->get('/give', function () use ($app) {
-    return $app['twig']->render('give.twig', array(
+    return $app['twig']->render('give/give.twig', array(
         'Title' => 'Give'
     ));
 });
 
 $app->get('/contact', function () use ($app) {
-    return $app['twig']->render('contact.twig', array(
-        'Title' => 'Contact!'
+    return $app['twig']->render('contact/contact.twig', array(
+        'Title' => 'Contact'
     ));
 });
 
 $app->error(function () use ($app) {
-    return $app['twig']->render('404.twig', array(
+    return $app['twig']->render('common/404.twig', array(
         'Title' => 'Not Found'
     ));
 });

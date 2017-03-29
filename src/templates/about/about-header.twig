@@ -1,0 +1,34 @@
+{{ include('common/header.twig') }}
+{{ include('common/title.twig') }}
+
+<div id="about">
+    <section id="mission-statement">
+        <div class="padding-hold">
+            <h1 id="mission-statement-heading">
+                Providing relief, hope, and dignity to the poor, elderly, and homeless people of Haiti.
+            </h1>
+            <p id="mission-statement-details">
+                Reiser Relief is a Catholic based non-profit 501(c)(3) dedicated to serving the most vulnerable and disadvantaged Haitians.  We are committed to being a volunteer run organization, where nearly 100% of all donations go directly towards the needs of the poor.
+            </p>
+        </div>
+    </section>
+    <section id="about-navigation">
+        <div class="container">
+            <div class="pure-menu pure-menu-horizontal">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item">
+                        <a href="{{ RootURL }}about/our-mission"{{ Active == 'Our Mission' ? ' id="active-about"' : '' }}>Our Mission</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="{{ RootURL }}about/our-work"{{ Active == 'Our Work' ? ' id="active-about"' : '' }}>Our Work</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="{{ RootURL }}about/our-board"{{ Active == 'Our Board' ? ' id="active-about"' : '' }}>Our Board</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="{{ RootURL }}about/our-founder"{{ Active == 'Our Founder' ? ' id="active-about"' : '' }}>Our Founder</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
