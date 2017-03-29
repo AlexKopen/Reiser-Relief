@@ -7,10 +7,10 @@
 				{% for Image in SlideShowImages %}
 					{% if loop.index0 == 0 %}
 						<li>
-							<img src="{{ RootURL }}resources/images/slide-show/{{ Image['Url'] }}" alt="{{ Image['Alt'] }}">
+							<img src="{{ RootURL }}resources/images/home/slide-show/{{ Image['Url'] }}" alt="{{ Image['Alt'] }}">
 					{% else %}
 						<li class="hidden-slide">
-							<span class="hidden-image-url">{{ RootURL }}resources/images/slide-show/{{ Image['Url'] }}</span>
+							<span class="hidden-image-url">{{ RootURL }}resources/images/home/slide-show/{{ Image['Url'] }}</span>
 							<img src="" alt="{{ Image['Alt'] }}">
 					{% endif %}
 							<div class="slide-description">
@@ -94,7 +94,7 @@
 				<div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3">
 					<a href="{{ RootURL }}about/#our-work">
 						<div class="work-column">
-							<img src="{{ RootURL }}resources/images/work/water.png" alt="Water">
+							<img src="{{ RootURL }}resources/images/home/work-tiles/water.png" alt="Water">
 							<h2>
 								Water
 							</h2>
@@ -104,7 +104,7 @@
 				<div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3">
 					<a href="{{ RootURL }}about/#our-work">
 						<div class="work-column">
-							<img src="{{ RootURL }}resources/images/work/education.png" alt="Education">
+							<img src="{{ RootURL }}resources/images/home/work-tiles/education.png" alt="Education">
 							<h2>
 								Education
 							</h2>
@@ -114,7 +114,7 @@
 				<div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3 sm-not-first-row">
 					<a href="{{ RootURL }}about/#our-work">
 						<div class="work-column">
-							<img src="{{ RootURL }}resources/images/work/elder-care.png" alt="Elder Care">
+							<img src="{{ RootURL }}resources/images/home/work-tiles/elder-care.png" alt="Elder Care">
 							<h2>
 								Elder Care
 							</h2>
@@ -124,7 +124,7 @@
 				<div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3 md-second-row sm-not-first-row" id="fourth-work-tile">
 					<a href="{{ RootURL }}about/#our-work">
 						<div class="work-column">
-							<img src="{{ RootURL }}resources/images/work/orphan-care.png" alt="Orphan Care">
+							<img src="{{ RootURL }}resources/images/home/work-tiles/orphan-care.png" alt="Orphan Care">
 							<h2>
 								Orphan Care
 							</h2>
@@ -134,7 +134,7 @@
 				<div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3 md-second-row sm-not-first-row" id="last-work-tile">
 					<a href="{{ RootURL }}about/#our-work">
 						<div class="work-column">
-							<img src="{{ RootURL }}resources/images/work/food.png" alt="Food">
+							<img src="{{ RootURL }}resources/images/home/work-tiles/food.png" alt="Food">
 							<h2>
 								Food
 							</h2>
