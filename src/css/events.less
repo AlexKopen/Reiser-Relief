@@ -9,8 +9,22 @@
         }
 
         img {
-            margin: 25px auto 0;
-            width: 400px;
+            margin: 10px auto 0;
+            padding-bottom: 25px;
+
+            &.tile-large {
+                @media only screen and (max-width: 768px) {
+                    display: none;
+                }
+            }
+
+            &.tile-small {
+                display: none;
+
+                @media only screen and (max-width: 768px) {
+                    display: block;
+                }
+            }
         }
     }
 }
