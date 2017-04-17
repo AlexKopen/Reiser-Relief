@@ -44,10 +44,6 @@ $app->get('/', function () use ($app) {
 $AboutTitle = 'About';
 $AboutDisplayTitle = 'About Us';
 
-$app->get('/about', function () use ($app, $RootURL) {
-    return $app->redirect($RootURL . 'about/our-mission');
-});
-
 $app->get('/about/our-mission', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
     return $app['twig']->render('about/our-mission.twig', array(
         'Title' => $AboutTitle,
@@ -109,6 +105,19 @@ $app->error(function () use ($app) {
     return $app['twig']->render('common/404.twig', array(
         'Title' => 'Not Found'
     ));
+});
+
+//Redirects
+$app->get('/{wildCard}/', function ($wildCard) use ($app, $RootURL) {
+    return $app->redirect($RootURL . $wildCard);
+})->assert('wildCard', '.*');
+
+$app->get('/about', function () use ($app, $RootURL) {
+    return $app->redirect($RootURL . 'about/our-mission');
+});
+
+$app->get('/trips', function () use ($app, $RootURL) {
+    return $app->redirect($RootURL . 'experience');
 });
 
 $app->run();
