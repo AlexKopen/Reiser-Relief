@@ -89,6 +89,13 @@ $app->get('/experience', function () use ($app) {
     ));
 });
 
+$app->get('/experience/apply', function () use ($app) {
+    return $app['twig']->render('experience/apply.twig', array(
+        'Title' => 'Experience - Apply',
+        'DisplayTitle' => 'Experience'
+    ));
+});
+
 $app->get('/give', function () use ($app) {
     return $app['twig']->render('give/give.twig', array(
         'Title' => 'Give'
@@ -101,11 +108,11 @@ $app->get('/contact', function () use ($app) {
     ));
 });
 
-$app->error(function () use ($app) {
-    return $app['twig']->render('common/404.twig', array(
-        'Title' => 'Not Found'
-    ));
-});
+// $app->error(function () use ($app) {
+//     return $app['twig']->render('common/404.twig', array(
+//         'Title' => 'Not Found'
+//     ));
+// });
 
 //Redirects
 $app->get('/{wildCard}/', function ($wildCard) use ($app, $RootURL) {
