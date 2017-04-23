@@ -1,0 +1,29 @@
+@import "globals.less";
+
+#experience {
+    #page-info {
+        @link-height: 48px;
+
+        .link-block {
+            background: @light-theme-color;
+            color: @white;
+            text-align: center;
+            height: @link-height;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+
+            &:hover {
+                background: @dark-theme-color;
+            }
+
+            p {
+                line-height: @link-height;
+            }
+        }
+    }
+
+    #mission-trip-details {
+        margin-top: 45px;
+    }
+}

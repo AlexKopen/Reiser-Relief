@@ -1,11 +1,6 @@
 @import "globals.less";
 
 #about {
-    .about-header {
-        border-bottom: 1px solid @separator-color;
-        margin-bottom: @header-padding;
-    }
-
     img {
         margin: 10px auto 0;
         padding-bottom: 25px;
@@ -22,28 +17,6 @@
             @media only screen and (max-width: 768px) {
                 display: block;
             }
-        }
-    }
-
-    #mission-statement {
-        .statement-properties() {
-            width: 100%;
-            max-width: 700px;
-            text-align: center;
-            padding-bottom: 45px;
-        }
-
-        #mission-statement-heading {
-            .statement-properties();
-            color: @dark-theme-color;
-            margin: 45px auto 0;
-            font-size: 25px;
-        }
-
-        #mission-statement-details {
-            .statement-properties();
-            color: @gray;
-            margin: 0 auto;
         }
     }
 
