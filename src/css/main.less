@@ -43,6 +43,20 @@ img {
 	padding: 0 @side-container-padding;
 }
 
+.padding-left {
+	padding-left: @side-container-padding;
+}
+
+.padding-left-sub-large-screen {
+	@media only screen and (max-width: 1024px) {
+		padding-left: 15px;
+	}
+}
+
+.padding-right {
+	padding-right: @side-container-padding;
+}
+
 #title-section {
     background: @dark-theme-color;
     padding: 35px 0;
@@ -86,8 +100,8 @@ img {
 }
 
 .page-section-header {
-	border-bottom: 1px solid @separator-color;
-	margin-bottom: @header-padding;
+	color: @dark-theme-color;
+	font-size: 42px;
 }
 
 .page-sub-section {
