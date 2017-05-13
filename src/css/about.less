@@ -2,102 +2,137 @@
 
 #about {
     img {
-        margin: 10px auto 0;
-        padding-bottom: 25px;
-
-        &.tile-large {
-            @media only screen and (max-width: 768px) {
-                display: none;
-            }
-        }
-
-        &.tile-small {
-            display: none;
-
-            @media only screen and (max-width: 768px) {
-                display: block;
-            }
-        }
+        margin: 0 auto;
     }
 
-    #about-navigation {
+    h3 {
         text-align: center;
-
-        ul {
-            padding-bottom: 45px;
-
-            li {
-                padding-right: 10px;
-
-                a {
-                    &:hover {
-                        color: @light-theme-color;
-                    }
-
-                    &#active-about{
-                        border-bottom: 1px solid @dark-theme-color;
-                    }
-                }
-            }
-        }
+        font-size: 25px;
+        padding-bottom: 15px;
     }
 
-    #mission {
-        #mission-list {
-            margin-left: 0;
-            padding-left: 0;
-            li {
-                padding-left: 1em;
-                text-indent: -1em;
-                padding-bottom: 10px;
-
-                &:before {
-                    content: "-";
-                    padding-right: 5px;
-                }
-
-                &:last-child {
-                    padding-bottom: 0;
-                }
-            }
-        }
+    .about-section {
+        padding-bottom: 45px;
+        position: relative;
     }
 
-    #work {
-        .page-sub-section {
-            margin-top: 45px;
+    @side-bar-width: 150px;
 
-            &#first-page-sub-section {
-                margin-top: 0;
-            }
+    #side-bar {
+        width: @side-bar-width;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-right: 1px solid #000000;
 
-            h3 {
-                text-align: center;
+        nav {
+            padding-right: 25px;
+
+            li {
+                text-align: right;
+                margin-top: 10px;
+                padding-bottom: 5px;
                 color: @dark-theme-color;
-                padding-bottom: 15px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &#active {
+                    border-bottom: 1px solid @separator-color;
+                }
+
+                &>:first-of-type {
+                    margin-top: 0;
+                }
             }
         }
     }
 
-    #board {
-        .board-entry {
-            padding-bottom: 10px;
+    #content {
+        margin-left: @side-bar-width;
+        min-height: 375px;
+
+        img {
+            float: right;
+            padding: 0 0 30px 30px;
+
+            @media only screen and (max-width: 768px) {
+                float: none;
+                padding: 0;
+            }
+        }
+
+        #mission {
+            #mission-list {
+                margin-left: 0;
+                padding-left: 0;
+                li {
+                    padding-left: 1em;
+                    text-indent: -1em;
+                    padding-bottom: 10px;
+
+                    &:before {
+                        content: "-";
+                        padding-right: 5px;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                }
+            }
 
             img {
-                margin: 0 auto;
-                width: 200px;
-                height: 200px;
+                width: 250px;
+            }
+        }
+
+        #work {
+            .page-sub-section {
+                margin-top: 45px;
+
+                &#first-page-sub-section {
+                    margin-top: 0;
+                }
+
+                h3 {
+                    text-align: center;
+                    color: @dark-theme-color;
+                    padding-bottom: 15px;
+                }
+            }
+
+            img {
+                width: 518px;
+            }
+        }
+
+        #board {
+            .board-entry {
                 padding-bottom: 10px;
-            }
 
-            h3 {
-                text-align: center;
-            }
+                img {
+                    margin: 0 auto;
+                    width: 200px;
+                    height: 200px;
+                    padding-bottom: 10px;
+                }
 
-            .position {
-                color: @gray;
-                text-align: center;
+                h3 {
+                    text-align: center;
+                }
+
+                .position {
+                    color: @gray;
+                    text-align: center;
+                }
             }
+        }
+
+        #founder {
+
         }
     }
 }

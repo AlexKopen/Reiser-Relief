@@ -5,3 +5,4 @@ src/php/silex/
 .DS_Store
 composer.lock
 npm-debug.log
+.idea/
