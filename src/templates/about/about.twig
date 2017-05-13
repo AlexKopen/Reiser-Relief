@@ -1,0 +1,42 @@
+{{ include('about/about-header.twig') }}
+
+<div class="container about-section">
+    <div id="side-bar">
+        <nav>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"{{ Active == 'Our Mission' ? ' id="active"' : '' }}>
+                    <a href="{{ RootURL }}about/our-mission">Our Mission</a>
+                </li>
+                <li class="pure-menu-item"{{ Active == 'Our Work' ? ' id="active"' : '' }}>
+                    <a href="{{ RootURL }}about/our-work">Our Work</a>
+                </li>
+                <li class="pure-menu-item"{{ Active == 'Our Board' ? ' id="active"' : '' }}>
+                    <a href="{{ RootURL }}about/our-board">Our Board</a>
+                </li>
+                <li class="pure-menu-item"{{ Active == 'Our Founder' ? ' id="active"' : '' }}>
+                    <a href="{{ RootURL }}about/our-founder">Our Founder</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="content">
+        <div class="padding-left">
+            <h2 class="page-section-header">
+                {{ Active }}
+            </h2>
+        </div>
+        <div class="padding-hold">
+            {% if Active=="Our Mission" %}
+                {{ include('about/our-mission.twig') }}
+            {% elseif Active=="Our Work" %}
+                {{ include('about/our-work.twig') }}
+            {% elseif Active=="Our Board" %}
+                {{ include('about/our-board.twig') }}
+            {% elseif Active=="Our Founder" %}
+                {{ include('about/our-founder.twig') }}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{{ include('about/about-footer.twig') }}
