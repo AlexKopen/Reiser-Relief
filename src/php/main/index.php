@@ -15,6 +15,14 @@ $app['twig']->addGlobal('MasterScript', $masterScript);
 $RootURL = 'http://localhost/Reiser-Relief/dist/';
 $app['twig']->addGlobal('RootURL', $RootURL);
 
+$pages = [
+    "about",
+    "events",
+    "experience",
+    "give",
+    "contact"
+];
+
 $app->get('/', function () use ($app) {
     return $app['twig']->render('home/home.twig', array(
         'Title' => 'Home',
@@ -116,8 +124,16 @@ $app->error(function () use ($app) {
 });
 
 //Redirects
-$app->get('/{wildCard}/', function ($wildCard) use ($app, $RootURL) {
-    return $app->redirect($RootURL . $wildCard);
+$app->get('/{wildCard}/', function ($wildCard) use ($app, $RootURL, $pages) {
+    $wildCard = strtolower($wildCard);
+    if (in_array($wildCard, $pages)){
+        return $app->redirect($RootURL . $wildCard);
+    } else {
+        return $app['twig']->render('common/404.twig', array(
+            'Title' => 'Not Found'
+        ));
+    }
+
 })->assert('wildCard', '.*');
 
 $app->get('/about', function () use ($app, $RootURL) {
