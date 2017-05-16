@@ -45,7 +45,7 @@ $AboutTitle = 'About';
 $AboutDisplayTitle = 'About Us';
 
 $app->get('/about/our-mission', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
-    return $app['twig']->render('about/our-mission.twig', array(
+    return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
         'Active' => 'Our Mission'
@@ -53,7 +53,7 @@ $app->get('/about/our-mission', function () use ($app, $AboutTitle, $AboutDispla
 });
 
 $app->get('/about/our-work', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
-    return $app['twig']->render('about/our-work.twig', array(
+    return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
         'Active' => 'Our Work'
@@ -61,7 +61,7 @@ $app->get('/about/our-work', function () use ($app, $AboutTitle, $AboutDisplayTi
 });
 
 $app->get('/about/our-board', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
-    return $app['twig']->render('about/our-board.twig', array(
+    return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
         'Active' => 'Our Board'
@@ -69,7 +69,7 @@ $app->get('/about/our-board', function () use ($app, $AboutTitle, $AboutDisplayT
 });
 
 $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
-    return $app['twig']->render('about/our-founder.twig', array(
+    return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
         'Active' => 'Our Founder'
