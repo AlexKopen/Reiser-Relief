@@ -84,10 +84,21 @@ $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDispla
     ));
 });
 
-$app->get('/events', function () use ($app) {
+$EventsTitle = 'Events';
+
+$app->get('/events/keep-the-wheel-turning', function () use ($app, $EventsTitle) {
     return $app['twig']->render('events/events.twig', array(
-        'Title' => 'Events',
-        'DisplayTitle' => 'Events'
+        'Title' => $EventsTitle,
+        'DisplayTitle' => $EventsTitle,
+        'Active' => 'Keep the Wheel Turning'
+    ));
+});
+
+$app->get('/events/give-to-the-max-day', function () use ($app, $EventsTitle) {
+    return $app['twig']->render('events/events.twig', array(
+        'Title' => $EventsTitle,
+        'DisplayTitle' => $EventsTitle,
+        'Active' => 'Give to the Max Day'
     ));
 });
 
@@ -138,6 +149,10 @@ $app->get('/{wildCard}/', function ($wildCard) use ($app, $RootURL, $pages) {
 
 $app->get('/about', function () use ($app, $RootURL) {
     return $app->redirect($RootURL . 'about/our-mission');
+});
+
+$app->get('/events', function () use ($app, $RootURL) {
+    return $app->redirect($RootURL . 'events/keep-the-wheel-turning');
 });
 
 $app->get('/trips', function () use ($app, $RootURL) {

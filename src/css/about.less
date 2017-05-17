@@ -11,144 +11,82 @@
     padding-bottom: 15px;
   }
 
-  .about-section {
-    padding-bottom: 45px;
-    position: relative;
-  }
-
-  @side-bar-width: 150px;
-
-  #side-bar {
-    width: @side-bar-width;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-right: 1px solid #000000;
-
-    nav {
-      padding-right: 25px;
-
+  #mission {
+    #mission-list {
+      margin-left: 0;
+      padding-left: 0;
       li {
-        text-align: right;
-        margin-top: 10px;
-        padding-bottom: 5px;
-        color: @dark-theme-color;
+        padding-left: 1em;
+        text-indent: -1em;
+        padding-bottom: 10px;
 
-        &:hover {
-          text-decoration: underline;
+        &:before {
+          content: "-";
+          padding-right: 5px;
         }
 
-        &#active {
-          border-bottom: 1px solid @separator-color;
-        }
-
-        & > :first-of-type {
-          margin-top: 0;
+        &:last-child {
+          padding-bottom: 0;
         }
       }
     }
-  }
-
-  #content {
-    margin-left: @side-bar-width;
-    min-height: 375px;
 
     img {
-      float: right;
-      padding: 0 0 30px 30px;
-
-      &.vertical {
-        @media only screen and (max-width: 768px) {
-          float: none;
-          padding: 0 0 10px;
-        }
-      }
-
-      &.horizontal {
-        @media only screen and (max-width: 950px) {
-          float: none;
-          padding: 0 0 10px;
-        }
-      }
+      width: 250px;
     }
+  }
 
-    #mission {
-      #mission-list {
-        margin-left: 0;
-        padding-left: 0;
-        li {
-          padding-left: 1em;
-          text-indent: -1em;
-          padding-bottom: 10px;
+  #work {
+    .work-item {
+      margin-bottom: 25px;
+      border-bottom: 1px solid @separator-color;
 
-          &:before {
-            content: "-";
-            padding-right: 5px;
-          }
-
-          &:last-child {
-            padding-bottom: 0;
-          }
-        }
+      &.last {
+        border-bottom: none;
+        margin-bottom: none;
       }
 
       img {
-        width: 250px;
+        width: 518px;
       }
-    }
-
-    #work {
-      .work-item {
-        margin-bottom: 25px;
-        border-bottom: 1px solid @separator-color;
-
-        &.last {
-          border-bottom: none;
-          margin-bottom: none;
-        }
-
-        img {
-          width: 518px;
-        }
-      }
-    }
-
-    #board {
-      .board-entry {
-        padding-bottom: 10px;
-
-        .padding-right-sub-large-screen {
-          @media only screen and (max-width: 768px) {
-            padding-right: 0;
-          }
-        }
-
-        .image-container {
-          padding-bottom: 10px;
-          padding-right: 15px;
-
-          img {
-            margin: 0 auto;
-            padding: 0;
-            float: none;
-          }
-        }
-
-        h3 {
-          text-align: center;
-          padding-bottom: 0;
-        }
-
-        .position {
-          color: @gray;
-          text-align: center;
-        }
-      }
-    }
-
-    #founder {
-
     }
   }
+
+  #board {
+    .board-entry {
+      padding-bottom: 10px;
+
+      .padding-right-sub-large-screen {
+        @media only screen and (max-width: 768px) {
+          padding-right: 0;
+        }
+      }
+
+      .image-container {
+        padding-bottom: 10px;
+        padding-right: 15px;
+
+        img {
+          margin: 0 auto;
+          padding: 0;
+          float: none;
+        }
+      }
+
+      h3 {
+        text-align: center;
+        padding-bottom: 0;
+      }
+
+      .position {
+        color: @gray;
+        text-align: center;
+      }
+    }
+  }
+
+  #founder {
+
+  }
 }
+
