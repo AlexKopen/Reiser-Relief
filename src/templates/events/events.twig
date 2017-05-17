@@ -1,37 +1,32 @@
-{{ include('common/header.twig') }}
+{{ include('events/events-header.twig') }}
 
-<div id="events">
-	{{ include('common/title.twig') }}
-	<section id="wheel-turning">
-		<div class="container event-entry">
-			<div class="padding-hold">
-				<h1>
-					Keep the Wheel Turning
-				</h1>
-				<div class="pure-g">
-					<div class="pure-u-1-1">
-						<img src="{{ RootURL }}resources/images/events/ktwt.jpg" alt="Keep the Wheel Turning">
-					</div>
-				</div>
-				<p>
-					Join us Thursday, April 27, for an excellent evening! Fellowship, games, soft drinks, appetizers, cash bar. Let’s honor the legacy of our dear departed Father Reiser. Money raised will fund the construction of a kitchen and dining hall at Guardian Angels Primary School in Haiti.
-				</p>
-			</div>
-		</div>
-	</section>
-	<section id="max-day">
-		<div class="container">
-			<div class="padding-hold event-entry">
-				<h1>
-					Give to the Max Day
-				</h1>
-				<img src="{{ RootURL }}resources/images/events/gttmd.jpg" alt="Give to the Max Day">
-				<p>
-					Thank you to all who attended, mailed in donations, gave on-line, volunteered and provided prayer support for this event. Over $78,000 was raised at our event, and $56,000 online and by mail. In addition we met a $40,000 matching grant for a total of $174,000! All funds will go directly to our partners in Marfranc to rebuild dormitories, the convent, school, and to provide emergency food relief and supplies to the community.  Our next fall event will be Friday, November 10, 2017, at the Minneapolis Marriott Northwest in Brooklyn Park, MN.
-				</p>
-			</div>
-		</div>
-	</section>
+<div class="container main-page-content">
+    <div id="side-bar">
+        <nav>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"{{ Active == 'Keep the Wheel Turning' ? ' id="active"' : '' }}>
+                    <a href="{{ RootURL }}events/keep-the-wheel-turning">Keep the Wheel Turning</a>
+                </li>
+                <li class="pure-menu-item"{{ Active == 'Give to the Max Day' ? ' id="active"' : '' }}>
+                    <a href="{{ RootURL }}events/give-to-the-max-day">Give to the Max Day</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="content">
+        <div class="padding-left">
+            <h2 class="page-section-header">
+                {{ Active }}
+            </h2>
+        </div>
+        <div class="padding-hold">
+            {% if Active=="Keep the Wheel Turning" %}
+                {{ include('events/keep-the-wheel-turning.twig') }}
+            {% elseif Active=="Give to the Max Day" %}
+                {{ include('events/give-to-the-max-day.twig') }}
+            {% endif %}
+        </div>
+    </div>
 </div>
 
-{{ include('common/footer.twig') }}
+{{ include('events/events-footer.twig') }}
