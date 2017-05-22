@@ -3,12 +3,12 @@ var menu = (function () {
 
     function menuDrop() {
         $('#drop-down-menu').on('click', function () {
-            $('header ul').toggle();
+            $('header ul').slideToggle();
         });
     }
 
     function windowResize() {
-        var enteredFromDesktop = !Modernizr.mq('(max-width: 768px)') ? true : false;
+        var enteredFromDesktop = !Modernizr.mq('(max-width: 768px)');
         $(window).on('resize', function () {
             if (!Modernizr.mq('(max-width: 768px)')) {
                 enteredFromDesktop = true;
