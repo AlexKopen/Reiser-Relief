@@ -27,7 +27,6 @@
         margin-top: 45px;
 
         .page-section-header {
-            color: @white;
             text-align: center;
         }
 
@@ -47,10 +46,7 @@
     }
 
     #mission-trip-details {
-        color: @white;
-
         .page-section-header {
-            color: @white;
             text-align: center;
         }
 
@@ -73,10 +69,27 @@
 
             h3 {
                 font-weight: bold;
+                cursor: pointer;
+                display: inline-block;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                img {
+                    float: right;
+                    margin-top: 6px;
+                    margin-left: 9px;
+
+                    &.down-arrow {
+                        display: none;
+                    }
+                }
             }
 
             p {
                 margin-top: 10px;
+                display: none;
             }
         }
     }

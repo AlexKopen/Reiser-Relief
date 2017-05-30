@@ -29,7 +29,7 @@ var menu = (function () {
 
     var menuModule = {
         init: init
-    }
+    };
 
     return menuModule;
 
