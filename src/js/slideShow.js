@@ -34,7 +34,7 @@ var slideShow = (function () {
 
     var slideShowModule = {
         init: init
-    }
+    };
 
     return slideShowModule;
 
