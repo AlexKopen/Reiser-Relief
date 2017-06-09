@@ -192,6 +192,13 @@ $app->get('/experience', function () use ($app) {
     ));
 });
 
+$app->get('/experience/trip-dates', function () use ($app) {
+    return $app['twig']->render('experience/trip-dates.twig', array(
+        'Title' => 'Experience - Mission Trip Selection',
+        'DisplayTitle' => 'Experience - Mission Trip Selection'
+    ));
+});
+
 $app->get('/experience/apply', function () use ($app) {
     return $app['twig']->render('experience/apply.twig', array(
         'Title' => 'Experience - Apply',
