@@ -1,0 +1,40 @@
+{{ include('experience/experience-header.twig') }}
+
+<section id="trip-selection">
+    <div class="container">
+        <table class="pure-table">
+            <thead>
+            <tr>
+                <th>Trip Date</th>
+                <th>Trip Leader</th>
+                <th>Trip Status</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>Monday, July 10th, 2017</td>
+                <td>Joyce Getchell & Rebecca Christiansen</td>
+                <td><a href="{{ RootURL }}experience/apply">Apply</a></td>
+            </tr>
+            <tr>
+                <td>Monday, October 16th, 2017</td>
+                <td>Ann Brau</td>
+                <td class="full">Trip is full</td>
+            </tr>
+            <tr>
+                <td>Monday, February 19th, 2018</td>
+                <td>Eileen Bock & Jennifer Lanigan</td>
+                <td><a href="{{ RootURL }}experience/apply">Apply</a></td>
+            </tr>
+            <tr>
+                <td>Monday, July 9th, 2018</td>
+                <td>Joyce Getchell</td>
+                <td><a href="{{ RootURL }}experience/apply">Apply</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{{ include('experience/experience-footer.twig') }}
