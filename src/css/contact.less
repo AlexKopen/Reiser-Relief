@@ -1,5 +1,29 @@
 @import "globals.less";
 
 #contact {
+  padding:0 @side-container-padding;
 
+  #contact-form {
+    border-right: 1px solid @separator-color;
+
+    @media only screen and (max-width: 768px) {
+      border-right: none;
+    }
+
+    input, textarea {
+      width: 95%;
+
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+
+  #additional-contact {
+    padding-left: @side-container-padding;
+
+    @media only screen and (max-width: 768px) {
+      padding-left: 0;
+    }
+  }
 }
