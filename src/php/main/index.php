@@ -208,13 +208,15 @@ $app->get('/experience/apply', function () use ($app) {
 
 $app->get('/give', function () use ($app) {
     return $app['twig']->render('give/give.twig', array(
-        'Title' => 'Give'
+        'Title' => 'Give',
+        'DisplayTitle' => 'Give'
     ));
 });
 
 $app->get('/contact', function () use ($app) {
     return $app['twig']->render('contact/contact.twig', array(
-        'Title' => 'Contact'
+        'Title' => 'Contact',
+        'DisplayTitle' => 'Contact Us'
     ));
 });
 
