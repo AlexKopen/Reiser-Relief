@@ -33,6 +33,54 @@ img {
   display: block;
 }
 
+table {
+  width: 100%;
+}
+
+.pure-form {
+  legend {
+    border-bottom: none;
+  }
+
+  .input-set {
+    margin-top: -12px;
+
+    input, select {
+      border-radius: 0;
+      height: 42px;
+
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    select {
+      width: 90%;
+
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    label {
+      font-size: 14px;
+      color: #595d64;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      resize: vertical;
+    }
+
+    .pure-checkbox input {
+      @checkboxWidthAndHeight: 20px;
+      width: @checkboxWidthAndHeight;
+      height: @checkboxWidthAndHeight;
+    }
+  }
+}
+
 .page-content {
   min-height: 320px;
 }
