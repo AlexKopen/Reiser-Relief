@@ -100,7 +100,25 @@
             margin-top: @large-top-margin;
             margin-bottom: @small-top-margin;
 
-            .full {
+            .apply-status {
+                padding: 0;
+
+                &:hover{
+                    color: @dark-theme-color;
+                    text-decoration: underline;
+                }
+
+                .apply-container {
+                    height: 38px;
+
+                    p {
+                        padding: 0 0 0 1em;
+                        line-height: 38px;
+                    }
+                }
+            }
+
+            .full-status {
                 color: @error-color;
             }
         }
