@@ -1,5 +1,43 @@
 @import "globals.less";
 
 #give {
+  .page-section-header {
+    text-align: center;
+  }
 
+  #give-methods {
+    #amount-columns {
+      @column-background-color: #e3e3e4;
+      margin-top: @large-top-margin;
+      text-align: center;
+      padding-bottom: 25px;
+      background: @column-background-color;
+
+      .donation-amount {
+        @amount-box-height: 80px;
+        color: @dark-theme-color;
+        background: @white;
+        font-size: 31px;
+        height: @amount-box-height;
+        line-height: @amount-box-height;
+        cursor: pointer;
+
+        &:hover {
+          background: #ebeced;
+        }
+
+        &.selected-amount {
+          background: @column-background-color;
+        }
+      }
+    }
+
+    .amount-details {
+      display: none;
+
+      &.selected-amount-details {
+        display: block;
+      }
+    }
+  }
 }
