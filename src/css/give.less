@@ -7,11 +7,14 @@
 
   #give-methods {
     #amount-columns {
-      @column-background-color: #e3e3e4;
       margin-top: @large-top-margin;
       text-align: center;
       padding-bottom: 25px;
-      background: @column-background-color;
+      background: @tab-background-color;
+
+      @media only screen and (max-width: 768px) {
+        padding-bottom: 0;
+      }
 
       .donation-amount {
         @amount-box-height: 80px;
@@ -23,11 +26,11 @@
         cursor: pointer;
 
         &:hover {
-          background: #ebeced;
+          background: @tab-hover-color;
         }
 
         &.selected-amount {
-          background: @column-background-color;
+          background: @tab-background-color;
         }
       }
     }
@@ -35,6 +38,7 @@
     .amount-details {
       display: none;
       min-height: 300px;
+      margin-top: @small-top-margin;
 
       &.selected-amount-details {
         display: block;

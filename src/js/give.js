@@ -6,21 +6,24 @@ var give = (function () {
             $('.selected-amount').removeClass('selected-amount');
             $(this).children('.donation-amount').addClass('selected-amount');
             $('.selected-amount-details').removeClass('selected-amount-details');
+            var selectedAmountDetailsToDisplay;
 
             switch ($(this).children('.donation-amount').text()) {
                 case '$10':
-                    $('#ten-dollars').addClass('selected-amount-details');
+                    selectedAmountDetailsToDisplay = $('#ten-dollars');
                     break;
                 case '$25':
-                    $('#twenty-five-dollars').addClass('selected-amount-details');
+                    selectedAmountDetailsToDisplay = $('#twenty-five-dollars');
                     break;
                 case '$50':
-                    $('#fifty-dollars').addClass('selected-amount-details');
+                    selectedAmountDetailsToDisplay = $('#fifty-dollars');
                     break;
                 default:
-                    $('#other').addClass('selected-amount-details');
+                    selectedAmountDetailsToDisplay = $('#other');
                     break;
             }
+
+            selectedAmountDetailsToDisplay.addClass('selected-amount-details');
         });
     }
 
