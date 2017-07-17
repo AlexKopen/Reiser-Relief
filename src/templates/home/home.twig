@@ -1,344 +1,279 @@
 {{ include('common/header.twig') }}
 
 <div id="home" class="page-content">
-	<section id="slide-show">
-		<div class="container">
-			<ul>
-				{% for Image in SlideShowImages %}
-					{% if loop.index0 == 0 %}
-						<li>
-							<img src="{{ RootURL }}resources/images/home/slide-show/{{ Image['Url'] }}" alt="{{ Image['Alt'] }}">
-					{% else %}
-						<li class="hidden-slide">
-							<span class="hidden-image-url">{{ RootURL }}resources/images/home/slide-show/{{ Image['Url'] }}</span>
-							<img src="" alt="{{ Image['Alt'] }}">
-					{% endif %}
-							<div class="slide-description">
-								<h1>{{ Image['Header'] }}</h1>
-								<p>{{ Image['Description'] }}</p>
-							</div>
-						</li>
-				{% endfor %}
-			</ul>
-		</div>
-		<nav class="unslider-nav">
-			<ol>
-				{% for Image in SlideShowImages %}
-					{% if loop.index0 == 0 %}
-						<li data-slide="0" class="unslider-active">1</li>
-					{% else %}
-						<li data-slide="{{ loop.index0 }}">{{ loop.index0 + 1 }}</li>
-					{% endif %}
-				{% endfor %}
-			</ol>
-		</nav>
-	</section>
-	<section id="three-block-information">
-		<div class="pure-g container">
-			<div class="pure-u-1-1 pure-u-md-1-3">
-				<div class="info-content" id="first-info-content">
-					<div class="text-block">
-						<p>
-							<span class="beginning">Mission</span> Reiser Relief aims to provide relief, hope, and dignity to the poor, elderly, and homeless people of Haiti.
-						</p>
-					</div>
-					<div class="link-block">
-						<a href="{{ RootURL }}about">
-							<p>
-								LEARN MORE
-							</p>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="pure-u-1-1 pure-u-md-1-3">
-				<div class="info-content">
-					<div class="text-block">
-						<p>
-							<span class="beginning">Make a Difference</span> Check out our volunteer opportunities or apply for a mission trip to Haiti.
-						</p>
-					</div>
-					<div class="link-block">
-						<a href="{{ RootURL }}experience">
-							<p>
-								EXPERIENCE NOW
-							</p>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="pure-u-1-1 pure-u-md-1-3">
-				<div class="info-content" id="last-info-content">
-					<div class="text-block">
-						<p>
-							<span class="beginning">Support Us</span> Reiser Relief is entirely based off of donations.  100% of our proceedings go to the people that need it most.
-						</p>
-					</div>
-					<div class="link-block">
-						<a href="{{ RootURL }}give">
-							<p>
-								GIVE
-							</p>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="our-work">
-		<div class="container">
-			<h1>
-				Our Work
-			</h1>
-			<div class="pure-g work-row">
-				<div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3">
-					<a href="{{ RootURL }}about/our-work#water">
-						<div class="work-column">
-							<img src="{{ RootURL }}resources/images/home/work-tiles/water.png" alt="Water">
-							<h2>
-								Water
-							</h2>
-						</div>
-					</a>
-				</div>
-				<div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3">
-					<a href="{{ RootURL }}about/our-work#education">
-						<div class="work-column">
-							<img src="{{ RootURL }}resources/images/home/work-tiles/education.png" alt="Education">
-							<h2>
-								Education
-							</h2>
-						</div>
-					</a>
-				</div>
-				<div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3 sm-not-first-row">
-					<a href="{{ RootURL }}about/our-work#elder-care">
-						<div class="work-column">
-							<img src="{{ RootURL }}resources/images/home/work-tiles/elder-care.png" alt="Elder Care">
-							<h2>
-								Elder Care
-							</h2>
-						</div>
-					</a>
-				</div>
-				<div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3 md-second-row sm-not-first-row" id="fourth-work-tile">
-					<a href="{{ RootURL }}about/our-work#orphan-care">
-						<div class="work-column">
-							<img src="{{ RootURL }}resources/images/home/work-tiles/orphan-care.png" alt="Orphan Care">
-							<h2>
-								Orphan Care
-							</h2>
-						</div>
-					</a>
-				</div>
-				<div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3 md-second-row sm-not-first-row" id="last-work-tile">
-					<a href="{{ RootURL }}about/our-work#food">
-						<div class="work-column">
-							<img src="{{ RootURL }}resources/images/home/work-tiles/food.png" alt="Food">
-							<h2>
-								Food
-							</h2>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="connect">
-		<div class="container">
-			<h1>
-				Connect
-			</h1>
-			<div id="social">
-				<div class="pure-g">
-					<div class="pure-u-1-2 pure-u-md-1-6">
-						<a href="https://www.facebook.com/ReiserRelief">
-							<div class="social-link-block md-not-last-row" id="facebook">
-								<div class="social-link-block-table">
-									<p class="social-title">
-										Facebook
-									</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="pure-u-1-2 pure-u-md-1-6">
-						<a href="https://twitter.com/reiserrelief">
-							<div class="social-link-block md-not-last-row" id="twitter">
-								<div class="social-link-block-table">
-									<p class="social-title">
-										Twitter
-									</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="pure-u-1-2 pure-u-md-1-6">
-						<a href="https://instagram.com/reiserrelief/">
-							<div class="social-link-block md-not-last-row" id="instagram">
-								<div class="social-link-block-table">
-									<p class="social-title">
-										Instagram
-									</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="pure-u-1-2 pure-u-md-1-6">
-						<a href="http://reiserreliefjournal.blogspot.com/">
-							<div class="social-link-block md-not-last-row" id="blog">
-								<div class="social-link-block-table">
-									<p class="social-title">
-										Blog
-									</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="pure-u-1-2 pure-u-md-1-6">
-						<a href="http://www.youtube.com/user/reiserrelief">
-							<div class="social-link-block" id="youtube">
-								<div class="social-link-block-table">
-									<p class="social-title">
-										YouTube
-									</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="pure-u-1-2 pure-u-md-1-6">
-						<a href="{{ RootURL }}contact">
-							<div class="social-link-block" id="last-social-link-block">
-								<div class="social-link-block-table">
-									<p class="social-title">
-										Email
-									</p>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="news-and-events">
-		<div class="pure-g container">
-			<div class="padding-hold">
-				<div class="pure-u-1-1 pure-u-md-15-24">
-					<div id="news">
-						<div class="news-and-events-header">
-							<h1>
-								News
-							</h1>
-						</div>
-						<div class="news-post">
-							<h2>
-								Hurricane Matthew Relief
-							</h2>
-							<h3>
-								October 4, 2016
-							</h3>
-							<p class="news-content">
-								Thank you for your support. Please pray for the people who suffered damage from this devastating storm.
-							</p>
-						</div>
-						<div class="news-post">
-							<h2>
-								November 16 – Save the Date!
-							</h2>
-							<h3>
-								August 25, 2016
-							</h3>
-							<p class="news-content">
-								Our 4th annual “Give to the Max Day Kickoff Event” will be on Wednesday, November 16 at the Minneapolis Marriott Northwest in Brooklyn Park, Minnesota. More information is coming soon.
-							</p>
-						</div>
-						<div class="news-post">
-							<h2>
-								A New Website Coming Soon
-							</h2>
-							<h3>
-								November 17, 2016
-							</h3>
-							<p class="news-content">
-								The genius programmer known by the name of Alex Kopen loves run-on sentences but more importantly is making a brand new website that is really breh.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="pure-u-1-1 pure-u-md-9-24">
-					<div id="home-events">
-						<div class="news-and-events-header">
-							<h1>
-								Events
-							</h1>
-						</div>
-						<div class="event-entry" id="first">
-							<div class="pure-g">
-								<div class="pure-u">
-									<div class="calendar-tile">
-										<div class="day-of-week">
-											Thu
-										</div>
-										<div class="date">
-											27
-										</div>
-										<div class="month">
-											Apr
-										</div>
-									</div>
-								</div>
-								<div class="pure-u event-description">
-									<h2 class="event-title">
-										Keep the Wheel Turning
-									</h2>
-									<h3 class="event-date">
-										April 27, 2017
-									</h3>
-									<p class="event-location">
-										Coon Rapids American Legion <br>
-										Coon Rapids, MN
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="event-entry">
-							<div class="pure-g">
-								<div class="pure-u">
-									<div class="calendar-tile">
-										<div class="day-of-week">
-											Fri
-										</div>
-										<div class="date">
-											10
-										</div>
-										<div class="month">
-											Nov
-										</div>
-									</div>
-								</div>
-								<div class="pure-u event-description">
-									<h2 class="event-title">
-										Give to the Max Day
-									</h2>
-									<h3 class="event-date">
-										November 10, 2017
-									</h3>
-									<p class="event-location">
-										Minneapolis Marriott Northwest <br>
-										Brooklyn Park, MN
-									</p>
-									<p class="event-location">
-										Learn more
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section id="slide-show">
+        <div class="container">
+            <ul>
+                {% for Image in SlideShowImages %}
+                    {% if loop.index0 == 0 %}
+                        <li>
+                        <img src="{{ RootURL }}resources/images/home/slide-show/{{ Image['Url'] }}"
+                             alt="{{ Image['Alt'] }}">
+                    {% else %}
+                        <li class="hidden-slide">
+                        <span class="hidden-image-url">{{ RootURL }}
+                            resources/images/home/slide-show/{{ Image['Url'] }}</span>
+                        <img src="" alt="{{ Image['Alt'] }}">
+                    {% endif %}
+                    <div class="slide-description">
+                        <h1>{{ Image['Header'] }}</h1>
+                        <p>{{ Image['Description'] }}</p>
+                    </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <nav class="unslider-nav">
+            <ol>
+                {% for Image in SlideShowImages %}
+                    {% if loop.index0 == 0 %}
+                        <li data-slide="0" class="unslider-active">1</li>
+                    {% else %}
+                        <li data-slide="{{ loop.index0 }}">{{ loop.index0 + 1 }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        </nav>
+    </section>
+    <section id="three-block-information">
+        <div class="pure-g container">
+            <div class="pure-u-1-1 pure-u-md-1-3">
+                <div class="info-content" id="first-info-content">
+                    <div class="text-block">
+                        <p>
+                            <span class="beginning">Mission</span> Reiser Relief aims to provide relief, hope, and
+                            dignity to the poor, elderly, and homeless people of Haiti.
+                        </p>
+                    </div>
+                    <div class="link-block">
+                        <a href="{{ RootURL }}about">
+                            <p>
+                                LEARN MORE
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-1-1 pure-u-md-1-3">
+                <div class="info-content">
+                    <div class="text-block">
+                        <p>
+                            <span class="beginning">Make a Difference</span> Check out our volunteer opportunities or
+                            apply for a mission trip to Haiti.
+                        </p>
+                    </div>
+                    <div class="link-block">
+                        <a href="{{ RootURL }}experience">
+                            <p>
+                                EXPERIENCE NOW
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pure-u-1-1 pure-u-md-1-3">
+                <div class="info-content" id="last-info-content">
+                    <div class="text-block">
+                        <p>
+                            <span class="beginning">Support Us</span> Reiser Relief is entirely based off of donations.
+                            100% of our proceedings go to the people that need it most.
+                        </p>
+                    </div>
+                    <div class="link-block">
+                        <a href="{{ RootURL }}give">
+                            <p>
+                                GIVE
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="our-work">
+        <div class="container">
+            <h1>
+                Our Work
+            </h1>
+            <div class="pure-g work-row">
+                <div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3">
+                    <a href="{{ RootURL }}about/our-work#water">
+                        <div class="work-column">
+                            <img src="{{ RootURL }}resources/images/home/work-tiles/water.png" alt="Water">
+                            <h2>
+                                Water
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3">
+                    <a href="{{ RootURL }}about/our-work#education">
+                        <div class="work-column">
+                            <img src="{{ RootURL }}resources/images/home/work-tiles/education.png" alt="Education">
+                            <h2>
+                                Education
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3 sm-not-first-row">
+                    <a href="{{ RootURL }}about/our-work#elder-care">
+                        <div class="work-column">
+                            <img src="{{ RootURL }}resources/images/home/work-tiles/elder-care.png" alt="Elder Care">
+                            <h2>
+                                Elder Care
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3 md-second-row sm-not-first-row"
+                     id="fourth-work-tile">
+                    <a href="{{ RootURL }}about/our-work#orphan-care">
+                        <div class="work-column">
+                            <img src="{{ RootURL }}resources/images/home/work-tiles/orphan-care.png" alt="Orphan Care">
+                            <h2>
+                                Orphan Care
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+                <div class="pure-u-1-2 pure-u-md-1-5 pure-u-sm-1-3 md-second-row sm-not-first-row" id="last-work-tile">
+                    <a href="{{ RootURL }}about/our-work#food">
+                        <div class="work-column">
+                            <img src="{{ RootURL }}resources/images/home/work-tiles/food.png" alt="Food">
+                            <h2>
+                                Food
+                            </h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="connect">
+        <div class="container">
+            <h1>
+                Connect
+            </h1>
+            <div id="social">
+                <div class="pure-g">
+                    <div class="pure-u-1-2 pure-u-md-1-6">
+                        <a href="https://www.facebook.com/ReiserRelief">
+                            <div class="social-link-block md-not-last-row" id="facebook">
+                                <div class="social-link-block-table">
+                                    <p class="social-title">
+                                        Facebook
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-md-1-6">
+                        <a href="https://twitter.com/reiserrelief">
+                            <div class="social-link-block md-not-last-row" id="twitter">
+                                <div class="social-link-block-table">
+                                    <p class="social-title">
+                                        Twitter
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-md-1-6">
+                        <a href="https://instagram.com/reiserrelief/">
+                            <div class="social-link-block md-not-last-row" id="instagram">
+                                <div class="social-link-block-table">
+                                    <p class="social-title">
+                                        Instagram
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-md-1-6">
+                        <a href="http://reiserreliefjournal.blogspot.com/">
+                            <div class="social-link-block md-not-last-row" id="blog">
+                                <div class="social-link-block-table">
+                                    <p class="social-title">
+                                        Blog
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-md-1-6">
+                        <a href="http://www.youtube.com/user/reiserrelief">
+                            <div class="social-link-block" id="youtube">
+                                <div class="social-link-block-table">
+                                    <p class="social-title">
+                                        YouTube
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pure-u-1-2 pure-u-md-1-6">
+                        <a href="{{ RootURL }}contact">
+                            <div class="social-link-block" id="last-social-link-block">
+                                <div class="social-link-block-table">
+                                    <p class="social-title">
+                                        Email
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="news">
+        <div class="container padding-hold">
+            <div class="pure-g">
+                <div class="pure-u-1-1">
+                    <h1>
+                        News
+                    </h1>
+                    <div class="news-post">
+                        <h2>
+                            Hurricane Matthew Relief
+                        </h2>
+                        <h3>
+                            October 4, 2016
+                        </h3>
+                        <p>
+                            Thank you for your support. Please pray for the people who suffered damage from this
+                            devastating storm.
+                        </p>
+                    </div>
+                    <div class="news-post">
+                        <h2>
+                            November 16 – Save the Date!
+                        </h2>
+                        <h3>
+                            August 25, 2016
+                        </h3>
+                        <p>
+                            Our 4th annual “Give to the Max Day Kickoff Event” will be on Wednesday, November 16 at the
+                            Minneapolis Marriott Northwest in Brooklyn Park, Minnesota. More information is coming soon.
+                        </p>
+                    </div>
+                    <div class="news-post">
+                        <h2>
+                            A New Website Coming Soon
+                        </h2>
+                        <h3>
+                            November 17, 2016
+                        </h3>
+                        <p>
+                            The genius programmer known by the name of Alex Kopen loves run-on sentences but more
+                            importantly is making a brand new website that is really breh.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 {{ include('common/footer.twig') }}
