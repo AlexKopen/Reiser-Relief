@@ -6,43 +6,5 @@
   }
 
   #give-methods {
-    #amount-columns {
-      margin-top: @large-top-margin;
-      text-align: center;
-      padding-bottom: 25px;
-      background: @tab-background-color;
-
-      @media @medium-screen {
-        padding-bottom: 0;
-      }
-
-      .donation-amount {
-        @amount-box-height: 80px;
-        color: @dark-theme-color;
-        background: @white;
-        font-size: 31px;
-        height: @amount-box-height;
-        line-height: @amount-box-height;
-        cursor: pointer;
-
-        &:hover {
-          background: @tab-hover-color;
-        }
-
-        &.selected-amount {
-          background: @tab-background-color;
-        }
-      }
-    }
-
-    .amount-details {
-      display: none;
-      min-height: 300px;
-      margin-top: @small-top-margin;
-
-      &.selected-amount-details {
-        display: block;
-      }
-    }
   }
 }
