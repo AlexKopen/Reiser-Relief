@@ -8,9 +8,9 @@ var menu = (function () {
     }
 
     function windowResize() {
-        var enteredFromDesktop = !Modernizr.mq('(max-width: 768px)');
+        var enteredFromDesktop = !Modernizr.mq('(max-width: 767px)');
         $(window).on('resize', function () {
-            if (!Modernizr.mq('(max-width: 768px)')) {
+            if (!Modernizr.mq('(max-width: 767px)')) {
                 enteredFromDesktop = true;
                 $('header ul').css('display', 'inline-block');
             } else {
