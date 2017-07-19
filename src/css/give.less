@@ -5,6 +5,37 @@
     text-align: center;
   }
 
-  #give-methods {
+  #give-funds {
+    .donation-container {
+      @donation-container-height: 100px;
+      @separation-margin: 10px;
+      height: @donation-container-height;
+      margin-right: @separation-margin;
+      margin-bottom: @separation-margin;
+      background: @dark-theme-color;
+      color: @white;
+      cursor: pointer;
+
+      &:hover {
+        background: @light-theme-color;
+      }
+
+      .donation-amount {
+        color: @white;
+        line-height: @donation-container-height;
+        text-align: center;
+        font-size: 30px;
+      }
+    }
+
+    #give-funds-image {
+      @media @medium-screen {
+        display: none;
+      }
+    }
+  }
+
+  #give-other {
+
   }
 }
