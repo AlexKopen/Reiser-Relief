@@ -156,42 +156,19 @@
                     <h1>
                         News
                     </h1>
-                    <div class="news-post">
-                        <h2>
-                            Hurricane Matthew Relief
-                        </h2>
-                        <h3>
-                            October 4, 2016
-                        </h3>
-                        <p>
-                            Thank you for your support. Please pray for the people who suffered damage from this
-                            devastating storm.
-                        </p>
-                    </div>
-                    <div class="news-post">
-                        <h2>
-                            November 16 – Save the Date!
-                        </h2>
-                        <h3>
-                            August 25, 2016
-                        </h3>
-                        <p>
-                            Our 4th annual “Give to the Max Day Kickoff Event” will be on Wednesday, November 16 at the
-                            Minneapolis Marriott Northwest in Brooklyn Park, Minnesota. More information is coming soon.
-                        </p>
-                    </div>
-                    <div class="news-post">
-                        <h2>
-                            A New Website Coming Soon
-                        </h2>
-                        <h3>
-                            November 17, 2016
-                        </h3>
-                        <p>
-                            The genius programmer known by the name of Alex Kopen loves run-on sentences but more
-                            importantly is making a brand new website that is really breh.
-                        </p>
-                    </div>
+                    {% for CurrentNewsPost in News %}
+                        <div class="news-post">
+                            <h2>
+                                {{ CurrentNewsPost['Title'] }}
+                            </h2>
+                            <h3>
+                                {{ CurrentNewsPost['Date'] }}
+                            </h3>
+                            <p>
+                                {{ CurrentNewsPost['Content'] }}
+                            </p>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

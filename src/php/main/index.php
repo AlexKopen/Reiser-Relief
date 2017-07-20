@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/php/urls.php';
+require_once __DIR__ . '/php/database-data.php';
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -23,7 +24,7 @@ $pages = [
     "contact"
 ];
 
-$app->get('/', function () use ($app) {
+$app->get('/', function () use ($app, $news) {
     return $app['twig']->render('home/home.twig', array(
         'Title' => 'Home',
         'SlideShowImages' => array(
@@ -45,7 +46,8 @@ $app->get('/', function () use ($app) {
                 'Header' => 'Give Today',
                 'Description' => 'Help those in need with a donation which will provide water, food, care, and so much more'
             )
-        )
+        ),
+        'News' => $news
     ));
 });
 
@@ -221,11 +223,13 @@ $app->get('/contact', function () use ($app) {
     ));
 });
 
-//$app->error(function () use ($app) {
-//    return $app['twig']->render('common/404.twig', array(
-//        'Title' => 'Not Found'
-//    ));
-//});
+if (!$app['debug']) {
+    $app->error(function () use ($app) {
+        return $app['twig']->render('common/404.twig', array(
+            'Title' => 'Not Found'
+        ));
+    });
+}
 
 //Redirects
 $app->get('/{wildCard}/', function ($wildCard) use ($app, $RootURL, $pages) {
@@ -253,5 +257,3 @@ $app->get('/trips', function () use ($app, $RootURL) {
 });
 
 $app->run();
-
-?>
