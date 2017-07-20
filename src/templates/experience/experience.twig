@@ -90,7 +90,7 @@
                     </div>
                     <div class="pure-u-1-1 pure-u-md-1-2">
                         <h3>Application</h3>
-                        <p><a href="{{ RootURL }}experience/trip-dates">Apply online</a></p>
+                        <p><a href="{{ RootURL }}experience/trip-dates" class="plain-link">Apply online</a></p>
                     </div>
                 </div>
             </div>
@@ -108,12 +108,20 @@
             {% for CurrentQuestion in Questions %}
                 <div class="question">
                     <h3>
-                       {{ CurrentQuestion['Question'] }}
-                        <img class="right-arrow" src="{{ RootURL }}resources/images/experience/right-arrow.png" alt="Right arrow">
-                        <img class="down-arrow" src="{{ RootURL }}resources/images/experience/down-arrow.png" alt="Down arrow">
+                        {{ CurrentQuestion['Question'] }}
+                        <img class="right-arrow" src="{{ RootURL }}resources/images/experience/right-arrow.png"
+                             alt="Right arrow">
+                        <img class="down-arrow" src="{{ RootURL }}resources/images/experience/down-arrow.png"
+                             alt="Down arrow">
                     </h3>
                     <p>
-                        {{ CurrentQuestion['Answer'] }}
+                        {% if CurrentQuestion['Link'] is defined %}
+                        <a href="{{ CurrentQuestion['Link'] }}" class="plain-link">
+                            {% endif %}
+                            {{ CurrentQuestion['Answer'] }}
+                            {% if CurrentQuestion['Link'] is defined %}
+                        </a>
+                        {% endif %}
                     </p>
                 </div>
             {% endfor %}

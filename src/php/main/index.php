@@ -1,13 +1,13 @@
 <?php
 
-require_once __DIR__.'/vendor/autoload.php';
-require_once __DIR__.'/php/urls.php';
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/php/urls.php';
 
 $app = new Silex\Application();
 $app['debug'] = true;
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/resources/templates',
+    'twig.path' => __DIR__ . '/resources/templates',
 ));
 
 $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
@@ -118,7 +118,8 @@ $app->get('/experience', function () use ($app) {
             ),
             array(
                 'Question' => 'What do I pack?',
-                'Answer' => 'Refer to our packing list.'
+                'Answer' => 'Refer to our packing list.',
+                'Link' => 'https://drive.google.com/file/d/0By871gytPLeeMmhsdEJDc2NOMHc/view?usp=sharing'
             ),
             array(
                 'Question' => 'How can I raise support?',
@@ -220,16 +221,16 @@ $app->get('/contact', function () use ($app) {
     ));
 });
 
-$app->error(function () use ($app) {
-    return $app['twig']->render('common/404.twig', array(
-        'Title' => 'Not Found'
-    ));
-});
+//$app->error(function () use ($app) {
+//    return $app['twig']->render('common/404.twig', array(
+//        'Title' => 'Not Found'
+//    ));
+//});
 
 //Redirects
 $app->get('/{wildCard}/', function ($wildCard) use ($app, $RootURL, $pages) {
     $wildCard = strtolower($wildCard);
-    if (in_array($wildCard, $pages)){
+    if (in_array($wildCard, $pages)) {
         return $app->redirect($RootURL . $wildCard);
     } else {
         return $app['twig']->render('common/404.twig', array(
