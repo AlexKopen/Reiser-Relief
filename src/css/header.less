@@ -12,8 +12,11 @@ header {
 		}
 
 		#left-header {
+			padding-left: @side-container-padding;
+
 			@media @medium-screen {
 				width: 100%;
+				padding: 0 @side-container-padding;
 			}
 
 			img {
@@ -27,11 +30,13 @@ header {
 			text-align: right;
 			width: 100%;
 			margin-top: -38px;
+			padding-right: @side-container-padding;
 
 			@media @medium-screen {
 				text-align: center;
 				width: 100%;
 				margin: 10px 0 0;
+				padding: 0;
 			}
 
 			#drop-down-menu {
