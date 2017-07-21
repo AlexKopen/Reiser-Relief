@@ -226,7 +226,8 @@ $app->get('/contact', function () use ($app) {
 if (!$app['debug']) {
     $app->error(function () use ($app) {
         return $app['twig']->render('common/404.twig', array(
-            'Title' => 'Not Found'
+            'Title' => 'Not Found',
+            'DisplayTitle' => 'Not Found'
         ));
     });
 }
@@ -238,7 +239,8 @@ $app->get('/{wildCard}/', function ($wildCard) use ($app, $RootURL, $pages) {
         return $app->redirect($RootURL . $wildCard);
     } else {
         return $app['twig']->render('common/404.twig', array(
-            'Title' => 'Not Found'
+            'Title' => 'Not Found',
+            'DisplayTitle' => 'Not Found'
         ));
     }
 
