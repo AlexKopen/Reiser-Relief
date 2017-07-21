@@ -225,7 +225,7 @@ $app->get('/contact', function () use ($app) {
     ));
 });
 
-$app->get('/contact/contact-submit/', function (Request $request) use ($app) {
+$app->post('/contact/contact-submit', function (Request $request) use ($app) {
     $name = $request->get('name');
     $email = $request->get('email');
     $subject = $request->get('subject');
