@@ -4,6 +4,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/php/urls.php';
 require_once __DIR__ . '/php/database-data.php';
 
+use Symfony\Component\HttpFoundation\Request;
+
 $app = new Silex\Application();
 $app['debug'] = true;
 
@@ -218,6 +220,18 @@ $app->get('/give', function () use ($app) {
 
 $app->get('/contact', function () use ($app) {
     return $app['twig']->render('contact/contact.twig', array(
+        'Title' => 'Contact',
+        'DisplayTitle' => 'Contact Us'
+    ));
+});
+
+$app->get('/contact/contact-submit/', function (Request $request) use ($app) {
+    $name = $request->get('name');
+    $email = $request->get('email');
+    $subject = $request->get('subject');
+    $message = $request->get('message');
+
+    return $app['twig']->render('contact/contact-submit.twig', array(
         'Title' => 'Contact',
         'DisplayTitle' => 'Contact Us'
     ));
