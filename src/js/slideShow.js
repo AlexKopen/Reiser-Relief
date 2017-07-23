@@ -17,7 +17,7 @@ var slideShow = (function () {
         });
 
         $('#slide-show .hidden-slide').promise().done(function () {
-            $('#slide-show .container').unslider({
+            $('#slide-show #slide-show-container').unslider({
                 autoplay: true,
                 infinite: true,
                 arrows: false,

@@ -10,10 +10,6 @@
   #slide-show {
     margin-top: 15px;
 
-    h1 {
-      color: @white;
-    }
-
     @media @medium-screen {
       display: none;
     }
@@ -24,28 +20,41 @@
       margin: 0 auto;
     }
 
-    li {
-      &.hidden-slide {
-        display: none;
-      }
-
-      .hidden-image-url {
-        display: none;
-      }
-
-      .slide-description {
-        display: none;
-        position: absolute;
-        top: 0;
-        margin-left: 13.8%;
-        margin-top: 2%;
-        width: 6%;
-        text-align: center;
+    #slide-show-container {
+      h1 {
         color: @white;
+      }
 
-        p {
-          padding: 0;
-          margin-top: 10px;
+      li {
+        position: relative;
+
+        &.hidden-slide {
+          display: none;
+        }
+
+        .hidden-image-url {
+          display: none;
+        }
+
+        .slide-description {
+          display: none;
+          position: absolute;
+          top: 25%;
+          right: 0;
+          height: 100%;
+          width: 27%;
+          padding-right: 15px;
+          text-align: center;
+          color: @white;
+
+          @media only screen and (max-width: 800px) {
+            top: 14%;
+          }
+
+          p {
+            padding: 0;
+            margin-top: 10px;
+          }
         }
       }
     }

@@ -3,24 +3,32 @@
 <div id="home" class="page-content">
     <section id="slide-show">
         <div class="container">
-            <ul>
-                {% for Image in SlideShowImages %}
-                    {% if loop.index0 == 0 %}
-                        <li>
-                        <img src="{{ RootURL }}resources/images/home/slide-show/{{ Image['Url'] }}"
-                             alt="{{ Image['Alt'] }}">
-                    {% else %}
-                        <li class="hidden-slide">
-                        <span class="hidden-image-url">{{ RootURL }}resources/images/home/slide-show/{{ Image['Url'] }}</span>
-                        <img src="" alt="{{ Image['Alt'] }}">
-                    {% endif %}
-                    <div class="slide-description">
-                        <h1>{{ Image['Header'] }}</h1>
-                        <p>{{ Image['Description'] }}</p>
-                    </div>
-                    </li>
-                {% endfor %}
-            </ul>
+            <div class="padding-hold">
+                <div id="slide-show-container">
+                    <ul>
+                        {% for Image in SlideShowImages %}
+                            {% if loop.index0 == 0 %}
+                                <li>
+                            <a href="{{ Image['Link'] }}">
+                                <img src="{{ RootURL }}resources/images/home/slide-show/{{ Image['Url'] }}"
+                                     alt="{{ Image['Alt'] }}">
+                            {% else %}
+                                <li class="hidden-slide">
+                                <a href="{{ Image['Link'] }}">
+                                <span class="hidden-image-url">{{ RootURL }}resources/images/home/slide-show/{{ Image['Url'] }}</span>
+                                <img src="" alt="{{ Image['Alt'] }}">
+                            {% endif %}
+                            <div class="slide-description">
+                                <h1>{{ Image['Header'] }}</h1>
+                                <p>{{ Image['Description'] }}</p>
+                            </div>
+                            </a>
+                            </li>
+
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
         <nav class="unslider-nav">
             <ol>

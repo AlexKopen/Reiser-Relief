@@ -26,27 +26,30 @@ $pages = [
     "contact"
 ];
 
-$app->get('/', function () use ($app, $news) {
+$app->get('/', function () use ($app, $news, $RootURL) {
     return $app['twig']->render('home/home.twig', array(
         'Title' => 'Home',
         'SlideShowImages' => array(
             array(
                 'Url' => 'experience-slide.jpg',
                 'Alt' => 'Experience',
-                'Header' => 'Leave your Comfort Zone',
-                'Description' => 'Experience the opportunity of a lifetime by applying for a mission trip to Haiti'
+                'Header' => 'Visit Haiti',
+                'Description' => 'Experience the opportunity of a lifetime by applying for a mission trip to Haiti',
+                'Link' => $RootURL . 'experience'
             ),
             array(
                 'Url' => 'work-slide.jpg',
                 'Alt' => 'Our Work',
                 'Header' => 'What we Do',
-                'Description' => 'Learn more about Reiser Relief including our work, upcoming events, and ways you can help'
+                'Description' => 'Learn more about Reiser Relief including our work, upcoming events, and ways you can help',
+                'Link' => $RootURL . 'about'
             ),
             array(
                 'Url' => 'support-slide.jpg',
                 'Alt' => 'Support Us',
                 'Header' => 'Give Today',
-                'Description' => 'Help those in need with a donation which will provide water, food, care, and so much more'
+                'Description' => 'Help those in need with a donation which will provide water, food, care, and so much more',
+                'Link' => $RootURL . 'give'
             )
         ),
         'News' => $news
