@@ -256,7 +256,7 @@ $app->post('/experience/apply/apply-submit', function (Request $request) use ($a
     $person2Phone = $request->get('person-2-phone');
     $person2Email = $request->get('person-2-email');
 
-    return $app['twig']->render('contact/contact-submit.twig', array(
+    return $app['twig']->render('experience/apply-submit.twig', array(
         'Title' => 'Experience - Apply',
         'DisplayTitle' => 'Experience - Mission Trip Application'
     ));
