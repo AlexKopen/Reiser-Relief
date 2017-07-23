@@ -34,7 +34,6 @@ var donate = (function () {
 
             $('body').append(form);
             form.submit();
-
         });
     }
 
