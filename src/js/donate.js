@@ -32,7 +32,7 @@ var donate = (function () {
                 '</form>'
             );
 
-            $('body').append(form);
+            $('#give').append(form);
             form.submit();
         });
     }
