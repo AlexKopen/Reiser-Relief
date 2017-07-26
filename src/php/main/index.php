@@ -17,6 +17,7 @@ $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
 $RootURL = 'http://localhost/Reiser-Relief/dist/';
 $app['twig']->addGlobal('RootURL', $RootURL);
+$app['twig']->addGlobal('Year', date("Y"));
 
 $pages = [
     "about",
