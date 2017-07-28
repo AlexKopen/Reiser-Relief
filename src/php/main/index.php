@@ -17,6 +17,7 @@ $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
 $RootURL = 'http://localhost/Reiser-Relief/dist/';
 $app['twig']->addGlobal('RootURL', $RootURL);
+$app['twig']->addGlobal('Year', date("Y"));
 
 $pages = [
     "about",
@@ -58,14 +59,6 @@ $app->get('/', function () use ($app, $news, $RootURL) {
 
 $AboutTitle = 'About';
 $AboutDisplayTitle = 'About Us';
-
-$app->get('/about/our-mission', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
-    return $app['twig']->render('about/about.twig', array(
-        'Title' => $AboutTitle,
-        'DisplayTitle' => $AboutDisplayTitle,
-        'Active' => 'Our Mission'
-    ));
-});
 
 $app->get('/about/our-work', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
     return $app['twig']->render('about/about.twig', array(
@@ -312,7 +305,7 @@ $app->get('/{wildCard}/', function ($wildCard) use ($app, $RootURL, $pages) {
 })->assert('wildCard', '.*');
 
 $app->get('/about', function () use ($app, $RootURL) {
-    return $app->redirect($RootURL . 'about/our-mission');
+    return $app->redirect($RootURL . 'about/our-work');
 });
 
 $app->get('/events', function () use ($app, $RootURL) {
