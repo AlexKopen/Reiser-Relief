@@ -1,123 +1,123 @@
 @import "globals.less";
 
 footer {
-    margin-top: @sub-section-top-margin;
-    color: @light-theme-color;
-    text-align: center;
+  margin-top: @sub-section-top-margin;
+  color: @light-theme-color;
+  text-align: center;
 
-    background: @dark-theme-color;
-    padding: 75px 0;
+  background: @dark-theme-color;
+  padding: 75px 0;
+
+  @media @small-screen {
+    padding: 25px 0;
+  }
+
+  img {
+    margin: 0 auto;
+  }
+
+  .pure-menu {
+    margin-top: 30px;
 
     @media @small-screen {
-        padding: 25px 0;
+      display: none;
     }
 
-    img {
-        margin: 0 auto;
+    ul {
+      li {
+        padding-bottom: 0;
+
+        a {
+          .vertical-separator {
+            color: @light-theme-color;
+          }
+
+          &.pure-menu-link {
+            color: @light-theme-color;
+            padding: 0;
+
+            &:hover {
+              background-color: @dark-theme-color;
+            }
+          }
+
+          &:hover {
+            color: @white;
+          }
+        }
+
+      }
+    }
+  }
+
+  #copyright {
+    @media @small-screen {
+      display: none;
+    }
+  }
+
+  #social {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 490px;
+
+    @media @small-screen {
+      display: none;
     }
 
-    #copyright {
-        @media @small-screen {
-            display: none;
+    .social-link-block {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      height: 35px;
+
+      &#facebook {
+        background-image: url('../images/common/social/light/facebook.png');
+
+        &:hover {
+          background-image: url('../images/common/social/white/facebook.png');
         }
+      }
+
+      &#twitter {
+        background-image: url('../images/common/social/light/twitter.png');
+
+        &:hover {
+          background-image: url('../images/common/social/white/twitter.png');
+        }
+      }
+
+      &#instagram {
+        background-image: url('../images/common/social/light/instagram.png');
+
+        &:hover {
+          background-image: url('../images/common/social/white/instagram.png');
+        }
+      }
+
+      &#blog {
+        background-image: url('../images/common/social/light/blogger.png');
+
+        &:hover {
+          background-image: url('../images/common/social/white/blogger.png');
+        }
+      }
+
+      &#youtube {
+        background-image: url('../images/common/social/light/youtube.png');
+
+        &:hover {
+          background-image: url('../images/common/social/white/youtube.png');
+        }
+      }
+
+      &#mail {
+        background-image: url('../images/common/social/light/mail.png');
+
+        &:hover {
+          background-image: url('../images/common/social/white/mail.png');
+        }
+      }
     }
-
-    .pure-menu {
-        margin-top: 30px;
-
-        @media @small-screen {
-            display: none;
-        }
-
-        ul {
-            li {
-                padding-bottom: 0;
-
-                a {
-                    .vertical-separator {
-                        color: @light-theme-color;
-                    }
-
-                    &.pure-menu-link {
-                        color: @light-theme-color;
-                        padding: 0;
-
-                        &:hover {
-                            background-color: @dark-theme-color;
-                        }
-                    }
-
-                    &:hover {
-                        color: @white;
-                    }
-                }
-
-            }
-        }
-    }
-
-    #social {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 490px;
-
-        @media @small-screen {
-            display: none;
-        }
-
-        .social-link-block {
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            height: 35px;
-
-            &#facebook {
-                background-image: url('../images/common/social/light/facebook.png');
-
-                &:hover {
-                    background-image: url('../images/common/social/white/facebook.png');
-                }
-            }
-
-            &#twitter {
-                background-image: url('../images/common/social/light/twitter.png');
-
-                &:hover {
-                    background-image: url('../images/common/social/white/twitter.png');
-                }
-            }
-
-            &#instagram {
-                background-image: url('../images/common/social/light/instagram.png');
-
-                &:hover {
-                    background-image: url('../images/common/social/white/instagram.png');
-                }
-            }
-
-            &#blog {
-                background-image: url('../images/common/social/light/blogger.png');
-
-                &:hover {
-                    background-image: url('../images/common/social/white/blogger.png');
-                }
-            }
-
-            &#youtube {
-                background-image: url('../images/common/social/light/youtube.png');
-
-                &:hover {
-                    background-image: url('../images/common/social/white/youtube.png');
-                }
-            }
-
-            &#mail {
-                background-image: url('../images/common/social/light/mail.png');
-
-                &:hover {
-                    background-image: url('../images/common/social/white/mail.png');
-                }
-            }
-        }
-    }
+  }
 }
