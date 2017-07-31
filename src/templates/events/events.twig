@@ -14,12 +14,10 @@
         </nav>
     </div>
     <div id="content">
-        <div class="padding-left">
+        <div class="padding-hold">
             <h2 class="page-section-header">
                 {{ Active }}
             </h2>
-        </div>
-        <div class="padding-hold">
             {% if Active=="Keep the Wheel Turning" %}
                 {{ include('events/keep-the-wheel-turning.twig') }}
             {% elseif Active=="Give to the Max Day" %}
