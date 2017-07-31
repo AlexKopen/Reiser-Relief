@@ -17,12 +17,10 @@
         </nav>
     </div>
     <div id="content">
-        <div class="padding-left">
+        <div class="padding-hold">
             <h2 class="page-section-header">
                 {{ Active }}
             </h2>
-        </div>
-        <div class="padding-hold">
             {% if Active=="Our Work" %}
                 {{ include('about/our-work.twig') }}
             {% elseif Active=="Our Board" %}

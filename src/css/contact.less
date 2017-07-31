@@ -1,7 +1,7 @@
 @import "globals.less";
 
 #contact {
-  padding:0 @side-container-padding;
+  padding: 0 @side-container-padding;
 
   #contact-form {
     border-right: 1px solid @separator-color;
@@ -42,13 +42,29 @@
 
       @media @medium-screen {
         width: 100%;
-        max-width: 121px;
+        max-width: 203px;
         margin: 0 auto;
       }
 
       p {
         line-height: @social-link-block-height;
         padding-left: 50px;
+      }
+
+      &#mail {
+        background-image: url('../images/common/social/dark/mail.png');
+
+        &:hover {
+          background-image: url('../images/common/social/light/mail.png');
+        }
+      }
+
+      &#phone {
+        background-image: url('../images/common/social/dark/phone.png');
+
+        &:hover {
+          background-image: url('../images/common/social/light/phone.png');
+        }
       }
 
       &#facebook {
@@ -88,14 +104,6 @@
 
         &:hover {
           background-image: url('../images/common/social/light/youtube.png');
-        }
-      }
-
-      &#mail {
-        background-image: url('../images/common/social/dark/mail.png');
-
-        &:hover {
-          background-image: url('../images/common/social/light/mail.png');
         }
       }
     }
