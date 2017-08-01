@@ -1,152 +1,171 @@
 @import "globals.less";
 
 #experience {
-    #page-info {
-        @link-height: 48px;
+  #page-info {
+    @link-height: 48px;
 
-        .link-block {
-            background: @light-theme-color;
-            color: @white;
-            text-align: center;
-            height: @link-height;
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
+    .link-block {
+      background: @light-theme-color;
+      color: @white;
+      text-align: center;
+      height: @link-height;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
 
-            &:hover {
-                background: @dark-theme-color;
-            }
+      &:hover {
+        background: @dark-theme-color;
+      }
 
-            p {
-                line-height: @link-height;
-            }
-        }
+      p {
+        line-height: @link-height;
+      }
+    }
+  }
+
+  .page-section-header {
+    text-align: center;
+  }
+
+  #mission-trips {
+    margin-top: 45px;
+
+    img {
+      @media only screen and (max-width: 950px) {
+        float: none !important;
+        padding: 0 0 10px !important;
+        margin: 0 auto;
+      }
+
+      &.left-aligned {
+        float: left;
+        padding: 0 30px 30px 0;
+      }
+
+      &.right-aligned {
+        float: right;
+        padding: 0 0 30px 30px;
+      }
     }
 
-    #mission-trips {
-        margin-top: 45px;
-
-        .page-section-header {
-            text-align: center;
-        }
-
-        h3 {
-            text-align: center;
-            font-size: 20px;
-            padding-bottom: 5px;
-        }
-
-        #trip-showcase {
-            padding: 45px 0;
-
-            #first {
-                margin-top: 0;
-            }
-        }
+    h3 {
+      text-align: center;
+      font-size: 20px;
+      padding-bottom: 5px;
     }
 
-    #mission-trip-details {
-        .page-section-header {
-            text-align: center;
-        }
+    #trip-showcase {
+      padding: @large-top-margin 0 0;
 
-        #specific-details {
-            padding: 45px 0;
+      .page-sub-section {
+        margin-top: @small-top-margin;
+        min-height: 346px;
 
-            #details-content {
-                text-align: center;
-            }
+        &#first {
+          margin-top: 0;
         }
+      }
+    }
+  }
+
+  #mission-trip-details {
+    #specific-details {
+      padding: 45px 0;
+
+      #details-content {
+        text-align: center;
+      }
+    }
+  }
+
+  #faq {
+    h2 {
+      text-align: center;
     }
 
-    #faq {
-        h2 {
-            text-align: center;
+    .question {
+      padding-bottom: 15px;
+
+      h3 {
+        font-weight: bold;
+        cursor: pointer;
+        display: inline-block;
+
+        &:hover {
+          text-decoration: underline;
         }
 
-        .question {
-            padding-bottom: 15px;
+        img {
+          float: right;
+          margin-top: 6px;
+          margin-left: 9px;
 
-            h3 {
-                font-weight: bold;
-                cursor: pointer;
-                display: inline-block;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-
-                img {
-                    float: right;
-                    margin-top: 6px;
-                    margin-left: 9px;
-
-                    &.down-arrow {
-                        display: none;
-                    }
-                }
-            }
-
-            p {
-                margin-top: 10px;
-                display: none;
-            }
+          &.down-arrow {
+            display: none;
+          }
         }
+      }
+
+      p {
+        margin-top: 10px;
+        display: none;
+      }
+    }
+  }
+
+  #trip-selection {
+    table {
+      margin-top: @large-top-margin;
+      margin-bottom: @small-top-margin;
+
+      .apply-status {
+        padding: 0;
+
+        &:hover {
+          color: @dark-theme-color;
+          text-decoration: underline;
+        }
+
+        .apply-container {
+          height: 38px;
+
+          p {
+            padding: 0 0 0 1em;
+            line-height: 38px;
+          }
+        }
+      }
+
+      .full-status {
+        color: @error-color;
+      }
+    }
+  }
+
+  #apply {
+    padding: 0 @side-container-padding;
+
+    h2 {
+      margin-top: @large-top-margin;
+      padding-bottom: @small-top-margin;
     }
 
-    #trip-selection {
-        table {
-            margin-top: @large-top-margin;
-            margin-bottom: @small-top-margin;
-
-            .apply-status {
-                padding: 0;
-
-                &:hover{
-                    color: @dark-theme-color;
-                    text-decoration: underline;
-                }
-
-                .apply-container {
-                    height: 38px;
-
-                    p {
-                        padding: 0 0 0 1em;
-                        line-height: 38px;
-                    }
-                }
-            }
-
-            .full-status {
-                color: @error-color;
-            }
-        }
+    table {
+      margin-bottom: @small-top-margin;
     }
 
-    #apply {
-        padding:0 @side-container-padding;
-
-        h2 {
-            margin-top: @large-top-margin;
-            padding-bottom: @small-top-margin;
-        }
-
-        table {
-            margin-bottom: @small-top-margin;
-        }
-
-        ul {
-            list-style: disc;
-            padding-left: 60px;
-        }
-
-        #error-message {
-            height: 35px;
-            color: @error-color;
-
-            span {
-                display: none;
-            }
-        }
+    ul {
+      list-style: disc;
+      padding-left: 60px;
     }
+
+    #error-message {
+      height: 35px;
+      color: @error-color;
+
+      span {
+        display: none;
+      }
+    }
+  }
 }
