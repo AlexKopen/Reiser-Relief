@@ -1,5 +1,18 @@
 @import "globals.less";
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: @footer-height;
+
+  @media @medium-screen {
+    margin-bottom: @footer-height-small;
+  }
+}
+
 p, h1, h2, h3, ul, li, div, .container {
   margin: 0;
   padding: 0;
@@ -86,14 +99,9 @@ table {
   }
 }
 
-.page-content {
-  min-height: 320px;
-}
-
 .container {
   width: 100%;
   max-width: 1000px;
-  min-height: 20px;
   margin: 0 auto;
 }
 
