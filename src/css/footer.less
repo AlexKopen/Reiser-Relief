@@ -4,119 +4,127 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: @footer-height;
   text-align: center;
   background: #00514d;
-  padding: @small-top-margin 0px;
   color: @light-theme-color;
 
   @media @small-screen {
-    padding: 25px 0;
+    height: @footer-height-small;
   }
 
-  img {
-    margin: 0 auto;
-  }
-
-  .pure-menu {
-    margin-top: 30px;
+  #footer-container {
+    padding: 75px 0px;
 
     @media @small-screen {
-      display: none;
+      padding: 25px 0;
     }
 
-    ul {
-      li {
-        padding-bottom: 0;
+    img {
+      margin: 0 auto;
+    }
 
-        a {
-          .vertical-separator {
-            color: @light-theme-color;
-          }
+    .pure-menu {
+      margin-top: 30px;
 
-          &.pure-menu-link {
-            color: @light-theme-color;
-            padding: 0;
+      @media @small-screen {
+        display: none;
+      }
+
+      ul {
+        li {
+          padding-bottom: 0;
+
+          a {
+            .vertical-separator {
+              color: @light-theme-color;
+            }
+
+            &.pure-menu-link {
+              color: @light-theme-color;
+              padding: 0;
+
+              &:hover {
+                background-color: @dark-theme-color;
+              }
+            }
 
             &:hover {
-              background-color: @dark-theme-color;
+              color: @white;
             }
           }
 
+        }
+      }
+    }
+
+    #copyright {
+      @media @small-screen {
+        display: none;
+      }
+    }
+
+    #social {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 490px;
+
+      @media @small-screen {
+        display: none;
+      }
+
+      .social-link-block {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        height: 35px;
+
+        &#facebook {
+          background-image: url('../images/common/social/light/facebook.png');
+
           &:hover {
-            color: @white;
+            background-image: url('../images/common/social/white/facebook.png');
           }
         }
 
-      }
-    }
-  }
+        &#twitter {
+          background-image: url('../images/common/social/light/twitter.png');
 
-  #copyright {
-    @media @small-screen {
-      display: none;
-    }
-  }
-
-  #social {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 490px;
-
-    @media @small-screen {
-      display: none;
-    }
-
-    .social-link-block {
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      height: 35px;
-
-      &#facebook {
-        background-image: url('../images/common/social/light/facebook.png');
-
-        &:hover {
-          background-image: url('../images/common/social/white/facebook.png');
+          &:hover {
+            background-image: url('../images/common/social/white/twitter.png');
+          }
         }
-      }
 
-      &#twitter {
-        background-image: url('../images/common/social/light/twitter.png');
+        &#instagram {
+          background-image: url('../images/common/social/light/instagram.png');
 
-        &:hover {
-          background-image: url('../images/common/social/white/twitter.png');
+          &:hover {
+            background-image: url('../images/common/social/white/instagram.png');
+          }
         }
-      }
 
-      &#instagram {
-        background-image: url('../images/common/social/light/instagram.png');
+        &#blog {
+          background-image: url('../images/common/social/light/blogger.png');
 
-        &:hover {
-          background-image: url('../images/common/social/white/instagram.png');
+          &:hover {
+            background-image: url('../images/common/social/white/blogger.png');
+          }
         }
-      }
 
-      &#blog {
-        background-image: url('../images/common/social/light/blogger.png');
+        &#youtube {
+          background-image: url('../images/common/social/light/youtube.png');
 
-        &:hover {
-          background-image: url('../images/common/social/white/blogger.png');
+          &:hover {
+            background-image: url('../images/common/social/white/youtube.png');
+          }
         }
-      }
 
-      &#youtube {
-        background-image: url('../images/common/social/light/youtube.png');
+        &#mail {
+          background-image: url('../images/common/social/light/mail.png');
 
-        &:hover {
-          background-image: url('../images/common/social/white/youtube.png');
-        }
-      }
-
-      &#mail {
-        background-image: url('../images/common/social/light/mail.png');
-
-        &:hover {
-          background-image: url('../images/common/social/white/mail.png');
+          &:hover {
+            background-image: url('../images/common/social/white/mail.png');
+          }
         }
       }
     }
