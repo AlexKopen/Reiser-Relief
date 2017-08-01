@@ -8,7 +8,7 @@ html {
 body {
   margin-bottom: @footer-height;
 
-  @media @medium-screen {
+  @media @small-screen {
     margin-bottom: @footer-height-small;
   }
 }
@@ -141,6 +141,10 @@ table {
       border-bottom: 1px solid @separator-color;
     }
   }
+}
+
+.page-content {
+  padding-bottom: @sub-section-top-margin;
 }
 
 .main-page-content {
