@@ -1,3 +1,4 @@
 {
-  "rootURL": "http://localhost/Reiser-Relief/dist/"
+  "rootURL": "http://localhost/Reiser-Relief/dist/",
+  "production": false
 }

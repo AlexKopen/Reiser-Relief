@@ -13,17 +13,27 @@ $masterScript = 'resources/js/' . $assetsJson['all.min.js'];
 $settings = file_get_contents('admin/settings.json');
 $settingsJson = json_decode($settings, true);
 $rootURL = $settingsJson['rootURL'];
+$production = $settingsJson['production'];
 
 $app = new Silex\Application();
-$app['debug'] = true;
+$app['debug'] = !$production;
 
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__ . '/resources/templates',
-));
+$twigParameters = array(
+    'twig.path' => __DIR__ . '/resources/templates'
+);
 
+if ($production) {
+    $twigParameters['twig.options'] = array(
+        'cache' => __DIR__ . '/cache',
+    );
+}
+
+$app->register(new Silex\Provider\TwigServiceProvider(), $twigParameters);
+
+$app['twig']->addGlobal('RootURL', $rootURL);
+$app['twig']->addGlobal('Production', $production);
 $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
-$app['twig']->addGlobal('RootURL', $rootURL);
 $app['twig']->addGlobal('Year', date("Y"));
 
 $pages = [
