@@ -24,11 +24,13 @@ Run gulp with npm start:
 npm start
 ```
 
-Access index.php, located inside the newly created 'dist' directory, using a web browser.
+Access index.php, located inside the newly created 'dist' directory, using a web browser.  The default root URL is 'http://localhost/Reiser-Relief/dist/'.  This can be changed in admin/settings.json.
 
 Ex. [http://localhost/Reiser-Relief/dist/](http://localhost/Reiser-Relief/dist/)
 
 ### Additional Information
+
+In a production environment, replace the administrative data in 'admin/database.php' with content from a database.
 
 [Silex](http://silex.sensiolabs.org/) is used for the micro-framework with [Twig](http://twig.sensiolabs.org/) as its template engine.
 
