@@ -142,50 +142,55 @@ $app->get('/experience/apply', function () use ($app) {
 });
 
 $app->post('/experience/apply/apply-submit', function (Request $request) use ($app) {
-    $first = $request->get('first');
-    $middle = $request->get('middle');
-    $last = $request->get('last');
-    $addressLine1 = $request->get('address-line-1');
-    $addressLine2 = $request->get('address-line-2');
-    $city = $request->get('city');
-    $state = $request->get('state');
-    $zip = $request->get('zip');
-    $homePhone = $request->get('home-phone');
-    $cellPhone = $request->get('cell-phone');
-    $email = $request->get('email');
-    $month = $request->get('month');
-    $day = $request->get('day');
-    $year = $request->get('year');
-    $nationality = $request->get('nationality');
-    $birthPlace = $request->get('birth-place');
-    $maidenName = $request->get('maiden-name');
-    $maritalStatus = $request->get('marital-status');
-    $gender = $request->get('gender');
-    $passportNumber = $request->get('passport-number');
-    $passportIssueDateMonth = $request->get('passport-issue-date-month');
-    $passportIssueDateDay = $request->get('passport-issue-date-day');
-    $passportIssueDateYear = $request->get('passport-issue-date-year');
-    $passportExpirationDateMonth = $request->get('passport-expiration-date-month');
-    $passportExpirationDateDay = $request->get('passport-expiration-date-day');
-    $passportExpirationDateYear = $request->get('passport-expiration-date-year');
-    $question1 = $request->get('question-1');
-    $question2 = $request->get('question-2');
-    $question3 = $request->get('question-3');
-    $question4 = $request->get('question-4');
-    $question5 = $request->get('question-5');
-    $question6 = $request->get('question-6');
-    $person1Name = $request->get('person-1-name');
-    $person1Relationship = $request->get('person-1-relationship');
-    $person1Phone = $request->get('person-1-phone');
-    $person1Email = $request->get('person-1-email');
-    $person2Name = $request->get('person-2-name');
-    $person2Relationship = $request->get('person-2-relationship');
-    $person2Phone = $request->get('person-2-phone');
-    $person2Email = $request->get('person-2-email');
+    $formData = array(
+        'first' => $request->get('first'),
+        'middle' => $request->get('middle'),
+        'last' => $request->get('last'),
+        'addressLine1' => $request->get('address-line-1'),
+        'addressLine2' => $request->get('address-line-2'),
+        'city' => $request->get('city'),
+        'state' => $request->get('state'),
+        'zip' => $request->get('zip'),
+        'homePhone' => $request->get('home-phone'),
+        'cellPhone' => $request->get('cell-phone'),
+        'email' => $request->get('email'),
+        'month' => $request->get('month'),
+        'day' => $request->get('day'),
+        'year' => $request->get('year'),
+        'nationality' => $request->get('nationality'),
+        'birthPlace' => $request->get('birth-place'),
+        'maidenName' => $request->get('maiden-name'),
+        'maritalStatus' => $request->get('marital-status'),
+        'gender' => $request->get('gender'),
+        'passportNumber' => $request->get('passport-number'),
+        'passportIssueDateMonth' => $request->get('passport-issue-date-month'),
+        'passportIssueDateDay' => $request->get('passport-issue-date-day'),
+        'passportIssueDateYear' => $request->get('passport-issue-date-year'),
+        'passportExpirationDateMonth' => $request->get('passport-expiration-date-month'),
+        'passportExpirationDateDay' => $request->get('passport-expiration-date-day'),
+        'passportExpirationDateYear' => $request->get('passport-expiration-date-year'),
+        'question1' => $request->get('question-1'),
+        'question2' => $request->get('question-2'),
+        'question3' => $request->get('question-3'),
+        'question4' => $request->get('question-4'),
+        'question5' => $request->get('question-5'),
+        'question6' => $request->get('question-6'),
+        'person1Name' => $request->get('person-1-name'),
+        'person1Relationship' => $request->get('person-1-relationship'),
+        'person1Phone' => $request->get('person-1-phone'),
+        'person1Email' => $request->get('person-1-email'),
+        'person2Name' => $request->get('person-2-name'),
+        'person2Relationship' => $request->get('person-2-relationship'),
+        'person2Phone' => $request->get('person-2-phone'),
+        'person2Email' => $request->get('person-2-email')
+    );
+
+    $formSuccess = submitApplication($formData);
 
     return $app['twig']->render('experience/apply-submit.twig', array(
         'Title' => 'Experience - Apply',
-        'DisplayTitle' => 'Experience - Mission Trip Application'
+        'DisplayTitle' => 'Experience - Mission Trip Application',
+        'FormSuccess' => $formSuccess
     ));
 });
 
@@ -204,14 +209,18 @@ $app->get('/contact', function () use ($app) {
 });
 
 $app->post('/contact/contact-submit', function (Request $request) use ($app) {
-    $name = $request->get('name');
-    $email = $request->get('email');
-    $subject = $request->get('subject');
-    $message = $request->get('message');
+    $formData = array('name' => $request->get('name'),
+        'email' => $request->get('email'),
+        'subject' => $request->get('subject'),
+        'message' => $request->get('message')
+    );
+
+    $formSuccess = submitContact($formData);
 
     return $app['twig']->render('contact/contact-submit.twig', array(
         'Title' => 'Contact',
-        'DisplayTitle' => 'Contact Us'
+        'DisplayTitle' => 'Contact Us',
+        'FormSuccess' => $formSuccess
     ));
 });
 

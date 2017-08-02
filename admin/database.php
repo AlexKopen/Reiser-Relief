@@ -105,3 +105,13 @@ $questions = array(
         'Answer' => 'Your trip leader will let you know when to submit a Consent of Treatment Form. If you are a minor, your trip leader will let you know when to submit Forms for Minors.'
     )
 );
+
+function submitApplication($formData)
+{
+    return true;
+}
+
+function submitContact($formData)
+{
+    return true;
+}
