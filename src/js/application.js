@@ -1,34 +1,38 @@
 var application = (function () {
-    'use strict';
+  'use strict';
 
-    function allCheckboxSelected() {
-        $('.pure-checkbox').change(function () {
-            if ($('#apply input:checked').length === 2) {
-                $('#apply button').prop('disabled', false);
-                $('#apply #error-message span').css('display', 'none');
-            } else {
-                $('#apply button').prop('disabled', true);
-            }
-        });
-    }
+  function allCheckboxSelected() {
+    $('input[type=checkbox]').each(function () {
+      $(this).prop('checked', false);
+    });
 
-    function submitApp() {
-        $('#apply #submit-hold').click(function () {
-            if ($('#apply input:checked').length !== 2) {
-                $('#apply #error-message span').css('display', 'block');
-            }
-        });
-    }
+    $('.pure-checkbox').change(function () {
+      if ($('#apply input:checked').length === 2) {
+        $('#apply button').prop('disabled', false);
+        $('#apply #error-message span').css('display', 'none');
+      } else {
+        $('#apply button').prop('disabled', true);
+      }
+    });
+  }
 
-    function init() {
-        allCheckboxSelected();
-        submitApp();
-    }
+  function submitApp() {
+    $('#apply #submit-hold').click(function () {
+      if ($('#apply input:checked').length !== 2) {
+        $('#apply #error-message span').css('display', 'block');
+      }
+    });
+  }
 
-    var applicationModule = {
-        init: init
-    };
+  function init() {
+    allCheckboxSelected();
+    submitApp();
+  }
 
-    return applicationModule;
+  var applicationModule = {
+    init: init
+  };
+
+  return applicationModule;
 
 })();
