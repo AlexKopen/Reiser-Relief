@@ -1,14 +1,16 @@
 {{ include('contact/contact-header.twig') }}
 
-<section id="page-info">
-    <div class="padding-hold">
-        <h1 id="page-info-heading">
-            {% if FormSuccess %}
-                Thank you for reaching out to us.  A team member will be in touch with you shortly.
-            {% else %}
-                There was an error submitting your message.  Please go back and try again.
-            {% endif %}
-        </h1>
+<section>
+    <div id="page-info">
+        <div class="padding-hold">
+            <h1 id="page-info-heading">
+                {% if FormSuccess %}
+                    Thank you for reaching out to us.  A team member will be in touch with you shortly.
+                {% else %}
+                    There was an error submitting your message.  Please go back and try again.
+                {% endif %}
+            </h1>
+        </div>
     </div>
 </section>
 
