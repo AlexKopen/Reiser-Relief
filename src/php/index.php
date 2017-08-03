@@ -34,7 +34,6 @@ $app['twig']->addGlobal('RootURL', $rootURL);
 $app['twig']->addGlobal('Production', $production);
 $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
-$app['twig']->addGlobal('Year', date("Y"));
 
 $pages = [
     "about",
