@@ -4,11 +4,11 @@
     <div id="side-bar">
         <nav>
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"{{ Active == 'Keep the Wheel Turning' ? ' id="active"' : '' }}>
-                    <a href="{{ RootURL }}events/keep-the-wheel-turning">Keep the Wheel Turning</a>
-                </li>
                 <li class="pure-menu-item"{{ Active == 'Give to the Max Day' ? ' id="active"' : '' }}>
                     <a href="{{ RootURL }}events/give-to-the-max-day">Give to the Max Day</a>
+                </li>
+                <li class="pure-menu-item"{{ Active == 'Keep the Wheel Turning' ? ' id="active"' : '' }}>
+                    <a href="{{ RootURL }}events/keep-the-wheel-turning">Keep the Wheel Turning</a>
                 </li>
             </ul>
         </nav>
@@ -18,10 +18,10 @@
             <h2 class="page-section-header">
                 {{ Active }}
             </h2>
-            {% if Active=="Keep the Wheel Turning" %}
-                {{ include('events/keep-the-wheel-turning.twig') }}
-            {% elseif Active=="Give to the Max Day" %}
+            {% if Active=="Give to the Max Day" %}
                 {{ include('events/give-to-the-max-day.twig') }}
+            {% elseif Active=="Keep the Wheel Turning" %}
+                {{ include('events/keep-the-wheel-turning.twig') }}
             {% endif %}
         </div>
     </div>
