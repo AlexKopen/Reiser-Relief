@@ -251,7 +251,7 @@ $app->get('/about', function () use ($app, $rootURL) {
 });
 
 $app->get('/events', function () use ($app, $rootURL) {
-    return $app->redirect($rootURL . 'events/keep-the-wheel-turning');
+    return $app->redirect($rootURL . 'events/give-to-the-max-day');
 });
 
 $app->get('/trips', function () use ($app, $rootURL) {
