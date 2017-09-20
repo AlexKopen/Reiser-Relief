@@ -107,18 +107,18 @@
                 {% for CurrentQuestion in Questions %}
                     <div class="question">
                         <h3>
-                            {{ CurrentQuestion['Question'] }}
+                            {{ CurrentQuestion['question'] }}
                             <img class="right-arrow" src="{{ RootURL }}resources/images/experience/right-arrow.png"
                                  alt="Right arrow">
                             <img class="down-arrow" src="{{ RootURL }}resources/images/experience/down-arrow.png"
                                  alt="Down arrow">
                         </h3>
                         <p>
-                            {% if CurrentQuestion['Link'] is defined %}
-                            <a href="{{ CurrentQuestion['Link'] }}" class="plain-link">
+                            {% if CurrentQuestion['link'] is defined %}
+                            <a href="{{ CurrentQuestion['link'] }}" class="plain-link">
                                 {% endif %}
-                                {{ CurrentQuestion['Answer'] }}
-                                {% if CurrentQuestion['Link'] is defined %}
+                                {{ CurrentQuestion['answer'] }}
+                                {% if CurrentQuestion['link'] is defined %}
                             </a>
                             {% endif %}
                         </p>
