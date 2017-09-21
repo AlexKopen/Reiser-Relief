@@ -102,21 +102,52 @@ $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDispla
 
 $EventsTitle = 'Events';
 
-$app->get('/events/keep-the-wheel-turning', function () use ($app, $EventsTitle) {
-    return $app['twig']->render('events/events.twig', array(
-        'Title' => $EventsTitle,
-        'DisplayTitle' => $EventsTitle,
-        'Active' => 'Keep the Wheel Turning'
-    ));
-});
+if(!$production) {
+    $app->get('/events/keep-the-wheel-turning', function () use ($app, $EventsTitle) {
+        $KTWTText = 'Join us Thursday, April 27, for an excellent evening! Fellowship, games, soft drinks, appetizers, cash bar.  Let’s honor the legacy of our dear departed Father Reiser. Money raised will fund the construction of a kitchen and dining hall at Guardian Angels Primary School in Haiti.';
 
-$app->get('/events/give-to-the-max-day', function () use ($app, $EventsTitle) {
-    return $app['twig']->render('events/events.twig', array(
-        'Title' => $EventsTitle,
-        'DisplayTitle' => $EventsTitle,
-        'Active' => 'Give to the Max Day'
-    ));
-});
+        return $app['twig']->render('events/events.twig', array(
+            'Title' => $EventsTitle,
+            'DisplayTitle' => $EventsTitle,
+            'Active' => 'Keep the Wheel Turning',
+            'EventText' => $KTWTText
+        ));
+    });
+
+    $app->get('/events/give-to-the-max-day', function () use ($app, $EventsTitle) {
+        $GTMDText = 'Thank you to all who attended, mailed in donations, gave on-line, volunteered and provided prayer support for this event. Over $78,000 was raised at our event, and $56,000 online and by mail. In addition we met a $40,000 matching grant for a total of $174,000! All funds will go directly to our partners in Marfranc to rebuild dormitories, the convent, school, and to provide emergency food relief and supplies to the community. Our next fall event will be Friday, November 10, 2017, at the Minneapolis Marriott Northwest in Brooklyn Park, MN.';
+
+        return $app['twig']->render('events/events.twig', array(
+            'Title' => $EventsTitle,
+            'DisplayTitle' => $EventsTitle,
+            'Active' => 'Give to the Max Day',
+            'EventText' => $GTMDText
+        ));
+    });
+
+} else {
+    $app->get('/events/keep-the-wheel-turning', function (Request $request) use ($app, $EventsTitle) {
+        $eventText = json_decode($request->get('admin/events'))[1]->content;
+
+        return $app['twig']->render('events/events.twig', array(
+            'Title' => $EventsTitle,
+            'DisplayTitle' => $EventsTitle,
+            'Active' => 'Keep the Wheel Turning',
+            'EventText' => $eventText
+        ));
+    });
+
+    $app->get('/events/give-to-the-max-day', function (Request $request) use ($app, $EventsTitle) {
+        $eventText = json_decode($request->get('admin/events'))[0]->content;
+
+        return $app['twig']->render('events/events.twig', array(
+            'Title' => $EventsTitle,
+            'DisplayTitle' => $EventsTitle,
+            'Active' => 'Give to the Max Day',
+            'EventText' => $eventText
+        ));
+    });
+}
 
 $questions = array(
     array(
