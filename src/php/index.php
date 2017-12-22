@@ -28,6 +28,37 @@ if ($production) {
     );
 }
 
+function CallAPI($method, $url, $data = false)
+{
+    $curl = curl_init();
+
+    switch ($method) {
+        case "POST":
+            curl_setopt($curl, CURLOPT_POST, 1);
+
+            if ($data)
+                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+            break;
+        case "PUT":
+            curl_setopt($curl, CURLOPT_PUT, 1);
+            break;
+        default:
+            if ($data)
+                $url = sprintf("%s?%s", $url, http_build_query($data));
+    }
+
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+    $result = curl_exec($curl);
+
+    curl_close($curl);
+
+    return $result;
+}
+
+$callAPI = 'CallAPI';
+
 $app->register(new Silex\Provider\TwigServiceProvider(), $twigParameters);
 
 $app['twig']->addGlobal('RootURL', $rootURL);
@@ -43,7 +74,7 @@ $pages = [
     "contact"
 ];
 
-$app->get('/', function () use ($app, $news, $rootURL) {
+$app->get('/', function () use ($app, $production, $news, $rootURL, $callAPI) {
     return $app['twig']->render('home/home.twig', array(
         'Title' => 'Home',
         'SlideShowImages' => array(
@@ -69,7 +100,8 @@ $app->get('/', function () use ($app, $news, $rootURL) {
                 'Link' => $rootURL . 'give'
             )
         ),
-        'News' => $news
+        'News' => !$production ? $news : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/admin/api/news')),true)
+//        'News' => array(json_decode(str_replace(str_split(''), '', $callAPI('GET', 'http://localhost/Reiser-Relief/admin/api/news')), true))
     ));
 });
 
@@ -102,7 +134,7 @@ $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDispla
 
 $EventsTitle = 'Events';
 
-if(!$production) {
+if (!$production) {
     $app->get('/events/keep-the-wheel-turning', function () use ($app, $EventsTitle) {
         $KTWTText = 'Join us Thursday, April 27, for an excellent evening! Fellowship, games, soft drinks, appetizers, cash bar.  Let’s honor the legacy of our dear departed Father Reiser. Money raised will fund the construction of a kitchen and dining hall at Guardian Angels Primary School in Haiti.';
 
