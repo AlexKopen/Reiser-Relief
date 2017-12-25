@@ -22,7 +22,7 @@ $twigParameters = array(
     'twig.path' => __DIR__ . '/resources/templates'
 );
 
-if ($production) {
+if ($production && !(strpos(getenv('HTTP_USER_AGENT'), 'Mac') !== false)) {
     $twigParameters['twig.options'] = array(
         'cache' => __DIR__ . '/cache',
     );
@@ -100,8 +100,7 @@ $app->get('/', function () use ($app, $production, $news, $rootURL, $callAPI) {
                 'Link' => $rootURL . 'give'
             )
         ),
-        'News' => !$production ? $news : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/admin/api/news')),true)
-//        'News' => array(json_decode(str_replace(str_split(''), '', $callAPI('GET', 'http://localhost/Reiser-Relief/admin/api/news')), true))
+        'News' => !$production ? $news : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/news')),true)
     ));
 });
 
