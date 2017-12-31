@@ -134,8 +134,8 @@ $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDispla
 $EventsTitle = 'Events';
 
 $app->get('/events/keep-the-wheel-turning', function () use ($app, $production, $callAPI, $KTWTText, $EventsTitle) {
-//    $eventText = !$production ? $KTWTText : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/ktwt')), true)['content'];
-    $eventText = 'test';
+    $eventText = !$production ? $KTWTText : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/ktwt')), true)[0];
+    //$eventText = 'test';
 
     return $app['twig']->render('events/events.twig', array(
         'Title' => $EventsTitle,
@@ -332,14 +332,14 @@ if (!$production) {
     });
 }
 
-//if (!$app['debug']) {
-//    $app->error(function () use ($app) {
-//        return $app['twig']->render('common/404.twig', array(
-//            'Title' => 'Not Found',
-//            'DisplayTitle' => 'Not Found'
-//        ));
-//    });
-//}
+if (!$app['debug']) {
+    $app->error(function () use ($app) {
+        return $app['twig']->render('common/404.twig', array(
+            'Title' => 'Not Found',
+            'DisplayTitle' => 'Not Found'
+        ));
+    });
+}
 
 //Redirects
 //$app->get('/{wildCard}/', function ($wildCard) use ($app, $rootURL, $pages) {
