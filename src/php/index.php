@@ -134,8 +134,7 @@ $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDispla
 $EventsTitle = 'Events';
 
 $app->get('/events/keep-the-wheel-turning', function () use ($app, $production, $callAPI, $KTWTText, $EventsTitle) {
-    $eventText = !$production ? $KTWTText : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/ktwt')), true)[0];
-    //$eventText = 'test';
+    $eventText = !$production ? $KTWTText : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/ktwt')), true)[0]['content'];
 
     return $app['twig']->render('events/events.twig', array(
         'Title' => $EventsTitle,
@@ -146,8 +145,7 @@ $app->get('/events/keep-the-wheel-turning', function () use ($app, $production, 
 });
 
 $app->get('/events/give-to-the-max-day', function () use ($app, $production, $callAPI, $GTMDText, $EventsTitle) {
-//    $eventText = !$production ? $GTMDText : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/ktwt')), true)['content'];
-    $eventText = 'test';
+    $eventText = !$production ? $GTMDText : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/gttmd')), true)[0]['content'];
 
     return $app['twig']->render('events/events.twig', array(
         'Title' => $EventsTitle,
