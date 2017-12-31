@@ -260,7 +260,8 @@ $app->get('/experience/trip-dates', function () use ($app, $production, $callAPI
 $app->get('/experience/apply', function () use ($app) {
     return $app['twig']->render('experience/apply.twig', array(
         'Title' => 'Experience - Apply',
-        'DisplayTitle' => 'Experience - Mission Trip Application'
+        'DisplayTitle' => 'Experience - Mission Trip Application',
+        'TripId' => $_GET['id']
     ));
 });
 
@@ -277,7 +278,7 @@ if (!$production) {
     });
 
 } else {
-    $app->post('/experience/apply/apply-submit', function (Request $request) use ($app) {
+    $app->post('/experience/apply/apply-submit', function () use ($app) {
 
         $response = $request->post('/admin/applications');
 
@@ -305,32 +306,17 @@ $app->get('/contact', function () use ($app) {
     ));
 });
 
-if (!$production) {
-    $app->post('/contact/contact-submit', function () use ($app) {
+$app->post('/contact/contact-submit', function () use ($app, $callAPI, $production) {
 
-        $formSuccess = true;
+    $formSuccess = $production ? (json_decode($callAPI('POST', 'http://localhost/Reiser-Relief/dist/admin/api/contact-submit'), true)['status'] == 'ok' ? true : false) : true;
 
-        return $app['twig']->render('contact/contact-submit.twig', array(
-            'Title' => 'Contact',
-            'DisplayTitle' => 'Contact Us',
-            'FormSuccess' => $formSuccess
-        ));
-    });
+    return $app['twig']->render('contact/contact-submit.twig', array(
+        'Title' => 'Contact',
+        'DisplayTitle' => 'Contact Us',
+        'FormSuccess' => $formSuccess
+    ));
+});
 
-} else {
-    $app->post('/contact/contact-submit', function (Request $request) use ($app) {
-
-        $response = $request->post('/admin/contact');
-
-        $formSuccess = $response['status'];
-
-        return $app['twig']->render('contact/contact-submit.twig', array(
-            'Title' => 'Contact',
-            'DisplayTitle' => 'Contact Us',
-            'FormSuccess' => $formSuccess
-        ));
-    });
-}
 
 if (!$app['debug']) {
     $app->error(function () use ($app) {
