@@ -22,11 +22,11 @@ $twigParameters = array(
     'twig.path' => __DIR__ . '/resources/templates'
 );
 
-if ($production && !(strpos(getenv('HTTP_USER_AGENT'), 'Mac') !== false)) {
-    $twigParameters['twig.options'] = array(
-        'cache' => __DIR__ . '/cache',
-    );
-}
+//if ($production && !(strpos(getenv('HTTP_USER_AGENT'), 'Mac') !== false)) {
+//    $twigParameters['twig.options'] = array(
+//        'cache' => __DIR__ . '/cache',
+//    );
+//}
 
 function CallAPI($method, $url, $data = false)
 {
@@ -248,10 +248,12 @@ $app->get('/experience', function () use ($app, $questions) {
     ));
 });
 
-$app->get('/experience/trip-dates', function () use ($app) {
+$app->get('/experience/trip-dates', function () use ($app, $production, $callAPI, $trips) {
+    $allTrips = !$production ? $trips : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/trip-dates')), true);
     return $app['twig']->render('experience/trip-dates.twig', array(
         'Title' => 'Experience - Mission Trip Selection',
-        'DisplayTitle' => 'Experience - Mission Trip Selection'
+        'DisplayTitle' => 'Experience - Mission Trip Selection',
+        'Trips' => $allTrips
     ));
 });
 
