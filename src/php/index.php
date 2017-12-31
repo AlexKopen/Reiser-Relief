@@ -265,32 +265,16 @@ $app->get('/experience/apply', function () use ($app) {
     ));
 });
 
-if (!$production) {
-    $app->post('/experience/apply/apply-submit', function () use ($app) {
+$app->post('/experience/apply/apply-submit', function () use ($app, $callAPI, $production) {
 
-        $formSuccess = true;
+    $formSuccess = $production ? (json_decode($callAPI('POST', 'http://localhost/Reiser-Relief/dist/admin/api/apply-submit'), true)['status'] == 'ok' ? true : false) : true;
 
-        return $app['twig']->render('experience/apply-submit.twig', array(
-            'Title' => 'Experience - Apply',
-            'DisplayTitle' => 'Experience - Mission Trip Application',
-            'FormSuccess' => $formSuccess
-        ));
-    });
-
-} else {
-    $app->post('/experience/apply/apply-submit', function () use ($app) {
-
-        $response = $request->post('/admin/applications');
-
-        $formSuccess = $response['status'];
-
-        return $app['twig']->render('experience/apply-submit.twig', array(
-            'Title' => 'Experience - Apply',
-            'DisplayTitle' => 'Experience - Mission Trip Application',
-            'FormSuccess' => $formSuccess
-        ));
-    });
-}
+    return $app['twig']->render('contact/contact-submit.twig', array(
+        'Title' => 'Experience - Apply',
+        'DisplayTitle' => 'Experience - Mission Trip Application',
+        'FormSuccess' => $formSuccess
+    ));
+});
 
 $app->get('/give', function () use ($app) {
     return $app['twig']->render('give/give.twig', array(
