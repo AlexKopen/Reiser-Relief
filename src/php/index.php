@@ -270,11 +270,10 @@ $app->get('/experience/apply', function () use ($app, $rootURL) {
 });
 
 $app->post('/experience/apply/apply-submit', function () use ($app, $callAPI, $production) {
-
     if (!isset($_GET['id'])) {
         $formSuccess = false;
     } else {
-        $_POST['id'] = $_GET['id'];
+        $_POST['trip-id'] = $_GET['id'];
         $formSuccess = $production ? (json_decode($callAPI('POST', 'http://localhost/Reiser-Relief/dist/admin/api/apply-submit', $_POST), true)['status'] == 'ok' ? true : false) : true;
     }
 
