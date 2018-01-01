@@ -267,9 +267,9 @@ $app->get('/experience/apply', function () use ($app) {
 
 $app->post('/experience/apply/apply-submit', function () use ($app, $callAPI, $production) {
 
-    $formSuccess = $production ? (json_decode($callAPI('POST', 'http://localhost/Reiser-Relief/dist/admin/api/apply-submit'), true)['status'] == 'ok' ? true : false) : true;
+    $formSuccess = $production ? (json_decode($callAPI('POST', 'http://localhost/Reiser-Relief/dist/admin/api/apply-submit', $_POST), true)['status'] == 'ok' ? true : false) : true;
 
-    return $app['twig']->render('contact/contact-submit.twig', array(
+    return $app['twig']->render('contact/apply-submit.twig', array(
         'Title' => 'Experience - Apply',
         'DisplayTitle' => 'Experience - Mission Trip Application',
         'FormSuccess' => $formSuccess
@@ -292,7 +292,7 @@ $app->get('/contact', function () use ($app) {
 
 $app->post('/contact/contact-submit', function () use ($app, $callAPI, $production) {
 
-    $formSuccess = $production ? (json_decode($callAPI('POST', 'http://localhost/Reiser-Relief/dist/admin/api/contact-submit'), true)['status'] == 'ok' ? true : false) : true;
+    $formSuccess = $production ? (json_decode($callAPI('POST', 'http://localhost/Reiser-Relief/dist/admin/api/contact-submit', $_POST), true)['status'] == 'ok' ? true : false) : true;
 
     return $app['twig']->render('contact/contact-submit.twig', array(
         'Title' => 'Contact',
