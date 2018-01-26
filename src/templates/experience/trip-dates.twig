@@ -17,10 +17,10 @@
                     {% for CurrentTrip in Trips %}
                         <tr>
                             <td>{{ CurrentTrip['date']|date("l, F jS, Y") }}</td>
-                            <td>{{ CurrentTrip['trip_leader'] }}</td>
+                            <td>{{ CurrentTrip['tripLeader'] }}</td>
                             {% if CurrentTrip['status'] == 'Open' %}
                                 <td class="apply-status">
-                                    <a href="{{ RootURL }}experience/apply?id={{ CurrentTrip['id'] }}">
+                                    <a href="/experience/apply?id={{ CurrentTrip['id'] }}">
                                         <div class="apply-container">
                                             <p>
                                                 Apply

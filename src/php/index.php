@@ -91,7 +91,7 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Link' => '/give'
             )
         ),
-        'News' => json_decode(json_encode($callAPI('GET', 'http://api.reiserrelief.org/public/news')), true)
+        'News' => json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/news'), true)
     ));
 });
 
@@ -125,7 +125,7 @@ $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDispla
 $EventsTitle = 'Events';
 
 $app->get('/events/keep-the-wheel-turning', function () use ($app, $callAPI, $EventsTitle) {
-    $eventText = json_decode(json_encode($callAPI('GET', 'http://api.reiserrelief.org/public/events/ktwt')),
+    $eventText = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/events/ktwt'),
         true)[0]['content'];
 
     return $app['twig']->render('events/events.twig', array(
@@ -137,7 +137,7 @@ $app->get('/events/keep-the-wheel-turning', function () use ($app, $callAPI, $Ev
 });
 
 $app->get('/events/give-to-the-max-day', function () use ($app, $callAPI, $EventsTitle) {
-    $eventText = json_decode(json_encode($callAPI('GET', 'http://api.reiserrelief.org/public/events/ktwt')),
+    $eventText = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/events/gttmd'),
         true)[0]['content'];
 
     return $app['twig']->render('events/events.twig', array(
@@ -242,7 +242,7 @@ $app->get('/experience', function () use ($app, $questions) {
 });
 
 $app->get('/experience/trip-dates', function () use ($app, $callAPI) {
-    $allTrips = json_decode(json_encode($callAPI('GET', 'http://api.reiserrelief.org/public/trip-dates')), true);
+    $allTrips = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/trip-dates'), true);
     return $app['twig']->render('experience/trip-dates.twig', array(
         'Title' => 'Experience - Mission Trip Selection',
         'DisplayTitle' => 'Experience - Mission Trip Selection',
@@ -266,7 +266,7 @@ $app->post('/experience/apply/apply-submit', function () use ($app, $callAPI) {
     if (!isset($_GET['id'])) {
         $formSuccess = false;
     } else {
-        $_POST['trip-id'] = $_GET['id'];
+        $_POST['tripId'] = $_GET['id'];
         $formSuccess = $callAPI('POST', 'http://api.reiserrelief.org/public/secured/application', $_POST);
     }
 
