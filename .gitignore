@@ -6,3 +6,5 @@ src/php/silex/
 composer.lock
 npm-debug.log
 .idea/
+admin/
+package-lock.json
