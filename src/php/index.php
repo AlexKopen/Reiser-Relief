@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
+
 use Symfony\Component\HttpFoundation\Request;
 
 $assets = file_get_contents('assets.json');
@@ -9,17 +10,15 @@ $masterStylesheet = 'resources/css/' . $assetsJson['style.css'];
 $masterScript = 'resources/js/' . $assetsJson['all.min.js'];
 
 $app = new Silex\Application();
-$app['debug'] = true;
+$app['debug'] = false;
 
 $twigParameters = array(
     'twig.path' => __DIR__ . '/resources/templates'
 );
 
-//if ($production && !(strpos(getenv('HTTP_USER_AGENT'), 'Mac') !== false)) {
-//    $twigParameters['twig.options'] = array(
-//        'cache' => __DIR__ . '/cache',
-//    );
-//}
+$twigParameters['twig.options'] = array(
+    'cache' => __DIR__ . '/cache',
+);
 
 function CallAPI($method, $url, $data = false)
 {
@@ -56,14 +55,6 @@ $app->register(new Silex\Provider\TwigServiceProvider(), $twigParameters);
 
 $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
-
-//$pages = [
-//    "about",
-//    "events",
-//    "experience",
-//    "give",
-//    "contact"
-//];
 
 $app->get('/', function () use ($app, $callAPI) {
     return $app['twig']->render('home/home.twig', array(
@@ -313,20 +304,6 @@ if (!$app['debug']) {
 }
 
 //Redirects
-//$app->get('/{wildCard}/', function ($wildCard) use ($app, $rootURL, $pages) {
-//    $wildCard = strtolower($wildCard);
-//    if (in_array($wildCard, $pages)) {
-//        return $app->redirect($rootURL . $wildCard);
-//    }
-//    else {
-//        return $app['twig']->render('common/404.twig', array(
-//            'Title' => 'Not Found',
-//            'DisplayTitle' => 'Not Found'
-//        ));
-//    }
-//
-//})->assert('wildCard', '.*');
-
 $app->get('/about', function () use ($app) {
     return $app->redirect('/about/our-work');
 });
