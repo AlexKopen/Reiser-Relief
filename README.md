@@ -1,36 +1,37 @@
-## Reiser-Relief
+# Reiser-Relief
 
-Source code for [reiserrelief.org](http://reiserrelief.org)
+Source code for the front-end of [reiserrelief.org](http://reiserrelief.org)
 
-### Installation
+## Installation
 
-Clone the repository into an environment running PHP 7.0+.
-
-Install the necessary node modules with [npm](https://www.npmjs.com/):
+Install the necessary node modules with [npm](https://www.npmjs.com/)
 
 ```
 npm install
 ```
 
-Install the necessary PHP dependencies with [composer](https://getcomposer.org/):
+Install the necessary PHP dependencies with [composer](https://getcomposer.org/)
 ```
 composer install
 ```
 
-### Usage
+## Usage
 
-Run gulp with npm start:
+Run gulp with npm start
 ```
 npm start
 ```
 
-Access index.php, located inside the newly created 'dist' directory, using a web browser.  The default root URL is 'http://localhost/Reiser-Relief/dist/'.  This can be changed in admin/settings.json.
+Run the server
 
-Ex. [http://localhost/Reiser-Relief/dist/](http://localhost/Reiser-Relief/dist/)
+```
+php -S localhost:8000 -t dist
+```
 
-### Additional Information
 
-In a production environment, replace the administrative data in 'admin/database.php' with content from a database.
+View the site at [http://localhost:8000](http://localhost:8000)
+
+## Additional Information
 
 [Silex](http://silex.sensiolabs.org/) is used for the micro-framework with [Twig](http://twig.sensiolabs.org/) as its template engine.
 
