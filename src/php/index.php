@@ -3,20 +3,13 @@
 require_once __DIR__ . '/vendor/autoload.php';
 use Symfony\Component\HttpFoundation\Request;
 
-require_once __DIR__ . '/admin/database.php';
-
 $assets = file_get_contents('assets.json');
 $assetsJson = json_decode($assets, true);
 $masterStylesheet = 'resources/css/' . $assetsJson['style.css'];
 $masterScript = 'resources/js/' . $assetsJson['all.min.js'];
 
-$settings = file_get_contents('admin/settings.json');
-$settingsJson = json_decode($settings, true);
-$rootURL = $settingsJson['rootURL'];
-$production = $settingsJson['production'];
-
 $app = new Silex\Application();
-$app['debug'] = !$production;
+$app['debug'] = true;
 
 $twigParameters = array(
     'twig.path' => __DIR__ . '/resources/templates'
@@ -61,20 +54,18 @@ $callAPI = 'CallAPI';
 
 $app->register(new Silex\Provider\TwigServiceProvider(), $twigParameters);
 
-$app['twig']->addGlobal('RootURL', $rootURL);
-$app['twig']->addGlobal('Production', $production);
 $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
 
-$pages = [
-    "about",
-    "events",
-    "experience",
-    "give",
-    "contact"
-];
+//$pages = [
+//    "about",
+//    "events",
+//    "experience",
+//    "give",
+//    "contact"
+//];
 
-$app->get('/', function () use ($app, $production, $news, $rootURL, $callAPI) {
+$app->get('/', function () use ($app, $callAPI) {
     return $app['twig']->render('home/home.twig', array(
         'Title' => 'Home',
         'SlideShowImages' => array(
@@ -83,24 +74,24 @@ $app->get('/', function () use ($app, $production, $news, $rootURL, $callAPI) {
                 'Alt' => 'Experience',
                 'Header' => 'Visit Haiti',
                 'Description' => 'Experience the opportunity of a lifetime by applying for a mission trip to Haiti',
-                'Link' => $rootURL . 'experience'
+                'Link' => '/experience'
             ),
             array(
                 'Url' => 'work-slide.jpg',
                 'Alt' => 'Our Work',
                 'Header' => 'What we Do',
                 'Description' => 'Learn more about Reiser Relief including our work, upcoming events, and ways you can help',
-                'Link' => $rootURL . 'about'
+                'Link' => '/about'
             ),
             array(
                 'Url' => 'support-slide.jpg',
                 'Alt' => 'Support Us',
                 'Header' => 'Give Today',
                 'Description' => 'Help those in need with a donation which will provide water, food, care, and so much more',
-                'Link' => $rootURL . 'give'
+                'Link' => '/give'
             )
         ),
-        'News' => !$production ? $news : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/news')), true)
+        'News' => json_decode(json_encode($callAPI('GET', 'http://api.reiserrelief.org/public/news')), true)
     ));
 });
 
@@ -133,8 +124,9 @@ $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDispla
 
 $EventsTitle = 'Events';
 
-$app->get('/events/keep-the-wheel-turning', function () use ($app, $production, $callAPI, $KTWTText, $EventsTitle) {
-    $eventText = !$production ? $KTWTText : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/ktwt')), true)[0]['content'];
+$app->get('/events/keep-the-wheel-turning', function () use ($app, $callAPI, $EventsTitle) {
+    $eventText = json_decode(json_encode($callAPI('GET', 'http://api.reiserrelief.org/public/events/ktwt')),
+        true)[0]['content'];
 
     return $app['twig']->render('events/events.twig', array(
         'Title' => $EventsTitle,
@@ -144,8 +136,9 @@ $app->get('/events/keep-the-wheel-turning', function () use ($app, $production, 
     ));
 });
 
-$app->get('/events/give-to-the-max-day', function () use ($app, $production, $callAPI, $GTMDText, $EventsTitle) {
-    $eventText = !$production ? $GTMDText : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/gttmd')), true)[0]['content'];
+$app->get('/events/give-to-the-max-day', function () use ($app, $callAPI, $EventsTitle) {
+    $eventText = json_decode(json_encode($callAPI('GET', 'http://api.reiserrelief.org/public/events/ktwt')),
+        true)[0]['content'];
 
     return $app['twig']->render('events/events.twig', array(
         'Title' => $EventsTitle,
@@ -248,8 +241,8 @@ $app->get('/experience', function () use ($app, $questions) {
     ));
 });
 
-$app->get('/experience/trip-dates', function () use ($app, $production, $callAPI, $trips) {
-    $allTrips = !$production ? $trips : json_decode(json_decode($callAPI('GET', 'http://localhost/Reiser-Relief/dist/admin/api/trip-dates')), true);
+$app->get('/experience/trip-dates', function () use ($app, $callAPI) {
+    $allTrips = json_decode(json_encode($callAPI('GET', 'http://api.reiserrelief.org/public/trip-dates')), true);
     return $app['twig']->render('experience/trip-dates.twig', array(
         'Title' => 'Experience - Mission Trip Selection',
         'DisplayTitle' => 'Experience - Mission Trip Selection',
@@ -257,7 +250,7 @@ $app->get('/experience/trip-dates', function () use ($app, $production, $callAPI
     ));
 });
 
-$app->get('/experience/apply', function () use ($app, $rootURL) {
+$app->get('/experience/apply', function () use ($app) {
     if (isset($_GET['id'])) {
         return $app['twig']->render('experience/apply.twig', array(
             'Title' => 'Experience - Apply',
@@ -265,16 +258,16 @@ $app->get('/experience/apply', function () use ($app, $rootURL) {
             'TripId' => $_GET['id']
         ));
     } else {
-        return $app->redirect($rootURL . 'experience/trip-dates');
+        return $app->redirect('/experience/trip-dates');
     }
 });
 
-$app->post('/experience/apply/apply-submit', function () use ($app, $callAPI, $production) {
+$app->post('/experience/apply/apply-submit', function () use ($app, $callAPI) {
     if (!isset($_GET['id'])) {
         $formSuccess = false;
     } else {
         $_POST['trip-id'] = $_GET['id'];
-        $formSuccess = $production ? (json_decode($callAPI('POST', 'http://localhost/Reiser-Relief/dist/admin/api/apply-submit', $_POST), true)['status'] == 'ok' ? true : false) : true;
+        $formSuccess = $callAPI('POST', 'http://api.reiserrelief.org/public/secured/application', $_POST);
     }
 
     return $app['twig']->render('experience/apply-submit.twig', array(
@@ -298,9 +291,9 @@ $app->get('/contact', function () use ($app) {
     ));
 });
 
-$app->post('/contact/contact-submit', function () use ($app, $callAPI, $production) {
+$app->post('/contact/contact-submit', function () use ($app, $callAPI) {
 
-    $formSuccess = $production ? (json_decode($callAPI('POST', 'http://localhost/Reiser-Relief/dist/admin/api/contact-submit', $_POST), true)['status'] == 'ok' ? true : false) : true;
+    $formSuccess = $callAPI('POST', 'http://api.reiserrelief.org/public/secured/contact', $_POST);
 
     return $app['twig']->render('contact/contact-submit.twig', array(
         'Title' => 'Contact',
@@ -334,16 +327,16 @@ if (!$app['debug']) {
 //
 //})->assert('wildCard', '.*');
 
-$app->get('/about', function () use ($app, $rootURL) {
-    return $app->redirect($rootURL . 'about/our-work');
+$app->get('/about', function () use ($app) {
+    return $app->redirect('/about/our-work');
 });
 
-$app->get('/events', function () use ($app, $rootURL) {
-    return $app->redirect($rootURL . 'events/give-to-the-max-day');
+$app->get('/events', function () use ($app) {
+    return $app->redirect('/events/give-to-the-max-day');
 });
 
-$app->get('/trips', function () use ($app, $rootURL) {
-    return $app->redirect($rootURL . 'experience');
+$app->get('/trips', function () use ($app) {
+    return $app->redirect('/experience');
 });
 
 $app->run();
