@@ -258,7 +258,7 @@ $app->post('/experience/apply/apply-submit', function () use ($app, $callAPI) {
         $formSuccess = false;
     } else {
         $_POST['tripId'] = $_GET['id'];
-        $formSuccess = $callAPI('POST', 'http://api.reiserrelief.org/public/secured/application', $_POST);
+        $formSuccess = $callAPI('POST', 'http://api.reiserrelief.org/public/application', $_POST);
     }
 
     return $app['twig']->render('experience/apply-submit.twig', array(
@@ -284,7 +284,7 @@ $app->get('/contact', function () use ($app) {
 
 $app->post('/contact/contact-submit', function () use ($app, $callAPI) {
 
-    $formSuccess = $callAPI('POST', 'http://api.reiserrelief.org/public/secured/contact', $_POST);
+    $formSuccess = $callAPI('POST', 'http://api.reiserrelief.org/public/contact', $_POST);
 
     return $app['twig']->render('contact/contact-submit.twig', array(
         'Title' => 'Contact',
