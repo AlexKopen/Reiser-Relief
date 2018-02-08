@@ -127,14 +127,14 @@ $app->get('/events/keep-the-wheel-turning', function () use ($app, $callAPI, $Ev
     ));
 });
 
-$app->get('/events/give-to-the-max-day', function () use ($app, $callAPI, $EventsTitle) {
+$app->get('/events/fall-gala', function () use ($app, $callAPI, $EventsTitle) {
     $eventText = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/events/gttmd'),
         true)[0]['content'];
 
     return $app['twig']->render('events/events.twig', array(
         'Title' => $EventsTitle,
         'DisplayTitle' => $EventsTitle,
-        'Active' => 'Give to the Max Day',
+        'Active' => 'Fall Gala',
         'EventText' => $eventText
     ));
 });
@@ -309,7 +309,7 @@ $app->get('/about', function () use ($app) {
 });
 
 $app->get('/events', function () use ($app) {
-    return $app->redirect('/events/give-to-the-max-day');
+    return $app->redirect('/events/fall-gala');
 });
 
 $app->get('/trips', function () use ($app) {
