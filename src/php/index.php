@@ -69,9 +69,9 @@ $app->get('/', function () use ($app, $callAPI) {
             ),
             array(
                 'Url' => 'work-slide.jpg',
-                'Alt' => 'Our Work',
+                'Alt' => 'Our Core Values',
                 'Header' => 'What we Do',
-                'Description' => 'Learn more about Reiser Relief including our work, upcoming events, and ways you can help',
+                'Description' => 'Learn more about Reiser Relief including our core values, upcoming events, and ways you can help',
                 'Link' => '/about'
             ),
             array(
@@ -89,11 +89,11 @@ $app->get('/', function () use ($app, $callAPI) {
 $AboutTitle = 'About';
 $AboutDisplayTitle = 'About Us';
 
-$app->get('/about/our-work', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
+$app->get('/about/our-core-values', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
     return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
-        'Active' => 'Our Work'
+        'Active' => 'Our Core Values'
     ));
 });
 
@@ -305,7 +305,7 @@ if (!$app['debug']) {
 
 //Redirects
 $app->get('/about', function () use ($app) {
-    return $app->redirect('/about/our-work');
+    return $app->redirect('/about/our-core-values');
 });
 
 $app->get('/events', function () use ($app) {

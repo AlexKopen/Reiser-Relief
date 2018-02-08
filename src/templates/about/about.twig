@@ -4,8 +4,8 @@
     <div id="side-bar">
         <nav>
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"{{ Active == 'Our Work' ? ' id="active"' : '' }}>
-                    <a href="/about/our-work">Our Work</a>
+                <li class="pure-menu-item"{{ Active == 'Our Core Values' ? ' id="active"' : '' }}>
+                    <a href="/about/our-core-values">Our Core Values</a>
                 </li>
                 <li class="pure-menu-item"{{ Active == 'Our Board' ? ' id="active"' : '' }}>
                     <a href="/about/our-board">Our Board</a>
@@ -21,8 +21,8 @@
             <h2 class="page-section-header">
                 {{ Active }}
             </h2>
-            {% if Active=="Our Work" %}
-                {{ include('about/our-work.twig') }}
+            {% if Active=="Our Core Values" %}
+                {{ include('about/our-core-values.twig') }}
             {% elseif Active=="Our Board" %}
                 {{ include('about/our-board.twig') }}
             {% elseif Active=="Our Founder" %}
