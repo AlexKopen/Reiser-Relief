@@ -4,14 +4,10 @@
     <div id="page-info">
         <div class="padding-hold">
             <h1 id="page-info-heading">
-                Experience the opportunity of a lifetime.
+                Live out God's mission through service.
             </h1>
             <p id="page-info-details">
-                Mission trips allow us to connect with Haitians, our teammates and with God, learn about the needs of
-                the
-                poor, and transform our hearts. During and after a mission trip, God will lead you on a path to respond
-                to
-                the needs of others. Your heart will never be the same.
+                Walking and working together, we seek to accompany our companions in Christ.
             </p>
             <div class="link-block">
                 <a href="/experience/trip-dates">
@@ -75,7 +71,7 @@
                     <div id="details-content" class="pure-g">
                         <div class="pure-u-1-1 pure-u-md-1-2">
                             <h3>Cost</h3>
-                            <p>$850</p>
+                            <p>$875</p>
                         </div>
                         <div class="pure-u-1-1 pure-u-md-1-2">
                             <h3>Trip Length</h3>
@@ -114,13 +110,7 @@
                                  alt="Down arrow">
                         </h3>
                         <p>
-                            {% if CurrentQuestion['link'] is defined %}
-                            <a href="{{ CurrentQuestion['link'] }}" class="plain-link">
-                                {% endif %}
-                                {{ CurrentQuestion['answer'] }}
-                                {% if CurrentQuestion['link'] is defined %}
-                            </a>
-                            {% endif %}
+                            {{ CurrentQuestion['answer'] | raw }}
                         </p>
                     </div>
                 {% endfor %}

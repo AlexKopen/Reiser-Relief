@@ -64,7 +64,7 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Url' => 'experience-slide.jpg',
                 'Alt' => 'Experience',
                 'Header' => 'Visit Haiti',
-                'Description' => 'Experience the opportunity of a lifetime by applying for a mission trip to Haiti',
+                'Description' => 'Live out God\'s mission through service by applying for a mission trip to Haiti',
                 'Link' => '/experience'
             ),
             array(
@@ -151,8 +151,7 @@ $questions = array(
     ),
     array(
         'question' => 'What do I pack?',
-        'answer' => 'Refer to our packing list.',
-        'link' => 'https://drive.google.com/file/d/0By871gytPLeeMmhsdEJDc2NOMHc/view?usp=sharing'
+        'answer' => '<a href="https://drive.google.com/file/d/0By871gytPLeeMmhsdEJDc2NOMHc/view?usp=sharing" class="plain-link">Refer to our packing list</a>.'
     ),
     array(
         'question' => 'How can I raise support?',
@@ -188,7 +187,7 @@ $questions = array(
     ),
     array(
         'question' => 'Where do we stay?',
-        'answer' => 'We stay in one of the guesthouses operated by Healing Haiti in Port Au Prince, 15 minutes from the airport. The houses have air-conditioned bedrooms and bathrooms with showers and flushing toilets. The bedrooms have bunk beds, pillows and blankets. We eat family style in a dining room. A 6-foot security wall surrounds the houses.'
+        'answer' => 'We stay in guesthouses in Port Au Prince with security walls. There are air-conditioned bedrooms with bunk beds, pillows and blankets. Bathrooms have showers and flushing toilets. We eat family style in a dining room.'
     ),
     array(
         'question' => 'What kind of food will we be eating?',
@@ -220,7 +219,7 @@ $questions = array(
     ),
     array(
         'question' => 'Is there additional paperwork?',
-        'answer' => 'Your trip leader will let you know when to submit a Consent of Treatment Form. If you are a minor, your trip leader will let you know when to submit Forms for Minors.'
+        'answer' => 'Your trip leader will let you know when to submit a <a href="https://drive.google.com/file/d/0By871gytPLeeM25NdEdpaDFIQVU/view?usp=sharing" class="plain-link">Consent of Treatment Form</a>. If you are a minor, your trip leader will let you know when to submit Forms for Minors.'
     )
 );
 
