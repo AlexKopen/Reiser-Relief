@@ -8,7 +8,6 @@ var uglify = require('gulp-uglify');
 var merge = require('merge-stream');
 
 var sourcePaths = {
-  admin: 'admin/**/*',
   dist: 'dist',
   framework: 'src/php/silex/vendor/**/*',
   htaccess: '.htaccess',
@@ -16,11 +15,12 @@ var sourcePaths = {
   index: 'src/php/index.php',
   scripts: 'src/js/**/*',
   stylesheets: 'src/css/**/*',
-  templates: 'src/templates/**/*'
+  templates: 'src/templates/**/*',
+  settings: 'settings.yaml',
+  spyc: 'src/php/Spyc.php'
 };
 
 var destinationPaths = {
-  admin: 'dist/admin',
   assets: 'dist',
   framework: 'dist/vendor',
   htaccess: 'dist',
@@ -31,7 +31,9 @@ var destinationPaths = {
   masterStylesheet: 'dist/resources/css/style-*.css',
   scripts: 'dist/resources/js',
   stylesheets: 'dist/resources/css',
-  templatesDestination: 'dist/resources/templates'
+  templatesDestination: 'dist/resources/templates',
+  settings: 'dist',
+  spyc: 'dist'
 };
 
 gulp.task('javascript', ['deleteMasterScript'], function () {
@@ -92,16 +94,19 @@ gulp.task('images', ['deleteImages'], function () {
 });
 
 gulp.task('copyResources', function () {
-  var admin = gulp.src(sourcePaths.admin)
-    .pipe(gulp.dest(destinationPaths.admin));
-
   var framework = gulp.src(sourcePaths.framework)
     .pipe(gulp.dest(destinationPaths.framework));
 
   var htaccess = gulp.src(sourcePaths.htaccess)
     .pipe(gulp.dest(destinationPaths.htaccess));
 
-  return merge(framework, htaccess);
+  var settings = gulp.src(sourcePaths.settings)
+    .pipe(gulp.dest(destinationPaths.settings));
+
+  var spyc = gulp.src(sourcePaths.spyc)
+    .pipe(gulp.dest(destinationPaths.spyc));
+
+  return merge(framework, htaccess, settings);
 });
 
 gulp.task('deleteMasterScript', function () {
