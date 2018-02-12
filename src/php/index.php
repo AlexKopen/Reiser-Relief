@@ -98,7 +98,8 @@ $app->get('/about/our-core-values', function () use ($app, $AboutTitle, $AboutDi
     return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
-        'Active' => 'Our Core Values'
+        'Active' => 'Our Core Values',
+        'DisplayPageInfo' => true
     ));
 });
 
