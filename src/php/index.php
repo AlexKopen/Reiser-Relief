@@ -245,7 +245,8 @@ $app->get('/experience/apply', function () use ($app) {
         return $app['twig']->render('experience/apply.twig', array(
             'Title' => 'Experience - Apply',
             'DisplayTitle' => 'Experience - Mission Trip Application',
-            'TripId' => $_GET['id']
+            'TripId' => $_GET['id'],
+            'TripDate' => $_GET['date']
         ));
     } else {
         return $app->redirect('/experience/trip-dates');
