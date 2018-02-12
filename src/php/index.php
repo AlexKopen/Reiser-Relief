@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
+require_once 'spyc.php';
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -8,6 +9,7 @@ $assets = file_get_contents('assets.json');
 $assetsJson = json_decode($assets, true);
 $masterStylesheet = 'resources/css/' . $assetsJson['style.css'];
 $masterScript = 'resources/js/' . $assetsJson['all.min.js'];
+$settings = Spyc::YAMLLoad('settings.yaml');
 
 $app = new Silex\Application();
 $app['debug'] = false;
@@ -16,9 +18,11 @@ $twigParameters = array(
     'twig.path' => __DIR__ . '/resources/templates'
 );
 
-$twigParameters['twig.options'] = array(
-    'cache' => __DIR__ . '/cache',
-);
+if ($settings['production']) {
+    $twigParameters['twig.options'] = array(
+        'cache' => __DIR__ . '/cache',
+    );
+}
 
 function CallAPI($method, $url, $data = false)
 {
@@ -55,6 +59,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), $twigParameters);
 
 $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
+$app['twig']->addGlobal('Production', $settings['production']);
 
 $app->get('/', function () use ($app, $callAPI) {
     return $app['twig']->render('home/home.twig', array(
