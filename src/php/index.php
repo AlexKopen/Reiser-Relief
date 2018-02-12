@@ -61,18 +61,18 @@ $app->get('/', function () use ($app, $callAPI) {
         'Title' => 'Home',
         'SlideShowImages' => array(
             array(
-                'Url' => 'experience-slide.jpg',
-                'Alt' => 'Experience',
-                'Header' => 'Visit Haiti',
-                'Description' => 'Live out God\'s mission through service by applying for a mission trip to Haiti',
-                'Link' => '/experience'
-            ),
-            array(
                 'Url' => 'work-slide.jpg',
                 'Alt' => 'Our Core Values',
                 'Header' => 'What we Do',
                 'Description' => 'Learn more about Reiser Relief including our core values, upcoming events, and ways you can help',
                 'Link' => '/about'
+            ),
+            array(
+                'Url' => 'experience-slide.jpg',
+                'Alt' => 'Experience',
+                'Header' => 'Visit Haiti',
+                'Description' => 'Live out God\'s mission through service by applying for a mission trip to Haiti',
+                'Link' => '/experience'
             ),
             array(
                 'Url' => 'support-slide.jpg',
