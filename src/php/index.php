@@ -240,8 +240,8 @@ $app->get('/experience', function () use ($app, $questions) {
 $app->get('/experience/trip-dates', function () use ($app, $callAPI) {
     $allTrips = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/trip-dates'), true);
     return $app['twig']->render('experience/trip-dates.twig', array(
-        'Title' => 'Experience - Mission Trip Selection',
-        'DisplayTitle' => 'Experience - Mission Trip Selection',
+        'Title' => 'Mission Trips',
+        'DisplayTitle' => 'Mission Trips',
         'Trips' => $allTrips
     ));
 });
