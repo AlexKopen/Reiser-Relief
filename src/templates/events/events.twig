@@ -7,9 +7,6 @@
                 <li class="pure-menu-item"{{ Active == 'Fall Gala' ? ' id="active"' : '' }}>
                     <a href="/events/fall-gala">Fall Gala</a>
                 </li>
-                <li class="pure-menu-item"{{ Active == 'Keep the Wheel Turning' ? ' id="active"' : '' }}>
-                    <a href="/events/keep-the-wheel-turning">Keep the Wheel Turning</a>
-                </li>
             </ul>
         </nav>
     </div>
@@ -20,8 +17,6 @@
             </h2>
             {% if Active=="Fall Gala" %}
                 {{ include('events/fall-gala.twig') }}
-            {% elseif Active=="Keep the Wheel Turning" %}
-                {{ include('events/keep-the-wheel-turning.twig') }}
             {% endif %}
         </div>
     </div>

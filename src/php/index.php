@@ -121,18 +121,6 @@ $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDispla
 
 $EventsTitle = 'Events';
 
-$app->get('/events/keep-the-wheel-turning', function () use ($app, $callAPI, $EventsTitle) {
-    $eventText = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/events/ktwt'),
-        true)[0]['content'];
-
-    return $app['twig']->render('events/events.twig', array(
-        'Title' => $EventsTitle,
-        'DisplayTitle' => $EventsTitle,
-        'Active' => 'Keep the Wheel Turning',
-        'EventText' => $eventText
-    ));
-});
-
 $app->get('/events/fall-gala', function () use ($app, $callAPI, $EventsTitle) {
     $eventText = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/events/gttmd'),
         true)[0]['content'];
