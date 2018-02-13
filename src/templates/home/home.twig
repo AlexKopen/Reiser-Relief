@@ -184,10 +184,10 @@
                                         {{ CurrentNewsPost['title'] }}
                                     </h2>
                                     <h3>
-                                        {{ CurrentNewsPost['date']|date("l, F jS, Y") }}
+                                        {{ CurrentNewsPost['date'] | date("l, F jS, Y") }}
                                     </h3>
                                     <p>
-                                        {{ CurrentNewsPost['content'] }}
+                                        {{ CurrentNewsPost['content'] | raw }}
                                     </p>
                                 </div>
                             {% endfor %}

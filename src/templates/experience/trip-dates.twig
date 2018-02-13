@@ -16,7 +16,7 @@
                     <tbody>
                     {% for CurrentTrip in Trips %}
                         <tr>
-                            <td>{{ CurrentTrip['date']|date("l, F jS, Y") }}</td>
+                            <td>{{ CurrentTrip['date'] | date("l, F jS, Y") }}</td>
                             <td>{{ CurrentTrip['tripLeader'] }}</td>
                             {% if CurrentTrip['status'] == 'Open' %}
                                 <td class="apply-status">
