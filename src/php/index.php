@@ -240,7 +240,7 @@ $app->get('/experience', function () use ($app, $questions) {
 $app->get('/experience/trip-dates', function () use ($app, $callAPI) {
     $allTrips = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/trip-dates'), true);
     return $app['twig']->render('experience/trip-dates.twig', array(
-        'Title' => 'Mission Trips',
+        'Title' => 'Experience - Mission Trips',
         'DisplayTitle' => 'Mission Trips',
         'Trips' => $allTrips
     ));
@@ -249,8 +249,8 @@ $app->get('/experience/trip-dates', function () use ($app, $callAPI) {
 $app->get('/experience/apply', function () use ($app) {
     if (isset($_GET['id'])) {
         return $app['twig']->render('experience/apply.twig', array(
-            'Title' => 'Experience - Apply',
-            'DisplayTitle' => 'Experience - Mission Trip Application',
+            'Title' => 'Experience - Mission Trip Application',
+            'DisplayTitle' => 'Mission Trip Application',
             'TripId' => $_GET['id'],
             'TripDate' => $_GET['date']
         ));
@@ -268,8 +268,8 @@ $app->post('/experience/apply/apply-submit', function () use ($app, $callAPI) {
     }
 
     return $app['twig']->render('experience/apply-submit.twig', array(
-        'Title' => 'Experience - Apply',
-        'DisplayTitle' => 'Experience - Mission Trip Application',
+        'Title' => 'Experience - Mission Trip Application',
+        'DisplayTitle' => 'Mission Trip Application',
         'FormSuccess' => $formSuccess
     ));
 });
