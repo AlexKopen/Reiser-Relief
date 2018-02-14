@@ -3,7 +3,7 @@ var menu = (function () {
 
     function menuDrop() {
         $('#drop-down-menu').on('click', function () {
-            $('header ul').slideToggle();
+            $('#header ul').slideToggle();
         });
     }
 
@@ -12,11 +12,11 @@ var menu = (function () {
         $(window).on('resize', function () {
             if (!Modernizr.mq('(max-width: 767px)')) {
                 enteredFromDesktop = true;
-                $('header ul').css('display', 'inline-block');
+                $('#header ul').css('display', 'inline-block');
             } else {
                 if (enteredFromDesktop) {
                     enteredFromDesktop = false;
-                    $('header ul').css('display', 'none');
+                    $('#header ul').css('display', 'none');
                 }
             }
         });
