@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
-require_once 'spyc.php';
+require_once 'Spyc.php';
 
 use Symfony\Component\HttpFoundation\Request;
 
