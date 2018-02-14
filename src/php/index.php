@@ -87,7 +87,7 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Link' => '/give'
             )
         ),
-        'News' => json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/news'), true)
+        'News' => json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/news/5'), true)
     ));
 });
 
@@ -226,7 +226,7 @@ $app->get('/experience', function () use ($app, $questions) {
 });
 
 $app->get('/experience/trip-dates', function () use ($app, $callAPI) {
-    $allTrips = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/trip-dates'), true);
+    $allTrips = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/trip-dates-date-filtered'), true);
     return $app['twig']->render('experience/trip-dates.twig', array(
         'Title' => 'Experience - Mission Trips',
         'DisplayTitle' => 'Mission Trips',
