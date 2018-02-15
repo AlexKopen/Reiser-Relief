@@ -248,17 +248,14 @@ $app->get('/experience/apply', function () use ($app) {
 });
 
 $app->post('/experience/apply/apply-submit', function () use ($app, $callAPI) {
-    if (!isset($_GET['id'])) {
-        $formSuccess = false;
-    } else {
+    if (isset($_GET['id'])) {
         $_POST['tripId'] = $_GET['id'];
-        $formSuccess = $callAPI('POST', 'http://api.reiserrelief.org/public/application', $_POST);
+        $callAPI('POST', 'http://api.reiserrelief.org/public/application', $_POST);
     }
 
     return $app['twig']->render('experience/apply-submit.twig', array(
         'Title' => 'Experience - Mission Trip Application',
-        'DisplayTitle' => 'Mission Trip Application',
-        'FormSuccess' => $formSuccess
+        'DisplayTitle' => 'Mission Trip Application'
     ));
 });
 
@@ -278,12 +275,11 @@ $app->get('/contact', function () use ($app) {
 
 $app->post('/contact/contact-submit', function () use ($app, $callAPI) {
 
-    $formSuccess = $callAPI('POST', 'http://api.reiserrelief.org/public/contact', $_POST);
+    $callAPI('POST', 'http://api.reiserrelief.org/public/contact', $_POST);
 
     return $app['twig']->render('contact/contact-submit.twig', array(
         'Title' => 'Contact',
-        'DisplayTitle' => 'Contact Us',
-        'FormSuccess' => $formSuccess
+        'DisplayTitle' => 'Contact Us'
     ));
 });
 
