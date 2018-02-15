@@ -8,8 +8,7 @@ var application = (function () {
 
     $('.pure-checkbox').change(function () {
       if ($('#apply input:checked').length === 2) {
-        $('#apply button').prop('disabled', false);
-        $('#apply #error-message span').css('display', 'none');
+        displayError(false);
       } else {
         $('#apply button').prop('disabled', true);
       }
@@ -19,9 +18,20 @@ var application = (function () {
   function submitApp() {
     $('#apply #submit-hold').click(function () {
       if ($('#apply input:checked').length !== 2) {
-        $('#apply #error-message span').css('display', 'block');
+        displayError(true);
       }
     });
+  }
+
+  function displayError(error) {
+    if (error) {
+      $('#apply #error-message span').css('display', 'block');
+      $('#apply .error-highlight').css('background', '#f5ab9e');
+    } else {
+      $('#apply button').prop('disabled', false);
+      $('#apply #error-message span').css('display', 'none');
+      $('#apply .error-highlight').css('background', 'none');
+    }
   }
 
   function init() {

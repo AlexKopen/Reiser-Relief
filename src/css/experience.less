@@ -136,7 +136,7 @@
       }
 
       .full-status {
-        color: @error-color;
+        color: @dark-error-color;
       }
     }
   }
@@ -156,9 +156,17 @@
       padding-left: 60px;
     }
 
+    #submit-hold {
+      margin-top: 10px;
+    }
+
+    .error-highlight {
+      padding: 5px 0;
+    }
+
     #error-message {
       height: 35px;
-      color: @error-color;
+      color: @dark-error-color;
 
       span {
         display: none;
