@@ -162,14 +162,38 @@ table {
     left: 0;
     border-right: 1px solid @separator-color;
 
+    @media @medium-screen {
+      width: 100%;
+      height: auto;
+      border: none;
+      position: static;
+    }
+
     nav {
       padding-right: 25px;
+
+      @media @medium-screen {
+        padding: 0 @side-container-padding
+      }
+
+      ul {
+        @media @medium-screen {
+          display: inline-block;
+        }
+      }
 
       li {
         text-align: right;
         margin-top: 10px;
         padding-bottom: 5px;
         color: @dark-theme-color;
+
+        @media @medium-screen {
+          text-align: left;
+          margin-top: 0;
+          padding-bottom: 0;
+          display: inline-block;
+        }
 
         &:hover {
           text-decoration: underline;
@@ -189,6 +213,10 @@ table {
   #content {
     margin-left: @side-bar-width;
     min-height: 375px;
+
+    @media @medium-screen {
+      margin-left: 0;
+    }
 
     img {
       float: right;
