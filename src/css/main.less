@@ -48,6 +48,10 @@ img {
 
 table {
   width: 100%;
+
+  @media @small-screen {
+    display: none;
+  }
 }
 
 .plain-link {
@@ -283,4 +287,42 @@ table {
 .dark-sub-section {
   background: @dark-theme-color;
   color: @white;
+}
+
+.small-table-hold {
+  display: none;
+
+  @media @small-screen {
+    display: block;
+
+    .small-table-row {
+      border: 1px solid @light-border-color;
+      border-bottom: none;
+      @row-height: 60px;
+      min-height: @row-height;
+
+      &.odd {
+        background: #f2f2f2;
+      }
+
+      &#first {
+        margin-top: @large-top-margin;
+      }
+
+      &#last {
+        border-bottom: 1px solid @light-border-color;
+      }
+
+      .left-column {
+        height: 100%;
+        border-right: 1px solid @light-border-color;
+      }
+
+      p {
+        line-height: @row-height;
+        padding: 0;
+        margin-left: 5px;
+      }
+    }
+  }
 }

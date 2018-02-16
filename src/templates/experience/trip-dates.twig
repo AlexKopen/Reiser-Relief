@@ -20,7 +20,7 @@
                             <td>{{ CurrentTrip['tripLeader'] }}</td>
                             {% if CurrentTrip['status'] == 'Open' %}
                                 <td class="apply-status">
-                                    <a href="/experience/apply?id={{ CurrentTrip['id'] }}&date={{ CurrentTrip['date'] }}">
+                                    <a class="plain-link" href="/experience/apply?id={{ CurrentTrip['id'] }}&date={{ CurrentTrip['date'] }}">
                                         <div class="apply-container">
                                             <p>
                                                 Apply
@@ -35,6 +35,33 @@
                     {% endfor %}
                     </tbody>
                 </table>
+
+                {% for CurrentTrip in Trips %}
+                <div class="small-table-hold">
+                    <div class="small-table-row odd" id="first">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2"><div class="left-column"><p>Trip Date</p></div></div>
+                            <div class="pure-u-1-2"><p>{{ CurrentTrip['date'] | date("F jS, Y") }}</p></div>
+                        </div>
+                    </div>
+                    <div class="small-table-row" id="last">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2"><div class="left-column"><p>Trip Status</p></div></div>
+                            <div class="pure-u-1-2">
+                                {% if CurrentTrip['status'] == 'Open' %}
+                                <a class="plain-link" href="/experience/apply?id={{ CurrentTrip['id'] }}&date={{ CurrentTrip['date'] }}">
+                                    <p>
+                                        Apply
+                                    </p>
+                                    {% else %}
+                                        <p class="full-status">Trip is full</p>
+                                    {% endif %}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
