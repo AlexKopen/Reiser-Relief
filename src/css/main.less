@@ -184,6 +184,10 @@ table {
         @media @medium-screen {
           display: inline-block;
         }
+
+        @media @very-small-screen {
+          display: block;
+        }
       }
 
       li {
@@ -196,7 +200,16 @@ table {
           text-align: left;
           margin-top: 0;
           padding-bottom: 0;
+          padding-right: 25px;
           display: inline-block;
+        }
+
+        @media @very-small-screen {
+          display: inline-block;
+          text-align: center;
+          width: 100%;
+          margin-bottom: 10px;
+          padding-right: 0;
         }
 
         &:hover {
@@ -204,7 +217,7 @@ table {
         }
 
         &#active {
-          border-bottom: 1px solid @separator-color;
+          text-decoration: underline;
         }
 
         & > :first-of-type {
