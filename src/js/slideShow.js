@@ -17,12 +17,24 @@ var slideShow = (function () {
         });
 
         $('#slide-show .hidden-slide').promise().done(function () {
-            $('#slide-show #slide-show-container').unslider({
+            var $slider = $('#slide-show #slide-show-container').unslider({
                 autoplay: true,
                 infinite: true,
                 arrows: false,
                 speed: 1000,
                 delay: 6000
+            });
+
+            if (Modernizr.mq('(max-width: 767px)')) {
+                $slider.data('unslider').stop();
+            }
+
+            $(window).on('resize', function () {
+                if (!Modernizr.mq('(max-width: 767px)')) {
+                    $slider.data('unslider').start();
+                } else {
+                    $slider.data('unslider').stop();
+                }
             });
         });
     }
