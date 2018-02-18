@@ -60,6 +60,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), $twigParameters);
 $app['twig']->addGlobal('MasterStyleSheet', $masterStylesheet);
 $app['twig']->addGlobal('MasterScript', $masterScript);
 $app['twig']->addGlobal('Production', $settings['production']);
+$app['twig']->addGlobal('ProductionURL', $settings['productionURL']);
 
 $app->get('/', function () use ($app, $callAPI) {
     return $app['twig']->render('home/home.twig', array(
