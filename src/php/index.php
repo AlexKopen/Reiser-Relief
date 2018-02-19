@@ -12,7 +12,6 @@ $masterScript = 'resources/js/' . $assetsJson['all.min.js'];
 $settings = Spyc::YAMLLoad('settings.yaml');
 
 $app = new Silex\Application();
-$app['debug'] = false;
 
 $twigParameters = array(
     'twig.path' => __DIR__ . '/resources/templates'
@@ -285,14 +284,12 @@ $app->post('/contact/contact-submit', function () use ($app, $callAPI) {
 });
 
 
-if (!$app['debug']) {
-    $app->error(function () use ($app) {
-        return $app['twig']->render('common/404.twig', array(
-            'Title' => 'Not Found',
-            'DisplayTitle' => 'Not Found'
-        ));
-    });
-}
+$app->error(function () use ($app) {
+    return $app['twig']->render('common/404.twig', array(
+        'Title' => 'Not Found',
+        'DisplayTitle' => 'Not Found'
+    ));
+});
 
 //Redirects
 $app->get('/about', function () use ($app) {
