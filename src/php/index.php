@@ -307,4 +307,12 @@ $app->get('/trips', function () use ($app) {
     return $app->redirect('/experience');
 });
 
+$app->get('/apply', function () use ($app) {
+    return $app->redirect('/experience');
+});
+
+$app->get('/ministries', function () use ($app) {
+    return $app->redirect('/about');
+});
+
 $app->run();
