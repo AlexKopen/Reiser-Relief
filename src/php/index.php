@@ -28,18 +28,18 @@ function CallAPI($method, $url, $data = false)
     $curl = curl_init();
 
     switch ($method) {
-        case "POST":
+        case 'POST':
             curl_setopt($curl, CURLOPT_POST, 1);
 
             if ($data)
                 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
             break;
-        case "PUT":
+        case 'PUT':
             curl_setopt($curl, CURLOPT_PUT, 1);
             break;
         default:
             if ($data)
-                $url = sprintf("%s?%s", $url, http_build_query($data));
+                $url = sprintf('%s?%s', $url, http_build_query($data));
     }
 
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -311,5 +311,27 @@ $app->get('/apply', function () use ($app) {
 $app->get('/ministries', function () use ($app) {
     return $app->redirect('/about');
 });
+
+$pages = [
+    '',
+    'about',
+    'events',
+    'experience',
+    'give',
+    'contact'
+];
+
+$app->get('/{wildCard}/', function ($wildCard) use ($app, $pages) {
+    $wildCard = strtolower($wildCard);
+    if (in_array($wildCard, $pages)) {
+        return $app->redirect('/' . $wildCard);
+    } else {
+        return $app['twig']->render('common/404.twig', array(
+            'Title' => 'Not Found',
+            'DisplayTitle' => 'Not Found'
+        ));
+    }
+
+})->assert('wildCard', '.*');
 
 $app->run();
