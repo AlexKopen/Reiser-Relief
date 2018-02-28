@@ -153,7 +153,7 @@ $questions = array(
     ),
     array(
         'question' => 'Do I have to be Catholic or Christian to go on a Reiser Relief trip?',
-        'answer' => 'A Catholic priest, Fr. Bernard Reiser, founded Reiser Relief. We are a Catholic based organization, but we welcome all Christian believers and non-believers to join in our ministry. While we will pray together on trips, participation is optional and we respect your boundaries. Expect to be spiritually challenged on this trip. “Listen, my dear brothers: Has not God chosen those who are poor in the eyes of the world to be rich in faith and to inherit the kingdom he promised to those to love him?” James 2:5'
+        'answer' => 'A Catholic priest, Fr. Bernard Reiser, founded Reiser Relief. We are a Catholic organization, but we welcome all Christian believers and non-believers to join in our ministry. While we will pray together on trips, participation is optional and we respect your boundaries. Expect to be spiritually challenged on this trip. “Listen, my dear brothers: Has not God chosen those who are poor in the eyes of the world to be rich in faith and to inherit the kingdom he promised to those to love him?” James 2:5'
     ),
     array(
         'question' => 'I’m not sure I’m cut out to be a missionary. Should I go?',
