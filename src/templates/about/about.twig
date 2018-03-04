@@ -2,13 +2,13 @@
 
 <div class="container main-page-content">
     <div id="sub-page-navigation">
-        <nav>
+        <nav class="padding-hold">
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"{{ Active == 'Our Core Values' ? ' id="active"' : '' }}>
-                    <a href="/about/our-core-values">Core Values</a>
+                <li class="pure-menu-item"{{ Active == 'Core Values' ? ' id="active"' : '' }}>
+                    <a href="/about/core-values">Core Values</a>
                 </li>
-                <li class="pure-menu-item"{{ Active == 'Our Board' ? ' id="active"' : '' }}>
-                    <a href="/about/our-board">The Board</a>
+                <li class="pure-menu-item"{{ Active == 'Board Members' ? ' id="active"' : '' }}>
+                    <a href="/about/board-members">Board Members</a>
                 </li>
                 <li class="pure-menu-item"{{ Active == 'Our Founder' ? ' id="active"' : '' }}>
                     <a href="/about/our-founder">Our Founder</a>
@@ -21,10 +21,10 @@
             <h2 class="page-section-header">
                 {{ Active }}
             </h2>
-            {% if Active=="Our Core Values" %}
-                {{ include('about/our-core-values.twig') }}
-            {% elseif Active=="Our Board" %}
-                {{ include('about/our-board.twig') }}
+            {% if Active=="Core Values" %}
+                {{ include('about/core-values.twig') }}
+            {% elseif Active=="Board Members" %}
+                {{ include('about/board-members.twig') }}
             {% elseif Active=="Our Founder" %}
                 {{ include('about/our-founder.twig') }}
             {% endif %}

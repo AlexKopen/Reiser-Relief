@@ -157,8 +157,17 @@ table {
 
   #sub-page-navigation {
     ul {
+      @bottom-border-height: 4px;
       display: inline-block;
       font-size: 0;
+      border-bottom: @bottom-border-height solid @dark-theme-color;
+      width: 100%;
+
+      @media @small-screen {
+        border-bottom: none;
+        text-align: center;
+      }
+
       li {
         font-size: 16px;
         @item-height: 50px;
@@ -166,9 +175,16 @@ table {
         color: @white;
         background: @dark-theme-color;
         height: @item-height;
-        line-height: @item-height;
+        line-height: @item-height + @bottom-border-height;
         text-align: center;
         border-right: 1px solid @black;
+
+        @media @small-screen {
+          line-height: @item-height;
+          display: block;
+          border-right: none;
+          border-bottom: 1px solid @light-theme-color;
+        }
 
         &:last-child {
           border-right: none;

@@ -12,6 +12,7 @@ $masterScript = 'resources/js/' . $assetsJson['all.min.js'];
 $settings = Spyc::YAMLLoad('settings.yaml');
 
 $app = new Silex\Application();
+$app['debug'] = !$settings['production'];
 
 $twigParameters = array(
     'twig.path' => __DIR__ . '/resources/templates'
@@ -67,7 +68,7 @@ $app->get('/', function () use ($app, $callAPI) {
         'SlideShowImages' => array(
             array(
                 'Url' => 'work-slide.jpg',
-                'Alt' => 'Our Core Values',
+                'Alt' => 'Core Values',
                 'Header' => 'What we Do',
                 'Description' => 'Learn more about Reiser Relief including our core values, upcoming events, and ways you can help',
                 'Link' => '/about'
@@ -94,20 +95,21 @@ $app->get('/', function () use ($app, $callAPI) {
 $AboutTitle = 'About';
 $AboutDisplayTitle = 'About Us';
 
-$app->get('/about/our-core-values', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
+$app->get('/about/core-values', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
     return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
-        'Active' => 'Our Core Values',
+        'Active' => 'Core Values',
         'DisplayPageInfo' => true
     ));
 });
 
-$app->get('/about/our-board', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
+$app->get('/about/board-members', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
     return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
-        'Active' => 'Our Board'
+        'Active' => 'Board Members',
+        'DisplayPageInfo' => false
     ));
 });
 
@@ -115,7 +117,8 @@ $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDispla
     return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
-        'Active' => 'Our Founder'
+        'Active' => 'Our Founder',
+        'DisplayPageInfo' => false
     ));
 });
 
@@ -284,16 +287,18 @@ $app->post('/contact/contact-submit', function () use ($app, $callAPI) {
 });
 
 
-$app->error(function () use ($app) {
-    return $app['twig']->render('common/404.twig', array(
-        'Title' => 'Not Found',
-        'DisplayTitle' => 'Not Found'
-    ));
-});
+if (!$app['debug']) {
+    $app->error(function () use ($app) {
+        return $app['twig']->render('common/404.twig', array(
+            'Title' => 'Not Found',
+            'DisplayTitle' => 'Not Found'
+        ));
+    });
+}
 
 //Redirects
 $app->get('/about', function () use ($app) {
-    return $app->redirect('/about/our-core-values');
+    return $app->redirect('/about/core-values');
 });
 
 $app->get('/events', function () use ($app) {
@@ -331,7 +336,6 @@ $app->get('/{wildCard}/', function ($wildCard) use ($app, $pages) {
             'DisplayTitle' => 'Not Found'
         ));
     }
-
 })->assert('wildCard', '.*');
 
 $app->run();
