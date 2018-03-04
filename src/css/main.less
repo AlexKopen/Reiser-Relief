@@ -155,79 +155,38 @@ table {
   padding-bottom: 45px;
   position: relative;
 
-  @side-bar-width: 150px;
-
-  #side-bar {
-    width: @side-bar-width;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-right: 1px solid @separator-color;
-
-    @media @medium-screen {
-      width: 100%;
-      height: auto;
-      border: none;
-      position: static;
-    }
-
-    nav {
-      padding-right: 25px;
-
-      @media @medium-screen {
-        padding: 0 @side-container-padding
-      }
-
-      ul {
-        @media @medium-screen {
-          display: inline-block;
-        }
-
-        @media @very-small-screen {
-          display: block;
-        }
-      }
-
+  #sub-page-navigation {
+    ul {
+      display: inline-block;
+      font-size: 0;
       li {
-        text-align: right;
-        margin-top: 10px;
-        padding-bottom: 5px;
-        color: @dark-theme-color;
+        font-size: 16px;
+        @item-height: 50px;
+        display: inline-block;
+        color: @white;
+        background: @dark-theme-color;
+        height: @item-height;
+        line-height: @item-height;
+        text-align: center;
+        border-right: 1px solid @black;
 
-        @media @medium-screen {
-          text-align: left;
-          margin-top: 0;
-          padding-bottom: 0;
-          padding-right: 25px;
-          display: inline-block;
-        }
-
-        @media @very-small-screen {
-          display: inline-block;
-          text-align: center;
-          width: 100%;
-          margin-bottom: 10px;
-          padding-right: 0;
+        &:last-child {
+          border-right: none;
         }
 
         &:hover {
-          text-decoration: underline;
+          background: @light-theme-color;
         }
 
-        &#active {
-          text-decoration: underline;
-        }
-
-        & > :first-of-type {
-          margin-top: 0;
+        a {
+          display: block;
+          padding: 0 20px;
         }
       }
     }
   }
 
   #content {
-    margin-left: @side-bar-width;
     min-height: 375px;
 
     @media @medium-screen {
