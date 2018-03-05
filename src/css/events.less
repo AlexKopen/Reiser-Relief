@@ -11,6 +11,11 @@
     margin-bottom: 20px;
     height: @header-height;
     line-height: @header-height;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     .arrow {
       position: absolute;
@@ -18,19 +23,29 @@
 
       &.right-arrow {
         top: (@header-height - image-height('../images/common/arrows/right-arrow-white-large.png')) / 2;
+
+        &.first-event {
+          display: none;
+        }
       }
 
       &.down-arrow {
         display: none;
         top: (@header-height - image-height('../images/common/arrows/down-arrow-white-large.png')) / 2;
+
+        &.first-event {
+          display: block;
+        }
       }
     }
   }
 
-
-
   .event-content {
     display: none;
+
+    &.first-event {
+      display: block;
+    }
 
     img {
       float: none !important;
