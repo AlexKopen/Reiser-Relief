@@ -1,6 +1,6 @@
 # Reiser-Relief
 
-Source code for the front-end of [reiserrelief.org](http://reiserrelief.org)
+Source code for [reiserrelief.org](http://reiserrelief.org)
 
 ## Installation
 

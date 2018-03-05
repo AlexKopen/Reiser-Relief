@@ -3,8 +3,6 @@
 require_once __DIR__ . '/vendor/autoload.php';
 require_once 'Spyc.php';
 
-use Symfony\Component\HttpFoundation\Request;
-
 $assets = file_get_contents('assets.json');
 $assetsJson = json_decode($assets, true);
 $masterStylesheet = 'resources/css/' . $assetsJson['style.css'];
@@ -124,15 +122,10 @@ $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDispla
 
 $EventsTitle = 'Events';
 
-$app->get('/events/fall-gala', function () use ($app, $callAPI, $EventsTitle) {
-    $eventText = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/events/gttmd'),
-        true)[0]['content'];
-
+$app->get('/events', function () use ($app, $EventsTitle) {
     return $app['twig']->render('events/events.twig', array(
         'Title' => $EventsTitle,
         'DisplayTitle' => $EventsTitle,
-        'Active' => 'Fall Gala',
-        'EventText' => $eventText
     ));
 });
 
@@ -299,10 +292,6 @@ if (!$app['debug']) {
 //Redirects
 $app->get('/about', function () use ($app) {
     return $app->redirect('/about/core-values');
-});
-
-$app->get('/events', function () use ($app) {
-    return $app->redirect('/events/fall-gala');
 });
 
 $app->get('/trips', function () use ($app) {

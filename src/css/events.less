@@ -1,6 +1,35 @@
 @import "globals.less";
 
 #events {
-  #fall-gala {
+  .page-section-header {
+    @header-height: 57px;
+    position: relative;
+    color: @white;
+    font-size: 42px;
+    background: @dark-theme-color;
+    padding: 0 0 0 10px;
+    margin-bottom: 20px;
+    height: @header-height;
+    line-height: @header-height;
+
+    .arrow {
+      position: absolute;
+      left: 310px;
+
+      &.right-arrow {
+        top: (@header-height - image-height('../images/common/arrows/right-arrow-white-large.png')) / 2;
+      }
+
+      &.down-arrow {
+        display: none;
+        top: (@header-height - image-height('../images/common/arrows/down-arrow-white-large.png')) / 2;
+      }
+    }
+  }
+
+  img {
+    float: none !important;
+    padding: 0 !important;
+    margin: 0 auto;
   }
 }
