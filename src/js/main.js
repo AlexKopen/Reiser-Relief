@@ -5,6 +5,7 @@ function init() {
     application.init();
     donate.init();
     showMore.init();
+    event.init();
 }
 
 $(document).ready(init);
