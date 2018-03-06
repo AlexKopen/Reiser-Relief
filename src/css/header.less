@@ -29,7 +29,7 @@ header {
 		#right-header {
 			text-align: right;
 			width: 100%;
-			margin-top: -38px;
+			margin-top: -50px;
 			padding-right: @side-container-padding;
 
 			@media @medium-screen {
@@ -66,7 +66,10 @@ header {
 			}
 
 			ul {
+              margin-top: 15px;
+
 				@media @medium-screen {
+                    margin: 0;
 					background: @dark-theme-color;
 					width: 100%;
 					display: none;
@@ -123,6 +126,72 @@ header {
 							@media @medium-screen {
 								color: @black;
 							}
+						}
+					}
+				}
+			}
+
+			#social {
+              margin: 0;
+              width: 100%;
+              max-width: 325px;
+              display: inline-block;
+
+				@media @medium-screen {
+					display: none;
+				}
+
+				.social-link-block {
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: contain;
+					height: 30px;
+
+					&#facebook {
+						background-image: url('../images/common/social/light/facebook.png');
+
+						&:hover {
+							background-image: url('../images/common/social/dark/facebook.png');
+						}
+					}
+
+					&#twitter {
+						background-image: url('../images/common/social/light/twitter.png');
+
+						&:hover {
+							background-image: url('../images/common/social/dark/twitter.png');
+						}
+					}
+
+					&#instagram {
+						background-image: url('../images/common/social/light/instagram.png');
+
+						&:hover {
+							background-image: url('../images/common/social/dark/instagram.png');
+						}
+					}
+
+					&#blog {
+						background-image: url('../images/common/social/light/blogger.png');
+
+						&:hover {
+							background-image: url('../images/common/social/dark/blogger.png');
+						}
+					}
+
+					&#youtube {
+						background-image: url('../images/common/social/light/youtube.png');
+
+						&:hover {
+							background-image: url('../images/common/social/dark/youtube.png');
+						}
+					}
+
+					&#mail {
+						background-image: url('../images/common/social/light/mail.png');
+
+						&:hover {
+							background-image: url('../images/common/social/dark/mail.png');
 						}
 					}
 				}
