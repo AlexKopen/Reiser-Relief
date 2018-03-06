@@ -181,15 +181,11 @@ $questions = array(
     ),
     array(
         'question' => 'What kind of food will we be eating?',
-        'answer' => 'Haitian staff at the guesthouse prepares breakfast and dinner. We will eat mostly American style food (like pancakes, French toast, tacos and spaghetti) and some traditional Haitian food including rice and beans, plantain and vegetables.'
-    ),
-    array(
-        'question' => 'Do I need to bring my own food?',
-        'answer' => 'Team members buy snacks in the US and carry them to Haiti in our luggage. We eat snacks while on the go for lunch and share all of our food. Typical items are beef sticks, granola bars, nuts, dried fruit, and crackers. Please don’t bring anything containing chocolate. It will melt! If you have special dietary needs you are welcome to bring your own food. Haitian staff members cook our meals in the kitchen. You are welcome to prepare your own food in the kitchen.'
-    ),
-    array(
-        'question' => 'Is it safe to drink the water?',
-        'answer' => 'We provide you with purified Culligan water to drink while out in the field and at the guesthouse. It is not safe to drink tap water.'
+        'answer' => 'Haitian staff at the guesthouse prepares breakfast and dinner. We will eat mostly American style food (like pancakes, French toast, tacos and spaghetti) and some traditional Haitian food including rice and beans, plantain and vegetables.<br><br>
+        
+        Team members buy snacks in the US and carry them to Haiti in our luggage. We eat snacks while on the go for lunch and share all of our food. Typical items are beef sticks, granola bars, nuts, dried fruit, and crackers. Please don’t bring anything containing chocolate. It will melt! If you have special dietary needs you are welcome to bring your own food. Haitian staff members cook our meals in the kitchen. You are welcome to prepare your own food in the kitchen.<br><br>
+        
+        We provide you with purified Culligan water to drink while out in the field and at the guesthouse. It is not safe to drink tap water.'
     ),
     array(
         'question' => 'Will there be an opportunity to buy souvenirs?',
@@ -201,15 +197,13 @@ $questions = array(
     ),
     array(
         'question' => 'How will our team prepare for the trip?',
-        'answer' => 'There will be two trip meetings before the trip where your leader will guide you through everything you need to know. There is also a packing meeting shortly before the trip where we pack donations and group items together.'
+        'answer' => 'There will be two trip meetings before the trip where your leader will guide you through everything you need to know. There is also a packing meeting shortly before the trip where we pack donations and group items together.<br><br>
+
+Your trip leader will let you know when to submit a <a href="https://drive.google.com/file/d/0By871gytPLeeM25NdEdpaDFIQVU/view?usp=sharing" class="plain-link">Consent of Treatment Form</a>. If you are a minor, your trip leader will let you know when to submit <a href="https://drive.google.com/file/d/0By871gytPLeeb2RKT19YT0xNeXM/view?usp=sharing" class="plain-link">Forms for Minors</a>.'
     ),
     array(
         'question' => 'Is there follow up after the trip?',
         'answer' => 'Post trip your team will have a reunion meeting. This will help you process what you learned, give you support, and help you explore ways to respond.'
-    ),
-    array(
-        'question' => 'Is there additional paperwork?',
-        'answer' => 'Your trip leader will let you know when to submit a <a href="https://drive.google.com/file/d/0By871gytPLeeM25NdEdpaDFIQVU/view?usp=sharing" class="plain-link">Consent of Treatment Form</a>. If you are a minor, your trip leader will let you know when to submit <a href="https://drive.google.com/file/d/0By871gytPLeeb2RKT19YT0xNeXM/view?usp=sharing" class="plain-link">Forms for Minors</a>.'
     )
 );
 
