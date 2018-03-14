@@ -102,12 +102,76 @@ $app->get('/about/core-values', function () use ($app, $AboutTitle, $AboutDispla
     ));
 });
 
-$app->get('/about/board-members', function () use ($app, $AboutTitle, $AboutDisplayTitle) {
+$boardMembers = array(
+    array(
+        'image' => 'ann_brau',
+        'name' => 'Ann Brau',
+        'title' => 'President',
+        'bio' => 'My husband and I live in Eden Prairie where we raised our three grown daughters. I was baptized and married by my uncle, Father Reiser. He taught me by example that God gets his work on earth done by using people whose hearts are humble and willing to serve. Is has been my honor to continue his work in Haiti since joining the Board shortly after his death.'
+    ),
+    array(
+        'image' => 'joyce_getchell',
+        'name' => 'Joyce Getchell',
+        'title' => 'Co-Vice President',
+        'bio' => 'I live in Forest Lake with my husband Greg and my three school aged children. I joined the board in 2012 shortly after my uncle, Fr. Bernard Reiser, passed away. My service started with a desire to carry on my uncle’s legacy. It has since expanded to a passion to follow God’s command to go and serve.'
+    ),
+    array(
+        'image' => 'james_lanigan',
+        'name' => 'James Lanigan',
+        'title' => 'Co-Vice President',
+        'bio' => 'I live in Ramsey with my wife Jennifer and our two children. I attended Epiphany for nine excellent years and have many fond memories of Father Reiser. My first mission trip to Haiti was in January 2015 where I saw firsthand the need to help the people there who are suffering and need life’s most basic needs.'
+    ),
+    array(
+        'image' => 'jerry_welle',
+        'name' => 'Jerry Welle',
+        'title' => 'Treasurer',
+        'bio' => 'I live in White Bear Lake and have 3 grown children and numerous grandchildren. I attend St Mary of the Lake Catholic Church, which was Fr Reiser’s first parish assignment. I joined the Board in 2015 after praying for a new way to serve and feeling a calling to help Reiser Relief. My wife Mary has been a volunteer and team leader on numerous trips to Haiti. I was on the Board of Directors of the Catholic Spirit Newspaper for 15 years and Chairman of the Finance Committee.'
+    ),
+    array(
+        'image' => 'beth_simms',
+        'name' => 'Beth Simms',
+        'title' => 'Secretary',
+        'bio' => ''
+    ),
+    array(
+        'image' => 'brian_olson',
+        'name' => 'Brian Olson',
+        'title' => 'Board Member',
+        'bio' => 'I live in Dayton with my wife Angela and together we have four children. I knew Father Resier for many years while attending Epiphany Catholic School and he was also a good friend to both my parents. I was able to visit Haiti in the early part of 2016 and was deeply touched by the overall strength and perseverance of the Haitian people in spite of the many obstacles they face. My goal is to continue to try and serve those needs in whatever capacity I can.'
+    ),
+    array(
+        'image' => 'bernie_maciej',
+        'name' => 'Bernie Maciej',
+        'title' => 'Board Member',
+        'bio' => 'I am a nephew of Father Bernard Reiser. I joined the board in early 2012 to help the water trucks keep delivering fresh water to the people of Haiti. My desire is to keep the legacy that Father Reiser started in Haiti going.'
+    ),
+    array(
+        'image' => 'doris_schulte',
+        'name' => 'Doris Schulte',
+        'title' => 'Board Member',
+        'bio' => 'Father Bernard Reiser, our pastor and cherished friend, went to Haiti and what he saw broke his heart wide open. His commitment to make a difference caused us to start fund raising for his cause. Over the years, we’ve raised hundreds of thousands of dollars to reduce suffering in Haiti.'
+    ),
+    array(
+        'image' => 'rick_wilder',
+        'name' => 'Rick Wilder',
+        'title' => 'Board Member',
+        'bio' => 'Through my years of friendship with Father Reiser he became an inspiration for my family of three children and my wife Rita. When he would talk to me, I knew that everything was according to God’s will. I was honored that he asked me to become a board member so that with his directive we could help the less fortunate in Haiti. Father Reiser was and is, to this day a reason to respect life and to do God’s will always.'
+    ),
+    array(
+        'image' => 'joline_caswell',
+        'name' => 'Joline Caswell',
+        'title' => 'Board Member',
+        'bio' => ''
+    ),
+);
+
+$app->get('/about/board-members', function () use ($app, $AboutTitle, $AboutDisplayTitle, $boardMembers) {
     return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
         'Active' => 'Board Members',
-        'DisplayPageInfo' => false
+        'DisplayPageInfo' => false,
+        'BoardMembers' => $boardMembers
     ));
 });
 
