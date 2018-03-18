@@ -211,7 +211,7 @@ $questions = array(
     ),
     array(
         'question' => 'What do I pack?',
-        'answer' => '<a href="https://drive.google.com/file/d/0By871gytPLeeMmhsdEJDc2NOMHc/view?usp=sharing" class="plain-link">Refer to our packing list</a>.'
+        'answer' => '<a href="https://drive.google.com/file/d/0By871gytPLeeMmhsdEJDc2NOMHc/view?usp=sharing" class="plain-link" target="_blank">Refer to our packing list</a>.'
     ),
     array(
         'question' => 'How can I raise support?',
@@ -269,7 +269,7 @@ $questions = array(
         'question' => 'How will our team prepare for the trip?',
         'answer' => 'There will be two trip meetings before the trip where your leader will guide you through everything you need to know. There is also a packing meeting shortly before the trip where we pack donations and group items together.<br><br>
 
-Your trip leader will let you know when to submit a <a href="https://drive.google.com/file/d/0By871gytPLeeM25NdEdpaDFIQVU/view?usp=sharing" class="plain-link">Consent of Treatment Form</a>. If you are a minor, your trip leader will let you know when to submit <a href="https://drive.google.com/file/d/0By871gytPLeeb2RKT19YT0xNeXM/view?usp=sharing" class="plain-link">Forms for Minors</a>.'
+Your trip leader will let you know when to submit a <a href="https://drive.google.com/file/d/0By871gytPLeeM25NdEdpaDFIQVU/view?usp=sharing" class="plain-link" target="_blank">Consent of Treatment Form</a>. If you are a minor, your trip leader will let you know when to submit <a href="https://drive.google.com/file/d/0By871gytPLeeb2RKT19YT0xNeXM/view?usp=sharing" class="plain-link" target="_blank">Forms for Minors</a>.'
     ),
     array(
         'question' => 'Is there follow up after the trip?',
