@@ -8,32 +8,36 @@
   #give-funds {
     #donation-buttons {
       margin-top: 15px;
+
+      .donation-container {
+        @donation-container-height: 100px;
+        @separation-margin: 10px;
+        height: @donation-container-height;
+        margin-right: @separation-margin;
+        margin-bottom: @separation-margin;
+        background: @dark-theme-color;
+        color: @white;
+        cursor: pointer;
+
+        @media only screen and (max-width: 767px) and (min-width: 568px) {
+          margin-bottom: 0;
+        }
+
+        &:hover {
+          background: @light-theme-color;
+        }
+
+        .donation-amount {
+          color: @white;
+          line-height: @donation-container-height;
+          text-align: center;
+          font-size: 30px;
+        }
+      }
     }
 
-    .donation-container {
-      @donation-container-height: 100px;
-      @separation-margin: 10px;
-      height: @donation-container-height;
-      margin-right: @separation-margin;
-      margin-bottom: @separation-margin;
-      background: @dark-theme-color;
-      color: @white;
-      cursor: pointer;
-
-      @media only screen and (max-width: 767px) and (min-width: 568px) {
-        margin-bottom: 0;
-      }
-
-      &:hover {
-        background: @light-theme-color;
-      }
-
-      .donation-amount {
-        color: @white;
-        line-height: @donation-container-height;
-        text-align: center;
-        font-size: 30px;
-      }
+    #give-examples {
+      margin-top: 30px;
     }
   }
 
