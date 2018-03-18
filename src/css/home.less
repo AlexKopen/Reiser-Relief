@@ -93,64 +93,68 @@
 
     @media @medium-screen {
       margin-top: @sub-section-top-margin;
+    }
 
-      .single-three-block {
-        border-bottom: 1px solid @light-theme-color;
-        padding-bottom: 30px;
+    .single-three-block {
+      display: table-cell;
+      width: 33.33%;
+      vertical-align: top;
+      border-right: 1px solid @separator-color;
+      position: relative;
+      @link-height: 48px;
+
+      &:last-of-type {
+        border-right: none;
+      }
+
+      @media @medium-screen {
+        display: block;
+        width: 100%;
+        border-right: none;
+        padding-bottom: 40px;
+        margin-bottom: 25px;
 
         &:last-of-type {
           border-bottom: none;
         }
       }
-    }
 
-    .info-content {
-      border-right: 1px solid @separator-color;
-      padding: 0 25px;
-
-      @media @medium-screen {
-        width: 100%;
-        max-width: 500px;
-        border-right: none;
-        margin: 35px auto 0;
-        padding: 0;
-        text-align: center;
-
-        &#first-info-content {
-          margin-top: 0;
-        }
-      }
-
-      &#last-info-content {
-        border-right: none;
-      }
-
-      .beginning {
-        color: @light-theme-color;
-
-        a:hover {
-          color: @dark-theme-color;
-        }
-      }
-
-      .text-block {
-        height: 130px;
+      .info-content {
+        padding: 0 25px;
+        padding-bottom: @link-height;
 
         @media @medium-screen {
-          height: auto;
+          padding-bottom: 15px;
+          text-align: center;
+        }
+
+        .beginning {
+          color: @light-theme-color;
+
+          a:hover {
+            color: @dark-theme-color;
+          }
         }
       }
-
-      @link-height: 48px;
 
       .link-block {
         background: @light-theme-color;
         color: @white;
         text-align: center;
         height: @link-height;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 90%;
+        margin: auto;
 
         &:hover {
           background: @dark-theme-color;
+        }
+
+        @media @medium-screen {
+          bottom: 5px;
         }
 
         p {
