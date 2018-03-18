@@ -72,8 +72,35 @@
     #specific-details {
       padding: 45px 0;
 
-      #details-content {
-        text-align: center;
+      #more-information {
+        margin-top: 30px;
+
+        #top-margin {
+          @media @medium-screen {
+            margin-top: 10px;
+          }
+        }
+
+        h3 {
+          font-weight: 900;
+          text-align: center;
+        }
+
+        ul {
+          margin-top: 10px;
+          list-style: none;
+          padding-left: 1em;
+
+          li {
+            padding-bottom: 10px;
+            &:before {
+              display: inline-block;
+              content: "-";
+              width: 1em;
+              margin-left: -1em;
+            }
+          }
+        }
       }
     }
   }
