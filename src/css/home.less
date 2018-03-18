@@ -47,7 +47,7 @@
           text-align: center;
           color: @white;
 
-          @media only screen and (max-width: 800px) {
+          @media only screen and (max-width: 890px) {
             top: 14%;
           }
 
@@ -111,11 +111,12 @@
         display: block;
         width: 100%;
         border-right: none;
-        padding-bottom: 40px;
         margin-bottom: 25px;
+        border-top: 1px solid @separator-color;
+        padding-top: 20px;
 
-        &:last-of-type {
-          border-bottom: none;
+        &:first-of-type {
+          border-top: none;
         }
       }
 
@@ -124,7 +125,6 @@
         padding-bottom: @link-height;
 
         @media @medium-screen {
-          padding-bottom: 15px;
           text-align: center;
         }
 
