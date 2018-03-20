@@ -131,7 +131,7 @@ $boardMembers = array(
         'image' => 'beth_simms',
         'name' => 'Beth Simms',
         'title' => 'Secretary',
-        'bio' => ''
+        'bio' => 'My husband and I live in White Bear Lake where we raised our three daughters.  As a child, I always read my mother\'s Maryknoll magazine and from that knew I wanted to one day go on a mission trip, preferably in Haiti.  It took a while, but I went on my first trip in March of 2016 after Reiser Relief connected with St. Mary of the Lake. I feel very blessed to have had the opportunity to participate in a second trip since then and to be a member of the Reiser Relief board.'
     ),
     array(
         'image' => 'brian_olson',
