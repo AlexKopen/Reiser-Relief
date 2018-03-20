@@ -122,10 +122,18 @@
           text-decoration: underline;
         }
 
+        @media @small-screen {
+          text-decoration: underline;
+        }
+
         img {
           float: right;
           margin-top: 6px;
           margin-left: 9px;
+
+          @media @small-screen {
+            visibility: hidden;
+          }
 
           &.down-arrow {
             display: none;
