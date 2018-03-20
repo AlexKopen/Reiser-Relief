@@ -2,8 +2,8 @@ var event = (function () {
   'use strict';
 
   function eventShow() {
-    $('.individual-event h2').on('click', function () {
-      $(this).next('.event-content').slideToggle(800);
+    $('.individual-event').on('click', function () {
+      $(this).find('.event-content').slideToggle(800);
       $(this).find('.right-arrow, .down-arrow').toggle();
     });
   }
