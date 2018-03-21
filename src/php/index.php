@@ -75,7 +75,7 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Url' => 'experience-slide.jpg',
                 'Alt' => 'Experience',
                 'Header' => 'Visit Haiti',
-                'Description' => 'Live out God\'s mission through service by applying for a mission trip to Haiti',
+                'Description' => 'Live out God\'s mission through service by applying for a trip to Haiti',
                 'Link' => '/experience'
             ),
             array(
