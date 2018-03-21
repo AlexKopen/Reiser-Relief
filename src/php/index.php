@@ -68,7 +68,7 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Url' => 'work-slide.jpg',
                 'Alt' => 'Core Values',
                 'Header' => 'What we Do',
-                'Description' => 'Learn more about Reiser Relief including our core values, upcoming events, and ways you can help',
+                'Description' => 'Learn more about Reiser Relief\'s values and the organization as a whole',
                 'Link' => '/about'
             ),
             array(
@@ -84,6 +84,20 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Header' => 'Give Today',
                 'Description' => 'Help those in need with a donation which will provide water, food, care, and so much more',
                 'Link' => '/give'
+            ),
+            array(
+                'Url' => 'event-slide.jpg',
+                'Alt' => 'Events',
+                'Header' => 'Connect With Others',
+                'Description' => 'Come to one of our events to raise support for Haiti',
+                'Link' => '/events'
+            ),
+            array(
+                'Url' => 'contact-slide.jpg',
+                'Alt' => 'Contact',
+                'Header' => 'Reach Out to Us',
+                'Description' => 'We would love to hear any questions or comments you may have',
+                'Link' => '/contact'
             )
         ),
         'News' => json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/news/5'), true)
