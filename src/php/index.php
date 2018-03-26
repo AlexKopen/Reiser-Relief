@@ -175,7 +175,7 @@ $boardMembers = array(
         'image' => 'joline_caswell',
         'name' => 'Joline Caswell',
         'title' => 'Board Member',
-        'bio' => ''
+        'bio' => 'I live in White Bear Lake with my husband, Phil, and we have 3 grown children. In 2016, I joined my mother and husband on a mission trip to Haiti, through Reiser Relief and St. Mary of the Lake.  I saw firsthand the immense need there, as well as the amazing impact Reiser Relief was having on people\'s lives. I felt called to serve and help Reiser Relief in their on-going mission and was honored to join the board in 2017.'
     ),
     array(
         'image' => 'mary_welle',
