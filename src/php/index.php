@@ -181,7 +181,7 @@ $boardMembers = array(
         'image' => 'mary_welle',
         'name' => 'Mary Welle',
         'title' => 'Board Member',
-        'bio' => 'I live in White Bear Lake, MN, with my husband Jerry, who is the treasurer of Reiser Relief.  We have three grown children and 6 grandchildren.  We attend St. Marys of the Lake Parish where Father Reiser had his first assignment.  I took my first mission trip to Haiti in 2010 and became involved with Reiser Relief in 2014.  In 2014, Ann Brau and myself brought Father Talbot on his first mission trip to Haiti.  Since then, Father Talbot and St. Mary of the Lake have become very involved in Reiser Relief and have supported many projects in Haiti.  I help manage the relationship between St. Marys and Reiser Relief.  I have been on the board since 2017.'
+        'bio' => 'I live in White Bear Lake, MN, with my husband, Jerry, who is the treasurer of Reiser Relief.  We have three grown children and 6 grandchildren.  We attend St. Marys of the Lake Parish where Father Reiser had his first assignment.  I took my first mission trip to Haiti in 2010 and became involved with Reiser Relief in 2014.  In 2014, Ann Brau and myself brought Father Talbot on his first mission trip to Haiti.  Since then, Father Talbot and St. Mary of the Lake have become very involved in Reiser Relief and have supported many projects in Haiti.  I help manage the relationship between St. Marys and Reiser Relief.  I have been on the board since 2017.'
     )
 );
 

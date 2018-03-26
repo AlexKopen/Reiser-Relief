@@ -15,7 +15,7 @@
       }
     }
 
-    @media @very-small-screen {
+    @media only screen and (max-width: 250px) {
       h2 {
         text-decoration: underline;
       }
@@ -23,22 +23,24 @@
 
     h2 {
       width: 100%;
-      max-width: 335px;
+      max-width: 200px;
       line-height: @header-height;
       color: @white;
-      font-size: 42px;
+      font-size: 25px;
 
       .arrow {
         padding: 0;
         margin: 0;
         float: right;
 
-        @media @very-small-screen {
+        @media only screen and (max-width: 250px) {
           visibility: hidden;
         }
 
         &.right-arrow {
+          width: 12px;
           margin-top: (@header-height - image-height('../images/common/arrows/right-arrow-white-large.png')) / 2;
+          margin-right: image-width('../images/common/arrows/down-arrow-white-large.png') / 2;
 
           &.first-event {
             display: none;
@@ -46,6 +48,7 @@
         }
 
         &.down-arrow {
+          width: 22px;
           display: none;
           margin-top: (@header-height - image-height('../images/common/arrows/down-arrow-white-large.png')) / 2;
 
