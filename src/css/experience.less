@@ -1,17 +1,20 @@
 @import "globals.less";
 
 #experience {
-  #page-info {
-    @link-height: 48px;
+  .page-section-header {
+    text-align: center;
+  }
 
+  #mission-trips {
     .link-block {
+      @link-height: 48px;
       background: @light-theme-color;
       color: @white;
       text-align: center;
       height: @link-height;
       width: 100%;
       max-width: 400px;
-      margin: 0 auto;
+      margin: 0 auto @large-top-margin;
 
       &:hover {
         background: @dark-theme-color;
@@ -21,14 +24,6 @@
         line-height: @link-height;
       }
     }
-  }
-
-  .page-section-header {
-    text-align: center;
-  }
-
-  #mission-trips {
-    margin-top: 45px;
 
     img {
       @media only screen and (max-width: 950px) {
@@ -54,16 +49,12 @@
       padding-bottom: 5px;
     }
 
-    #trip-showcase {
-      padding: @large-top-margin 0 0;
+    .page-sub-section {
+      margin-top: @small-top-margin;
+      min-height: 346px;
 
-      .page-sub-section {
-        margin-top: @small-top-margin;
-        min-height: 346px;
-
-        &#first {
-          margin-top: 0;
-        }
+      &#first {
+        margin-top: 0;
       }
     }
   }
