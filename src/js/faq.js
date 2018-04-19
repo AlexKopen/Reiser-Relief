@@ -3,7 +3,7 @@ var faq = (function () {
 
     function questionShow() {
         $('.question h3').on('click', function () {
-            $(this).parent().find('p').slideToggle();
+            $(this).parent().find('.question-answer').slideToggle();
             $(this).parent().find('.right-arrow, .down-arrow').toggle();
         });
     }

@@ -83,7 +83,7 @@
 
                         <tbody>
                         <tr>
-                            <td>$875</td>
+                            <td><a href="/experience#faq" class="plain-link">See the FAQ</a></td>
                             <td>Monday to Monday: 8 days / 7 nights</td>
                             <td>15 years</td>
                             <td><a href="/experience/trip-dates" class="plain-link">Apply online</a></td>
@@ -96,7 +96,8 @@
                                 <div class="pure-u-1-2">
                                     <div class="left-column"><p>Cost</p></div>
                                 </div>
-                                <div class="pure-u-1-2"><p>$875</p></div>
+                                <div class="pure-u-1-2"><p><a href="/experience#faq" class="plain-link">See the FAQ</a>
+                                    </p></div>
                             </div>
                         </div>
                         <div class="small-table-row">
@@ -169,6 +170,51 @@
                 </h2>
             </div>
             <div class="padding-hold">
+                <div class="question">
+                    <h3>
+                        What is the cost?
+                        <img class="right-arrow" src="/resources/images/common/arrows/right-arrow-black-small.png"
+                             alt="Right arrow">
+                        <img class="down-arrow" src="/resources/images/common/arrows/down-arrow-black-small.png"
+                             alt="Down arrow">
+                    </h3>
+                    <div class="question-answer">
+                        <p>The base price for a trip is $875, which includes:</p>
+                        <ul>
+                            <li>Lodging</li>
+                            <li>Breakfast and dinner daily</li>
+                            <li>Safe drinking water</li>
+                            <li>Transportation to / from airport and ministry sites</li>
+                            <li>Interpreters / security</li>
+                            <li>2 trip leaders</li>
+                            <li>Group t-shirt (additional shirts available for $12)</li>
+                        </ul>
+
+                        <p>Other expenses / US:</p>
+                        <ul>
+                            <li>You purchase your own airline ticket.  You can check ticket prices by searching for
+                                flights
+                                from your airport to Port au Prince (PAP)
+                            </li>
+                            <li><a href="http://www.volunteercard.com/reiserrelief.html" target="_blank">$29 mandatory
+                                    emergency evacuation insurance</a></li>
+                            <li>Group snacks for lunch (purchased in the US and brought to Haiti)</li>
+                            <li>Passport</li>
+                            <li>Vaccinations</li>
+                        </ul>
+                        <p>Other expenses / Haiti:</p>
+                        <ul>
+                            <li>$10 Haiti entrance tax</li>
+                            <li>Tips in Haiti(suggest $20)</li>
+                            <li>Your team may choose to go to a pool and / or beach that charge entry. Total entry fees
+                                should not exceed $20.
+                            </li>
+                            <li>Beverages purchased at restaurants or other locations</li>
+                            <li>Souvenirs</li>
+                            <li>Offering at church service<strong> </strong></li>
+                        </ul>
+                    </div>
+                </div>
                 {% for CurrentQuestion in Questions %}
                     <div class="question">
                         <h3>
@@ -178,7 +224,7 @@
                             <img class="down-arrow" src="/resources/images/common/arrows/down-arrow-black-small.png"
                                  alt="Down arrow">
                         </h3>
-                        <p>
+                        <p class="question-answer">
                             {{ CurrentQuestion['answer'] | raw }}
                         </p>
                     </div>
