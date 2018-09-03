@@ -2,9 +2,9 @@ var event = (function () {
   'use strict';
 
   function eventShow() {
-    $('.individual-event').on('click', function () {
-      $(this).find('.event-content').slideToggle(800);
-      $(this).find('.right-arrow, .down-arrow').toggle();
+    $('.individual-event .page-section-header').on('click', function () {
+      $(this).parent().find('.event-content').slideToggle(800);
+      $(this).parent().find('.right-arrow, .down-arrow').toggle();
     });
   }
 
