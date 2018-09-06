@@ -118,6 +118,13 @@ $app->get('/about/core-values', function () use ($app, $AboutTitle, $AboutDispla
 
 $boardMembers = array(
     array(
+        'image' => 'will_jude',
+        'name' => 'Will Jude',
+        'title' => 'Executive Director',
+        'email' => 'willjude@reiserrelief.org',
+        'bio' => '​​Will Jude graduated from St. John’s University with a bachelor’s degree in political science and communication. He has extensive experience in nonprofit management and mission work. Will has participated in numerous mission programs in Haiti the past four summers, including some independent work in the slums surrounding Port-au-Prince. Will is committed to increasing opportunity for the poor and marginalized, and has helped develop a unique poverty-alleviation model that addresses the root causes of poverty in Haiti, rather than the symptoms. His favorite course in college was <i>International Law and Organization</i>. Prior to joining Reiser Relief, Will served as the Executive Director of Just 4 Them Inc. Will enjoys spending time with friends, traveling domestically and abroad, and participating in activities at his local Catholic church. Will became Reiser Relief’s Executive Director in September, 2018.'
+    ),
+    array(
         'image' => 'ann_brau',
         'name' => 'Ann Brau',
         'title' => 'President',

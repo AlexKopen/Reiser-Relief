@@ -14,8 +14,13 @@
                             <p class="position">
                                 {{ CurrentBoardMember['title'] }}
                             </p>
+                            {% if  CurrentBoardMember['email'] is defined %}
+                            <p class="email">
+                                <a href="mailto:{{ CurrentBoardMember['email'] }}" class="plain-link">{{ CurrentBoardMember['email'] }}</a>
+                            </p>
+                            {% endif %}
                             <p class="bio">
-                                {{ CurrentBoardMember['bio'] }}
+                                {{ CurrentBoardMember['bio'] | raw }}
                             </p>
                         </div>
                     </div>
