@@ -65,38 +65,38 @@ $app->get('/', function () use ($app, $callAPI) {
         'Title' => 'Home',
         'SlideShowImages' => array(
             array(
+                'Url' => 'event-slide.jpg',
+                'Alt' => 'Events',
+                'Header' => '7th Annual Fall Gala',
+                'Description' => 'Thursday, November 15th<br>Doors open at 5pm<br>Brooklyn Park, MN',
+                'Link' => '/events'
+            ),
+            array(
                 'Url' => 'work-slide.jpg',
                 'Alt' => 'Core Values',
-                'Header' => 'What we Do',
-                'Description' => 'Learn more about Reiser Relief\'s values and the organization as a whole',
+                'Header' => 'Our Impact',
+                'Description' => 'Learn how we improve the lives of those we serve',
                 'Link' => '/about'
             ),
             array(
                 'Url' => 'experience-slide.jpg',
                 'Alt' => 'Experience',
-                'Header' => 'Visit Haiti',
-                'Description' => 'Live out God\'s mission through service by applying for a trip to Haiti',
+                'Header' => 'Missions',
+                'Description' => 'Live out God\'s call to serve by applying for a mission trip to Haiti',
                 'Link' => '/experience'
             ),
             array(
                 'Url' => 'support-slide.jpg',
                 'Alt' => 'Support Us',
-                'Header' => 'Give Today',
-                'Description' => 'Help those in need with a donation which will provide water, food, care, and so much more',
+                'Header' => 'Support Us',
+                'Description' => 'Help us break the cycle of poverty with a one-time or recurring gift',
                 'Link' => '/give'
-            ),
-            array(
-                'Url' => 'event-slide.jpg',
-                'Alt' => 'Events',
-                'Header' => 'Connect With Others',
-                'Description' => 'Come to one of our events to raise support for Haiti',
-                'Link' => '/events'
             ),
             array(
                 'Url' => 'contact-slide.jpg',
                 'Alt' => 'Contact',
-                'Header' => 'Reach Out to Us',
-                'Description' => 'We would love to hear any questions or comments you may have',
+                'Header' => 'Join Us',
+                'Description' => 'We would love to learn more about you and your interest in our ministry',
                 'Link' => '/contact'
             )
         ),
