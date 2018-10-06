@@ -111,8 +111,7 @@ $app->get('/about/core-values', function () use ($app, $AboutTitle, $AboutDispla
     return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
-        'Active' => 'Core Values',
-        'DisplayPageInfo' => true
+        'Active' => 'Core Values'
     ));
 });
 
@@ -197,7 +196,6 @@ $app->get('/about/board-members', function () use ($app, $AboutTitle, $AboutDisp
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
         'Active' => 'Board Members',
-        'DisplayPageInfo' => false,
         'BoardMembers' => $boardMembers
     ));
 });
@@ -206,8 +204,7 @@ $app->get('/about/our-founder', function () use ($app, $AboutTitle, $AboutDispla
     return $app['twig']->render('about/about.twig', array(
         'Title' => $AboutTitle,
         'DisplayTitle' => $AboutDisplayTitle,
-        'Active' => 'Our Founder',
-        'DisplayPageInfo' => false
+        'Active' => 'Our Founder'
     ));
 });
 

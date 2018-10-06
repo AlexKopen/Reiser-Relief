@@ -22,7 +22,7 @@ var slideShow = (function () {
         infinite: true,
         arrows: false,
         speed: 1000,
-        delay: 600000
+        delay: 6000
       });
 
       if (Modernizr.mq('(max-width: 767px)')) {
