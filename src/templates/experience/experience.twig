@@ -19,13 +19,91 @@
                 <h2 class="page-section-header">
                     Mission Trips
                 </h2>
-                <div class="link-block">
-                    <a href="/experience/trip-dates">
-                        <p>
-                            APPLY
-                        </p>
-                    </a>
-                </div>
+
+                <section>
+                    <div id="trip-selection">
+                        <div class="container">
+                            <div class="padding-hold">
+                                {% if Trips is not empty %}
+                                    <table class="pure-table pure-table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Trip Date</th>
+                                            <th>Trip Leader</th>
+                                            <th>Trip Status</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        {% for CurrentTrip in Trips %}
+                                            <tr>
+                                                <td>{{ CurrentTrip['date'] | date("l, F jS, Y") }}</td>
+                                                <td>{{ CurrentTrip['tripLeader'] }}</td>
+                                                {% if CurrentTrip['status'] == 'Open' %}
+                                                    <td class="apply-status">
+                                                        <a class="plain-link"
+                                                           href="/experience/apply?id={{ CurrentTrip['id'] }}&date={{ CurrentTrip['date'] }}">
+                                                            <div class="apply-container">
+                                                                <p>
+                                                                    Apply
+                                                                </p>
+                                                            </div>
+                                                        </a>
+                                                    </td>
+                                                {% else %}
+                                                    <td class="full-status">Trip is full</td>
+                                                {% endif %}
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+
+                                    {% for CurrentTrip in Trips %}
+                                        <div class="small-table-hold">
+                                            <div class="small-table-row odd" id="first">
+                                                <div class="pure-g">\
+                                                    <div class="pure-u-1-2">
+                                                        <div class="left-column"><p>Trip Date</p></div>
+                                                    </div>
+                                                    <div class="pure-u-1-2"><p>{{ CurrentTrip['date'] | date("F jS, Y") }}</p></div>
+                                                </div>
+                                            </div>
+                                            <div class="small-table-row" id="last">
+                                                <div class="pure-g">
+                                                    <div class="pure-u-1-2">
+                                                        <div class="left-column"><p>Trip Status</p></div>
+                                                    </div>
+                                                    <div class="pure-u-1-2">
+                                                        {% if CurrentTrip['status'] == 'Open' %}
+                                                        <a class="plain-link"
+                                                           href="/experience/apply?id={{ CurrentTrip['id'] }}&date={{ CurrentTrip['date'] }}">
+                                                            <p>
+                                                                Apply
+                                                            </p>
+                                                            {% else %}
+                                                                <p class="full-status">Trip is full</p>
+                                                            {% endif %}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                {% else %}
+
+                                    <div id="page-info">
+                                        <h1 id="page-info-heading">
+                                            There are no upcoming mission trips. Please check back again another time.
+                                        </h1>
+                                    </div>
+
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <div id="first" class="page-sub-section">
                     <img class="left-aligned" src="/resources/images/experience/trip-1.jpg"
                          alt="Mission trip">
@@ -77,7 +155,6 @@
                             <th>Cost</th>
                             <th>Trip Length</th>
                             <th>Age Minimum</th>
-                            <th>Application</th>
                         </tr>
                         </thead>
 
@@ -86,7 +163,6 @@
                             <td><a href="/experience#faq" class="plain-link">See the FAQ</a></td>
                             <td>Monday to Monday: 8 days / 7 nights</td>
                             <td>15 years</td>
-                            <td><a href="/experience/trip-dates" class="plain-link">Apply online</a></td>
                         </tr>
                         </tbody>
                     </table>
@@ -114,15 +190,6 @@
                                     <div class="left-column"><p>Age Minimum</p></div>
                                 </div>
                                 <div class="pure-u-1-2"><p>15 years</p></div>
-                            </div>
-                        </div>
-                        <div class="small-table-row" id="last">
-                            <div class="pure-g">
-                                <div class="pure-u-1-2">
-                                    <div class="left-column"><p>Application</p></div>
-                                </div>
-                                <div class="pure-u-1-2"><p><a href="/experience/trip-dates" class="plain-link">Apply
-                                            online</a></p></div>
                             </div>
                         </div>
                     </div>

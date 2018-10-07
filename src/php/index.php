@@ -295,19 +295,12 @@ Your trip leader will let you know when to submit a <a href="https://drive.googl
     )
 );
 
-$app->get('/experience', function () use ($app, $questions) {
+$app->get('/experience', function () use ($app, $questions, $callAPI) {
+    $allTrips = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/trip-dates-date-filtered'), true);
     return $app['twig']->render('experience/experience.twig', array(
         'Title' => 'Experience',
         'DisplayTitle' => 'Experience',
-        'Questions' => $questions
-    ));
-});
-
-$app->get('/experience/trip-dates', function () use ($app, $callAPI) {
-    $allTrips = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/trip-dates-date-filtered'), true);
-    return $app['twig']->render('experience/trip-dates.twig', array(
-        'Title' => 'Experience - Mission Trips',
-        'DisplayTitle' => 'Mission Trips',
+        'Questions' => $questions,
         'Trips' => $allTrips
     ));
 });
