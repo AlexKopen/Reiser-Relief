@@ -90,7 +90,7 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Alt' => 'Support Us',
                 'Header' => 'Support Us',
                 'Description' => 'Help us break the cycle of poverty with a one-time or recurring gift',
-                'Link' => '/give'
+                'Link' => '/donate'
             ),
             array(
                 'Url' => 'contact-slide.jpg',
@@ -330,10 +330,10 @@ $app->post('/missions/apply/apply-submit', function () use ($app, $callAPI) {
     ));
 });
 
-$app->get('/give', function () use ($app) {
-    return $app['twig']->render('give/give.twig', array(
-        'Title' => 'Give',
-        'DisplayTitle' => 'Give'
+$app->get('/donate', function () use ($app) {
+    return $app['twig']->render('donate/donate.twig', array(
+        'Title' => 'Donate',
+        'DisplayTitle' => 'Donate'
     ));
 });
 
@@ -377,6 +377,10 @@ $app->get('/apply', function () use ($app) {
     return $app->redirect('/missions');
 });
 
+$app->get('/experience', function () use ($app) {
+    return $app->redirect('/missions');
+});
+
 $app->get('/ministries', function () use ($app) {
     return $app->redirect('/about');
 });
@@ -386,7 +390,7 @@ $pages = [
     'about',
     'events',
     'missions',
-    'give',
+    'donate',
     'contact'
 ];
 
