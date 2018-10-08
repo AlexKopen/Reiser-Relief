@@ -79,11 +79,11 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Link' => '/about'
             ),
             array(
-                'Url' => 'experience-slide.jpg',
-                'Alt' => 'Experience',
+                'Url' => 'missions-slide.jpg',
+                'Alt' => 'Missions',
                 'Header' => 'Missions',
                 'Description' => 'Live out God\'s call to serve by applying for a mission trip to Haiti',
-                'Link' => '/experience'
+                'Link' => '/missions'
             ),
             array(
                 'Url' => 'support-slide.jpg',
@@ -295,37 +295,37 @@ Your trip leader will let you know when to submit a <a href="https://drive.googl
     )
 );
 
-$app->get('/experience', function () use ($app, $questions, $callAPI) {
+$app->get('/missions', function () use ($app, $questions, $callAPI) {
     $allTrips = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/trip-dates-date-filtered'), true);
-    return $app['twig']->render('experience/experience.twig', array(
-        'Title' => 'Experience',
-        'DisplayTitle' => 'Experience',
+    return $app['twig']->render('missions/missions.twig', array(
+        'Title' => 'Missions',
+        'DisplayTitle' => 'Missions',
         'Questions' => $questions,
         'Trips' => $allTrips
     ));
 });
 
-$app->get('/experience/apply', function () use ($app) {
+$app->get('/missions/apply', function () use ($app) {
     if (isset($_GET['id'])) {
-        return $app['twig']->render('experience/apply.twig', array(
-            'Title' => 'Experience - Mission Trip Application',
+        return $app['twig']->render('missions/apply.twig', array(
+            'Title' => 'Missions - Mission Trip Application',
             'DisplayTitle' => 'Mission Trip Application',
             'TripId' => $_GET['id'],
             'TripDate' => $_GET['date']
         ));
     } else {
-        return $app->redirect('/experience/trip-dates');
+        return $app->redirect('/missions/trip-dates');
     }
 });
 
-$app->post('/experience/apply/apply-submit', function () use ($app, $callAPI) {
+$app->post('/missions/apply/apply-submit', function () use ($app, $callAPI) {
     if (isset($_GET['id'])) {
         $_POST['tripId'] = $_GET['id'];
         $callAPI('POST', 'http://api.reiserrelief.org/public/application', $_POST);
     }
 
-    return $app['twig']->render('experience/apply-submit.twig', array(
-        'Title' => 'Experience - Mission Trip Application',
+    return $app['twig']->render('missions/apply-submit.twig', array(
+        'Title' => 'Missions - Mission Trip Application',
         'DisplayTitle' => 'Mission Trip Application'
     ));
 });
@@ -370,11 +370,11 @@ $app->get('/about', function () use ($app) {
 });
 
 $app->get('/trips', function () use ($app) {
-    return $app->redirect('/experience');
+    return $app->redirect('/missions');
 });
 
 $app->get('/apply', function () use ($app) {
-    return $app->redirect('/experience');
+    return $app->redirect('/missions');
 });
 
 $app->get('/ministries', function () use ($app) {
@@ -385,7 +385,7 @@ $pages = [
     '',
     'about',
     'events',
-    'experience',
+    'missions',
     'give',
     'contact'
 ];

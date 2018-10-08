@@ -1,4 +1,4 @@
-{{ include('experience/experience-header.twig') }}
+{{ include('missions/missions-header.twig') }}
 
 <section>
     <div id="page-info">
@@ -42,7 +42,7 @@
                                                 {% if CurrentTrip['status'] == 'Open' %}
                                                     <td class="apply-status">
                                                         <a class="plain-link"
-                                                           href="/experience/apply?id={{ CurrentTrip['id'] }}&date={{ CurrentTrip['date'] }}">
+                                                           href="/missions/apply?id={{ CurrentTrip['id'] }}&date={{ CurrentTrip['date'] }}">
                                                             <div class="apply-container">
                                                                 <p>
                                                                     Apply
@@ -76,7 +76,7 @@
                                                     <div class="pure-u-1-2">
                                                         {% if CurrentTrip['status'] == 'Open' %}
                                                         <a class="plain-link"
-                                                           href="/experience/apply?id={{ CurrentTrip['id'] }}&date={{ CurrentTrip['date'] }}">
+                                                           href="/missions/apply?id={{ CurrentTrip['id'] }}&date={{ CurrentTrip['date'] }}">
                                                             <p>
                                                                 Apply
                                                             </p>
@@ -105,7 +105,7 @@
                 </section>
 
                 <div id="first" class="page-sub-section">
-                    <img class="left-aligned" src="/resources/images/experience/trip-1.jpg"
+                    <img class="left-aligned" src="/resources/images/missions/trip-1.jpg"
                          alt="Mission trip">
                     <h3>
                         Leave your Comfort Zone
@@ -119,7 +119,7 @@
                     </p>
                 </div>
                 <div class="page-sub-section">
-                    <img class="right-aligned" src="/resources/images/experience/trip-2.jpg"
+                    <img class="right-aligned" src="/resources/images/missions/trip-2.jpg"
                          alt="Mission trip">
                     <h3>
                         Grow as a Person
@@ -160,7 +160,7 @@
 
                         <tbody>
                         <tr>
-                            <td><a href="/experience#faq" class="plain-link">See the FAQ</a></td>
+                            <td><a href="/missions#faq" class="plain-link">See the FAQ</a></td>
                             <td>Monday to Monday: 8 days / 7 nights</td>
                             <td>15 years</td>
                         </tr>
@@ -172,7 +172,7 @@
                                 <div class="pure-u-1-2">
                                     <div class="left-column"><p>Cost</p></div>
                                 </div>
-                                <div class="pure-u-1-2"><p><a href="/experience#faq" class="plain-link">See the FAQ</a>
+                                <div class="pure-u-1-2"><p><a href="/missions#faq" class="plain-link">See the FAQ</a>
                                     </p></div>
                             </div>
                         </div>
@@ -301,4 +301,4 @@
     </div>
 </section>
 
-{{ include('experience/experience-footer.twig') }}
+{{ include('missions/missions-footer.twig') }}
