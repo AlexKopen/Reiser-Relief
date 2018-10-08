@@ -14,10 +14,27 @@ footer {
   }
 
   #footer-container {
-   margin-top: 35px;
+    margin-top: 35px;
+    position: relative;
 
     @media @small-screen {
       margin-top: 25px;
+    }
+
+    #contact {
+      position: absolute;
+      width: 200px;
+      height: @footer-height-small;
+      
+      @media only screen and (max-width: 825px) {
+        display: none;
+      }
+
+      p {
+        text-align: left;
+        line-height: 25px;
+        font-size: 14px;
+      }
     }
 
     img {
