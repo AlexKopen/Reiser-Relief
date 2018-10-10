@@ -100,7 +100,7 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Link' => '/contact'
             )
         ),
-        'News' => json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/news/5'), true)
+        'News' => json_decode($callAPI('GET', 'https://api.reiserrelief.org/public/news/5'), true)
     ));
 });
 
@@ -296,7 +296,7 @@ Your trip leader will let you know when to submit a <a href="https://drive.googl
 );
 
 $app->get('/missions', function () use ($app, $questions, $callAPI) {
-    $allTrips = json_decode($callAPI('GET', 'http://api.reiserrelief.org/public/trip-dates-date-filtered'), true);
+    $allTrips = json_decode($callAPI('GET', 'https://api.reiserrelief.org/public/trip-dates-date-filtered'), true);
     return $app['twig']->render('missions/missions.twig', array(
         'Title' => 'Missions',
         'DisplayTitle' => 'Missions',
@@ -321,7 +321,7 @@ $app->get('/missions/apply', function () use ($app) {
 $app->post('/missions/apply/apply-submit', function () use ($app, $callAPI) {
     if (isset($_GET['id'])) {
         $_POST['tripId'] = $_GET['id'];
-        $callAPI('POST', 'http://api.reiserrelief.org/public/application', $_POST);
+        $callAPI('POST', 'https://api.reiserrelief.org/public/application', $_POST);
     }
 
     return $app['twig']->render('missions/apply-submit.twig', array(
@@ -346,7 +346,7 @@ $app->get('/contact', function () use ($app) {
 
 $app->post('/contact/contact-submit', function () use ($app, $callAPI) {
 
-    $callAPI('POST', 'http://api.reiserrelief.org/public/contact', $_POST);
+    $callAPI('POST', 'https://api.reiserrelief.org/public/contact', $_POST);
 
     return $app['twig']->render('contact/contact-submit.twig', array(
         'Title' => 'Contact',
