@@ -1,44 +1,69 @@
 var donate = (function () {
   'use strict';
 
-  function buttonClick() {
-    $('.donation-container').click(function () {
-      var amountClicked = $(this).children('.donation-amount').text().trim();
-      var url = 'https://www.paypal.com/cgi-bin/webscr';
-      var inputField1Name = 'cmd';
-      var inputField1Value = '_s-xclick';
-      var inputField2Name = 'hosted_button_id';
-      var inputField2Value;
+  function donationFormInitialization() {
+    $('#donation-form #frequency-list li').click(function () {
+      $(this).parent().find('li').each(function() {
+        $(this).removeClass('active');
+      });
+      $(this).addClass('active');
 
-      switch (amountClicked) {
-        case '$25':
-          inputField2Value = 'FYVU8GZE52KJA';
+      $('#donation-form .donation-level').each(function() {
+        $(this).removeClass('active');
+      });
+
+      $('#donation-form .donation-level li').each(function() {
+        $(this).removeClass('active');
+      });
+
+      var activeDonationLevel;
+      switch($(this).text()) {
+        case 'One-Time':
+          activeDonationLevel = $('#one-time-level');
           break;
-        case '$50':
-          inputField2Value = 'Z8Y7MHEWPSQNA';
+        case 'Monthly':
+          activeDonationLevel = $('#monthly-level');
           break;
-        case '$100':
-          inputField2Value = 'Y583V7BZ3WWU4';
+        case 'Quarterly':
+          activeDonationLevel = $('#quarterly-level');
+          break;
+        case 'Annually':
+          activeDonationLevel = $('#annually-level');
           break;
         default:
-          inputField2Value = '3UD9NWCHCWPWE';
+          activeDonationLevel = $('#one-time-level');
           break;
       }
 
-      var form = $(
-        '<form action="' + url + '" method="post" target ="_blank" style="display:none">' +
-        '<input name="' + inputField1Name + '" value="' + inputField1Value + '">' +
-        '<input name="' + inputField2Name + '" value="' + inputField2Value + '">' +
-        '</form>'
-      );
+      activeDonationLevel.addClass('active');
+    });
 
-      $('#donate').append(form);
-      form.submit();
+    $('#donation-form .donation-level li').click(function () {
+      $('#donation-form .error').css('visibility', 'hidden');
+      $('#donation-form .donation-level li').each(function() {
+        $(this).removeClass('active');
+      });
+
+      $(this).addClass('active');
+    });
+
+    $('#donation-form #custom-amount').keypress(function () {
+      console.log('changed');
+      $('#donation-form .error').css('visibility', 'hidden');
+    });
+
+    $('#donation-form #continue').click(function () {
+      console.log($('#custom-amount').val());
+      if ($('.donation-level.active li.active').length <= 0 && $('#custom-amount').val().length <= 0) {
+        $('#donation-form .error').css('visibility', 'visible');
+      } else {
+        // send donate value over
+      }
     });
   }
 
   function init() {
-    buttonClick();
+    donationFormInitialization();
   }
 
   var donateModule = {
