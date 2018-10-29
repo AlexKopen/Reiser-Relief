@@ -220,7 +220,7 @@ $app->get('/events', function () use ($app, $EventsTitle) {
 $questions = array(
     array(
         'question' => 'How far in advance do I need to apply?',
-        'answer' => 'We can take up to 16 people on a mission trip including the trip leaders. 
+        'answer' => 'We can take up to 30 people on a mission trip including the trip leaders. 
                 Trips are available until filled. We encourage applications at least 4 months before the trip.'
     ),
     array(
