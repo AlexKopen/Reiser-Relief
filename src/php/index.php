@@ -121,12 +121,13 @@ $boardMembers = array(
         'name' => 'Will Jude',
         'title' => 'Executive Director',
         'email' => 'willjude@reiserrelief.org',
-        'bio' => '​​Will Jude graduated from St. John’s University with a bachelor’s degree in political science and communication. He has extensive experience in nonprofit management and mission work. Will has participated in numerous mission programs in Haiti the past four summers, including some independent work in the slums surrounding Port-au-Prince. Will is committed to increasing opportunity for the poor and marginalized, and has helped develop a unique poverty-alleviation model that addresses the root causes of poverty in Haiti, rather than the symptoms. His favorite course in college was <i>International Law and Organization</i>. Prior to joining Reiser Relief, Will served as the Executive Director of Just 4 Them Inc. Will enjoys spending time with friends, traveling domestically and abroad, and participating in activities at his local Catholic church. Will became Reiser Relief’s Executive Director in September, 2018.'
+        'bio' => 'Will Jude graduated from St. John’s University with a bachelor’s degree in political science and communication. He has extensive experience in nonprofit management and mission work. Will has participated in numerous mission programs in Haiti the past four summers, including some independent work in the slums surrounding Port-au-Prince. Will is committed to increasing opportunity for the poor and marginalized and has helped develop a unique poverty-alleviation model that addresses the root causes of poverty in Haiti, rather than the symptoms. Prior to joining Reiser Relief, Will served as the Executive Director of Just 4 Them Inc. Will enjoys spending time with friends, traveling domestically and abroad, and participating in activities at his local Catholic church. Will became Reiser Relief’s Executive Director in September, 2018.'
     ),
     array(
         'image' => 'ann_brau',
         'name' => 'Ann Brau',
         'title' => 'President',
+        'email' => 'annbrau@reiserrelief.org',
         'bio' => 'My husband and I live in Eden Prairie where we raised our three grown daughters. I was baptized and married by my uncle, Father Reiser. He taught me by example that God gets his work on earth done by using people whose hearts are humble and willing to serve. Is has been my honor to continue his work in Haiti since joining the Board shortly after his death.'
     ),
     array(
@@ -154,6 +155,24 @@ $boardMembers = array(
         'bio' => 'My husband and I live in White Bear Lake where we raised our three daughters.  As a child, I always read my mother\'s Maryknoll magazine and from that knew I wanted to one day go on a mission trip, preferably in Haiti.  It took a while, but I went on my first trip in March of 2016 after Reiser Relief connected with St. Mary of the Lake. I feel very blessed to have had the opportunity to participate in a second trip since then and to be a member of the Reiser Relief board.'
     ),
     array(
+        'image' => 'rick_wilder',
+        'name' => 'Rick Wilder',
+        'title' => 'Board Member',
+        'bio' => 'Through my years of friendship with Father Reiser he became an inspiration for my family of three children and my wife Rita. When he would talk to me, I knew that everything was according to God’s will. I was honored that he asked me to become a board member so that with his directive we could help the less fortunate in Haiti. Father Reiser was and is, to this day a reason to respect life and to do God’s will always.'
+    ),
+    array(
+        'image' => 'doris_schulte',
+        'name' => 'Doris Schulte',
+        'title' => 'Board Member',
+        'bio' => 'Father Bernard Reiser, our pastor and cherished friend, went to Haiti and what he saw broke his heart wide open. His commitment to make a difference caused us to start fund raising for his cause. Over the years, we’ve raised hundreds of thousands of dollars to reduce suffering in Haiti.'
+    ),
+    array(
+        'image' => 'mary_welle',
+        'name' => 'Mary Welle',
+        'title' => 'Board Member',
+        'bio' => 'I live in White Bear Lake, MN, with my husband, Jerry, who is the treasurer of Reiser Relief.  We have three grown children and 6 grandchildren.  We attend St. Marys of the Lake Parish where Father Reiser had his first assignment.  I took my first mission trip to Haiti in 2010 and became involved with Reiser Relief in 2014.  In 2014, Ann Brau and myself brought Father Talbot on his first mission trip to Haiti.  Since then, Father Talbot and St. Mary of the Lake have become very involved in Reiser Relief and have supported many projects in Haiti.  I help manage the relationship between St. Marys and Reiser Relief.  I have been on the board since 2017.'
+    ),
+    array(
         'image' => 'brian_olson',
         'name' => 'Brian Olson',
         'title' => 'Board Member',
@@ -166,28 +185,10 @@ $boardMembers = array(
         'bio' => 'I am a nephew of Father Bernard Reiser. I joined the board in early 2012 to help the water trucks keep delivering fresh water to the people of Haiti. My desire is to keep the legacy that Father Reiser started in Haiti going.'
     ),
     array(
-        'image' => 'doris_schulte',
-        'name' => 'Doris Schulte',
-        'title' => 'Board Member',
-        'bio' => 'Father Bernard Reiser, our pastor and cherished friend, went to Haiti and what he saw broke his heart wide open. His commitment to make a difference caused us to start fund raising for his cause. Over the years, we’ve raised hundreds of thousands of dollars to reduce suffering in Haiti.'
-    ),
-    array(
-        'image' => 'rick_wilder',
-        'name' => 'Rick Wilder',
-        'title' => 'Board Member',
-        'bio' => 'Through my years of friendship with Father Reiser he became an inspiration for my family of three children and my wife Rita. When he would talk to me, I knew that everything was according to God’s will. I was honored that he asked me to become a board member so that with his directive we could help the less fortunate in Haiti. Father Reiser was and is, to this day a reason to respect life and to do God’s will always.'
-    ),
-    array(
         'image' => 'joline_caswell',
         'name' => 'Joline Caswell',
         'title' => 'Board Member',
         'bio' => 'I live in White Bear Lake with my husband, Phil, and we have 3 grown children. In 2016, I joined my mother and husband on a mission trip to Haiti, through Reiser Relief and St. Mary of the Lake.  I saw firsthand the immense need there, as well as the amazing impact Reiser Relief was having on people\'s lives. I felt called to serve and help Reiser Relief in their on-going mission and was honored to join the board in 2017.'
-    ),
-    array(
-        'image' => 'mary_welle',
-        'name' => 'Mary Welle',
-        'title' => 'Board Member',
-        'bio' => 'I live in White Bear Lake, MN, with my husband, Jerry, who is the treasurer of Reiser Relief.  We have three grown children and 6 grandchildren.  We attend St. Marys of the Lake Parish where Father Reiser had his first assignment.  I took my first mission trip to Haiti in 2010 and became involved with Reiser Relief in 2014.  In 2014, Ann Brau and myself brought Father Talbot on his first mission trip to Haiti.  Since then, Father Talbot and St. Mary of the Lake have become very involved in Reiser Relief and have supported many projects in Haiti.  I help manage the relationship between St. Marys and Reiser Relief.  I have been on the board since 2017.'
     )
 );
 
