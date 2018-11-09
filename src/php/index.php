@@ -220,6 +220,14 @@ $app->get('/events', function () use ($app, $EventsTitle) {
 
 $questions = array(
     array(
+        'question' => 'How far in advance do I need to apply?',
+        'answer' => '<p class="question-answer">We can take up to 30 people on a mission trip including the trip leaders.  Trips are available until filled. We encourage applications at least 4 months before the trip.</p>'
+    ),
+    array(
+        'question' => 'What airport do I fly into?',
+        'answer' => '<p class="question-answer">Toussaint L’Ouverture International Airport (PAP) in Port Au Prince.</p>'
+    ),
+    array(
         'question' => 'What is the cost?',
         'answer' => '<div class="question-answer">
                         <p>The base price for a trip is $875, which includes:</p>
@@ -259,15 +267,6 @@ $questions = array(
                     </div>'
     ),
     array(
-        'question' => 'How far in advance do I need to apply?',
-        'answer' => '<p class="question-answer">We can take up to 30 people on a mission trip including the trip leaders. 
-                Trips are available until filled. We encourage applications at least 4 months before the trip.</p>'
-    ),
-    array(
-        'question' => 'What airport do I fly into?',
-        'answer' => '<p class="question-answer">Toussaint L’Ouverture International Airport (PAP) in Port Au Prince.</p>'
-    ),
-    array(
         'question' => 'What do I pack?',
         'answer' => '<p class="question-answer"><a href="https://drive.google.com/file/d/0By871gytPLeeMmhsdEJDc2NOMHc/view?usp=sharing" class="plain-link" target="_blank">Refer to our packing list</a>.</p>'
     ),
@@ -276,62 +275,44 @@ $questions = array(
         'answer' => '<p class="question-answer">We encourage team members to include friends and family in their mission by asking for prayer or financial support. Your team leader can provide a support letter template and give ideas on how to get your community involved in your mission.</p>'
     ),
     array(
-        'question' => 'Do I have to be Catholic or Christian to go on a Reiser Relief trip?',
-        'answer' => '<p class="question-answer">A Catholic priest, Fr. Bernard Reiser, founded Reiser Relief. We are a Catholic organization, but we welcome all Christian believers and non-believers to join in our ministry. While we will pray together on trips, participation is optional and we respect your boundaries. Expect to be spiritually challenged on this trip. “Listen, my dear brothers: Has not God chosen those who are poor in the eyes of the world to be rich in faith and to inherit the kingdom he promised to those to love him?” James 2:5</p>'
-    ),
-    array(
-        'question' => 'I’m not sure I’m cut out to be a missionary. Should I go?',
-        'answer' => '<p class="question-answer">Pray and examine your heart. Prepare to humble yourself. Haitians will teach you a great deal. Are you flexible? Are you willing to be uncomfortable, challenged and overwhelmed? If you have an open heart God will work through you.</p>'
+        'question' => 'I am not sure I’m cut out to be a missionary. Should I go?',
+        'answer' => '<p class="question-answer">Pray and examine your heart. Prepare to humble yourself. Haiti will teach you a great deal. Are you flexible? Are you willing to be uncomfortable, challenged and overwhelmed? If you have an open heart, God will work through you.</p>'
     ),
     array(
         'question' => 'I have physical limitations. Is that OK?',
-        'answer' => '<p class="question-answer">We encourage you to discuss physical limitations with your potential trip leader. If God has put this on your heart and we feel confident that you can travel safely, we will find a way to accommodate special needs.</p>'
+        'answer' => '<p class="question-answer">We encourage you to discuss physical limitations with your trip leader. If God has put this on your heart and we feel confident that you can travel safely, we will find a way to accommodate your needs.</p>'
     ),
     array(
         'question' => 'What language do they speak in Haiti?',
-        'answer' => '<p class="question-answer">Creole and French are the two official languages. Our teams always have Haitian interpreters with them in the field. It’s helpful to learn basic Creole phrases before your trip.</p>'
+        'answer' => '<p class="question-answer">Creole and French are the two official languages.</p>'
     ),
     array(
         'question' => 'Is it hot?',
-        'answer' => '<p class="question-answer">Yes, but not unbearable! The average daily high in January is 87 degrees F and in July is 92 degrees F. Rainy months are April, May, August, September and October. There is air conditioning in the bedrooms and fans throughout the house. You will sweat.</p>'
+        'answer' => '<p class="question-answer">Yes, but not unbearable. The average daily high in January is 87 degrees F and in July is 92 degrees F. Rainy months are April, May, August, September and October. There is air conditioning in the bedrooms and fans throughout the house. You will sweat.</p>'
     ),
     array(
         'question' => 'Is Haiti safe?',
-        'answer' => '<p class="question-answer">Overall Haitians are friendly and peaceful people. However, there are risks associated with any international travel. Team members in Haiti are required to follow strict rules to minimize risk and we take every precaution possible to keep you safe. The guesthouse where we sleep has a high security wall topped with barbed wire and 24 hour security.</p>'
+        'answer' => '<p class="question-answer">Overall Haitians are friendly and peaceful people. However, there are risks associated with any international travel. Team members in Haiti are required to follow rules that minimize risk and we take every precaution possible to keep you safe. The guesthouse where we sleep has a high security wall topped with barbed wire and a security guard at the gate 24/7.</p>'
     ),
     array(
         'question' => 'How will we travel around Haiti?',
-        'answer' => '<p class="question-answer">We will ride in a “tap tap.” This Haitian version of a bus allows for open air viewing of the city and sites while we travel. Many roads in Haiti are extremely rough and you will be bounced around.</p>'
-    ),
-    array(
-        'question' => 'Where do we stay?',
-        'answer' => '<p class="question-answer">We stay in guesthouses in Port Au Prince with security walls. There are air-conditioned bedrooms with bunk beds, pillows and blankets. Bathrooms have showers and flushing toilets. We eat family style in a dining room.</p>'
+        'answer' => '<p class="question-answer">We will ride in either a bus or an open-bed truck. Many roads in Haiti are rough and you will be bounced around.</p>'
     ),
     array(
         'question' => 'What kind of food will we be eating?',
-        'answer' => '<p class="question-answer">Haitian staff at the guesthouse prepares breakfast and dinner. We will eat mostly American style food (like pancakes, French toast, tacos and spaghetti) and some traditional Haitian food including rice and beans, plantain and vegetables.<br><br>
-        
-        Team members buy snacks in the US and carry them to Haiti in our luggage. We eat snacks while on the go for lunch and share all of our food. Typical items are beef sticks, granola bars, nuts, dried fruit, and crackers. Please don’t bring anything containing chocolate. It will melt! If you have special dietary needs you are welcome to bring your own food. Haitian staff members cook our meals in the kitchen. You are welcome to prepare your own food in the kitchen.<br><br>
-        
-        We provide you with purified Culligan water to drink while out in the field and at the guesthouse. It is not safe to drink tap water.</p>'
+        'answer' => '<p class="question-answer">Haitian staff at the guesthouse prepare breakfast and dinner. We will eat traditional Haitian foods such as rice, chicken, beans, plantain and vegetables. We will also occasionally eat “American” foods such as pancakes, burgers, and spaghetti.</p>'
+    ),
+    array(
+        'question' => 'Do I need to bring my own food?',
+        'answer' => '<p class="question-answer">Team members buy snacks in the US and carry them to Haiti in our luggage. We eat snacks while on the go for lunch and share all of our food. Typical items are beef sticks, granola bars, nuts, dried fruit, and crackers. Please don’t bring anything containing chocolate. It will melt! If you have special dietary needs you are welcome to bring your own food. Haitian staff members cook meals in the guesthouse kitchen.</p>'
+    ),
+    array(
+        'question' => 'Is it safe to drink the water?',
+        'answer' => '<p class="question-answer">We provide you with purified water to drink while out in the field and at the guesthouse. It is not safe to drink tap water.</p>'
     ),
     array(
         'question' => 'Will there be an opportunity to buy souvenirs?',
-        'answer' => '<p class="question-answer">Yes! We will shop at least once during our mission trip. Haitians create many beautiful souvenirs they are eager to sell. Bartering is customary and should be used for purchases bought on the street. There are also goods for sale at the airport.</p>'
-    ),
-    array(
-        'question' => 'Do I have to get shots?',
-        'answer' => '<p class="question-answer">We are not medical professionals and cannot provide immunization advice. We encourage everyone to seek professional advice from his or her doctor or travel clinic.</p>'
-    ),
-    array(
-        'question' => 'How will our team prepare for the trip?',
-        'answer' => '<p class="question-answer">There will be two trip meetings before the trip where your leader will guide you through everything you need to know. There is also a packing meeting shortly before the trip where we pack donations and group items together.<br><br>
-
-Your trip leader will let you know when to submit a <a href="https://drive.google.com/file/d/0By871gytPLeeM25NdEdpaDFIQVU/view?usp=sharing" class="plain-link" target="_blank">Consent of Treatment Form</a>. If you are a minor, your trip leader will let you know when to submit <a href="https://drive.google.com/file/d/0By871gytPLeeb2RKT19YT0xNeXM/view?usp=sharing" class="plain-link" target="_blank">Forms for Minors</a>.</p>'
-    ),
-    array(
-        'question' => 'Is there follow up after the trip?',
-        'answer' => '<p class="question-answer">Post trip your team will have a reunion meeting. This will help you process what you learned, give you support, and help you explore ways to respond.</p>'
+        'answer' => '<p class="question-answer">Yes. Haitians create many beautiful souvenirs and are eager to sell them. Bartering is customary and should be used for purchases bought on the street. There are also goods for sale at the airport.</p>'
     )
 );
 
