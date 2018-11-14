@@ -376,6 +376,13 @@ $app->post('/contact/contact-submit', function () use ($app, $callAPI) {
     ));
 });
 
+$app->post('/charge', function () use ($app, $callAPI) {
+
+//    $callAPI('POST', 'http://localhost:8001/charge', $_POST);
+
+    return $callAPI('POST', 'http://localhost:8001/charge', $_POST);
+});
+
 
 if (!$app['debug']) {
     $app->error(function () use ($app) {
