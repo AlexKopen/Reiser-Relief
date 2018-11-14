@@ -354,7 +354,8 @@ $app->post('/missions/apply/apply-submit', function () use ($app, $callAPI) {
 $app->get('/donate', function () use ($app) {
     return $app['twig']->render('donate/donate.twig', array(
         'Title' => 'Donate',
-        'DisplayTitle' => 'Donate'
+        'DisplayTitle' => 'Donate',
+        'UseStripe' => true
     ));
 });
 
