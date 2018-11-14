@@ -1,6 +1,9 @@
 var donate = (function () {
   'use strict';
 
+  var amount;
+  var frequency;
+
   function stripeSetup() {
     // Create a Stripe client.
     var stripe = Stripe('pk_test_2AC3GUXKprvQgKxqOPQjxo2q');
@@ -65,11 +68,23 @@ var donate = (function () {
     function stripeTokenHandler(token) {
       // Insert the token ID into the form so it gets submitted to the server
       var form = document.getElementById('payment-form');
-      var hiddenInput = document.createElement('input');
-      hiddenInput.setAttribute('type', 'hidden');
-      hiddenInput.setAttribute('name', 'stripeToken');
-      hiddenInput.setAttribute('value', token.id);
-      form.appendChild(hiddenInput);
+      var hiddenTokenInput = document.createElement('input');
+      hiddenTokenInput.setAttribute('type', 'hidden');
+      hiddenTokenInput.setAttribute('name', 'stripeToken');
+      hiddenTokenInput.setAttribute('value', token.id);
+      form.appendChild(hiddenTokenInput);
+
+      var hiddenFrequencyInput = document.createElement('input');
+      hiddenFrequencyInput.setAttribute('type', 'hidden');
+      hiddenFrequencyInput.setAttribute('name', 'frequency');
+      hiddenFrequencyInput.setAttribute('value', amount);
+      form.appendChild(hiddenFrequencyInput);
+
+      var hiddenAmountInput = document.createElement('input');
+      hiddenAmountInput.setAttribute('type', 'hidden');
+      hiddenAmountInput.setAttribute('name', 'amount');
+      hiddenAmountInput.setAttribute('value', frequency);
+      form.appendChild(hiddenAmountInput);
 
       // Submit the form
       form.submit();
@@ -153,7 +168,9 @@ var donate = (function () {
         $('#donation-form .error').css('visibility', 'visible');
       } else {
         var amountToChargeCard = $('#custom-amount').val().trim().length > 0 ? $('#custom-amount').val().trim() : amountToDonate;
-        console.log(amountToChargeCard);
+
+        amount = amountToChargeCard;
+        frequency = $('#frequency-list .active').text();
       }
     });
   }
