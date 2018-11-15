@@ -6,7 +6,7 @@ var donate = (function () {
 
   function stripeSetup() {
     // Create a Stripe client.
-    var stripe = Stripe('pk_test_2AC3GUXKprvQgKxqOPQjxo2q');
+    var stripe = Stripe('pk_live_MexJhaAUg9VRVL8d52RPoVDa');
 
 // Create an instance of Elements.
     var elements = stripe.elements();
@@ -92,7 +92,8 @@ var donate = (function () {
       hiddenEmailInput.setAttribute('type', 'hidden');
       hiddenEmailInput.setAttribute('name', 'email');
       hiddenEmailInput.setAttribute('value', $('#cardholder-email').val().trim());
-      form.appendChild(hiddenAmountInput);
+      form.appendChild(hiddenEmailInput);
+      console.log(hiddenEmailInput);
 
       var hiddenNameInput = document.createElement('input');
       hiddenNameInput.setAttribute('type', 'hidden');
