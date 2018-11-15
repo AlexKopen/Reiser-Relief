@@ -12,13 +12,19 @@
 
   #donate-funds {
     #donation-container {
-      height: 465px;
+      height: 550px;
 
       #donation-form {
         text-align: center;
 
         p {
           color: @gray;
+
+          &#donation-value-info {
+            font-size: 14px;
+            line-height: 24px;
+            margin-top: 15px;
+          }
         }
 
         ul {
@@ -31,6 +37,7 @@
             color: @light-theme-color;
             cursor: pointer;
             margin-left: 5px;
+            margin-bottom: 10px;
 
             &:first-of-type {
               margin-left: 0;
@@ -79,7 +86,7 @@
     }
   }
 
-  #donate-recurring, #donate-other {
+  #donate-other {
     margin-top: @sub-section-top-margin;
     text-align: center;
 
@@ -136,6 +143,22 @@
 
     .StripeElement--webkit-autofill {
       background-color: #fefde5 !important;
+    }
+  }
+
+  #button-container {
+    text-align: center;
+
+    button {
+      display: inline-block;
+    }
+  }
+
+  #donation-loading {
+    display: none;
+    img {
+      display: block;
+      margin: @large-top-margin auto 0;
     }
   }
 

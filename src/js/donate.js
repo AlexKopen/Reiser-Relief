@@ -46,25 +46,35 @@ var donate = (function () {
       }
     });
 
-// Handle form submission.
-    var form = document.getElementById('payment-form');
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      var cardholderName = $('#cardholder-name').text().trim();
-
-      stripe.createToken(card, {name: cardholderName}).then(function (result) {
-        if (result.error) {
-          // Inform the user if there was an error.
-          var errorElement = document.getElementById('card-errors');
-          errorElement.textContent = result.error.message;
-        } else {
-          console.log(result.token);
-          // Send the token to your server.
-          stripeTokenHandler(result.token);
-        }
-      });
+    $('#donate-back').click(function () {
+        $('#first-step').css('display', 'block');
+        $('#second-step').css('display', 'none');
     });
+
+// Handle form submission.
+   $('#donate-submit').click(function () {
+     $('#donation-loading').css('display', 'block');
+     $('#second-step').css('display', 'none');
+     $('#payment-form').submit();
+   });
+
+      $('#payment-form').submit(function (event) {
+          event.preventDefault();
+          var cardholderName = $('#cardholder-name').text().trim();
+
+          stripe.createToken(card, {name: cardholderName}).then(function (result) {
+              if (result.error) {
+                  // Inform the user if there was an error.
+                  $('#card-errors').text(result.error.message);
+                  $('#donation-loading').css('display', 'none');
+                  $('#second-step').css('display', 'block');
+              } else {
+                  console.log(result.token);
+                  // Send the token to your server.
+                  stripeTokenHandler(result.token);
+              }
+          });
+      });
 
 // Submit the form with the token ID.
     function stripeTokenHandler(token) {
