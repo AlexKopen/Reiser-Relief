@@ -51,9 +51,15 @@ var donate = (function () {
         $('#second-step').css('display', 'none');
     });
 
+    var loadingTimeout = null;
 // Handle form submission.
    $('#donate-submit').click(function () {
-     $('#donation-loading').css('display', 'block');
+     if (loadingTimeout !== null) {
+         clearTimeout(loadingTimeout);
+     }
+     loadingTimeout = setTimeout(function () {
+         $('#donation-loading').css('display', 'block');
+     }, 300);
      $('#second-step').css('display', 'none');
      $('#payment-form').submit();
    });
@@ -64,6 +70,9 @@ var donate = (function () {
 
           stripe.createToken(card, {name: cardholderName}).then(function (result) {
               if (result.error) {
+                  if (loadingTimeout !== null) {
+                      clearTimeout(loadingTimeout);
+                  }
                   // Inform the user if there was an error.
                   $('#card-errors').text(result.error.message);
                   $('#donation-loading').css('display', 'none');
