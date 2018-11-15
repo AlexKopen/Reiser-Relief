@@ -51,7 +51,9 @@ var donate = (function () {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
 
-      stripe.createToken(card).then(function (result) {
+      var cardholderName = $('#cardholder-name').text().trim();
+
+      stripe.createToken(card, {name: cardholderName}).then(function (result) {
         if (result.error) {
           // Inform the user if there was an error.
           var errorElement = document.getElementById('card-errors');
@@ -77,14 +79,26 @@ var donate = (function () {
       var hiddenFrequencyInput = document.createElement('input');
       hiddenFrequencyInput.setAttribute('type', 'hidden');
       hiddenFrequencyInput.setAttribute('name', 'frequency');
-      hiddenFrequencyInput.setAttribute('value', amount);
+      hiddenFrequencyInput.setAttribute('value', frequency);
       form.appendChild(hiddenFrequencyInput);
 
       var hiddenAmountInput = document.createElement('input');
       hiddenAmountInput.setAttribute('type', 'hidden');
       hiddenAmountInput.setAttribute('name', 'amount');
-      hiddenAmountInput.setAttribute('value', frequency);
+      hiddenAmountInput.setAttribute('value', amount);
       form.appendChild(hiddenAmountInput);
+
+      var hiddenEmailInput = document.createElement('input');
+      hiddenEmailInput.setAttribute('type', 'hidden');
+      hiddenEmailInput.setAttribute('name', 'email');
+      hiddenEmailInput.setAttribute('value', $('#cardholder-email').val().trim());
+      form.appendChild(hiddenAmountInput);
+
+      var hiddenNameInput = document.createElement('input');
+      hiddenNameInput.setAttribute('type', 'hidden');
+      hiddenNameInput.setAttribute('name', 'fullName');
+      hiddenNameInput.setAttribute('value', $('#cardholder-name').val().trim());
+      form.appendChild(hiddenNameInput);
 
       // Submit the form
       form.submit();
@@ -144,8 +158,8 @@ var donate = (function () {
     });
 
     $('#donation-form #custom-amount').keydown(function (e) {
-      // Allow: backspace, delete, tab, escape, enter and .
-      if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+      // Allow: backspace, delete, tab, escape, and enter
+      if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
         // Allow: Ctrl/cmd+A
         (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
         // Allow: Ctrl/cmd+C
@@ -171,6 +185,9 @@ var donate = (function () {
 
         amount = amountToChargeCard;
         frequency = $('#frequency-list .active').text();
+
+        $('#first-step').css('display', 'none');
+        $('#second-step').css('display', 'block');
       }
     });
   }

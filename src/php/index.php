@@ -378,9 +378,15 @@ $app->post('/contact/contact-submit', function () use ($app, $callAPI) {
 
 $app->post('/charge', function () use ($app, $callAPI) {
 
-//    $callAPI('POST', 'http://localhost:8001/charge', $_POST);
+    $payment = $callAPI('POST', 'https://api.reiserrelief.org/public/charge', $_POST);
 
-    return $callAPI('POST', 'http://localhost:8001/charge', $_POST);
+    //return $payment;
+
+    return $app['twig']->render('donate/donate-submit.twig', array(
+        'Title' => 'Donate',
+        'DisplayTitle' => 'Donation Confirmation',
+        'Message' => $payment == 'success' ? 'Thank you for your contribution!' : 'There was an error with your donation.  Please try again.'
+    ));
 });
 
 

@@ -5,84 +5,76 @@
     text-align: center;
   }
 
+  button {
+    display: block;
+    margin: @small-top-margin auto 0;
+  }
+
   #donate-funds {
-    #donation-form {
-      text-align: center;
+    #donation-container {
+      height: 465px;
 
-      p {
-        color: @gray;
-      }
-
-      ul {
-        margin: 0 auto @large-top-margin;
-
-        li {
-          display: inline-block;
-          border: 1px solid @light-theme-color;
-          border-radius: 5px;
-          color: @light-theme-color;
-          cursor: pointer;
-          margin-left: 5px;
-
-          &:first-of-type {
-            margin-left: 0;
-          }
-
-          &.active, &:hover {
-            background: @light-theme-color;
-            color: @white;
-          }
-        }
-
-        &#frequency-list {
-          li {
-            @item-height: 35px;
-            height: @item-height;
-            width: 90px;
-            line-height: @item-height;
-          }
-        }
-
-        &.donation-level {
-          li {
-            @item-height: 55px;
-            height: @item-height;
-            width: 120px;
-            line-height: @item-height;
-          }
-        }
-      }
-
-      input {
-        height: 42px;
-        margin: .25em 0;
-        padding: .5em .6em;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-shadow: inset 0 1px 3px #ddd;
-        border-radius: 4px;
-        vertical-align: middle;
-        box-sizing: border-box;
-      }
-
-      button {
-        display: block;
-        margin: @small-top-margin auto 0;
-      }
-
-      .donation-level {
-        display: none;
-
-        &.active {
-          display: block;
-        }
-      }
-
-      .error {
-        visibility: hidden;
-        color: @dark-error-color;
+      #donation-form {
         text-align: center;
-        margin-top: 10px;
+
+        p {
+          color: @gray;
+        }
+
+        ul {
+          margin: 0 auto @large-top-margin;
+
+          li {
+            display: inline-block;
+            border: 1px solid @light-theme-color;
+            border-radius: 5px;
+            color: @light-theme-color;
+            cursor: pointer;
+            margin-left: 5px;
+
+            &:first-of-type {
+              margin-left: 0;
+            }
+
+            &.active, &:hover {
+              background: @light-theme-color;
+              color: @white;
+            }
+          }
+
+          &#frequency-list {
+            li {
+              @item-height: 35px;
+              height: @item-height;
+              width: 90px;
+              line-height: @item-height;
+            }
+          }
+
+          &.donation-level {
+            li {
+              @item-height: 55px;
+              height: @item-height;
+              width: 120px;
+              line-height: @item-height;
+            }
+          }
+        }
+
+        .donation-level {
+          display: none;
+
+          &.active {
+            display: block;
+          }
+        }
+
+        .error {
+          visibility: hidden;
+          color: @dark-error-color;
+          text-align: center;
+          margin-top: 10px;
+        }
       }
     }
   }
@@ -106,26 +98,56 @@
     }
   }
 
-  .StripeElement {
-    background-color: white;
-    height: 40px;
-    padding: 10px 12px;
+  #first-step {
+    display: block;
+  }
+
+  #second-step {
+    display: none;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+
+    input {
+      width: 95%;
+    }
+  }
+
+  form {
+    margin-top: @small-top-margin;
+
+    .StripeElement {
+      background-color: white;
+      padding: 10px 12px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      box-shadow: 0 1px 3px 0 #e6ebf1;
+      -webkit-transition: box-shadow 150ms ease;
+      transition: box-shadow 150ms ease;
+    }
+
+    .StripeElement--focus {
+      box-shadow: 0 1px 3px 0 #cfd7df;
+    }
+
+    .StripeElement--invalid {
+      border-color: #fa755a;
+    }
+
+    .StripeElement--webkit-autofill {
+      background-color: #fefde5 !important;
+    }
+  }
+
+  input {
+    height: 42px;
+    margin: .25em 0;
+    padding: .5em .6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
     border-radius: 4px;
-    border: 1px solid transparent;
-    box-shadow: 0 1px 3px 0 #e6ebf1;
-    -webkit-transition: box-shadow 150ms ease;
-    transition: box-shadow 150ms ease;
-  }
-
-  .StripeElement--focus {
-    box-shadow: 0 1px 3px 0 #cfd7df;
-  }
-
-  .StripeElement--invalid {
-    border-color: #fa755a;
-  }
-
-  .StripeElement--webkit-autofill {
-    background-color: #fefde5 !important;
+    vertical-align: middle;
+    box-sizing: border-box;
   }
 }

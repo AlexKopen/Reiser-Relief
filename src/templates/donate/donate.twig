@@ -24,65 +24,81 @@
                 <iframe
                         src="https://www.youtube.com/embed/JR0DUX1ItSw" frameborder="0" allowfullscreen>
                 </iframe>
-                <div id="donation-form">
-                    <p>Choose Your Donation Frequency</p>
-                    <ul id="frequency-list">
-                        <li class="active">One-Time</li>
-                        <li>Monthly</li>
-                        <li>Quarterly</li>
-                        <li>Annually</li>
-                    </ul>
-                    <p>Choose a Donation Level</p>
-                    <ul class="donation-level active" id="one-time-level">
-                        <li>$100</li>
-                        <li>$150</li>
-                        <li>$250</li>
-                        <li>$500</li>
-                        <li>$1000</li>
-                    </ul>
-                    <ul class="donation-level" id="monthly-level">
-                        <li>$37</li>
-                        <li>$50</li>
-                        <li>$83</li>
-                        <li>$125</li>
-                        <li>$250</li>
-                    </ul>
-                    <ul class="donation-level" id="quarterly-level">
-                        <li>$150</li>
-                        <li>$250</li>
-                        <li>$500</li>
-                        <li>$750</li>
-                        <li>$1000</li>
-                    </ul>
-                    <ul class="donation-level" id="annually-level">
-                        <li>$250</li>
-                        <li>$500</li>
-                        <li>$750</li>
-                        <li>$1000</li>
-                        <li>$3000</li>
-                    </ul>
+                <div id="donation-container">
+                    <div id="first-step">
+                        <div id="donation-form">
+                            <p>Choose Your Donation Frequency</p>
+                            <ul id="frequency-list">
+                                <li class="active">One-Time</li>
+                                <li>Monthly</li>
+                                <li>Quarterly</li>
+                                <li>Annually</li>
+                            </ul>
+                            <p>Choose a Donation Level</p>
+                            <ul class="donation-level active" id="one-time-level">
+                                <li>$100</li>
+                                <li>$150</li>
+                                <li>$250</li>
+                                <li>$500</li>
+                                <li>$1000</li>
+                            </ul>
+                            <ul class="donation-level" id="monthly-level">
+                                <li>$37</li>
+                                <li>$50</li>
+                                <li>$83</li>
+                                <li>$125</li>
+                                <li>$250</li>
+                            </ul>
+                            <ul class="donation-level" id="quarterly-level">
+                                <li>$150</li>
+                                <li>$250</li>
+                                <li>$500</li>
+                                <li>$750</li>
+                                <li>$1000</li>
+                            </ul>
+                            <ul class="donation-level" id="annually-level">
+                                <li>$250</li>
+                                <li>$500</li>
+                                <li>$750</li>
+                                <li>$1000</li>
+                                <li>$3000</li>
+                            </ul>
 
-                    <p>Or Enter Your Own Amount</p>
-                    <input type="text" class="pure-input" id="custom-amount">
+                            <p>Or Enter Your Own Amount</p>
+                            <input type="text" class="pure-input" id="custom-amount">
 
-                    <button type="submit" class="pure-button" id="continue">Continue</button>
-                    <p class="error">Please Select a Donation Level or Enter a Custom Amount</p>
-                </div>
-                <form action="/charge" method="post" id="payment-form">
-                    <div class="form-row">
-                        <label for="card-element">
-                            Credit or debit card
-                        </label>
-                        <div id="card-element">
-                            <!-- A Stripe Element will be inserted here. -->
+                            <button type="submit" class="pure-button" id="continue">Continue</button>
+                            <p class="error">Please Select a Donation Level or Enter a Custom Amount</p>
                         </div>
-
-                        <!-- Used to display form errors. -->
-                        <div id="card-errors" role="alert"></div>
                     </div>
+                    <div id="second-step">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2">
+                                <p>Full Name</p>
+                                <input type="text" class="pure-input" id="cardholder-name">
+                            </div>
+                            <div class="pure-u-1-2">
+                                <p>Email Address</p>
+                                <input type="text" class="pure-input" id="cardholder-email">
+                            </div>
+                        </div>
+                        <form action="/charge" method="post" id="payment-form">
+                            <div class="form-row">
+                                <label for="card-element">
+                                    Credit or debit card
+                                </label>
+                                <div id="card-element">
+                                    <!-- A Stripe Element will be inserted here. -->
+                                </div>
 
-                    <button>Submit Payment</button>
-                </form>
+                                <!-- Used to display form errors. -->
+                                <div id="card-errors" role="alert"></div>
+                            </div>
+
+                            <button class="pure-button">Submit Payment</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
