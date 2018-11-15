@@ -14,74 +14,72 @@
     #donation-container {
       height: 550px;
 
-      #donation-form {
-        text-align: center;
+      text-align: center;
 
-        p {
-          color: @gray;
+      p, label {
+        color: @gray;
 
-          &#donation-value-info {
-            font-size: 14px;
-            line-height: 24px;
-            margin-top: 15px;
+        &#donation-value-info {
+          font-size: 14px;
+          line-height: 24px;
+          margin-top: 15px;
+        }
+      }
+
+      ul {
+        margin: 0 auto @large-top-margin;
+
+        li {
+          display: inline-block;
+          border: 1px solid @light-theme-color;
+          border-radius: 5px;
+          color: @light-theme-color;
+          cursor: pointer;
+          margin-left: 5px;
+          margin-bottom: 10px;
+
+          &:first-of-type {
+            margin-left: 0;
+          }
+
+          &.active, &:hover {
+            background: @light-theme-color;
+            color: @white;
           }
         }
 
-        ul {
-          margin: 0 auto @large-top-margin;
-
+        &#frequency-list {
           li {
-            display: inline-block;
-            border: 1px solid @light-theme-color;
-            border-radius: 5px;
-            color: @light-theme-color;
-            cursor: pointer;
-            margin-left: 5px;
-            margin-bottom: 10px;
-
-            &:first-of-type {
-              margin-left: 0;
-            }
-
-            &.active, &:hover {
-              background: @light-theme-color;
-              color: @white;
-            }
-          }
-
-          &#frequency-list {
-            li {
-              @item-height: 35px;
-              height: @item-height;
-              width: 90px;
-              line-height: @item-height;
-            }
-          }
-
-          &.donation-level {
-            li {
-              @item-height: 55px;
-              height: @item-height;
-              width: 120px;
-              line-height: @item-height;
-            }
+            @item-height: 35px;
+            height: @item-height;
+            width: 90px;
+            line-height: @item-height;
           }
         }
 
-        .donation-level {
-          display: none;
-
-          &.active {
-            display: block;
+        &.donation-level {
+          li {
+            @item-height: 55px;
+            height: @item-height;
+            width: 120px;
+            line-height: @item-height;
           }
         }
+      }
 
-        .error {
-          visibility: hidden;
-          color: @dark-error-color;
-          text-align: center;
-          margin-top: 10px;
+      .donation-level {
+        display: none;
+
+        &.active {
+          display: block;
         }
+      }
+
+      .error {
+        visibility: hidden;
+        color: @dark-error-color;
+        text-align: center;
+        margin-top: 10px;
       }
     }
   }
