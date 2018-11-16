@@ -34,7 +34,9 @@ var donate = (function () {
     var card = elements.create('card', {style: style});
 
 // Add an instance of the card Element into the `card-element` <div>.
-    card.mount('#card-element');
+    if ($('#card-element').length) {
+      card.mount('#card-element');
+    }
 
 // Handle real-time validation errors from the card Element.
     card.addEventListener('change', function (event) {
