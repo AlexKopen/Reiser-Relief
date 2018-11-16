@@ -208,6 +208,9 @@ var donate = (function () {
 
         $('#first-step').css('display', 'none');
         $('#second-step').css('display', 'block');
+
+        $('#donation-frequency-review').text('Donation Frequency: ' + frequency);
+        $('#donation-amount-review').text('Donation Amount: $' + amount);
       }
     });
   }
