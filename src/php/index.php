@@ -221,24 +221,27 @@ $app->get('/events', function () use ($app, $EventsTitle) {
 $questions = array(
     array(
         'question' => 'How far in advance do I need to apply?',
-        'answer' => '<p class="question-answer">We can take up to 30 people on a mission trip including the trip leaders.  Trips are available until filled. We encourage applications at least 4 months before the trip.</p>'
+        'answer' => '<p class="question-answer">We can take up to 30 people on a mission trip including the trip leaders.  Spots are available until filled.</p>'
+    ),
+    array(
+        'question' => 'Is there an age minimum?',
+        'answer' => '<p class="question-answer">Yes, you must be at least 18 years old to participate on our mission trips.</p>'
     ),
     array(
         'question' => 'What airport do I fly into?',
-        'answer' => '<p class="question-answer">Toussaint L’Ouverture International Airport (PAP) in Port Au Prince.</p>'
+        'answer' => '<p class="question-answer">Toussaint L’Ouverture International Airport (PAP) in Port Au Prince, Haiti.</p>'
     ),
     array(
         'question' => 'What is the cost?',
         'answer' => '<div class="question-answer">
-                        <p>The base price for a trip is $875, which includes:</p>
+                        <p>$875 (Unless otherwise noted), which includes:</p>
                         <ul>
-                            <li>Lodging</li>
+                            <li>$100 deposit</li>
+                            <li>Lodging and security</li>
                             <li>Breakfast and dinner daily</li>
                             <li>Safe drinking water</li>
-                            <li>Transportation to / from airport and ministry sites</li>
-                            <li>Interpreters / security</li>
-                            <li>2 trip leaders</li>
-                            <li>Group t-shirt (additional shirts available for $12)</li>
+                            <li>Transportation to / from airport and mission sites</li>
+                            <li>1 Mission T-shirt (unless otherwise noted)</li>
                         </ul>
 
                         <p>Other expenses / US:</p>
@@ -247,8 +250,7 @@ $questions = array(
                                 flights
                                 from your airport to Port au Prince (PAP)
                             </li>
-                            <li><a href="http://www.volunteercard.com/reiserrelief.html" target="_blank">$29 mandatory
-                                    emergency evacuation insurance</a></li>
+                            <li><a href="http://www.volunteercard.com/reiserrelief.html" target="_blank">$29 travel insurance</a></li>
                             <li>Group snacks for lunch (purchased in the US and brought to Haiti)</li>
                             <li>Passport</li>
                             <li>Vaccinations</li>
@@ -256,13 +258,7 @@ $questions = array(
                         <p>Other expenses / Haiti:</p>
                         <ul>
                             <li>$10 Haiti entrance tax</li>
-                            <li>Tips in Haiti(suggest $20)</li>
-                            <li>Your team may choose to go to a pool and / or beach that charge entry. Total entry fees
-                                should not exceed $20.
-                            </li>
-                            <li>Beverages purchased at restaurants or other locations</li>
                             <li>Souvenirs</li>
-                            <li>Offering at church service<strong> </strong></li>
                         </ul>
                     </div>'
     ),
@@ -288,11 +284,11 @@ $questions = array(
     ),
     array(
         'question' => 'Is it hot?',
-        'answer' => '<p class="question-answer">Yes, but not unbearable. The average daily high in January is 87 degrees F and in July is 92 degrees F. Rainy months are April, May, August, September and October. There is air conditioning in the bedrooms and fans throughout the house. You will sweat.</p>'
+        'answer' => '<p class="question-answer">Yes, but not unbearable. The average daily high in January is 87 degrees and in July is 92 degrees. Rainy months are April, May, August, September and October. There is air conditioning in the bedrooms. You will sweat when we are out in the mission field.</p>'
     ),
     array(
         'question' => 'Is Haiti safe?',
-        'answer' => '<p class="question-answer">Overall Haitians are friendly and peaceful people. However, there are risks associated with any international travel. Team members in Haiti are required to follow rules that minimize risk and we take every precaution possible to keep you safe. The guesthouse where we sleep has a high security wall topped with barbed wire and a security guard at the gate 24/7.</p>'
+        'answer' => '<p class="question-answer">Overall, Haitians are friendly and peaceful people. However, there are risks associated with any international travel. Team members in Haiti are required to follow rules that minimize risk and we take every precaution possible to keep you safe. The guesthouse where we sleep has a high security wall topped with barbed wire and a security guard at the gate 24/7.</p>'
     ),
     array(
         'question' => 'How will we travel around Haiti?',
@@ -313,6 +309,11 @@ $questions = array(
     array(
         'question' => 'Will there be an opportunity to buy souvenirs?',
         'answer' => '<p class="question-answer">Yes. Haitians create many beautiful souvenirs and are eager to sell them. Bartering is customary and should be used for purchases bought on the street. There are also goods for sale at the airport.</p>'
+    ),
+    array(
+        'question' => 'How do I apply for a trip?',
+        'answer' => '<p class="question-answer">Complete the online application and pay the $125 deposit. Send an email to <a href="mailto:info@reiserrelief.org" class="plain-link">info@reiserrelief.org</a> with any questions
+about the application process.</p>'
     )
 );
 
