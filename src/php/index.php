@@ -67,9 +67,9 @@ $app->get('/', function () use ($app, $callAPI) {
             array(
                 'Url' => 'event-slide.jpg',
                 'Alt' => 'Events',
-                'Header' => '7th Annual Fall Gala',
-                'Description' => 'Thursday, November 15th<br>Doors open at 5pm<br>Brooklyn Park, MN',
-                'Link' => '/events'
+                'Header' => 'Giving Tuesday',
+                'Description' => 'November 27, 2018<br>#GivingTuesday - A global day of giving',
+                'Link' => '/donate'
             ),
             array(
                 'Url' => 'work-slide.jpg',
@@ -85,13 +85,13 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Description' => 'Live out God\'s call to serve by applying for a mission trip to Haiti',
                 'Link' => '/missions'
             ),
-            array(
-                'Url' => 'support-slide.jpg',
-                'Alt' => 'Support Us',
-                'Header' => 'Support Us',
-                'Description' => 'Help us break the cycle of poverty with a one-time or recurring gift',
-                'Link' => '/donate'
-            ),
+//            array(
+//                'Url' => 'support-slide.jpg',
+//                'Alt' => 'Support Us',
+//                'Header' => 'Support Us',
+//                'Description' => 'Help us break the cycle of poverty with a one-time or recurring gift',
+//                'Link' => '/donate'
+//            ),
             array(
                 'Url' => 'contact-slide.jpg',
                 'Alt' => 'Contact',
