@@ -225,7 +225,7 @@ $questions = array(
     ),
     array(
         'question' => 'Is there an age minimum?',
-        'answer' => '<p class="question-answer">Yes, you must be at least 18 years old to participate on our mission trips.</p>'
+        'answer' => '<p class="question-answer">Participants must be at least 18 years old, unless the trip is organized by a high school through Reiser Relief, or the participant is traveling with an adult guardian.</p>'
     ),
     array(
         'question' => 'What airport do I fly into?',
@@ -236,12 +236,12 @@ $questions = array(
         'answer' => '<div class="question-answer">
                         <p>$875 (Unless otherwise noted), which includes:</p>
                         <ul>
-                            <li>$100 deposit</li>
+                            <li>$125 deposit</li>
                             <li>Lodging and security</li>
                             <li>Breakfast and dinner daily</li>
                             <li>Safe drinking water</li>
                             <li>Transportation to / from airport and mission sites</li>
-                            <li>1 Mission T-shirt (unless otherwise noted)</li>
+                            <li>1 Mission t-shirt (unless otherwise noted)</li>
                         </ul>
 
                         <p>Other expenses / US:</p>
@@ -264,14 +264,14 @@ $questions = array(
     ),
     array(
         'question' => 'What do I pack?',
-        'answer' => '<p class="question-answer"><a href="https://drive.google.com/file/d/0By871gytPLeeMmhsdEJDc2NOMHc/view?usp=sharing" class="plain-link" target="_blank">Refer to our packing list</a>.</p>'
+        'answer' => '<p class="question-answer">Contact your trip leader for the packing list.</p>'
     ),
     array(
         'question' => 'How can I raise support?',
         'answer' => '<p class="question-answer">We encourage team members to include friends and family in their mission by asking for prayer or financial support. Your team leader can provide a support letter template and give ideas on how to get your community involved in your mission.</p>'
     ),
     array(
-        'question' => 'I am not sure I’m cut out to be a missionary. Should I go?',
+        'question' => 'I am not sure I am cut out to be a missionary. Should I go?',
         'answer' => '<p class="question-answer">Pray and examine your heart. Prepare to humble yourself. Haiti will teach you a great deal. Are you flexible? Are you willing to be uncomfortable, challenged and overwhelmed? If you have an open heart, God will work through you.</p>'
     ),
     array(
