@@ -68,7 +68,7 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Url' => 'event-slide.jpg',
                 'Alt' => 'Events',
                 'Header' => 'Giving Tuesday',
-                'Description' => 'November 27, 2018<br>#GivingTuesday - A global day of giving',
+                'Description' => 'November 27, 2018<br>A global day of giving that unites countries worldwide',
                 'Link' => '/donate'
             ),
             array(
