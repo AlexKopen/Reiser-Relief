@@ -65,13 +65,6 @@ $app->get('/', function () use ($app, $callAPI) {
         'Title' => 'Home',
         'SlideShowImages' => array(
             array(
-                'Url' => 'event-slide.jpg',
-                'Alt' => 'Events',
-                'Header' => 'Giving Tuesday',
-                'Description' => 'November 27, 2018<br>A global day of giving that unites countries worldwide',
-                'Link' => '/donate'
-            ),
-            array(
                 'Url' => 'work-slide.jpg',
                 'Alt' => 'Core Values',
                 'Header' => 'Our Impact',
@@ -85,13 +78,13 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Description' => 'Live out God\'s call to serve by applying for a mission trip to Haiti',
                 'Link' => '/missions'
             ),
-//            array(
-//                'Url' => 'support-slide.jpg',
-//                'Alt' => 'Support Us',
-//                'Header' => 'Support Us',
-//                'Description' => 'Help us break the cycle of poverty with a one-time or recurring gift',
-//                'Link' => '/donate'
-//            ),
+            array(
+                'Url' => 'support-slide.jpg',
+                'Alt' => 'Support Us',
+                'Header' => 'Support Us',
+                'Description' => 'Help us break the cycle of poverty with a one-time or recurring gift',
+                'Link' => '/donate'
+            ),
             array(
                 'Url' => 'contact-slide.jpg',
                 'Alt' => 'Contact',
