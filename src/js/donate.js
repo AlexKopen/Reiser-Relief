@@ -217,9 +217,31 @@ var donate = (function () {
     });
   }
 
+  function paypalClick() {
+    $('.paypal-link').click(function() {
+      var url = 'https://www.paypal.com/cgi-bin/webscr';
+      var inputField1Name = 'cmd';
+      var inputField1Value = '_s-xclick';
+      var inputField2Name = 'hosted_button_id';
+      var inputField2Value = '3UD9NWCHCWPWE';
+
+      var form = $(
+        '<form action="' + url + '" method="post" target ="_blank" style="display:none">' +
+        '<input name="' + inputField1Name + '" value="' + inputField1Value + '">' +
+        '<input name="' + inputField2Name + '" value="' + inputField2Value + '">' +
+        '</form>'
+      );
+
+      $('#donate').append(form);
+      form.submit();
+      form.remove();
+    });
+  }
+
   function init() {
     donationFormInitialization();
     stripeSetup();
+    paypalClick();
   }
 
   var donateModule = {
