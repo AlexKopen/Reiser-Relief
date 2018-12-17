@@ -304,6 +304,10 @@ $questions = array(
         'answer' => '<p class="question-answer">Yes. Haitians create many beautiful souvenirs and are eager to sell them. Bartering is customary and should be used for purchases bought on the street. There are also goods for sale at the airport.</p>'
     ),
     array(
+        'question' => 'How do I access the mission trip blog?',
+        'answer' => '<p class="question-answer"><a href="https://reiserreliefjournal.blogspot.com/" class="plain-link" target="_blank">You can access the mission blog here</a>.</p>'
+    ),
+    array(
         'question' => 'How do I apply for a trip?',
         'answer' => '<p class="question-answer">Complete the online application and pay the $125 deposit. Send an email to <a href="mailto:info@reiserrelief.org" class="plain-link">info@reiserrelief.org</a> with any questions
 about the application process.</p>'
