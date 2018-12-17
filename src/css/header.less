@@ -1,75 +1,66 @@
 @import "globals.less";
 
 header {
-	@header-height: 50px;
-	padding-top: @header-padding;
+		#header-container {
+			@header-height: 50px;
+			@logo-width: 241px;
+			@medium-screen-logo-padding: 15px;
+			padding-top: @header-padding;
+			padding-right: @header-padding;
+			position: relative;
+			text-align: right;
 
-	.container {
-		.pure-g {
 			@media @medium-screen {
 				padding: 0;
-			}
-		}
-
-		#left-header {
-			padding-left: @side-container-padding;
-
-			@media @medium-screen {
-				width: 100%;
-				padding: 0 @side-container-padding;
+				text-align: center;
 			}
 
-			img {
+			#header-logo {
+				position: absolute;
+				top: @header-padding;
+				left: @header-padding;
+
 				@media @medium-screen {
-					margin: 0 auto;
+					left: 50%;
+					top: -@header-height - @medium-screen-logo-padding;
+					margin-left: -@logo-width/2;
 				}
 			}
-		}
 
-		#right-header {
-			text-align: right;
-			width: 100%;
-			margin-top: -50px;
-			padding-right: @side-container-padding;
-
-			@media @medium-screen {
-				text-align: center;
-				width: 100%;
-				margin: 10px 0 0;
-				padding: 0;
-			}
-
-			#drop-down-menu {
+			#drop-down-menu-container {
 				display: none;
 				background: @dark-theme-color;
+				margin-top: @header-height + (@medium-screen-logo-padding * 2);
 
 				@media @medium-screen {
 					display: block;
 				}
 
-				#hamburger {
-					width: 94px;
-					margin: 0 auto;
-					cursor: pointer;
+				#drop-down-menu {
+					#hamburger {
+						width: 94px;
+						margin: 0 auto;
+						cursor: pointer;
 
-					p {
-						@hamburger-icon-width: image-width("../images/common/hamburger.jpg");
-						@hamburger-icon-height: image-width("../images/common/hamburger.jpg");
-						padding: 0 0 0 @hamburger-icon-width;
-						height: @hamburger-icon-height;
-						margin-top: -@hamburger-icon-height;
-						line-height: @hamburger-icon-height;
-						color: @white;
-						background: @dark-theme-color;
+						p {
+							@hamburger-icon-width: image-width("../images/common/hamburger.jpg");
+							@hamburger-icon-height: image-width("../images/common/hamburger.jpg");
+							padding: 0 0 0 @hamburger-icon-width;
+							height: @hamburger-icon-height;
+							margin-top: -@hamburger-icon-height;
+							line-height: @hamburger-icon-height;
+							color: @white;
+							background: @dark-theme-color;
+						}
 					}
 				}
 			}
 
 			ul {
-              margin-top: 15px;
+				line-height: @header-height;
 
 				@media @medium-screen {
-                    margin: 0;
+					margin: 0;
 					background: @dark-theme-color;
 					width: 100%;
 					display: none;
@@ -130,7 +121,6 @@ header {
 					}
 				}
 			}
-		}
 
-	}
+		}
 }
