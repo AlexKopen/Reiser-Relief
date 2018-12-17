@@ -122,6 +122,36 @@ var donate = (function () {
       hiddenNameInput.setAttribute('value', $('#cardholder-name').val().trim());
       form.appendChild(hiddenNameInput);
 
+        var hiddenAddress1Input = document.createElement('input');
+        hiddenAddress1Input.setAttribute('type', 'hidden');
+        hiddenAddress1Input.setAttribute('name', 'address1');
+        hiddenAddress1Input.setAttribute('value', $('#cardholder-address-1').val().trim());
+        form.appendChild(hiddenAddress1Input);
+
+        var hiddenAddress2Input = document.createElement('input');
+        hiddenAddress2Input.setAttribute('type', 'hidden');
+        hiddenAddress2Input.setAttribute('name', 'address2');
+        hiddenAddress2Input.setAttribute('value', $('#cardholder-address-2').val().trim());
+        form.appendChild(hiddenAddress2Input);
+
+        var hiddenCityInput = document.createElement('input');
+        hiddenCityInput.setAttribute('type', 'hidden');
+        hiddenCityInput.setAttribute('name', 'city');
+        hiddenCityInput.setAttribute('value', $('#cardholder-city').val().trim());
+        form.appendChild(hiddenCityInput);
+
+        var hiddenStateInput = document.createElement('input');
+        hiddenStateInput.setAttribute('type', 'hidden');
+        hiddenStateInput.setAttribute('name', 'state');
+        hiddenStateInput.setAttribute('value', $('#cardholder-state').val().trim());
+        form.appendChild(hiddenStateInput);
+
+        var hiddenZipInput = document.createElement('input');
+        hiddenZipInput.setAttribute('type', 'hidden');
+        hiddenZipInput.setAttribute('name', 'zip');
+        hiddenZipInput.setAttribute('value', $('#cardholder-zip').val().trim());
+        form.appendChild(hiddenZipInput);
+
       // Submit the form
       form.submit();
     }

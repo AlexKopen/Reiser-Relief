@@ -112,9 +112,26 @@
     max-width: 700px;
     margin: 0 auto;
 
-    input {
+    input, select {
       width: 95%;
+      display: block;
+
+      &.full-width {
+        width: 98%;
+
+        @media @medium-screen {
+          width: 100%;
+        }
+      }
+
+      @media @medium-screen {
+        width: 100%;
+      }
     }
+  }
+
+  .subsection {
+    margin-top: @small-top-margin;
   }
 
   form {
@@ -159,7 +176,7 @@
     }
   }
 
-  input {
+  input, select {
     height: 42px;
     margin: .25em 0;
     padding: .5em .6em;
@@ -169,6 +186,7 @@
     border-radius: 4px;
     vertical-align: middle;
     box-sizing: border-box;
+    background: @white;
   }
 
   h3 {
