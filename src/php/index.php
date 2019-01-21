@@ -388,6 +388,12 @@ $app->post('/donation-submit', function () use ($app, $callAPI) {
     ));
 });
 
+$app->get('/newsletters', function () use ($app) {
+    return $app['twig']->render('news/news.twig', array(
+        'Title' => 'Newsletters',
+        'DisplayTitle' => 'Newsletters'
+    ));
+});
 
 if (!$app['debug']) {
     $app->error(function () use ($app) {
