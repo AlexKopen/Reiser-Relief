@@ -5,6 +5,9 @@ import {RouterModule} from '@angular/router';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {TransferHttpCacheModule} from '@nguniversal/common';
+import {environment} from "../environments/environment";
+import {AngularFireModule} from "@angular/fire";
+import {AngularFirestoreModule} from "@angular/fire/firestore";
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
       { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
     ]),
     TransferHttpCacheModule,
+    AngularFireModule.initializeApp(environment.firebase),
+      AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
