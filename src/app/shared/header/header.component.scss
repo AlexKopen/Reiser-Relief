@@ -1,0 +1,38 @@
+@import '../globals';
+
+$header-height: 50px;
+$header-vertical-margin: 15px;
+
+#header-container {
+  background: $dark-theme-color;
+  color: $white;
+}
+
+.container {
+  padding: $header-vertical-margin 0;
+  height: $header-height + ($header-vertical-margin * 2);
+}
+
+#logo {
+  flex: 0 0 245px;
+}
+
+ul {
+  list-style: none;
+  text-align: right;
+
+  li {
+    display: inline-block;
+    padding-right: 15px;
+    line-height: $header-height;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $light-theme-color;
+    }
+  }
+}
