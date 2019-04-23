@@ -8,9 +8,10 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-app' }),
     RouterModule.forRoot([

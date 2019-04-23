@@ -1,1 +1,5 @@
-suh dude...
+<div *ngFor="let newsPost of newsPosts">
+  <p>{{ newsPost.title }}</p>
+  <p>{{ newsPost.date | date: 'longDate' }}</p>
+  <p [innerHTML]="newsPost.content"></p>
+</div>

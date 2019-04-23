@@ -27,7 +27,8 @@
     "compile:server": "tsc -p server.tsconfig.json",
     "generate:prerender": "cd dist && node prerender",
     "serve:prerender": "cd dist/browser && http-server",
-    "serve:ssr": "node dist/server"
+    "serve:ssr": "node dist/server",
+    "deploy": "firebase deploy"
   },
   "pre-commit": [],
   "private": true,
@@ -46,6 +47,7 @@
     "@nguniversal/common": "^6.0.0",
     "@nguniversal/express-engine": "^6.0.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.4.1",
     "express": "^4.15.2",
     "firebase": "^5.9.4",
@@ -71,14 +73,14 @@
     "typescript": "3.1.6"
   },
   "husky": {
-      "hooks": {
-        "pre-commit": "lint-staged"
-      }
-    },
-    "lint-staged": {
-      "*.{js,json,css,md,ts,html,component.html}": [
-        "prettier --write",
-        "git add"
-      ]
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md,ts,html,component.html}": [
+      "prettier --write",
+      "git add"
+    ]
   }
+}

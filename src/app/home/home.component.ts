@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { first } from 'rxjs/operators';
+import { NewsPost } from './news-post.model';
 
 @Component({
   selector: 'app-home',
@@ -7,20 +9,28 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  data = [];
+  newsPosts: NewsPost[];
 
   constructor(private db: AngularFirestore) {}
 
   ngOnInit() {
+    const localNewsPosts = JSON.parse(localStorage.getItem('newsPosts'));
+    if (localNewsPosts !== null) {
+      this.newsPosts = localNewsPosts;
+    }
+
     if (typeof window === 'undefined') {
       // server code
     } else {
-      const news = this.db
-        .collection('news-posts')
+      this.db
+        .collection<NewsPost>('news-posts', ref =>
+          ref.orderBy('date', 'desc').limit(5)
+        )
         .valueChanges()
-        .subscribe(value => {
-          console.table(value);
-          news.unsubscribe();
+        .pipe(first())
+        .subscribe(newsPosts => {
+          localStorage.setItem('newsPosts', JSON.stringify(newsPosts));
+          this.newsPosts = newsPosts;
         });
     }
   }
