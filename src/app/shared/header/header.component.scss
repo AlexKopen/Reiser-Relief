@@ -1,38 +1,58 @@
 @import '../globals';
 
-$header-height: 50px;
-$header-vertical-margin: 15px;
+$header-padding: 0.5em;
+$header-desktop-height: 5em;
+$logo-height: 3.125em;
 
 #header-container {
+  padding: $header-padding 0;
   background: $dark-theme-color;
   color: $white;
+
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+    height: $header-desktop-height;
+    line-height: $header-desktop-height - ($header-padding * 2);
+  }
 }
 
-.container {
-  padding: $header-vertical-margin 0;
-  height: $header-height + ($header-vertical-margin * 2);
+img {
+  display: block;
+
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+    margin-top: ($header-desktop-height - $logo-height)/4;
+  }
 }
 
-#logo {
-  flex: 0 0 245px;
+#logo-column {
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+    flex: 0 0 245px;
+  }
 }
 
 ul {
-  list-style: none;
-  text-align: right;
+  text-align: center;
+  margin-top: 1em !important;
 
-  li {
-    display: inline-block;
-    padding-right: 15px;
-    line-height: $header-height;
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+    margin-top: 0 !important;
+    text-align: right;
+  }
+}
 
-    &:last-of-type {
-      padding-right: 0;
-    }
+li {
+  margin-right: 0.5rem !important;
+  cursor: pointer;
 
-    &:hover {
-      cursor: pointer;
-      color: $light-theme-color;
-    }
+  &:hover {
+    color: $light-theme-color;
+  }
+
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+    margin: 0 !important;
+    padding-left: 1em !important;
+  }
+
+  @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
+    padding-left: 2em !important;
   }
 }
