@@ -14,14 +14,14 @@ export class HomeComponent implements OnInit {
   constructor(private db: AngularFirestore) {}
 
   ngOnInit() {
-    const localNewsPosts = JSON.parse(localStorage.getItem('newsPosts'));
-    if (localNewsPosts !== null) {
-      this.newsPosts = localNewsPosts;
-    }
-
     if (typeof window === 'undefined') {
       // server code
     } else {
+      const localNewsPosts = JSON.parse(localStorage.getItem('newsPosts'));
+      if (localNewsPosts !== null) {
+        this.newsPosts = localNewsPosts;
+      }
+
       this.db
         .collection<NewsPost>('news-posts', ref =>
           ref.orderBy('date', 'desc').limit(5)
