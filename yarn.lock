@@ -332,6 +332,11 @@
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.2.17.tgz#a4f327693252ff330948298d75c264bc78863060"
   integrity sha512-94Nr1N7sX+AQ5JPPnIMqQlZCXUkowFqTF8X+KmJAc7bTV4nYqv4X7QBnSpmm9zTqgkJjfxdmiDSH7MWopDC9Zw==
 
+"@fortawesome/fontawesome-free@^5.8.2":
+  version "5.8.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.8.2.tgz#fae4112c4fb47086f6ae167e32524b280000abd5"
+  integrity sha512-E4fDUF4fbu9AxKpaQQqCN3XBnNzb/5e0Gvd9OaQsYkK574LVI57v/EqqPfIm/mC7jYbxaPNrhvT5AF+Yzwyizg==
+
 "@ngtools/webpack@7.1.4":
   version "7.1.4"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-7.1.4.tgz#632ece6ed8e05fe743554cc935be36a653376f01"
