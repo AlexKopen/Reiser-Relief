@@ -32,4 +32,8 @@ export class HeaderComponent implements OnInit {
       this.allowOutsideClick = true;
     }
   }
+
+  get mobileMenuClass(): string {
+    return this.showSideMenu ? 'animated slideInLeft' : '';
+  }
 }

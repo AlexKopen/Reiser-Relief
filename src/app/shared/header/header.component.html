@@ -24,7 +24,7 @@
 </div>
 
 <ng-container *ngIf="showSideMenu">
-  <div id="mobile-side-bar" (clickOutside)="outsideMenuClick()">
+  <div id="mobile-side-bar" [ngClass]="mobileMenuClass" (clickOutside)="outsideMenuClick()">
     <p id="close"><i class="fas fa-times" (click)="closeClick()"></i></p>
     <ul class="list-inline">
       <li *ngFor="let menuItem of menuItems" [innerText]="menuItem"></li>
