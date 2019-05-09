@@ -11,6 +11,8 @@ img {
 }
 
 .slide-content-wrapper {
+  height: 100%;
+  display: table;
   text-align: left;
   width: 340px;
 
@@ -37,5 +39,10 @@ img {
     &:hover {
       color: $dark-theme-color;
     }
+  }
+
+  .table-wrapper {
+    display: table-cell;
+    vertical-align: middle;
   }
 }

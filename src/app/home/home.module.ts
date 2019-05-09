@@ -3,12 +3,16 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
-import {SWIPER_CONFIG, SwiperConfigInterface, SwiperModule} from 'ngx-swiper-wrapper';
+import {
+  SWIPER_CONFIG,
+  SwiperConfigInterface,
+  SwiperModule
+} from 'ngx-swiper-wrapper';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   slidesPerView: 1,
-  autoplay: {delay: 4500},
+  autoplay: { delay: 5000 },
   allowTouchMove: false,
   speed: 1000
 };
@@ -20,7 +24,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     RouterModule.forChild([
       { path: '', component: HomeComponent, pathMatch: 'full' }
     ]),
-      SwiperModule
+    SwiperModule
   ],
   providers: [
     {

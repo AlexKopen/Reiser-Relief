@@ -19,8 +19,12 @@
 
         <div class="col-md">
           <ul class="list-inline">
-            <li class="list-inline-item" *ngFor="let menuItem of menuItems" [routerLink]="menuItemAsRoute(menuItem)" [innerText]="menuItem">
-            </li>
+            <li
+              class="list-inline-item"
+              *ngFor="let menuItem of menuItems"
+              [routerLink]="menuItemAsRoute(menuItem)"
+              [innerText]="menuItem"
+            ></li>
           </ul>
         </div>
       </div>
@@ -36,8 +40,12 @@
   >
     <p id="close"><i class="fas fa-times" (click)="closeClick()"></i></p>
     <ul class="list-inline">
-      <li (click)="closeClick()" *ngFor="let menuItem of menuItems" [routerLink]="menuItemAsRoute(menuItem)" [innerText]="menuItem">
-      </li>
+      <li
+        (click)="closeClick()"
+        *ngFor="let menuItem of menuItems"
+        [routerLink]="menuItemAsRoute(menuItem)"
+        [innerText]="menuItem"
+      ></li>
     </ul>
   </div>
 </div>
