@@ -8,7 +8,7 @@
       <div class="row no-gutters">
         <div class="col-md" id="logo-column">
           <div id="logo-container">
-            <a href="/"
+            <a [routerLink]="'/'"
               ><img
                 src="../../../assets/images/logo.png"
                 alt="Reiser Relief Logo"
@@ -19,8 +19,7 @@
 
         <div class="col-md">
           <ul class="list-inline">
-            <li class="list-inline-item" *ngFor="let menuItem of menuItems">
-              <a [routerLink]="menuItemAsRoute(menuItem)">{{ menuItem }}</a>
+            <li class="list-inline-item" *ngFor="let menuItem of menuItems" [routerLink]="menuItemAsRoute(menuItem)" [innerText]="menuItem">
             </li>
           </ul>
         </div>
@@ -37,8 +36,7 @@
   >
     <p id="close"><i class="fas fa-times" (click)="closeClick()"></i></p>
     <ul class="list-inline">
-      <li *ngFor="let menuItem of menuItems">
-        <a [routerLink]="menuItemAsRoute(menuItem)">{{ menuItem }}</a>
+      <li (click)="closeClick()" *ngFor="let menuItem of menuItems" [routerLink]="menuItemAsRoute(menuItem)" [innerText]="menuItem">
       </li>
     </ul>
   </div>

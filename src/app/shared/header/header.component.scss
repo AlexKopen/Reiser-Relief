@@ -24,17 +24,6 @@ $logo-height: 3.125em;
   margin: 0 auto;
 }
 
-li {
-  a {
-    color: $white;
-
-    &:hover {
-      color: $light-theme-color;
-      text-decoration: none;
-    }
-  }
-}
-
 #hamburger {
   position: absolute;
   top: 0;
