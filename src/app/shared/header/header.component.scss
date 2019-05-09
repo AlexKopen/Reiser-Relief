@@ -30,6 +30,7 @@ $logo-height: 3.125em;
   left: 10px;
   font-size: 34px;
   cursor: pointer;
+  z-index: 100;
 
   @media only screen and (min-width: map-get($grid-breakpoints, md)) {
     display: none;

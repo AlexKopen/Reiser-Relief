@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {MENU_ITEMS} from '../constants/menu-items.const';
 
 @Component({
@@ -16,6 +16,15 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  @HostListener('window:resize')
+  onResize() {
+    if (this.initialHamburgerClickOccurred && window.innerWidth > 768) {
+      this.initialHamburgerClickOccurred = false;
+      this.showSideMenu = false;
+      this.allowOutsideClickEvent = false;
+    }
+  }
 
   hamburgerClick(): void {
     this.initialHamburgerClickOccurred = true;
