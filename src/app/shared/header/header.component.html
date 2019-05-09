@@ -8,7 +8,7 @@
       <div class="row no-gutters">
 
         <div class="col-md" id="logo-column">
-          <a href="/"><img src="../../../assets/images/logo.png" alt="Reiser Relief Logo" class="mx-auto"/></a>
+          <div id="logo-container"><a href="/"><img src="../../../assets/images/logo.png" alt="Reiser Relief Logo" class="mx-auto"/></a></div>
         </div>
 
         <div class="col-md">
@@ -23,11 +23,12 @@
   </div>
 </div>
 
-<ng-container *ngIf="showSideMenu">
+<div [ngClass]="{'show-mobile-side-bar ': initialHamburgerClickOccurred, 'hide-mobile-side-bar ': !initialHamburgerClickOccurred}">
   <div id="mobile-side-bar" [ngClass]="mobileMenuClass" (clickOutside)="outsideMenuClick()">
     <p id="close"><i class="fas fa-times" (click)="closeClick()"></i></p>
     <ul class="list-inline">
       <li *ngFor="let menuItem of menuItems" [innerText]="menuItem"></li>
     </ul>
   </div>
-</ng-container>
+</div>
+

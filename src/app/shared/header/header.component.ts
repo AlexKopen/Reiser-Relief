@@ -8,32 +8,42 @@ import {MENU_ITEMS} from '../constants/menu-items.const';
 })
 export class HeaderComponent implements OnInit {
   menuItems = MENU_ITEMS;
+
+  initialHamburgerClickOccurred = false;
   showSideMenu = false;
-  allowOutsideClick = false;
+  allowOutsideClickEvent = false;
 
   constructor() {}
 
   ngOnInit() {}
 
   hamburgerClick(): void {
+    this.initialHamburgerClickOccurred = true;
     this.showSideMenu = true;
+    // We set allowOutsideClickEvent in outsideMenuClick() because the click outside event is called immediately
   }
 
   closeClick(): void {
     this.showSideMenu = false;
-    this.allowOutsideClick = false;
+    this.allowOutsideClickEvent = false;
   }
 
   outsideMenuClick(): void {
-    if (this.allowOutsideClick) {
+    if (this.allowOutsideClickEvent) {
       this.showSideMenu = false;
-      this.allowOutsideClick = false;
+      this.allowOutsideClickEvent = false;
     } else {
-      this.allowOutsideClick = true;
+      if (this.showSideMenu) {
+        this.allowOutsideClickEvent = true;
+      }
     }
   }
 
   get mobileMenuClass(): string {
-    return this.showSideMenu ? 'animated slideInLeft' : '';
+    if (this.initialHamburgerClickOccurred) {
+      return this.showSideMenu ? 'animated slideInLeft' : 'animated slideOutLeft';
+    } else {
+      return '';
+    }
   }
 }
