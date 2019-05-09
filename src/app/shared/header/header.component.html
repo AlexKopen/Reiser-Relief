@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<div [ngClass]="{'show-mobile-side-bar ': initialHamburgerClickOccurred, 'hide-mobile-side-bar ': !initialHamburgerClickOccurred}">
+<div [hidden]="!initialHamburgerClickOccurred">
   <div id="mobile-side-bar" [ngClass]="mobileMenuClass" (clickOutside)="outsideMenuClick()">
     <p id="close"><i class="fas fa-times" (click)="closeClick()"></i></p>
     <ul class="list-inline">
