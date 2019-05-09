@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { first } from 'rxjs/operators';
-import { NewsPost } from './news-post.model';
+import { NewsPost } from '../../shared/models/news-post.model';
 
 @Component({
   selector: 'app-home',

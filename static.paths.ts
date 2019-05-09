@@ -1,1 +1,1 @@
-export const ROUTES = ['/', '/lazy', '/lazy/nested'];
+export const ROUTES = ['/', '/about', '/missions', '/donate', '/events', '/contact'];
