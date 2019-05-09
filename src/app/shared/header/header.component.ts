@@ -55,4 +55,12 @@ export class HeaderComponent implements OnInit {
       return '';
     }
   }
+
+  menuItemAsRoute(menuItem: string): string {
+    if (menuItem.toLowerCase() === 'home') {
+      return '/';
+    }
+
+    return '/' + menuItem.toLowerCase();
+  }
 }

@@ -17,8 +17,7 @@ import { HeaderComponent } from './shared/header/header.component';
     BrowserModule.withServerTransition({ appId: 'my-app' }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule' },
-      { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule' }
+      { path: 'about', loadChildren: './about/about.module#AboutModule' },
     ]),
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase),

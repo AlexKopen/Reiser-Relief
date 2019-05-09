@@ -13,7 +13,9 @@
 
         <div class="col-md">
           <ul class="list-inline">
-            <li class="list-inline-item" *ngFor="let menuItem of menuItems" [innerText]="menuItem"></li>
+            <li class="list-inline-item" *ngFor="let menuItem of menuItems">
+              <a [routerLink]="menuItemAsRoute(menuItem)">{{menuItem}}</a>
+            </li>
           </ul>
         </div>
 
@@ -27,7 +29,7 @@
   <div id="mobile-side-bar" [ngClass]="mobileMenuClass" (clickOutside)="outsideMenuClick()">
     <p id="close"><i class="fas fa-times" (click)="closeClick()"></i></p>
     <ul class="list-inline">
-      <li *ngFor="let menuItem of menuItems" [innerText]="menuItem"></li>
+      <li *ngFor="let menuItem of menuItems" ><a [routerLink]="menuItemAsRoute(menuItem)">{{menuItem}}</a></li>
     </ul>
   </div>
 </div>
