@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {AboutComponent} from './about/about.component';
-import {RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AboutComponent } from './about/about.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AboutComponent],
@@ -12,4 +12,4 @@ import {RouterModule} from '@angular/router';
     ])
   ]
 })
-export class AboutModule { }
+export class AboutModule {}

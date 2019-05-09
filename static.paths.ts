@@ -1,1 +1,8 @@
-export const ROUTES = ['/', '/about', '/missions', '/donate', '/events', '/contact'];
+export const ROUTES = [
+  '/',
+  '/about',
+  '/missions',
+  '/donate',
+  '/events',
+  '/contact'
+];

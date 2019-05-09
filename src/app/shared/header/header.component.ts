@@ -1,5 +1,5 @@
-import {Component, HostListener, OnInit} from '@angular/core';
-import {MENU_ITEMS} from '../constants/menu-items.const';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { MENU_ITEMS } from '../constants/menu-items.const';
 
 @Component({
   selector: 'app-header',
@@ -50,7 +50,9 @@ export class HeaderComponent implements OnInit {
 
   get mobileMenuClass(): string {
     if (this.initialHamburgerClickOccurred) {
-      return this.showSideMenu ? 'animated slideInLeft' : 'animated slideOutLeft';
+      return this.showSideMenu
+        ? 'animated slideInLeft'
+        : 'animated slideOutLeft';
     } else {
       return '';
     }

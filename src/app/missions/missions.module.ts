@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {MissionsComponent} from './missions/missions.component';
-import {RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MissionsComponent } from './missions/missions.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [MissionsComponent],
@@ -12,4 +12,4 @@ import {RouterModule} from '@angular/router';
     ])
   ]
 })
-export class MissionsModule { }
+export class MissionsModule {}

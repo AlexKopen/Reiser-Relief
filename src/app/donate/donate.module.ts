@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {DonateComponent} from './donate/donate.component';
-import {RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { DonateComponent } from './donate/donate.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [DonateComponent],
@@ -12,4 +12,4 @@ import {RouterModule} from '@angular/router';
     ])
   ]
 })
-export class DonateModule { }
+export class DonateModule {}

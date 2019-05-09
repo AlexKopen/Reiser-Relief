@@ -4,33 +4,42 @@
       <i class="fas fa-bars"></i>
     </div>
 
-  <div class="container">
+    <div class="container">
       <div class="row no-gutters">
-
         <div class="col-md" id="logo-column">
-          <div id="logo-container"><a href="/"><img src="../../../assets/images/logo.png" alt="Reiser Relief Logo" class="mx-auto"/></a></div>
+          <div id="logo-container">
+            <a href="/"
+              ><img
+                src="../../../assets/images/logo.png"
+                alt="Reiser Relief Logo"
+                class="mx-auto"
+            /></a>
+          </div>
         </div>
 
         <div class="col-md">
           <ul class="list-inline">
             <li class="list-inline-item" *ngFor="let menuItem of menuItems">
-              <a [routerLink]="menuItemAsRoute(menuItem)">{{menuItem}}</a>
+              <a [routerLink]="menuItemAsRoute(menuItem)">{{ menuItem }}</a>
             </li>
           </ul>
         </div>
-
       </div>
     </div>
-
   </div>
 </div>
 
 <div [hidden]="!initialHamburgerClickOccurred">
-  <div id="mobile-side-bar" [ngClass]="mobileMenuClass" (clickOutside)="outsideMenuClick()">
+  <div
+    id="mobile-side-bar"
+    [ngClass]="mobileMenuClass"
+    (clickOutside)="outsideMenuClick()"
+  >
     <p id="close"><i class="fas fa-times" (click)="closeClick()"></i></p>
     <ul class="list-inline">
-      <li *ngFor="let menuItem of menuItems" ><a [routerLink]="menuItemAsRoute(menuItem)">{{menuItem}}</a></li>
+      <li *ngFor="let menuItem of menuItems">
+        <a [routerLink]="menuItemAsRoute(menuItem)">{{ menuItem }}</a>
+      </li>
     </ul>
   </div>
 </div>
-
