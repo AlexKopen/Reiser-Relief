@@ -54,6 +54,7 @@ $logo-height: 3.125em;
   background: $dark-theme-color;
   opacity: 0.9;
   color: $white;
+  z-index: 101;
 
   @media only screen and (min-width: map-get($grid-breakpoints, md)) {
     display: none;
