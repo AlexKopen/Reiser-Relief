@@ -1,0 +1,41 @@
+@import '../../shared/globals';
+
+img {
+  max-width: 100%;
+}
+
+.slide-content {
+  background: $dark-theme-color;
+  color: $white;
+  padding-left: 4em;
+}
+
+.slide-content-wrapper {
+  text-align: left;
+  width: 340px;
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  p, button {
+    margin-top: 2em !important;
+  }
+
+  p {
+    line-height: 2em;
+  }
+
+  button {
+    width: 10em;
+    height: 2.5em;
+    background: $light-theme-color;
+    color: $white;
+    border: 0;
+    border-radius: 4px;
+
+    &:hover {
+      color: $dark-theme-color;
+    }
+  }
+}
