@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('window:resize')
   onResize() {
-    if (this.initialHamburgerClickOccurred && window.innerWidth > 768) {
+    if (this.initialHamburgerClickOccurred && window.innerWidth >= 768) {
       this.initialHamburgerClickOccurred = false;
       this.showSideMenu = false;
       this.allowOutsideClickEvent = false;
