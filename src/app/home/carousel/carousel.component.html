@@ -1,93 +1,23 @@
 <swiper>
-  <div>
+  <div *ngFor="let slide of homeSlides">
     <div class="row no-gutters">
-      <div class="col-8">
+      <div class="col-lg-8">
         <img
-          src="../../../assets/images/home-page-slide-show/impact-slide.jpg"
-          alt="Our Impact"
+          [src]="
+            '../../assets/images/home-page-slide-show/' + slide.imageFileName
+          "
+          [alt]="slide.altText"
         />
       </div>
-      <div class="col slide-content">
+      <div class="col-lg-4 slide-content">
         <div class="slide-content-wrapper">
           <div class="table-wrapper">
-            <h1>Our Impact</h1>
-            <p>
-              We partner with impactful organizations to empower and engage the
-              people of Haiti in Christ’s name. Learn how we improve the lives
-              of those we serve.
-            </p>
-            <button [routerLink]="'/about'">Learn More</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <div class="row no-gutters">
-      <div class="col-8">
-        <img
-          src="../../../assets/images/home-page-slide-show/missions-slide.jpg"
-          alt="Mission Trips"
-        />
-      </div>
-      <div class="col slide-content">
-        <div class="slide-content-wrapper">
-          <div class="table-wrapper">
-            <h1>Mission Trips</h1>
-            <p>
-              Our mission trips make a real, tangible difference in the lives of
-              those we serve. Live out God's call to serve by applying for a
-              mission trip to Haiti.
-            </p>
-            <button [routerLink]="'/missions'">Apply Now</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <div class="row no-gutters">
-      <div class="col-8">
-        <img
-          src="../../../assets/images/home-page-slide-show/support-slide.jpg"
-          alt="Support Us"
-        />
-      </div>
-      <div class="col slide-content">
-        <div class="slide-content-wrapper">
-          <div class="table-wrapper">
-            <h1>Support Us</h1>
-            <p>
-              Your donation will provide clean water, food, education and care
-              to the poor in Haiti. Help us break the cycle of poverty with a
-              one-time or recurring gift.
-            </p>
-            <button [routerLink]="'/donate'">Give Today</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <div class="row no-gutters">
-      <div class="col-8">
-        <img
-          src="../../../assets/images/home-page-slide-show/join-slide.jpg"
-          alt="Join Us"
-        />
-      </div>
-      <div class="col slide-content">
-        <div class="slide-content-wrapper">
-          <div class="table-wrapper">
-            <h1>Join Us</h1>
-            <p>
-              We would love to learn more about you and your interest in our
-              ministry.
-            </p>
-            <button [routerLink]="'/contact'">Contact Us</button>
+            <h1 [innerText]="slide.title"></h1>
+            <p [innerText]="slide.content"></p>
+            <button
+              [routerLink]="slide.routerLink"
+              [innerText]="slide.buttonText"
+            ></button>
           </div>
         </div>
       </div>
