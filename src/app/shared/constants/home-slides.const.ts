@@ -15,7 +15,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     'missions-slide.jpg',
     'Mission Trips',
     '/missions',
-    'Apply Now'
+    'Apply Today'
   ),
   new HomeSlide(
     'Support Us',

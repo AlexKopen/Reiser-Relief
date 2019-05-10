@@ -1,0 +1,42 @@
+@import '../../shared/globals';
+
+h2 {
+  width: 75%;
+  margin: 0 auto !important;
+  text-align: center;
+  color: #787878;
+  margin-top: 0.5em !important;
+  line-height: 40px;
+}
+
+#cards {
+  margin-top: 3em;
+
+  h3, p {
+    text-align: center;
+  }
+
+  h3 {
+    color: $dark-theme-color;
+  }
+
+  p {
+    color: #787878;;
+    font-size: 6em;
+  }
+
+  button {
+    display: block;
+    width: 90%;
+    margin: 0 auto !important;
+    height: 2.5em;
+    background: $light-theme-color;
+    color: $white;
+    border: 0;
+    border-radius: 4px;
+
+    &:hover {
+      color: $dark-theme-color;
+    }
+  }
+}
