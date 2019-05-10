@@ -8,6 +8,8 @@ import {
   SwiperConfigInterface,
   SwiperModule
 } from 'ngx-swiper-wrapper';
+import { HomeCardsComponent } from './home-cards/home-cards.component';
+import { NewsletterSubscribeComponent } from './newsletter-subscribe/newsletter-subscribe.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -18,7 +20,12 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 };
 
 @NgModule({
-  declarations: [HomeComponent, CarouselComponent],
+  declarations: [
+    HomeComponent,
+    CarouselComponent,
+    HomeCardsComponent,
+    NewsletterSubscribeComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild([

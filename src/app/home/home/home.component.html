@@ -5,27 +5,9 @@
   Haiti in Christ’s name
 </h2>
 
-<div id="cards">
-  <div class="row no-gutters">
-    <div class="col">
-      <h3>Our Mission</h3>
-      <p><i class="fas fa-hands-helping"></i></p>
-      <button>Learn More</button>
-    </div>
+<app-home-cards></app-home-cards>
 
-    <div class="col">
-      <h3>Mission Trips</h3>
-      <p><i class="fas fa-suitcase"></i></p>
-      <button>Apply Today</button>
-    </div>
-
-    <div class="col">
-      <h3>Support Us</h3>
-      <p><i class="fas fa-donate"></i></p>
-      <button>Give</button>
-    </div>
-  </div>
-</div>
+<app-newsletter-subscribe></app-newsletter-subscribe>
 
 <div *ngFor="let newsPost of newsPosts">
   <p>{{ newsPost.title }}</p>
