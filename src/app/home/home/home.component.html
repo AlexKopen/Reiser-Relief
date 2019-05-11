@@ -9,8 +9,6 @@
 
 <app-newsletter-subscribe></app-newsletter-subscribe>
 
-<div *ngFor="let newsPost of newsPosts">
-  <p>{{ newsPost.title }}</p>
-  <p>{{ newsPost.date | date: 'longDate' }}</p>
-  <p [innerHTML]="newsPost.content"></p>
-</div>
+<app-core-values></app-core-values>
+
+<app-news-posts></app-news-posts>

@@ -10,6 +10,8 @@ import {
 } from 'ngx-swiper-wrapper';
 import { HomeCardsComponent } from './home-cards/home-cards.component';
 import { NewsletterSubscribeComponent } from './newsletter-subscribe/newsletter-subscribe.component';
+import { CoreValuesComponent } from './core-values/core-values.component';
+import { NewsPostsComponent } from './news-posts/news-posts.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -24,7 +26,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HomeComponent,
     CarouselComponent,
     HomeCardsComponent,
-    NewsletterSubscribeComponent
+    NewsletterSubscribeComponent,
+    CoreValuesComponent,
+    NewsPostsComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,21 @@
+@import '../../shared/globals';
+
+#news-posts-wrapper {
+  margin-top: 2em;
+}
+
+.single-post {
+  margin-bottom: 1.5em;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  color: $dark-theme-color;
+}
+
+.date {
+  color: $gray-theme-color;
+}

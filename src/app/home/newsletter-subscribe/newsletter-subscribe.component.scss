@@ -44,6 +44,7 @@ input {
   line-height: 2.5em;
   width: 100%;
   margin-bottom: 0.5em !important;
+  padding-left: 10px !important;
 
   @media only screen and (min-width: map-get($grid-breakpoints, md)) {
     margin-bottom: 0 !important;
