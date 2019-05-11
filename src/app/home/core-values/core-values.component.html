@@ -2,54 +2,20 @@
   <div class="container">
     <h3>Core Values</h3>
     <div class="row">
-      <div class="col-4 core-value-card">
-        <div class="core-value-card-wrapper">
+      <div
+        class="col-xl-4 col-lg-6 core-value-card"
+        *ngFor="let coreValue of coreValues"
+      >
+        <div class="core-value-card-wrapper" [routerLink]="'/about'">
           <img
-            src="../../../assets/images/home-page-core-values/education.jpg"
-            alt="Education"
+            [src]="
+              '../../../assets/images/home-page-core-values/' +
+              coreValue.imageFileName
+            "
+            [alt]="coreValue.altText"
           />
           <div class="overlay"></div>
-          <p class="overlay-text">Education</p>
-        </div>
-      </div>
-      <div class="col-4 core-value-card">
-        <div class="core-value-card-wrapper">
-          <img
-            src="../../../assets/images/home-page-core-values/care.jpg"
-            alt="Education"
-          />
-          <div class="overlay"></div>
-          <p class="overlay-text">Elder Care</p>
-        </div>
-      </div>
-      <div class="col-4 core-value-card">
-        <div class="core-value-card-wrapper">
-          <img
-            src="../../../assets/images/home-page-core-values/employment.jpg"
-            alt="Education"
-          />
-          <div class="overlay"></div>
-          <p class="overlay-text">Job Creation</p>
-        </div>
-      </div>
-      <div class="col-4 core-value-card">
-        <div class="core-value-card-wrapper">
-          <img
-            src="../../../assets/images/home-page-core-values/agriculture.jpg"
-            alt="Education"
-          />
-          <div class="overlay"></div>
-          <p class="overlay-text">Agriculture</p>
-        </div>
-      </div>
-      <div class="col-4 core-value-card">
-        <div class="core-value-card-wrapper">
-          <img
-            src="../../../assets/images/home-page-core-values/water.jpg"
-            alt="Education"
-          />
-          <div class="overlay"></div>
-          <p class="overlay-text">Water</p>
+          <p class="overlay-text" [innerText]="coreValue.title"></p>
         </div>
       </div>
     </div>

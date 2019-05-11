@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeCoreValue } from '../../shared/models/home-core-value.model';
+import { CORE_VALUES } from '../../shared/constants/core-values.constant';
 
 @Component({
   selector: 'app-core-values',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./core-values.component.scss']
 })
 export class CoreValuesComponent implements OnInit {
+  coreValues: HomeCoreValue[] = CORE_VALUES;
+
   constructor() {}
 
   ngOnInit() {}
