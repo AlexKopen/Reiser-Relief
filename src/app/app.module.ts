@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import { ClickOutsideModule } from 'ng-click-outside';
 
 import { AppComponent } from './app.component';
@@ -14,20 +14,23 @@ import { HeaderComponent } from './shared/header/header.component';
   declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'my-app' }),
-    RouterModule.forRoot([
-      { path: '', loadChildren: './home/home.module#HomeModule' },
-      { path: 'about', loadChildren: './about/about.module#AboutModule' },
-      {
-        path: 'missions',
-        loadChildren: './missions/missions.module#MissionsModule'
-      },
-      { path: 'donate', loadChildren: './donate/donate.module#DonateModule' },
-      { path: 'events', loadChildren: './events/events.module#EventsModule' },
-      {
-        path: 'contact',
-        loadChildren: './contact/contact.module#ContactModule'
-      }
-    ]),
+    RouterModule.forRoot(
+      [
+        { path: '', loadChildren: './home/home.module#HomeModule' },
+        { path: 'about', loadChildren: './about/about.module#AboutModule' },
+        {
+          path: 'missions',
+          loadChildren: './missions/missions.module#MissionsModule'
+        },
+        { path: 'donate', loadChildren: './donate/donate.module#DonateModule' },
+        { path: 'events', loadChildren: './events/events.module#EventsModule' },
+        {
+          path: 'contact',
+          loadChildren: './contact/contact.module#ContactModule'
+        }
+      ],
+      { preloadingStrategy: PreloadAllModules }
+    ),
     TransferHttpCacheModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
