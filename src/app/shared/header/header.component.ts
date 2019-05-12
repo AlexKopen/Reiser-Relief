@@ -51,8 +51,8 @@ export class HeaderComponent implements OnInit {
   get mobileMenuClass(): string {
     if (this.initialHamburgerClickOccurred) {
       return this.showSideMenu
-        ? 'animated slideInLeft'
-        : 'animated slideOutLeft';
+        ? 'animated slideInLeft faster'
+        : 'animated slideOutLeft faster';
     } else {
       return '';
     }
