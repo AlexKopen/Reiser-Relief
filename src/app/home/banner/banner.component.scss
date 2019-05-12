@@ -1,11 +1,11 @@
 @import '../../shared/globals';
 
 img {
-  max-width: 100%;
   display: none;
 
   @media only screen and (min-width: map-get($grid-breakpoints, md)) {
     display: block;
+    width: 100%;
   }
 }
 

@@ -19,3 +19,11 @@ h4 {
 .date {
   color: $gray-theme-color;
 }
+
+::ng-deep a {
+  color: $dark-theme-color;
+
+  &:hover {
+    color: $dark-theme-color;
+  }
+}

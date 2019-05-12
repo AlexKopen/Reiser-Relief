@@ -10,7 +10,7 @@ export class BannerComponent implements OnInit {
   homeSlide = new HomeSlide(
     'Support Us',
     'Your donation will provide clean water, food, education and care to the poor in Haiti. Help us break the cycle of poverty with a one-time or recurring gift.',
-    'support-slide.jpg',
+    'impact-slide.jpg',
     'Support Us',
     '/donate',
     'Give Today'
