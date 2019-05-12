@@ -7,7 +7,7 @@ import { MENU_ITEMS } from '../constants/menu-items.constant';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  menuItems = MENU_ITEMS;
+  menuItems: string[] = MENU_ITEMS;
 
   initialHamburgerClickOccurred = false;
   showSideMenu = false;

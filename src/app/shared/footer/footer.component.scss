@@ -1,0 +1,38 @@
+@import '../../shared/globals';
+
+#footer-wrapper {
+  margin-top: 2em;
+  background: $dark-theme-color;
+  color: $white;
+  padding: 4em 0;
+}
+
+p, img {
+  margin-bottom: 1em !important;
+}
+
+a {
+  color: $white;
+}
+
+h4 {
+  color: $light-theme-color;
+  margin-bottom: 1em !important;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 0.5em !important;
+}
+
+#social-icons {
+  font-size: 24px;
+}
+
+.social-label {
+  margin-left: 10px;
+  font-size: initial;
+}
