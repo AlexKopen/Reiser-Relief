@@ -6,17 +6,30 @@
         Sign up with your email address to receive occasional newsletters and
         updates about upcoming events.
       </p>
-      <div id="input-fields" class="row">
-        <div class="col-md">
-          <input type="text" placeholder="Name" name="name" />
-        </div>
-        <div class="col-md">
-          <input type="text" placeholder="Email Address" name="email" />
-        </div>
-        <div class="col-md">
-          <button>Sign Up</button>
+      <div [formGroup]="subscribeForm">
+        <div id="input-fields" class="row">
+          <div class="col-md">
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              formControlName="name"
+            />
+          </div>
+          <div class="col-md">
+            <input
+              type="text"
+              placeholder="Email Address"
+              name="email"
+              formControlName="email"
+            />
+          </div>
+          <div class="col-md">
+            <button (click)="formSubmit()">Sign Up</button>
+          </div>
         </div>
       </div>
+      <p id="error-message" [innerText]="errorMessage"></p>
     </div>
   </div>
 </div>

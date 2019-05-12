@@ -7,6 +7,7 @@ import { HomeCardsComponent } from './home-cards/home-cards.component';
 import { NewsletterSubscribeComponent } from './newsletter-subscribe/newsletter-subscribe.component';
 import { CoreValuesComponent } from './core-values/core-values.component';
 import { NewsPostsComponent } from './news-posts/news-posts.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NewsPostsComponent } from './news-posts/news-posts.component';
     CommonModule,
     RouterModule.forChild([
       { path: '', component: HomeComponent, pathMatch: 'full' }
-    ])
+    ]),
+    ReactiveFormsModule
   ],
   providers: []
 })

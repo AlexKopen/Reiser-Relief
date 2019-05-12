@@ -63,3 +63,8 @@ button {
     color: $dark-theme-color;
   }
 }
+
+#error-message {
+  color: $error-red;
+  height: 24px;
+}
