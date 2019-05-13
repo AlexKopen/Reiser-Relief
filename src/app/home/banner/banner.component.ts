@@ -8,8 +8,8 @@ import { HomeSlide } from '../../shared/models/home-slide.model';
 })
 export class BannerComponent implements OnInit {
   homeSlide = new HomeSlide(
-    'Support Us',
-    'Your donation will provide clean water, food, education and care to the poor in Haiti. Help us break the cycle of poverty with a one-time or recurring gift.',
+    'Our Call to Serve',
+    'Since 1996, Reiser Relief has been providing relief, hope, and dignity to the poor, elderly, and homeless people of Haiti.',
     'impact-slide.jpg',
     'Support Us',
     '/donate',

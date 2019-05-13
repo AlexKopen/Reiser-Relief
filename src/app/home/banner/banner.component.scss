@@ -40,11 +40,11 @@ img {
     display: block;
 
     @media only screen and (min-width: map-get($grid-breakpoints, md)) {
-      font-size: 3rem;
+      font-size: 2em;
     }
 
     @media only screen and (min-width: map-get($grid-breakpoints, xl)) {
-      font-size: 4rem;
+      font-size: 3em;
     }
   }
 
@@ -54,6 +54,14 @@ img {
 
   p {
     line-height: 2em;
+  }
+
+  p, h1 {
+    padding: 0 10px !important;
+
+    @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
+      padding: 0 !important;
+    }
   }
 
   button {
