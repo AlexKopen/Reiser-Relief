@@ -1,21 +1,15 @@
 <div class="container" id="cards">
   <div class="row no-gutters">
-    <div class="col-md card-column">
-      <h3>Support Us</h3>
-      <p><i class="fas fa-donate"></i></p>
-      <button [routerLink]="'/donate'">Give</button>
-    </div>
-
-    <div class="col-md card-column">
-      <h3>Mission Trips</h3>
-      <p><i class="fas fa-suitcase"></i></p>
-      <button [routerLink]="'/missions'">Explore</button>
-    </div>
-
-    <div class="col-md card-column">
-      <h3>Our Mission</h3>
-      <p><i class="fas fa-hands-helping"></i></p>
-      <button [routerLink]="'/about'">Learn More</button>
+    <div class="col-md card-column" *ngFor="let card of cards">
+      <h3 [innerText]="card.title"></h3>
+      <p><i [ngClass]="card.iconClass"></i></p>
+      <p class="description" [innerText]="card.description"></p>
+      <div class="button-container">
+        <button
+          [routerLink]="card.routerLink"
+          [innerText]="card.buttonText"
+        ></button>
+      </div>
     </div>
   </div>
 </div>

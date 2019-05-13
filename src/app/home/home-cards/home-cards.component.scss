@@ -5,24 +5,40 @@
 
   .card-column {
     margin-bottom: 2em;
-
-    @media only screen and (min-width: map-get($grid-breakpoints, sm)) {
-      margin-bottom: 0;
-    }
   }
 
   h3, p {
     text-align: center;
   }
 
+  h3 {
+    margin-bottom: 1em !important;
+  }
+
   p {
     color: $gray-theme-color;
-    font-size: 6em;
+
+    &.description {
+      margin: 1.5em 0 !important;
+      height: auto;
+
+      @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+        height: 72px;
+      }
+    }
+
+    i {
+      font-size: 6em;
+    }
+  }
+
+  .button-container {
+    padding: 0 2em !important;
   }
 
   button {
     display: block;
-    width: 62%;
+    width: 100%;
     margin: 0 auto !important;
     height: 2.5em;
     background: $light-theme-color;

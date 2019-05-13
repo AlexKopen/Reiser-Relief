@@ -44,6 +44,12 @@ li {
 
 a {
   color: $white !important;
+
+  &:hover {
+    .social-label {
+      text-decoration: underline;
+    }
+  }
 }
 
 #social-icons {
@@ -53,6 +59,10 @@ a {
 i {
   width: 28px;
   margin-right: 0.5em;
+
+  &:hover {
+    color: $light-theme-color;
+  }
 
   @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
     margin-right: 0;
