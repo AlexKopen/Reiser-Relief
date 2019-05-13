@@ -8,6 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class NewsletterSubscribeComponent implements OnInit {
   subscribeForm: FormGroup;
+  showSuccess = false;
   private formSubmitted = false;
 
   constructor() {}
@@ -21,6 +22,11 @@ export class NewsletterSubscribeComponent implements OnInit {
 
   formSubmit(): void {
     this.formSubmitted = true;
+
+    if (this.subscribeForm.valid) {
+      // Submit form
+      this.showSuccess = true;
+    }
   }
 
   get errorMessage(): string {
