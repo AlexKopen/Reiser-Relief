@@ -14,12 +14,5 @@ export const HOME_CARDS = [
     'Our mission trips make a real, tangible difference in the lives of those we serve.',
     '/missions',
     'Explore'
-  ),
-  new HomeCard(
-    'Our Mission',
-    'fas fa-hands-helping',
-    'Learn how we improve the lives of those we serve.',
-    '/about',
-    'Learn More'
   )
 ];
