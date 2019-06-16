@@ -1,4 +1,6 @@
 body {
+  position: relative;
+  min-height: 100%;
   font-family: 'Open Sans', sans-serif !important;
 }
 
@@ -12,4 +14,8 @@ li,
 input {
   padding: 0 !important;
   margin: 0 !important;
+}
+
+.page-wrapper {
+  margin-bottom: 2em;
 }

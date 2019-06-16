@@ -1,0 +1,9 @@
+@import 'shared/globals';
+
+#router-outlet-wrapper {
+  padding-bottom: $footer-height;
+
+  @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
+    padding-bottom: $footer-height-large;
+  }
+}
