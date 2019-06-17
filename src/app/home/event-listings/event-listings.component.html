@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row event-entry" *ngFor="let event of events">
+  <div class="row event-entry" *ngFor="let event of eventsAndTrips">
     <div class="col calendar-date">
       <p class="event-heading" [innerText]="event.date | date: 'MMM'"></p>
       <p class="date" [innerText]="event.date | date: 'dd'"></p>
@@ -11,18 +11,4 @@
       <p><a [href]="event.url" target="_blank">Learn More</a></p>
     </div>
   </div>
-  <!--  <div class="row event-entry">-->
-  <!--    <div class="col calendar-date">-->
-  <!--      <p class="event-heading">January</p>-->
-  <!--      <p class="date">01</p>-->
-  <!--      <p class="event-heading">2020</p>-->
-  <!--    </div>-->
-  <!--    <div class="col">-->
-  <!--      <h4>Winter Mission Trip</h4>-->
-  <!--      <p>-->
-  <!--        Port Au Prince, Haiti-->
-  <!--      </p>-->
-  <!--      <p><a href="#">Learn More</a></p>-->
-  <!--    </div>-->
-  <!--  </div>-->
 </div>
