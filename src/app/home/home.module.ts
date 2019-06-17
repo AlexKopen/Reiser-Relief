@@ -8,6 +8,7 @@ import { NewsletterSubscribeComponent } from './newsletter-subscribe/newsletter-
 import { CoreValuesComponent } from './core-values/core-values.component';
 import { NewsPostsComponent } from './news-posts/news-posts.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EventListingsComponent } from './event-listings/event-listings.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeCardsComponent,
     NewsletterSubscribeComponent,
     CoreValuesComponent,
-    NewsPostsComponent
+    NewsPostsComponent,
+    EventListingsComponent
   ],
   imports: [
     CommonModule,

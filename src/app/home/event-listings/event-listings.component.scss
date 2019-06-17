@@ -1,0 +1,28 @@
+@import '../../shared/globals';
+
+.event-heading {
+  text-align: center;
+  color: $gray-theme-color;
+}
+
+.calendar-date {
+  flex: 0 0 91px;
+}
+
+.date {
+  $date-height: 66px;
+  background-image: url("../../../assets/images/calendar.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: $date-height;
+  padding-top: 28px !important;
+}
+
+h4 {
+  margin-bottom: 0.5em !important;
+}
+
+h4, p {
+  text-align: center;
+}

@@ -1,6 +1,5 @@
 <div id="news-posts-wrapper">
   <div class="container">
-    <h3>News</h3>
     <div class="single-post" *ngFor="let newsPost of newsPosts">
       <h4 [innerText]="newsPost.title"></h4>
       <p class="date" [innerText]="newsPost.date | date: 'longDate'"></p>
