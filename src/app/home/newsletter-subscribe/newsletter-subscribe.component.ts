@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { EmailSubscribe } from '../../shared/models/email-subscribe.model';
 
 @Component({
   selector: 'app-newsletter-subscribe',
@@ -11,7 +13,7 @@ export class NewsletterSubscribeComponent implements OnInit {
   showSuccess = false;
   private formSubmitted = false;
 
-  constructor() {}
+  constructor(private db: AngularFirestore) {}
 
   ngOnInit() {
     this.subscribeForm = new FormGroup({
@@ -24,8 +26,15 @@ export class NewsletterSubscribeComponent implements OnInit {
     this.formSubmitted = true;
 
     if (this.subscribeForm.valid) {
-      // Submit form
       this.showSuccess = true;
+      this.db
+        .collection<EmailSubscribe>('newsletter-subscriptions')
+        .add({
+          name: this.subscribeForm.value.name,
+          email: this.subscribeForm.value.email,
+          date: new Date()
+        })
+        .then(() => {});
     }
   }
 
