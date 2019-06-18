@@ -4,7 +4,7 @@ export const HOME_CARDS = [
   new HomeCard(
     'Support Us',
     'fas fa-donate',
-    'Your donation will provide clean water, food, education and care to the poor in Haiti.',
+    'Your donation will provide incredibly clean water, food, education and care to the poor in Haiti.',
     '/donate',
     'Give Today'
   ),
