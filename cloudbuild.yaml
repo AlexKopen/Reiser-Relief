@@ -7,5 +7,4 @@ steps:
     args: ['run', 'build:prerender']
   # Deploy
   - name: 'gcr.io/$PROJECT_ID/firebase'
-    args: ['deploy']
-
+    args: ['use reiser-relief', 'deploy']
