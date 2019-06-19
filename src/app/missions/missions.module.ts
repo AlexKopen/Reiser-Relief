@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { MissionsComponent } from './missions/missions.component';
 import { RouterModule } from '@angular/router';
 import { PageHeaderModule } from '../shared/modules/page-header/page-header.module';
+import { MissionTripsComponent } from './mission-trips/mission-trips.component';
 
 @NgModule({
-  declarations: [MissionsComponent],
+  declarations: [MissionsComponent, MissionTripsComponent],
   imports: [
     CommonModule,
     RouterModule.forChild([

@@ -1,0 +1,16 @@
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Trip Date</th>
+      <th scope="col">Trip Leader</th>
+      <th scope="col">Trip Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let missionTrip of missionTrips">
+      <td [innerText]="missionTrip.date | date">Mark</td>
+      <td [innerText]="missionTrip.leader"></td>
+      <td [innerText]="missionTrip.full"></td>
+    </tr>
+  </tbody>
+</table>
