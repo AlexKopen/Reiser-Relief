@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row event-entry" *ngFor="let event of eventsAndTrips">
+  <div class="row no-gutters event-entry" *ngFor="let event of eventsAndTrips">
     <div class="col calendar-date">
       <p class="event-heading" [innerText]="event.date | date: 'MMM'"></p>
       <p class="date" [innerText]="event.date | date: 'dd'"></p>

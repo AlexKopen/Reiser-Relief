@@ -19,3 +19,8 @@ input {
 .page-wrapper {
   margin-bottom: 2em;
 }
+
+li:focus {
+  outline: none;
+  box-shadow: none;
+}

@@ -23,8 +23,9 @@
               class="list-inline-item"
               *ngFor="let menuItem of menuItems"
               [routerLink]="menuItemAsRoute(menuItem)"
-              [innerText]="menuItem"
-            ></li>
+            >
+              <span [innerText]="menuItem"></span>
+            </li>
           </ul>
         </div>
       </div>

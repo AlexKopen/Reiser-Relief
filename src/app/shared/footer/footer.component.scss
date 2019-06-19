@@ -16,7 +16,11 @@
 }
 
 #footer-contents {
-  padding: 2em 0;
+  padding-top: 1em;
+
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+    padding-top: 1em;
+  }
 }
 
 .medium-hidden {
@@ -31,7 +35,7 @@ p, img {
   margin-bottom: 1em !important;
 }
 
-a {
+p, a {
   color: $white;
 }
 
