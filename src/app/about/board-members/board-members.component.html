@@ -1,3 +1,12 @@
-<div class="container">
-  <h3>Willard</h3>
+<div id="board-members-container">
+  <div class="container">
+    <div class="row">
+      <div class="col" *ngFor="let boardMember of boardMembers">
+        <img [src]="'../../assets/images/about/board/' + boardMember.headShotFileName" [alt]="boardMember.name">
+        <h3 class="name" [innerText]="boardMember.name"></h3>
+        <p class="position" [innerText]="boardMember.position"></p>
+        <p class="email"><a [href]="'mailto:' + boardMember.email" [innerText]="boardMember.email"></a></p>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,30 @@
+@import '../../shared/globals';
+
+#board-members-container {
+  margin-bottom: 2em;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 100px;
+}
+
+h3, p {
+  text-align: center;
+}
+
+h3 {
+  color: $dark-theme-color;
+}
+
+.position {
+  color: $gray-theme-color;
+}
+
+.email {
+  a {
+    color: $dark-theme-color;
+    text-decoration: underline;
+  }
+}
