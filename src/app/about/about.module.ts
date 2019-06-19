@@ -5,13 +5,15 @@ import { RouterModule } from '@angular/router';
 import { PageHeaderComponent } from '../shared/components/page-header/page-header.component';
 import { CoreValuesComponent } from './core-values/core-values.component';
 import { BoardMembersComponent } from './board-members/board-members.component';
+import { FounderComponent } from './founder/founder.component';
 
 @NgModule({
   declarations: [
     AboutComponent,
     PageHeaderComponent,
     CoreValuesComponent,
-    BoardMembersComponent
+    BoardMembersComponent,
+    FounderComponent
   ],
   imports: [
     CommonModule,

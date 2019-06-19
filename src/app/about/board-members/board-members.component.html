@@ -1,10 +1,9 @@
 <div id="board-members-container">
   <div class="container">
-    <div class="row">
+    <div class="row no-gutters">
       <div
         class="col-lg-3 col-md-4 board-member"
-        *ngFor="let boardMember of boardMembers; let last = last"
-        [ngClass]="{ last: last }"
+        *ngFor="let boardMember of boardMembers"
       >
         <img
           [src]="

@@ -7,8 +7,20 @@
 .board-member {
   margin-bottom: 4em !important;
 
-  &.last {
+  &:nth-last-child(-n+1) {
     margin-bottom: 0 !important;
+  }
+
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+    &:nth-last-child(-n+3) {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
+    &:nth-last-child(-n+4) {
+      margin-bottom: 0 !important;
+    }
   }
 }
 
