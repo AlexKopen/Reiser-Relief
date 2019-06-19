@@ -5,7 +5,6 @@ import { HomeComponent } from './home/home.component';
 import { BannerComponent } from './banner/banner.component';
 import { HomeCardsComponent } from './home-cards/home-cards.component';
 import { NewsletterSubscribeComponent } from './newsletter-subscribe/newsletter-subscribe.component';
-import { CoreValuesComponent } from './core-values/core-values.component';
 import { NewsPostsComponent } from './news-posts/news-posts.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EventListingsComponent } from './event-listings/event-listings.component';
@@ -16,7 +15,6 @@ import { EventListingsComponent } from './event-listings/event-listings.componen
     BannerComponent,
     HomeCardsComponent,
     NewsletterSubscribeComponent,
-    CoreValuesComponent,
     NewsPostsComponent,
     EventListingsComponent
   ],

@@ -1,6 +1,6 @@
 <div id="core-values-wrapper">
   <div class="container">
-    <h3>Core Values</h3>
+    <h2>Core Values</h2>
     <div class="row">
       <div
         class="col-xl-4 col-lg-6 core-value-card"
@@ -14,8 +14,13 @@
             "
             [alt]="coreValue.altText"
           />
-          <div class="overlay"></div>
-          <p class="overlay-text" [innerText]="coreValue.title"></p>
+          <div class="card-content">
+            <h3 [innerText]="coreValue.title"></h3>
+            <div class="horizontal-rule">
+              <div class="horizontal-rule-line"></div>
+            </div>
+            <p [innerText]="coreValue.description"></p>
+          </div>
         </div>
       </div>
     </div>

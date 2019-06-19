@@ -1,0 +1,52 @@
+@import '../../shared/globals';
+
+#core-values-wrapper {
+  margin-top: 2em;
+}
+
+h2 {
+  color: $dark-theme-color;
+}
+
+h2, h3 {
+  text-align: center;
+  margin: 1em !important;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+p {
+  margin-top: 1em !important;
+  color: $gray-theme-color;
+  line-height: 32px;
+  max-width: 520px;
+}
+
+.core-value-card {
+  margin-bottom: 2em;
+  display: flex;
+}
+
+.core-value-card-wrapper {
+  margin: 0 auto;
+  box-shadow: 0 2px 2px rgba(0,0,0,.24),0 0 2px rgba(0,0,0,.12);
+}
+
+.card-content {
+  margin: 0 1em 1em 1em;
+}
+
+.horizontal-rule {
+  width: 100%;
+
+  .horizontal-rule-line {
+    margin: 0 auto;
+    width: 175px;
+    height: 4px;
+    background: #00514d;
+  }
+}

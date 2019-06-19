@@ -1,0 +1,13 @@
+@import '../../globals';
+
+#page-header-container {
+  background: $dark-theme-color;
+}
+
+h1 {
+  $height: 100px;
+  height: $height;
+  line-height: $height;
+  text-align: center;
+  color: $white;
+}
