@@ -1,13 +1,22 @@
 @import '../../shared/globals';
 
 #board-members-container {
-  margin-bottom: 2em;
+  margin: 2em 0;
+}
+
+.board-member {
+  margin-bottom: 4em !important;
+
+  &.last {
+    margin-bottom: 0 !important;
+  }
 }
 
 img {
   display: block;
   margin: 0 auto;
   border-radius: 100px;
+  margin-bottom: 1em;
 }
 
 h3, p {
@@ -23,6 +32,8 @@ h3 {
 }
 
 .email {
+  margin-top: 0.5em !important;
+
   a {
     color: $dark-theme-color;
     text-decoration: underline;

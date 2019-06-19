@@ -1,11 +1,25 @@
 <div id="board-members-container">
   <div class="container">
     <div class="row">
-      <div class="col" *ngFor="let boardMember of boardMembers">
-        <img [src]="'../../assets/images/about/board/' + boardMember.headShotFileName" [alt]="boardMember.name">
+      <div
+        class="col-lg-3 col-md-4 board-member"
+        *ngFor="let boardMember of boardMembers; let last = last"
+        [ngClass]="{ last: last }"
+      >
+        <img
+          [src]="
+            '../../assets/images/about/board/' + boardMember.headShotFileName
+          "
+          [alt]="boardMember.name"
+        />
         <h3 class="name" [innerText]="boardMember.name"></h3>
         <p class="position" [innerText]="boardMember.position"></p>
-        <p class="email"><a [href]="'mailto:' + boardMember.email" [innerText]="boardMember.email"></a></p>
+        <p class="email">
+          <a
+            [href]="'mailto:' + boardMember.email"
+            [innerText]="boardMember.email"
+          ></a>
+        </p>
       </div>
     </div>
   </div>

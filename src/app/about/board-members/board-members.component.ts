@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {BoardMember} from '../../shared/models/board-member.model';
-import {BOARD_MEMBERS} from '../../shared/constants/board-members.constant';
+import { BoardMember } from '../../shared/models/board-member.model';
+import { BOARD_MEMBERS } from '../../shared/constants/board-members.constant';
 
 @Component({
   selector: 'app-board-members',
