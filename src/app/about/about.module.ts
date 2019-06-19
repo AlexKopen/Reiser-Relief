@@ -4,9 +4,15 @@ import { AboutComponent } from './about/about.component';
 import { RouterModule } from '@angular/router';
 import { PageHeaderComponent } from '../shared/components/page-header/page-header.component';
 import { CoreValuesComponent } from './core-values/core-values.component';
+import { BoardMembersComponent } from './board-members/board-members.component';
 
 @NgModule({
-  declarations: [AboutComponent, PageHeaderComponent, CoreValuesComponent],
+  declarations: [
+    AboutComponent,
+    PageHeaderComponent,
+    CoreValuesComponent,
+    BoardMembersComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild([
