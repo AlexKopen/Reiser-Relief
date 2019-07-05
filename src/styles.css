@@ -24,3 +24,7 @@ li:focus {
   outline: none;
   box-shadow: none;
 }
+
+p {
+  line-height: 32px;
+}

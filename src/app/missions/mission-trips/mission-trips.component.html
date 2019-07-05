@@ -1,4 +1,7 @@
-<table class="table table-striped table-bordered">
+<table
+  *ngIf="tripsPopulated; else noTrips"
+  class="table table-striped table-bordered"
+>
   <thead>
     <tr>
       <th scope="col">Trip Date</th>
@@ -14,3 +17,7 @@
     </tr>
   </tbody>
 </table>
+
+<ng-template #noTrips>
+  <h3 id="no-trips">There are no upcoming trips</h3>
+</ng-template>

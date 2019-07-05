@@ -39,4 +39,8 @@ export class MissionTripsComponent implements OnInit {
         this.missionTrips = missionTrips;
       });
   }
+
+  get tripsPopulated(): boolean {
+    return this.missionTrips ? this.missionTrips.length > 0 : false;
+  }
 }
