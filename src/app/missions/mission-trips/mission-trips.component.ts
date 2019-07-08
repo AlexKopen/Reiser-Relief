@@ -2,6 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MissionTrip } from '../../shared/models/mission-trip.model';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { first } from 'rxjs/internal/operators';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'app-mission-trips',
@@ -17,7 +18,9 @@ export class MissionTripsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.fetchTrips();
+    if (isPlatformBrowser(this.platformId)) {
+      this.fetchTrips();
+    }
   }
 
   fetchTrips(): void {
