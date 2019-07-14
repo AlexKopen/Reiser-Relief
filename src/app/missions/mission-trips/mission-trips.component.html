@@ -6,14 +6,14 @@
     <tr>
       <th scope="col">Trip Date</th>
       <th scope="col">Trip Leader</th>
-      <th scope="col">Trip Status</th>
+      <th scope="col">Trip Application</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let missionTrip of missionTrips">
       <td [innerText]="missionTrip.date | date">Mark</td>
       <td [innerText]="missionTrip.leader"></td>
-      <td [innerText]="missionTrip.full"></td>
+      <td [innerHtml]="applicationText(missionTrip)"></td>
     </tr>
   </tbody>
 </table>

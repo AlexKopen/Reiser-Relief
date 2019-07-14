@@ -4,15 +4,22 @@
   margin-top: 2em;
 }
 
-h3 {
+h3, h4 {
   text-align: center;
 }
+
 
 img {
   display: block;
   margin: 0 auto;
+  max-width: 100%;
 }
 
 p {
   margin-top: 1em !important;
+}
+
+.indent {
+  display: block;
+  margin-left: 2em;
 }

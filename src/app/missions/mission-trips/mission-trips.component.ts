@@ -46,4 +46,8 @@ export class MissionTripsComponent implements OnInit {
   get tripsPopulated(): boolean {
     return this.missionTrips ? this.missionTrips.length > 0 : false;
   }
+
+  applicationText(missionTrip: MissionTrip) {
+    return missionTrip.full ? 'Trip is full' : '<a href="">Apply today<a>';
+  }
 }
