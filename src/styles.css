@@ -17,7 +17,7 @@ input {
 }
 
 .page-wrapper {
-  margin-bottom: 2em;
+  padding-bottom: 2em;
 }
 
 li:focus {

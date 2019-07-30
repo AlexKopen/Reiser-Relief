@@ -1,3 +1,57 @@
-<p>
-  contact works!
-</p>
+<div class="page-wrapper">
+  <app-page-header [title]="'Contact Us'"></app-page-header>
+
+  <div class="container">
+    <p id="info">
+      We’d love to hear from you! Whether you have questions, comments,
+      suggestions or just want to share your story, please don’t hesitate to
+      reach out.
+    </p>
+
+    <div class="row">
+      <div class="col">
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              class="form-control"
+              id="subject"
+              placeholder="Enter subject"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              placeholder="Enter message"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col">
+        contact info
+      </div>
+    </div>
+  </div>
+</div>

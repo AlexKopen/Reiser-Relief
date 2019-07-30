@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MissionTrip } from '../../shared/models/mission-trip.model';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { first } from 'rxjs/internal/operators';
-import {isPlatformBrowser} from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-mission-trips',

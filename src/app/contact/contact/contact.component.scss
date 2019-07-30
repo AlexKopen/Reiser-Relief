@@ -1,0 +1,10 @@
+@import '../../shared/globals';
+
+#info {
+  margin: 0 auto !important;
+  margin-top: 2em !important;
+  width: 100%;
+  max-width: 45em;
+  color: $gray-theme-color;
+  text-align: center;
+}
