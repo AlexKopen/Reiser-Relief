@@ -3,8 +3,74 @@
 #info {
   margin: 0 auto !important;
   margin-top: 2em !important;
+  margin-bottom: 2em !important;
   width: 100%;
   max-width: 45em;
   color: $gray-theme-color;
   text-align: center;
+}
+
+#form-column {
+  padding-bottom: 28px;
+  border-bottom: 1px solid $gray-theme-color;
+
+  @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
+    padding-bottom: 0;
+    border-right: 1px solid $gray-theme-color;
+    border-bottom: none;
+  }
+}
+
+#social-column {
+  margin-top: 2em;
+
+  @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
+    margin-top: 0;
+    flex: 0 0 21em;
+  }
+}
+
+#social-column-wrapper {
+  @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
+    padding-left: 1.5em;
+  }
+}
+
+textarea {
+  height: 10em;
+}
+
+button {
+  width: 8em;
+}
+
+.social-row {
+  margin-bottom: 2em;
+}
+
+.social-item {
+  @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
+   flex-basis: unset;
+  }
+}
+
+.social-icon {
+  flex: 0 0 3em;
+
+  @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
+  flex: 0 0 4em;
+  }
+}
+
+i {
+  font-size: 2em;
+  color: $dark-theme-color;
+
+  @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
+    font-size: 2.5em;
+  }
+}
+
+a {
+  color: $black;
 }

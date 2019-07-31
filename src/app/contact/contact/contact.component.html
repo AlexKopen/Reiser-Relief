@@ -1,6 +1,6 @@
-<div class="page-wrapper">
-  <app-page-header [title]="'Contact Us'"></app-page-header>
+<app-page-header [title]="'Contact Us'"></app-page-header>
 
+<div class="page-wrapper">
   <div class="container">
     <p id="info">
       We’d love to hear from you! Whether you have questions, comments,
@@ -9,7 +9,7 @@
     </p>
 
     <div class="row">
-      <div class="col">
+      <div class="col-lg" id="form-column">
         <form>
           <div class="form-group">
             <label for="name">Name</label>
@@ -49,8 +49,51 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
-      <div class="col">
-        contact info
+      <div class="col-lg" id="social-column">
+        <div id="social-column-wrapper">
+          <div class="row">
+            <div class="col-md social-item">
+              <div class="row no-gutters social-row">
+                <div class="col social-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="col">
+                  <p>
+                    Reiser Relief, Inc.<br />
+                    PO Box 48096<br />
+                    Coon Rapids, MN 55448<br />
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md social-item">
+              <div class="row no-gutters social-row">
+                <div class="col social-icon">
+                  <i class="fas fa-at"></i>
+                </div>
+                <div class="col">
+                  <p>
+                    <a href="mailto:info@reiserrelief.org"
+                      >info@reiserelief.org</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md social-item">
+              <div class="row no-gutters social-row">
+                <div class="col social-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="col">
+                  <p>
+                    <a href="tel:763-280-3433">763-280-3433</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

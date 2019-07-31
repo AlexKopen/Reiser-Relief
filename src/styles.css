@@ -17,7 +17,7 @@ input {
 }
 
 .page-wrapper {
-  padding-bottom: 2em;
+  padding: 0 0.5em 2em 0.5em;
 }
 
 li:focus {
@@ -27,4 +27,15 @@ li:focus {
 
 p {
   line-height: 32px;
+}
+
+input,
+button {
+  height: 2.5em;
+  border-radius: 4px !important;
+  border: none;
+}
+
+input {
+  padding-left: 10px !important;
 }
