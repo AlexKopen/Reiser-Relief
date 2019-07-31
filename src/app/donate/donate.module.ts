@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DonateComponent } from './donate/donate.component';
 import { RouterModule } from '@angular/router';
 import { PageHeaderModule } from '../shared/modules/page-header/page-header.module';
+import { NgxStripeModule } from 'ngx-stripe';
 
 @NgModule({
   declarations: [DonateComponent],
@@ -11,7 +12,8 @@ import { PageHeaderModule } from '../shared/modules/page-header/page-header.modu
     RouterModule.forChild([
       { path: '', component: DonateComponent, pathMatch: 'full' }
     ]),
-    PageHeaderModule
+    PageHeaderModule,
+    NgxStripeModule.forRoot('pk_test_2AC3GUXKprvQgKxqOPQjxo2q')
   ]
 })
 export class DonateModule {}
