@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
 import { PageHeaderModule } from '../shared/modules/page-header/page-header.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ContactComponent],
@@ -11,7 +12,8 @@ import { PageHeaderModule } from '../shared/modules/page-header/page-header.modu
     RouterModule.forChild([
       { path: '', component: ContactComponent, pathMatch: 'full' }
     ]),
-    PageHeaderModule
+    PageHeaderModule,
+    ReactiveFormsModule
   ]
 })
 export class ContactModule {}
