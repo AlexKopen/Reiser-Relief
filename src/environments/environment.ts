@@ -1,11 +1,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyBEFDCJlvsoULW7eHUSc_abkYpA4duzdlM',
-    authDomain: 'reiser-relief.firebaseapp.com',
-    databaseURL: 'https://reiser-relief.firebaseio.com',
-    projectId: 'reiser-relief',
-    storageBucket: 'reiser-relief.appspot.com',
-    messagingSenderId: '781593100602'
+    apiKey: "AIzaSyB4CEiPDHYwLdP7SJdaBRS93NKg0s5yr4Q",
+    authDomain: "reiser-relief-test.firebaseapp.com",
+    databaseURL: "https://reiser-relief-test.firebaseio.com",
+    projectId: "reiser-relief-test",
+    storageBucket: "reiser-relief-test.appspot.com'",
+    messagingSenderId: "443652747248"
   }
 };
