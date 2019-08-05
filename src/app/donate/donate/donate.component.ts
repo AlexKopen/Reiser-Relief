@@ -48,7 +48,6 @@ export class DonateComponent implements OnInit {
   }
 
   buy() {
-    const name = 'Alex Kopen Baby';
     this.stripeService.createToken(this.card, { name }).subscribe(result => {
       if (result.token) {
         // Use the token to create a charge or a customer
