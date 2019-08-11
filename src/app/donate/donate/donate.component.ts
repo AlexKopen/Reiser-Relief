@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {Element as StripeElement, Elements, StripeService} from 'ngx-stripe';
-import {AngularFirestore} from '@angular/fire/firestore';
-import {DonationLevel} from "../../shared/enums/donation-level.enum";
-import {DONATION_LEVELS} from "../../shared/constants/donation-levels.constant";
-import {DONATION_FREQUENCIES} from "../../shared/constants/donation-frequencies.constant";
-import {DonationFrequency} from "../../shared/enums/donation-frequency.enum";
+import { Component, OnInit } from '@angular/core';
+import { Element as StripeElement, Elements, StripeService } from 'ngx-stripe';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { DonationLevel } from '../../shared/enums/donation-level.enum';
+import { DONATION_LEVELS } from '../../shared/constants/donation-levels.constant';
+import { DONATION_FREQUENCIES } from '../../shared/constants/donation-frequencies.constant';
+import { DonationFrequency } from '../../shared/enums/donation-frequency.enum';
 
 @Component({
   selector: 'app-donate',

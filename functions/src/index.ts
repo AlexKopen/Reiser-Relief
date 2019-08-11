@@ -24,7 +24,7 @@ exports.stripecharge = functions.firestore
           items: [
             {
               plan: functions.config().stripe.subscription.monthly,
-                quantity: 69
+              quantity: 69
             }
           ]
         });

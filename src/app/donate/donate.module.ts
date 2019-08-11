@@ -4,7 +4,7 @@ import { DonateComponent } from './donate/donate.component';
 import { RouterModule } from '@angular/router';
 import { PageHeaderModule } from '../shared/modules/page-header/page-header.module';
 import { NgxStripeModule } from 'ngx-stripe';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [DonateComponent],
@@ -15,7 +15,7 @@ import {FormsModule} from "@angular/forms";
     ]),
     PageHeaderModule,
     NgxStripeModule.forRoot('pk_test_2AC3GUXKprvQgKxqOPQjxo2q'),
-      FormsModule
+    FormsModule
   ]
 })
 export class DonateModule {}
