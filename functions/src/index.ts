@@ -23,7 +23,8 @@ exports.stripecharge = functions.firestore
           customer: customer.id,
           items: [
             {
-              plan: 'sapphire-extended-385'
+              plan: functions.config().stripe.subscription.monthly,
+                quantity: 69
             }
           ]
         });

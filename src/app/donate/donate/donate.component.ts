@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  StripeService,
-  Elements,
-  Element as StripeElement,
-  ElementsOptions
-} from 'ngx-stripe';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { ContactForm } from '../../shared/models/contact-form.model';
+import {Component, OnInit} from '@angular/core';
+import {Element as StripeElement, Elements, StripeService} from 'ngx-stripe';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {DonationLevel} from "../../shared/enums/donation-level.enum";
+import {DONATION_LEVELS} from "../../shared/constants/donation-levels.constant";
+import {DONATION_FREQUENCIES} from "../../shared/constants/donation-frequencies.constant";
+import {DonationFrequency} from "../../shared/enums/donation-frequency.enum";
 
 @Component({
   selector: 'app-donate',
@@ -16,6 +14,13 @@ import { ContactForm } from '../../shared/models/contact-form.model';
 export class DonateComponent implements OnInit {
   elements: Elements;
   card: StripeElement;
+
+  donationFrequencies = DONATION_FREQUENCIES;
+  selectedDonationFrequency: DonationFrequency;
+
+  donationLevels = DONATION_LEVELS;
+  selectedDonationLevel: number;
+  showOtherAmount = false;
 
   constructor(
     private stripeService: StripeService,
@@ -47,11 +52,23 @@ export class DonateComponent implements OnInit {
     });
   }
 
+  donationLevelClick(level: DonationLevel) {
+    if (level === DonationLevel.Other) {
+      this.selectedDonationLevel = 0;
+      this.showOtherAmount = true;
+    } else {
+      this.showOtherAmount = false;
+      this.selectedDonationLevel = level;
+    }
+  }
+
+  donationFrequencyClick(frequency: DonationFrequency) {
+    this.selectedDonationFrequency = frequency;
+  }
+
   buy() {
     this.stripeService.createToken(this.card, { name }).subscribe(result => {
       if (result.token) {
-        // Use the token to create a charge or a customer
-        // https://stripe.com/docs/charges
         console.log(result.token);
 
         this.db

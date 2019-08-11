@@ -19,6 +19,18 @@
 
     <h3>Choose Your Donation Frequency</h3>
 
+    <ul>
+      <li *ngFor="let donationFrequency of donationFrequencies" [innerText]="donationFrequency" (click)="donationFrequencyClick(donationFrequency)"></li>
+    </ul>
+
+    <h3>Choose Your Donation Level</h3>
+
+    <ul>
+      <li *ngFor="let donationLevel of donationLevels" [innerText]="donationLevel" (click)="donationLevelClick(donationLevel)"></li>
+    </ul>
+
+    <input type="text" *ngIf="showOtherAmount" [(ngModel)]="selectedDonationLevel">
+
     <div id="card-element" class="field"></div>
     <button (click)="buy()">
       BUY
