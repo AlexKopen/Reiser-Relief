@@ -1,5 +1,5 @@
-import {DonationFrequency} from '../../src/app/shared/enums/donation-frequency.enum';
-import {Donation} from '../../src/app/shared/models/donation.model';
+import { DonationFrequency } from '../../src/app/shared/enums/donation-frequency.enum';
+import { Donation } from '../../src/app/shared/models/donation.model';
 
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
@@ -10,53 +10,54 @@ const stripe = require('stripe')(functions.config().stripe.token);
 exports.stripecharge = functions.firestore
   .document('stripe-payments/{wildcard}')
   .onCreate(async (snap: any, context: any) => {
+    const donation: Donation = snap.data();
 
-      const donation: Donation = snap.data();
+    if (donation.frequency === DonationFrequency.OneTime) {
+      stripe.charges.create({
+        amount: donation.amount * 100,
+        currency: 'usd',
+        description: 'Reiser Relief Donation',
+        source: donation.token.id
+      });
+    } else {
+      stripe.customers.create(
+        {
+          source: snap.data().token.id,
+          name: donation.name,
+          email: donation.email,
+          address: {
+            line1: donation.address.line1,
+            line2: donation.address.line2,
+            country: 'USA',
+            state: donation.address.state
+          }
+        },
+        function(err: any, customer: any) {
+          let subscriptionPlan;
 
-      if (donation.frequency === DonationFrequency.OneTime) {
-          stripe.charges.create({
-            amount: donation.amount * 100,
-            currency: 'usd',
-            description: 'Reiser Relief Donation',
-            source: donation.token.id
-          });
-      } else {
-          stripe.customers.create(
+          switch (donation.frequency) {
+            case DonationFrequency.Monthly:
+              subscriptionPlan = functions.config().stripe.subscription.monthly;
+              break;
+            case DonationFrequency.Quarterly:
+              subscriptionPlan = functions.config().stripe.subscription
+                .quarterly;
+              break;
+            case DonationFrequency.Annually:
+              subscriptionPlan = functions.config().stripe.subscription
+                .annually;
+              break;
+          }
+          stripe.subscriptions.create({
+            customer: customer.id,
+            items: [
               {
-                  source: snap.data().token.id,
-                  name: donation.name,
-                  email: donation.email,
-                  address: {
-                      line1: donation.address.line1,
-                      line2: donation.address.line2,
-                      country: 'USA',
-                      state: donation.address.state
-                  }
-              },
-              function(err: any, customer: any) {
-                  let subscriptionPlan;
-
-                  switch (donation.frequency) {
-                      case DonationFrequency.Monthly:
-                          subscriptionPlan = functions.config().stripe.subscription.monthly;
-                          break;
-                      case DonationFrequency.Quarterly:
-                          subscriptionPlan = functions.config().stripe.subscription.quarterly;
-                          break;
-                      case DonationFrequency.Annually:
-                          subscriptionPlan = functions.config().stripe.subscription.annually;
-                          break;
-                  }
-                  stripe.subscriptions.create({
-                      customer: customer.id,
-                      items: [
-                          {
-                              plan: subscriptionPlan,
-                              quantity: donation.amount
-                          }
-                      ]
-                  });
+                plan: subscriptionPlan,
+                quantity: donation.amount
               }
-          );
-      }
+            ]
+          });
+        }
+      );
+    }
   });

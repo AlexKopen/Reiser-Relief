@@ -94,26 +94,25 @@ export class DonateComponent implements OnInit {
       this.addressForm.value.zip
     );
 
-    this.stripeService.createToken(this.card, {name}).subscribe(result => {
-        if (result.token) {
-          const donation: Donation = new Donation(
-              this.selectedDonationFrequency,
-              this.selectedDonationLevel,
-              this.donorAddress,
-              this.addressForm.value.name,
-              this.addressForm.value.phone,
-              this.addressForm.value.email,
-              result.token
-          );
+    this.stripeService.createToken(this.card, { name }).subscribe(result => {
+      if (result.token) {
+        const donation: Donation = new Donation(
+          this.selectedDonationFrequency,
+          this.selectedDonationLevel,
+          this.donorAddress,
+          this.addressForm.value.name,
+          this.addressForm.value.phone,
+          this.addressForm.value.email,
+          result.token
+        );
 
-            this.db
-                .collection<Donation>('stripe-payments')
-                .add(donation.toJson(donation))
-                .then(() => {
-                });
-        } else if (result.error) {
-            console.log(result.error.message);
-        }
+        this.db
+          .collection<Donation>('stripe-payments')
+          .add(donation.toJson(donation))
+          .then(() => {});
+      } else if (result.error) {
+        console.log(result.error.message);
+      }
     });
   }
 }
