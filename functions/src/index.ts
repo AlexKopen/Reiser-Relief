@@ -24,21 +24,35 @@ exports.stripecharge = functions.firestore
           stripe.customers.create(
               {
                   source: snap.data().token.id,
-                  name: 'Alex Kopen',
-                  email: 'alexkopen@gmail.com',
+                  name: donation.name,
+                  email: donation.email,
                   address: {
-                      line1: '8581 Shadow Creek Drive',
+                      line1: donation.address.line1,
+                      line2: donation.address.line2,
                       country: 'USA',
-                      state: 'Minnesota'
+                      state: donation.address.state
                   }
               },
               function(err: any, customer: any) {
+                  let subscriptionPlan;
+
+                  switch (donation.frequency) {
+                      case DonationFrequency.Monthly:
+                          subscriptionPlan = functions.config().stripe.subscription.monthly;
+                          break;
+                      case DonationFrequency.Quarterly:
+                          subscriptionPlan = functions.config().stripe.subscription.quarterly;
+                          break;
+                      case DonationFrequency.Annually:
+                          subscriptionPlan = functions.config().stripe.subscription.annually;
+                          break;
+                  }
                   stripe.subscriptions.create({
                       customer: customer.id,
                       items: [
                           {
-                              plan: functions.config().stripe.subscription.monthly,
-                              quantity: 69
+                              plan: subscriptionPlan,
+                              quantity: donation.amount
                           }
                       ]
                   });
