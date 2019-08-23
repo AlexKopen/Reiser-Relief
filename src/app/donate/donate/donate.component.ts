@@ -103,21 +103,18 @@ export class DonateComponent implements OnInit {
       this.addressForm.value.email
     );
 
-    // this.stripeService.createToken(this.card, {name}).subscribe(result => {
-    //     if (result.token) {
-    //         console.log(result.token);
-    //
-    //         this.db
-    //             .collection<any>('stripe-payments')
-    //             .add({
-    //                 token: result.token
-    //             })
-    //             .then(() => {
-    //             });
-    //     } else if (result.error) {
-    //         // Error creating the token
-    //         console.log(result.error.message);
-    //     }
-    // });
+    this.stripeService.createToken(this.card, {name}).subscribe(result => {
+        if (result.token) {
+            console.log(result.token);
+
+            this.db
+                .collection<Donation>('stripe-payments')
+                .add(JSON.parse(JSON.stringify(donation)))
+                .then(() => {
+                });
+        } else if (result.error) {
+            console.log(result.error.message);
+        }
+    });
   }
 }
