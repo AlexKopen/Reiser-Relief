@@ -94,18 +94,17 @@ export class DonateComponent implements OnInit {
       this.addressForm.value.zip
     );
 
-    const donation: Donation = new Donation(
-      this.selectedDonationFrequency,
-      this.selectedDonationLevel,
-      this.donorAddress,
-      this.addressForm.value.name,
-      this.addressForm.value.phone,
-      this.addressForm.value.email
-    );
-
     this.stripeService.createToken(this.card, {name}).subscribe(result => {
         if (result.token) {
-            console.log(result.token);
+          const donation: Donation = new Donation(
+              this.selectedDonationFrequency,
+              this.selectedDonationLevel,
+              this.donorAddress,
+              this.addressForm.value.name,
+              this.addressForm.value.phone,
+              this.addressForm.value.email,
+              result.token
+          );
 
             this.db
                 .collection<Donation>('stripe-payments')

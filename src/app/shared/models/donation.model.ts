@@ -8,21 +8,16 @@ export class Donation {
   name: string;
   phone: string;
   email: string;
+  token: any;
 
-  constructor(
-    frequency: DonationFrequency,
-    amount: number,
-    address: DonationAddress,
-    name: string,
-    phone: string,
-    email: string
-  ) {
+  constructor(frequency: DonationFrequency, amount: number, address: DonationAddress, name: string, phone: string, email: string, token: any) {
     this.frequency = frequency;
     this.amount = amount;
     this.address = address;
     this.name = name;
     this.phone = phone;
     this.email = email;
+    this.token = token;
   }
 
   public toJson(donation: Donation): any {
