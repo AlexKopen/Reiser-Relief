@@ -109,7 +109,7 @@ export class DonateComponent implements OnInit {
 
             this.db
                 .collection<Donation>('stripe-payments')
-                .add(JSON.parse(JSON.stringify(donation)))
+                .add(donation.toJson(donation))
                 .then(() => {
                 });
         } else if (result.error) {

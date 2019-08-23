@@ -24,4 +24,8 @@ export class Donation {
     this.phone = phone;
     this.email = email;
   }
+
+  public toJson(donation: Donation): any {
+    return JSON.parse(JSON.stringify(donation));
+  }
 }
