@@ -57,7 +57,7 @@ exports.stripecharge = functions.firestore
               break;
           }
           stripe.subscriptions.create({
-            customer: customer,
+            customer: customer.id,
             items: [
               {
                 plan: subscriptionPlan,
