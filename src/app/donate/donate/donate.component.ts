@@ -7,7 +7,7 @@ import { DONATION_FREQUENCIES } from '../../shared/constants/donation-frequencie
 import { DonationFrequency } from '../../shared/enums/donation-frequency.enum';
 import { Donation } from '../../shared/models/donation.model';
 import { State } from '../../shared/models/state.model';
-import { STATE } from '../../shared/constants/states.constant';
+import { STATES } from '../../shared/constants/states.constant';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DonationAddress } from '../../shared/models/donation-address.model';
 
@@ -28,7 +28,7 @@ export class DonateComponent implements OnInit {
   selectedDonationLevel: number;
   showOtherAmount = false;
 
-  states: State[] = STATE;
+  states: State[] = STATES;
 
   addressForm = new FormGroup({
     name: new FormControl('', [Validators.required]),

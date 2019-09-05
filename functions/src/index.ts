@@ -12,27 +12,35 @@ exports.stripecharge = functions.firestore
   .onCreate(async (snap: any, context: any) => {
     const donation: Donation = snap.data();
 
-    if (donation.frequency === DonationFrequency.OneTime) {
-      stripe.charges.create({
-        amount: donation.amount * 100,
-        currency: 'usd',
-        description: 'Reiser Relief Donation',
-        source: donation.token.id
-      });
-    } else {
-      stripe.customers.create(
-        {
-          source: snap.data().token.id,
-          name: donation.name,
-          email: donation.email,
-          address: {
-            line1: donation.address.line1,
-            line2: donation.address.line2,
-            country: 'USA',
-            state: donation.address.state
-          }
-        },
-        function(err: any, customer: any) {
+    stripe.customers.create(
+      {
+        source: donation.token.id,
+        name: donation.name,
+        email: donation.email,
+        address: {
+          line1: donation.address.line1,
+          line2: donation.address.line2,
+          country: 'USA',
+          state: donation.address.state
+        }
+      },
+      function(err: any, customer: any) {
+        if (donation.frequency === DonationFrequency.OneTime) {
+          stripe.customers.createSource(
+            customer.id,
+            {
+              source: donation.token.id
+            },
+            function(createSourceError: any, card: any) {
+              stripe.charges.create({
+                amount: donation.amount * 100,
+                currency: 'usd',
+                description: 'Reiser Relief Donation',
+                customer: customer.id
+              });
+            }
+          );
+        } else {
           let subscriptionPlan;
 
           switch (donation.frequency) {
@@ -49,7 +57,7 @@ exports.stripecharge = functions.firestore
               break;
           }
           stripe.subscriptions.create({
-            customer: customer.id,
+            customer: customer,
             items: [
               {
                 plan: subscriptionPlan,
@@ -58,6 +66,6 @@ exports.stripecharge = functions.firestore
             ]
           });
         }
-      );
-    }
+      }
+    );
   });

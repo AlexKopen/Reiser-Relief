@@ -1,6 +1,6 @@
 import { State } from '../models/state.model';
 
-export const STATE: State[] = [
+export const STATES: State[] = [
   new State('Alabama', 'AL'),
   new State('Alaska', 'AK'),
   new State('Arizona', 'AZ'),
