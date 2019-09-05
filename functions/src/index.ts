@@ -26,20 +26,12 @@ exports.stripecharge = functions.firestore
       },
       function(err: any, customer: any) {
         if (donation.frequency === DonationFrequency.OneTime) {
-          stripe.customers.createSource(
-            customer.id,
-            {
-              source: donation.token.id
-            },
-            function(createSourceError: any, card: any) {
-              stripe.charges.create({
-                amount: donation.amount * 100,
-                currency: 'usd',
-                description: 'Reiser Relief Donation',
-                customer: customer.id
-              });
-            }
-          );
+          stripe.charges.create({
+            amount: donation.amount * 100,
+            currency: 'usd',
+            description: 'Reiser Relief Donation',
+            customer: customer.id
+          });
         } else {
           let subscriptionPlan;
 
