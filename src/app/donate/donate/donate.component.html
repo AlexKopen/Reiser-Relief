@@ -39,13 +39,20 @@
       ></li>
     </ul>
 
-    <input
-      type="text"
-      class="form-control"
-      id="other-amount"
-      *ngIf="showOtherAmount"
-      [(ngModel)]="customDonationAmount"
-    />
+    <div class="row" id="other-amount" *ngIf="showOtherAmount">
+      <div class="col" id="dollar-sign">
+        <p><i class="fas fa-dollar-sign"></i></p>
+      </div>
+      <div class="col">
+        <input
+          appNumberPress
+          pattern="[0-9]*"
+          type="text"
+          class="form-control"
+          [(ngModel)]="customDonationAmount"
+        />
+      </div>
+    </div>
 
     <form [formGroup]="addressForm">
       <div class="form-group">

@@ -53,7 +53,27 @@ li {
 }
 
 #other-amount {
-  margin: 0 auto !important;
-  margin-top: 2em !important;
-  width: 12em;
+  margin: 0 auto;
+  margin-top: 2em;
+  width: 215px;
+
+  .col {
+    padding: 0;
+  }
+
+  input {
+    width: 12em;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  p {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  #dollar-sign {
+    background: #ced4da;
+    flex: 0 0 20px;
+  }
 }
