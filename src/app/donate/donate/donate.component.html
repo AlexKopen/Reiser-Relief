@@ -17,30 +17,34 @@
 
     <h2>Donate Today</h2>
 
-    <h3>Choose Your Donation Frequency</h3>
+    <h3>Choose a Donation Frequency</h3>
 
     <ul>
       <li
         *ngFor="let donationFrequency of donationFrequencies"
         [innerText]="donationFrequency"
         (click)="donationFrequencyClick(donationFrequency)"
+        [ngClass]="{ active: frequencyActive(donationFrequency) }"
       ></li>
     </ul>
 
-    <h3>Choose Your Donation Level</h3>
+    <h3>Choose a Donation Level</h3>
 
     <ul>
       <li
         *ngFor="let donationLevel of donationLevels"
-        [innerText]="donationLevel"
         (click)="donationLevelClick(donationLevel)"
+        [innerText]="donationLevelLabel(donationLevel)"
+        [ngClass]="{ active: levelActive(donationLevel) }"
       ></li>
     </ul>
 
     <input
       type="text"
+      class="form-control"
+      id="other-amount"
       *ngIf="showOtherAmount"
-      [(ngModel)]="selectedDonationLevel"
+      [(ngModel)]="customDonationAmount"
     />
 
     <form [formGroup]="addressForm">

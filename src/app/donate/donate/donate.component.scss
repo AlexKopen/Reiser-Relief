@@ -17,3 +17,43 @@ iframe {
   max-width: 700px;
   height: 400px;
 }
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  margin: 1em 0 !important;
+  text-align: center;
+  color: $gray-theme-color;
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+}
+
+li {
+  $height: 45px;
+  display: inline-block;
+  height: $height;
+  width: 115px;
+  margin-right: 40px !important;
+  line-height: $height;
+  border: 1px solid $light-theme-color;
+  border-radius: 5px;
+  color: $light-theme-color;
+  cursor: pointer;
+
+  &.active, &:hover {
+    background: $light-theme-color;
+    color: $white;
+  }
+}
+
+#other-amount {
+  margin: 0 auto !important;
+  margin-top: 2em !important;
+  width: 12em;
+}

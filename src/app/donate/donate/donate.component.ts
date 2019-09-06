@@ -21,12 +21,14 @@ export class DonateComponent implements OnInit {
   card: StripeElement;
 
   donationFrequencies = DONATION_FREQUENCIES;
-  selectedDonationFrequency: DonationFrequency;
+  selectedDonationFrequency: DonationFrequency = DonationFrequency.Monthly;
   donorAddress: DonationAddress;
 
   donationLevels = DONATION_LEVELS;
-  selectedDonationLevel: number;
+  selectedDonationLevel: DonationLevel;
   showOtherAmount = false;
+
+  customDonationAmount: number;
 
   states: State[] = STATES;
 
@@ -71,18 +73,31 @@ export class DonateComponent implements OnInit {
     });
   }
 
+  donationLevelLabel(level: DonationLevel): string {
+    return level === DonationLevel.Other ? level : `$${level}`;
+  }
+
   donationLevelClick(level: DonationLevel) {
-    if (level === DonationLevel.Other) {
-      this.selectedDonationLevel = 0;
-      this.showOtherAmount = true;
-    } else {
-      this.showOtherAmount = false;
-      this.selectedDonationLevel = level;
-    }
+    this.selectedDonationLevel = level;
+    this.showOtherAmount = level === DonationLevel.Other;
   }
 
   donationFrequencyClick(frequency: DonationFrequency) {
     this.selectedDonationFrequency = frequency;
+  }
+
+  frequencyActive(donationFrequency: DonationFrequency): boolean {
+    return this.selectedDonationFrequency === donationFrequency;
+  }
+
+  levelActive(donationLevel: DonationLevel): boolean {
+    return this.selectedDonationLevel === donationLevel;
+  }
+
+  get donationAmount(): number {
+    return this.selectedDonationLevel === DonationLevel.Other
+      ? this.customDonationAmount
+      : (this.selectedDonationLevel as number);
   }
 
   buy() {
@@ -98,7 +113,7 @@ export class DonateComponent implements OnInit {
       if (result.token) {
         const donation: Donation = new Donation(
           this.selectedDonationFrequency,
-          this.selectedDonationLevel,
+          this.donationAmount,
           this.donorAddress,
           this.addressForm.value.name,
           this.addressForm.value.phone,
