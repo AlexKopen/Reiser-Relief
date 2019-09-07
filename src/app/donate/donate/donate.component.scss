@@ -1,5 +1,7 @@
 @import '../../shared/globals';
 
+$button-height: 45px;
+
 #info {
   margin: 0 auto !important;
   margin-top: 2em !important;
@@ -23,7 +25,7 @@ h2 {
 }
 
 h3 {
-  margin: 1em 0 !important;
+  margin: 2em 0 1em 0 !important;
   text-align: center;
   color: $gray-theme-color;
   font-size: 20px;
@@ -34,17 +36,33 @@ ul {
   text-align: center;
 }
 
-li {
-  $height: 45px;
-  display: inline-block;
-  height: $height;
-  width: 115px;
-  margin-right: 40px !important;
-  line-height: $height;
-  border: 1px solid $light-theme-color;
+button, li {
+  height: $button-height;
+  line-height: $button-height;
   border-radius: 5px;
-  color: $light-theme-color;
   cursor: pointer;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1em;
+  width: 145px;
+  background:$dark-theme-color;
+  border: 1px solid $dark-theme-color;
+  color: $white;
+
+  &:hover {
+    color: $light-theme-color;
+  }
+}
+
+li {
+  display: inline-block;
+  margin-right: 40px !important;
+  width: 115px;
+  color: $light-theme-color;
+  border: 1px solid $light-theme-color;
 
   &.active, &:hover {
     background: $light-theme-color;
@@ -76,4 +94,17 @@ li {
     background: #ced4da;
     flex: 0 0 20px;
   }
+}
+
+form {
+  margin-top: 1em;
+}
+
+#error-message {
+  $height: 50px;
+
+  height: $height;
+  line-height: $height;
+  color: $error-red;
+  text-align: center;
 }

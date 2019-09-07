@@ -27,6 +27,7 @@ export class DonateComponent implements OnInit {
   donationLevels = DONATION_LEVELS;
   selectedDonationLevel: DonationLevel;
   showOtherAmount = false;
+  formInvalid = false;
 
   customDonationAmount: number;
 
@@ -53,6 +54,8 @@ export class DonateComponent implements OnInit {
       this.elements = elements;
       // Only mount the element the first time
       if (!this.card) {
+        // TODO: Add border
+        // border: '1px solid #ced4da',
         this.card = this.elements.create('card', {
           style: {
             base: {
@@ -101,33 +104,57 @@ export class DonateComponent implements OnInit {
   }
 
   buy() {
-    this.donorAddress = new DonationAddress(
-      this.addressForm.value.city,
-      this.addressForm.value.state,
-      this.addressForm.value.addressLine1,
-      this.addressForm.value.addressLine2,
-      this.addressForm.value.zip
-    );
+    this.formInvalid = false;
 
-    this.stripeService.createToken(this.card, { name }).subscribe(result => {
-      if (result.token) {
-        const donation: Donation = new Donation(
-          this.selectedDonationFrequency,
-          this.donationAmount,
-          this.donorAddress,
-          this.addressForm.value.name,
-          this.addressForm.value.phone,
-          this.addressForm.value.email,
-          result.token
-        );
+    if (this.addressForm.valid) {
+      this.donorAddress = new DonationAddress(
+        this.addressForm.value.city,
+        this.addressForm.value.state,
+        this.addressForm.value.addressLine1,
+        this.addressForm.value.addressLine2,
+        this.addressForm.value.zip
+      );
 
-        this.db
-          .collection<Donation>('stripe-payments')
-          .add(donation.toJson(donation))
-          .then(() => {});
-      } else if (result.error) {
-        console.log(result.error.message);
+      this.stripeService.createToken(this.card, { name }).subscribe(result => {
+        if (result.token) {
+          const donation: Donation = new Donation(
+            this.selectedDonationFrequency,
+            this.donationAmount,
+            this.donorAddress,
+            this.addressForm.value.name,
+            this.addressForm.value.phone,
+            this.addressForm.value.email,
+            result.token
+          );
+
+          this.db
+            .collection<Donation>('stripe-payments')
+            .add(donation.toJson(donation))
+            .then(() => {});
+        } else if (result.error) {
+          console.log(result.error.message);
+        }
+      });
+    } else {
+      this.formInvalid = true;
+    }
+  }
+
+  get errorMessage(): string {
+    let errorMessage = '';
+    if (this.formInvalid) {
+      errorMessage += 'Please complete all payment information';
+
+      console.log(this.donationAmount);
+      if (
+        this.selectedDonationLevel === undefined ||
+        this.donationAmount === undefined ||
+        this.donationAmount <= 0
+      ) {
+        errorMessage += ' and choose a donation level';
       }
-    });
+    }
+
+    return errorMessage;
   }
 }
