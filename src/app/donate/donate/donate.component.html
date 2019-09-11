@@ -2,181 +2,192 @@
 
 <div class="page-wrapper">
   <div class="container">
-    <p id="info">
-      Your donation will provide clean water, food, education and care to the
-      poor in Haiti. Reiser Relief Inc. is a 501(c)(3) ministry. Donations are
-      tax exempt as allowed by law.
-    </p>
 
-    <iframe
-      src="https://www.youtube.com/embed/JR0DUX1ItSw"
-      frameborder="0"
-      allowfullscreen
-    >
-    </iframe>
+    <ng-container *ngIf="!showThanks; else thanksTemplate">
+      <p id="info">
+        Your donation will provide clean water, food, education and care to the
+        poor in Haiti. Reiser Relief Inc. is a 501(c)(3) ministry. Donations are
+        tax exempt as allowed by law.
+      </p>
 
-    <h2>Donate Today</h2>
+      <iframe
+              src="https://www.youtube.com/embed/JR0DUX1ItSw"
+              frameborder="0"
+              allowfullscreen
+      >
+      </iframe>
 
-    <h3>Choose a Donation Frequency</h3>
+      <h2>Donate Today</h2>
 
-    <ul>
-      <li
-        *ngFor="let donationFrequency of donationFrequencies"
-        [innerText]="donationFrequency"
-        (click)="donationFrequencyClick(donationFrequency)"
-        [ngClass]="{ active: frequencyActive(donationFrequency) }"
-      ></li>
-    </ul>
+      <h3>Choose a Donation Frequency</h3>
 
-    <h3>Choose a Donation Level</h3>
+      <ul>
+        <li
+                *ngFor="let donationFrequency of donationFrequencies"
+                [innerText]="donationFrequency"
+                (click)="donationFrequencyClick(donationFrequency)"
+                [ngClass]="{ active: frequencyActive(donationFrequency) }"
+        ></li>
+      </ul>
 
-    <ul>
-      <li
-        *ngFor="let donationLevel of donationLevels"
-        (click)="donationLevelClick(donationLevel)"
-        [innerText]="donationLevelLabel(donationLevel)"
-        [ngClass]="{ active: levelActive(donationLevel) }"
-      ></li>
-    </ul>
+      <h3>Choose a Donation Level</h3>
 
-    <div class="row" id="other-amount" *ngIf="showOtherAmount">
-      <div class="col" id="dollar-sign">
-        <p><i class="fas fa-dollar-sign"></i></p>
-      </div>
-      <div class="col">
-        <input
-          appNumberPress
-          pattern="[0-9]*"
-          type="text"
-          class="form-control"
-          [(ngModel)]="customDonationAmount"
-        />
-      </div>
-    </div>
+      <ul>
+        <li
+                *ngFor="let donationLevel of donationLevels"
+                (click)="donationLevelClick(donationLevel)"
+                [innerText]="donationLevelLabel(donationLevel)"
+                [ngClass]="{ active: levelActive(donationLevel) }"
+        ></li>
+      </ul>
 
-    <h3>Provide Payment Information</h3>
-    <form [formGroup]="addressForm">
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              placeholder="Enter name"
-              formControlName="name"
-            />
-          </div>
+      <div class="row" id="other-amount" *ngIf="showOtherAmount">
+        <div class="col" id="dollar-sign">
+          <p><i class="fas fa-dollar-sign"></i></p>
         </div>
         <div class="col">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="Enter email"
-              formControlName="email"
-            />
-          </div>
+          <input
+                  appNumberPress
+                  pattern="[0-9]*"
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="customDonationAmount"
+          />
         </div>
       </div>
 
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label for="addressLine1">Address Line 1</label>
-            <input
-              type="text"
-              class="form-control"
-              id="addressLine1"
-              placeholder="Enter Line 1 of Address"
-              formControlName="addressLine1"
-            />
+      <h3>Provide Payment Information</h3>
+      <form [formGroup]="addressForm">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Enter name"
+                      formControlName="name"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Enter email"
+                      formControlName="email"
+              />
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="addressLine2">Address Line 2</label>
-            <input
-              type="text"
-              class="form-control"
-              id="addressLine2"
-              placeholder="Enter Line 2 of Address"
-              formControlName="addressLine2"
-            />
-          </div>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label for="city">City</label>
-            <input
-              type="text"
-              class="form-control"
-              id="city"
-              placeholder="Enter City"
-              formControlName="city"
-            />
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="addressLine1">Address Line 1</label>
+              <input
+                      type="text"
+                      class="form-control"
+                      id="addressLine1"
+                      placeholder="Enter Line 1 of Address"
+                      formControlName="addressLine1"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="addressLine2">Address Line 2</label>
+              <input
+                      type="text"
+                      class="form-control"
+                      id="addressLine2"
+                      placeholder="Enter Line 2 of Address"
+                      formControlName="addressLine2"
+              />
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="state">State</label>
-            <select
-              type="text"
-              class="form-control"
-              id="state"
-              formControlName="state"
-            >
-              <option
-                *ngFor="let state of states"
-                [value]="state.abbreviation"
-                [innerText]="state.state"
-              ></option>
-            </select>
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input
+                      type="text"
+                      class="form-control"
+                      id="city"
+                      placeholder="Enter City"
+                      formControlName="city"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="state">State</label>
+              <select
+                      type="text"
+                      class="form-control"
+                      id="state"
+                      formControlName="state"
+              >
+                <option
+                        *ngFor="let state of states"
+                        [value]="state.abbreviation"
+                        [innerText]="state.state"
+                ></option>
+              </select>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label for="zip">Zip Code</label>
-            <input
-              type="text"
-              class="form-control"
-              id="zip"
-              placeholder="Enter Zip Code"
-              formControlName="zip"
-            />
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="zip">Zip Code</label>
+              <input
+                      type="text"
+                      class="form-control"
+                      id="zip"
+                      placeholder="Enter Zip Code"
+                      formControlName="zip"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                      type="text"
+                      class="form-control"
+                      id="phone"
+                      placeholder="Enter Phone Number"
+                      formControlName="phone"
+              />
+            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input
-              type="text"
-              class="form-control"
-              id="phone"
-              placeholder="Enter Phone Number"
-              formControlName="phone"
-            />
-          </div>
-        </div>
-      </div>
-    </form>
+      </form>
 
-    <p>Card Details</p>
-    <div id="card-element" class="field"></div>
+      <div id="card-element" class="field"></div>
 
-    <p id="error-message" [innerText]="errorMessage"></p>
+      <h3>Donation Frequency: {{selectedDonationFrequency}}</h3>
+      <h3>Donation Amount: {{donationAmount | currency}}</h3>
 
-    <button (click)="buy()">
-      Submit Payment
-    </button>
+      <p id="error-message" [innerText]="errorMessage"></p>
+
+      <button (click)="submitPayment()">
+        Submit Payment
+      </button>
+    </ng-container>
+
+    <ng-template #thanksTemplate>
+      <h3 id="thanks-message">Thank you!  A confirmation email will be sent shortly.</h3>
+      <p id="home" (click)="home()">Back to Home</p>
+    </ng-template>
+
   </div>
 </div>

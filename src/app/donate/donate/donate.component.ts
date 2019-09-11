@@ -10,6 +10,7 @@ import { State } from '../../shared/models/state.model';
 import { STATES } from '../../shared/constants/states.constant';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DonationAddress } from '../../shared/models/donation-address.model';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-donate',
@@ -28,6 +29,8 @@ export class DonateComponent implements OnInit {
   selectedDonationLevel: DonationLevel;
   showOtherAmount = false;
   formInvalid = false;
+  showReview = false;
+  showThanks = false;
 
   customDonationAmount: number;
 
@@ -46,7 +49,8 @@ export class DonateComponent implements OnInit {
 
   constructor(
     private stripeService: StripeService,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -103,41 +107,42 @@ export class DonateComponent implements OnInit {
       : (this.selectedDonationLevel as number);
   }
 
-  buy() {
+  submitPayment(): void {
     this.formInvalid = false;
 
-    if (this.addressForm.valid) {
-      this.donorAddress = new DonationAddress(
-        this.addressForm.value.city,
-        this.addressForm.value.state,
-        this.addressForm.value.addressLine1,
-        this.addressForm.value.addressLine2,
-        this.addressForm.value.zip
-      );
+   if (this.addressForm.valid) {
+     this.donorAddress = new DonationAddress(
+         this.addressForm.value.city,
+         this.addressForm.value.state,
+         this.addressForm.value.addressLine1,
+         this.addressForm.value.addressLine2,
+         this.addressForm.value.zip
+     );
 
-      this.stripeService.createToken(this.card, { name }).subscribe(result => {
-        if (result.token) {
-          const donation: Donation = new Donation(
-            this.selectedDonationFrequency,
-            this.donationAmount,
-            this.donorAddress,
-            this.addressForm.value.name,
-            this.addressForm.value.phone,
-            this.addressForm.value.email,
-            result.token
-          );
+     this.stripeService.createToken(this.card, { name }).subscribe(result => {
+       if (result.token) {
+         this.showThanks = true
+         const donation: Donation = new Donation(
+             this.selectedDonationFrequency,
+             this.donationAmount,
+             this.donorAddress,
+             this.addressForm.value.name,
+             this.addressForm.value.phone,
+             this.addressForm.value.email,
+             result.token
+         );
 
-          this.db
-            .collection<Donation>('stripe-payments')
-            .add(donation.toJson(donation))
-            .then(() => {});
-        } else if (result.error) {
-          console.log(result.error.message);
-        }
-      });
-    } else {
-      this.formInvalid = true;
-    }
+         this.db
+             .collection<Donation>('stripe-payments')
+             .add(donation.toJson(donation))
+             .then(() => {});
+       } else if (result.error) {
+         console.log(result.error.message);
+       }
+     });
+   } else {
+     this.formInvalid = true;
+   }
   }
 
   get errorMessage(): string {
@@ -145,7 +150,6 @@ export class DonateComponent implements OnInit {
     if (this.formInvalid) {
       errorMessage += 'Please complete all payment information';
 
-      console.log(this.donationAmount);
       if (
         this.selectedDonationLevel === undefined ||
         this.donationAmount === undefined ||
@@ -156,5 +160,9 @@ export class DonateComponent implements OnInit {
     }
 
     return errorMessage;
+  }
+
+  home(): void {
+    this.router.navigate(['/']);
   }
 }
