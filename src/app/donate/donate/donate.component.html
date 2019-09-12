@@ -2,7 +2,6 @@
 
 <div class="page-wrapper">
   <div class="container">
-
     <ng-container *ngIf="!showThanks; else thanksTemplate">
       <p id="info">
         Your donation will provide clean water, food, education and care to the
@@ -11,9 +10,9 @@
       </p>
 
       <iframe
-              src="https://www.youtube.com/embed/JR0DUX1ItSw"
-              frameborder="0"
-              allowfullscreen
+        src="https://www.youtube.com/embed/JR0DUX1ItSw"
+        frameborder="0"
+        allowfullscreen
       >
       </iframe>
 
@@ -23,10 +22,10 @@
 
       <ul>
         <li
-                *ngFor="let donationFrequency of donationFrequencies"
-                [innerText]="donationFrequency"
-                (click)="donationFrequencyClick(donationFrequency)"
-                [ngClass]="{ active: frequencyActive(donationFrequency) }"
+          *ngFor="let donationFrequency of donationFrequencies"
+          [innerText]="donationFrequency"
+          (click)="donationFrequencyClick(donationFrequency)"
+          [ngClass]="{ active: frequencyActive(donationFrequency) }"
         ></li>
       </ul>
 
@@ -34,10 +33,10 @@
 
       <ul>
         <li
-                *ngFor="let donationLevel of donationLevels"
-                (click)="donationLevelClick(donationLevel)"
-                [innerText]="donationLevelLabel(donationLevel)"
-                [ngClass]="{ active: levelActive(donationLevel) }"
+          *ngFor="let donationLevel of donationLevels"
+          (click)="donationLevelClick(donationLevel)"
+          [innerText]="donationLevelLabel(donationLevel)"
+          [ngClass]="{ active: levelActive(donationLevel) }"
         ></li>
       </ul>
 
@@ -47,11 +46,11 @@
         </div>
         <div class="col">
           <input
-                  appNumberPress
-                  pattern="[0-9]*"
-                  type="text"
-                  class="form-control"
-                  [(ngModel)]="customDonationAmount"
+            appNumberPress
+            pattern="[0-9]*"
+            type="text"
+            class="form-control"
+            [(ngModel)]="customDonationAmount"
           />
         </div>
       </div>
@@ -63,11 +62,11 @@
             <div class="form-group">
               <label for="name">Name</label>
               <input
-                      type="text"
-                      class="form-control"
-                      id="name"
-                      placeholder="Enter name"
-                      formControlName="name"
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Enter name"
+                formControlName="name"
               />
             </div>
           </div>
@@ -75,11 +74,11 @@
             <div class="form-group">
               <label for="email">Email</label>
               <input
-                      type="email"
-                      class="form-control"
-                      id="email"
-                      placeholder="Enter email"
-                      formControlName="email"
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter email"
+                formControlName="email"
               />
             </div>
           </div>
@@ -90,11 +89,11 @@
             <div class="form-group">
               <label for="addressLine1">Address Line 1</label>
               <input
-                      type="text"
-                      class="form-control"
-                      id="addressLine1"
-                      placeholder="Enter Line 1 of Address"
-                      formControlName="addressLine1"
+                type="text"
+                class="form-control"
+                id="addressLine1"
+                placeholder="Enter Line 1 of Address"
+                formControlName="addressLine1"
               />
             </div>
           </div>
@@ -102,11 +101,11 @@
             <div class="form-group">
               <label for="addressLine2">Address Line 2</label>
               <input
-                      type="text"
-                      class="form-control"
-                      id="addressLine2"
-                      placeholder="Enter Line 2 of Address"
-                      formControlName="addressLine2"
+                type="text"
+                class="form-control"
+                id="addressLine2"
+                placeholder="Enter Line 2 of Address"
+                formControlName="addressLine2"
               />
             </div>
           </div>
@@ -117,11 +116,11 @@
             <div class="form-group">
               <label for="city">City</label>
               <input
-                      type="text"
-                      class="form-control"
-                      id="city"
-                      placeholder="Enter City"
-                      formControlName="city"
+                type="text"
+                class="form-control"
+                id="city"
+                placeholder="Enter City"
+                formControlName="city"
               />
             </div>
           </div>
@@ -129,15 +128,15 @@
             <div class="form-group">
               <label for="state">State</label>
               <select
-                      type="text"
-                      class="form-control"
-                      id="state"
-                      formControlName="state"
+                type="text"
+                class="form-control"
+                id="state"
+                formControlName="state"
               >
                 <option
-                        *ngFor="let state of states"
-                        [value]="state.abbreviation"
-                        [innerText]="state.state"
+                  *ngFor="let state of states"
+                  [value]="state.abbreviation"
+                  [innerText]="state.state"
                 ></option>
               </select>
             </div>
@@ -149,11 +148,11 @@
             <div class="form-group">
               <label for="zip">Zip Code</label>
               <input
-                      type="text"
-                      class="form-control"
-                      id="zip"
-                      placeholder="Enter Zip Code"
-                      formControlName="zip"
+                type="text"
+                class="form-control"
+                id="zip"
+                placeholder="Enter Zip Code"
+                formControlName="zip"
               />
             </div>
           </div>
@@ -161,11 +160,11 @@
             <div class="form-group">
               <label for="phone">Phone Number</label>
               <input
-                      type="text"
-                      class="form-control"
-                      id="phone"
-                      placeholder="Enter Phone Number"
-                      formControlName="phone"
+                type="text"
+                class="form-control"
+                id="phone"
+                placeholder="Enter Phone Number"
+                formControlName="phone"
               />
             </div>
           </div>
@@ -174,8 +173,8 @@
 
       <div id="card-element" class="field"></div>
 
-      <h3>Donation Frequency: {{selectedDonationFrequency}}</h3>
-      <h3>Donation Level: {{donationAmount | currency}}</h3>
+      <h3>Donation Frequency: {{ selectedDonationFrequency }}</h3>
+      <h3>Donation Level: {{ donationAmount | currency }}</h3>
 
       <p id="error-message" [innerText]="errorMessage"></p>
 
@@ -185,9 +184,10 @@
     </ng-container>
 
     <ng-template #thanksTemplate>
-      <h3 id="thanks-message">Thank you!  A confirmation email will be sent shortly.</h3>
+      <h3 id="thanks-message">
+        Thank you! A confirmation email will be sent shortly.
+      </h3>
       <p id="home" (click)="home()">Back to Home</p>
     </ng-template>
-
   </div>
 </div>
