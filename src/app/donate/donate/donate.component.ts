@@ -29,7 +29,6 @@ export class DonateComponent implements OnInit {
   selectedDonationLevel: DonationLevel;
   showOtherAmount = false;
   formInvalid = false;
-  showReview = false;
   showThanks = false;
 
   customDonationAmount: number;
@@ -58,19 +57,17 @@ export class DonateComponent implements OnInit {
       this.elements = elements;
       // Only mount the element the first time
       if (!this.card) {
-        // TODO: Add border
-        // border: '1px solid #ced4da',
         this.card = this.elements.create('card', {
           style: {
             base: {
-              iconColor: '#666EE8',
-              color: '#31325F',
+              iconColor: '#00514d',
+              color: '#000',
               lineHeight: '40px',
               fontWeight: 300,
               fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
               fontSize: '18px',
               '::placeholder': {
-                color: '#CFD7E0'
+                color: '#6e777f'
               }
             }
           }

@@ -46,7 +46,6 @@ button, li {
 button {
   display: block;
   margin: 0 auto;
-  margin-top: 1em;
   width: 145px;
   background:$dark-theme-color;
   border: 1px solid $dark-theme-color;
@@ -117,4 +116,9 @@ form {
   text-align: center;
   text-decoration: underline;
   cursor: pointer;
+}
+
+::ng-deep .StripeElement {
+  border: 1px solid #ced4da;
+  padding: 0 10px;
 }
