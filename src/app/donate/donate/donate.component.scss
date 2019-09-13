@@ -39,14 +39,14 @@ h4 {
   font-size: 20px;
 }
 
-#by-mail {
-  margin: 0 auto;
+.mail-or-grant {
+  height: 100%;
 
-  #mail-column {
+  .icon-column {
     flex: 0 0 100px;
   }
 
-  #mail-icon {
+  .icon {
     display: table;
     height: 100%;
   }
