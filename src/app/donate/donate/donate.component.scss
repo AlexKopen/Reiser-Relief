@@ -24,8 +24,12 @@ iframe {
   height: 400px;
 }
 
-h2 {
+h2, h3 {
   text-align: center;
+}
+
+h3 {
+  margin: 1em 0 !important;
 }
 
 h4 {
@@ -33,6 +37,25 @@ h4 {
   text-align: center;
   color: $gray-theme-color;
   font-size: 20px;
+}
+
+#by-mail {
+  margin: 0 auto;
+
+  #mail-column {
+    flex: 0 0 100px;
+  }
+
+  #mail-icon {
+    display: table;
+    height: 100%;
+  }
+
+ i {
+   font-size: 90px;
+   display: table-cell;
+   vertical-align: middle;
+ }
 }
 
 ul {
