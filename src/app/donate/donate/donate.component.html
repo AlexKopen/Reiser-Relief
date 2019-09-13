@@ -16,9 +16,13 @@
       >
       </iframe>
 
-      <h2>Donate Today</h2>
+      <h2 id="donate-today">Donate Today</h2>
 
-      <h3>Choose a Donation Frequency</h3>
+      <h3>By Mail</h3>
+
+      <h3>Online</h3>
+
+      <h4>Choose a Donation Frequency</h4>
 
       <ul>
         <li
@@ -29,7 +33,7 @@
         ></li>
       </ul>
 
-      <h3>Choose a Donation Level</h3>
+      <h4>Choose a Donation Level</h4>
 
       <ul>
         <li
@@ -55,7 +59,7 @@
         </div>
       </div>
 
-      <h3>Provide Payment Information</h3>
+      <h4>Provide Payment Information</h4>
       <form [formGroup]="addressForm">
         <div class="row">
           <div class="col">
@@ -65,6 +69,7 @@
                 type="text"
                 class="form-control"
                 id="name"
+                name="name"
                 placeholder="Enter name"
                 formControlName="name"
               />
@@ -77,6 +82,7 @@
                 type="email"
                 class="form-control"
                 id="email"
+                name="email"
                 placeholder="Enter email"
                 formControlName="email"
               />
@@ -92,6 +98,7 @@
                 type="text"
                 class="form-control"
                 id="addressLine1"
+                name="addressLine1"
                 placeholder="Enter Line 1 of Address"
                 formControlName="addressLine1"
               />
@@ -104,6 +111,7 @@
                 type="text"
                 class="form-control"
                 id="addressLine2"
+                name="addressLine2"
                 placeholder="Enter Line 2 of Address"
                 formControlName="addressLine2"
               />
@@ -119,6 +127,7 @@
                 type="text"
                 class="form-control"
                 id="city"
+                name="city"
                 placeholder="Enter City"
                 formControlName="city"
               />
@@ -131,6 +140,7 @@
                 type="text"
                 class="form-control"
                 id="state"
+                name="state"
                 formControlName="state"
               >
                 <option
@@ -151,6 +161,7 @@
                 type="text"
                 class="form-control"
                 id="zip"
+                name="zip"
                 placeholder="Enter Zip Code"
                 formControlName="zip"
               />
@@ -163,6 +174,7 @@
                 type="text"
                 class="form-control"
                 id="phone"
+                name="phone"
                 placeholder="Enter Phone Number"
                 formControlName="phone"
               />
@@ -173,8 +185,8 @@
 
       <div id="card-element" class="field"></div>
 
-      <h3>Donation Frequency: {{ selectedDonationFrequency }}</h3>
-      <h3>Donation Level: {{ donationAmount | currency }}</h3>
+      <h4>Donation Frequency: {{ selectedDonationFrequency }}</h4>
+      <h4>Donation Level: {{ donationAmount | currency }}</h4>
 
       <p id="error-message" [innerText]="errorMessage"></p>
 

@@ -2,6 +2,10 @@
 
 $button-height: 45px;
 
+#donate-today {
+  margin-top: 0.5em !important;
+}
+
 #info {
   margin: 0 auto !important;
   margin-top: 2em !important;
@@ -24,7 +28,7 @@ h2 {
   text-align: center;
 }
 
-h3 {
+h4 {
   margin: 2em 0 1em 0 !important;
   text-align: center;
   color: $gray-theme-color;
