@@ -10,8 +10,9 @@ script:
   - npm install
   - npm run build:prerender
 deploy:
-  branch: angular-universal
   skip_cleanup: true
   provider: firebase
   token:
     secure: FIREBASE_TOKEN
+  on:
+    all_branches: true
