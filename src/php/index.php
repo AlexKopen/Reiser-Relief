@@ -65,6 +65,13 @@ $app->get('/', function () use ($app, $callAPI) {
         'Title' => 'Home',
         'SlideShowImages' => array(
             array(
+                'Url' => 'event-slide.jpg',
+                'Alt' => 'Reiser Relief Gala 2019',
+                'Header' => 'Gala 2019',
+                'Description' => 'Our 8th annual Fall Gala is Thursday, November 14, 2019',
+                'Link' => '/events'
+            ),
+            array(
                 'Url' => 'work-slide.jpg',
                 'Alt' => 'Core Values',
                 'Header' => 'Our Impact',
