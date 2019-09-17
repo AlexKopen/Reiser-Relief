@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { Element as StripeElement, Elements, StripeService } from 'ngx-stripe';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { DonationLevel } from '../../shared/enums/donation-level.enum';
-import { DONATION_LEVELS } from '../../shared/constants/donation-levels.constant';
-import { DONATION_FREQUENCIES } from '../../shared/constants/donation-frequencies.constant';
-import { DonationFrequency } from '../../shared/enums/donation-frequency.enum';
-import { Donation } from '../../shared/models/donation.model';
-import { State } from '../../shared/models/state.model';
-import { STATES } from '../../shared/constants/states.constant';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { DonationAddress } from '../../shared/models/donation-address.model';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Element as StripeElement, Elements, StripeService} from 'ngx-stripe';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {DonationLevel} from '../../shared/enums/donation-level.enum';
+import {DONATION_FREQUENCIES} from '../../shared/constants/donation-frequencies.constant';
+import {DonationFrequency} from '../../shared/enums/donation-frequency.enum';
+import {Donation} from '../../shared/models/donation.model';
+import {State} from '../../shared/models/state.model';
+import {STATES} from '../../shared/constants/states.constant';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {DonationAddress} from '../../shared/models/donation-address.model';
+import {Router} from '@angular/router';
+import {DONATION_LEVELS_ONE_TIME} from '../../shared/constants/donation-levels/donation-levels-one-time.constant';
+import {DONATION_LEVELS_MONTHLY} from "../../shared/constants/donation-levels/donation-levels-monthly.constant";
+import {DONATION_LEVELS_QUARTERLY} from "../../shared/constants/donation-levels/donation-levels-quarterly.constant";
+import {DONATION_LEVELS_ANNUALLY} from "../../shared/constants/donation-levels/donation-levels-annually.constant";
 
 @Component({
   selector: 'app-donate',
@@ -24,8 +27,6 @@ export class DonateComponent implements OnInit {
   donationFrequencies = DONATION_FREQUENCIES;
   selectedDonationFrequency: DonationFrequency = DonationFrequency.Monthly;
   donorAddress: DonationAddress;
-
-  donationLevels = DONATION_LEVELS;
   selectedDonationLevel: DonationLevel;
   showOtherAmount = false;
   formInvalid = false;
@@ -77,6 +78,29 @@ export class DonateComponent implements OnInit {
     });
   }
 
+  get donationLevels(): any[] {
+    let donationLevels: any[] = [];
+
+    switch (this.selectedDonationFrequency) {
+      case DonationFrequency.OneTime:
+        donationLevels = donationLevels.concat(DONATION_LEVELS_ONE_TIME);
+        break;
+      case DonationFrequency.Monthly:
+        donationLevels = donationLevels.concat(DONATION_LEVELS_MONTHLY);
+        break;
+      case DonationFrequency.Quarterly:
+        donationLevels = donationLevels.concat(DONATION_LEVELS_QUARTERLY);
+        break;
+      case DonationFrequency.Annually:
+        donationLevels = donationLevels.concat(DONATION_LEVELS_ANNUALLY);
+        break;
+    }
+
+    donationLevels.push(DonationLevel.Other);
+
+    return donationLevels;
+  }
+
   donationLevelLabel(level: DonationLevel): string {
     return level === DonationLevel.Other ? level : `$${level}`;
   }
@@ -87,6 +111,8 @@ export class DonateComponent implements OnInit {
   }
 
   donationFrequencyClick(frequency: DonationFrequency) {
+    this.showOtherAmount = false;
+    this.selectedDonationLevel = null;
     this.selectedDonationFrequency = frequency;
   }
 
