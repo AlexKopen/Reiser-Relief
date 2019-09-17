@@ -27,8 +27,4 @@ export class Donation {
     this.email = email;
     this.token = token;
   }
-
-  public toJson(donation: Donation): any {
-    return JSON.parse(JSON.stringify(donation));
-  }
 }

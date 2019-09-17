@@ -155,9 +155,12 @@ export class DonateComponent implements OnInit {
             result.token
           );
 
+          console.table(this.toJson(donation));
+          const donationToSend: any = this.toJson(donation);
+
           this.db
             .collection<Donation>('stripe-payments')
-            .add(donation.toJson(donation))
+            .add(donationToSend)
             .then(() => {});
         } else if (result.error) {
           console.log(result.error.message);
@@ -187,5 +190,9 @@ export class DonateComponent implements OnInit {
 
   home(): void {
     this.router.navigate(['/']);
+  }
+
+  private toJson(donation: Donation): any {
+    return JSON.parse(JSON.stringify(donation));
   }
 }
