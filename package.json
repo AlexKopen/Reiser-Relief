@@ -16,6 +16,7 @@
     "Fabian Wiles <fabian.wiles@gmail.com>"
   ],
   "scripts": {
+    "install:function:dependencies": "cd functions && npm install",
     "ng": "ng",
     "prettier": "prettier --write \"**/*.{js,json,css,md,ts,html,component.html}\"",
     "start": "ng serve",
