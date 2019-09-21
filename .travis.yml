@@ -9,7 +9,7 @@ before_script:
 script:
 - npm install
 - npm run install:function:dependencies
-- if [ "$TRAVIS_BRANCH" = "develop" ]; then firebase use reiser-relief-test; npm run build:prerender-develop; fi
+- if [ "$TRAVIS_BRANCH" = "develop" ]; then npm run build:prerender-develop; fi
 - if [ "$TRAVIS_BRANCH" = "master" ]; then npm run build:prerender; fi
 deploy:
   skip_cleanup: true
