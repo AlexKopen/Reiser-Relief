@@ -4,9 +4,6 @@ env:
 language: node_js
 node_js:
 - '10.16.3'
-branches:
-  only:
-  - angular-universal
 before_script:
 - npm install -g @angular/cli
 script:
