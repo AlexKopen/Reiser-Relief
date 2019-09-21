@@ -155,7 +155,6 @@ export class DonateComponent implements OnInit {
             result.token
           );
 
-          console.table(this.toJson(donation));
           const donationToSend: any = this.toJson(donation);
 
           this.db

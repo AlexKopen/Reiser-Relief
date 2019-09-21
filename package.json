@@ -23,9 +23,9 @@
     "build": "ng build",
     "lint": "ng lint ng-universal-demo",
     "build:client-and-server-bundles": "ng build --prod && ng run ng-universal-demo:server:production",
-    "build:client-and-server-bundles:test": "ng build --configuration test && ng run ng-universal-demo:server:production",
+    "build:client-and-server-bundles-develop": "ng build --configuration test && ng run ng-universal-demo:server:production",
     "build:prerender": "npm run build:client-and-server-bundles && npm run compile:server && npm run generate:prerender",
-    "build:prerender:test": "npm run build:client-and-server-bundles:test && npm run compile:server && npm run generate:prerender",
+    "build:prerender-develop": "npm run build:client-and-server-bundles-develop && npm run compile:server && npm run generate:prerender",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "compile:server": "tsc -p server.tsconfig.json",
     "generate:prerender": "cd dist && node prerender",
@@ -33,7 +33,7 @@
     "serve:ssr": "node dist/server",
     "deploy": "firebase deploy",
     "build-and-deploy": "npm run build:prerender && firebase deploy",
-    "build-and-deploy-test": "npm run build:prerender:test && firebase deploy"
+    "build-and-deploy-develop": "npm run build:prerender-develop && firebase deploy"
   },
   "pre-commit": [],
   "private": true,
