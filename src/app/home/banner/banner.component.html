@@ -1,4 +1,4 @@
-<div class="row no-gutters">
+<div class="row no-gutters" id="desktop-banner">
   <div class="col-lg-8">
     <img src="../../assets/images/home/impact-slide.jpg" alt="Reiser Relief" />
   </div>
@@ -14,4 +14,24 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="row no-gutters" id="mobile-banner">
+  <div class="banner-image">
+    <img src="../../assets/images/home/impact-slide.jpg" alt="Reiser Relief" />
+    <div id="overlay"></div>
+    <div id="banner-wrapper">
+      <div id="banner-content">
+
+        <h1>Our Call to Serve</h1>
+        <p>
+          Since 1996, Reiser Relief has been providing relief, hope, and dignity
+          to the poor, elderly, and homeless people of Haiti.
+        </p>
+        <button [routerLink]="'/donate'">Give Today</button>
+
+      </div>
+    </div>
+  </div>
+
 </div>
