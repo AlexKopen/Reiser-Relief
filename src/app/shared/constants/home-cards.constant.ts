@@ -10,7 +10,7 @@ export const HOME_CARDS = [
   ),
   new HomeCard(
     'Mission Trips',
-    'fas fa-suitcase',
+    'fas fa-suitcase-rolling',
     'Our mission trips make a real, tangible difference in the lives of those we serve.',
     '/missions',
     'Explore'

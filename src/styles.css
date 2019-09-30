@@ -16,6 +16,10 @@ input {
   margin: 0 !important;
 }
 
+h3 {
+  font-size: 2rem !important;
+}
+
 .page-wrapper {
   padding: 0 0.5em 2em 0.5em;
 }
