@@ -1,31 +1,47 @@
 <app-page-header [title]="'About Us'"></app-page-header>
 
 <ul>
-  <li *ngFor="let aboutNavigationSection of aboutSections"
-      [innerText]="aboutNavigationSection.title"
-  [ngClass]="{'active':navigationActive(aboutNavigationSection)}">
-  </li>
+  <li
+    *ngFor="let aboutNavigationSection of aboutSections"
+    [innerText]="aboutNavigationSection.title"
+    [ngClass]="{ active: navigationActive(aboutNavigationSection) }"
+  ></li>
 </ul>
 
 <div class="page-wrapper">
   <div
-          inViewport
-          (inViewportAction)="onIntersection($event,findNavigationSection(aboutSectionLabels.coreValues))">
-    <app-core-values>
-    </app-core-values>
+    inViewport
+    (inViewportAction)="
+      onIntersection(
+        $event,
+        findNavigationSection(aboutSectionLabels.coreValues)
+      )
+    "
+  >
+    <app-core-values> </app-core-values>
   </div>
 
-<div
-        inViewport
-        (inViewportAction)="onIntersection($event, findNavigationSection(aboutSectionLabels.boardMembers))">
-  <app-board-members>
-  </app-board-members>
-</div>
+  <div
+    inViewport
+    (inViewportAction)="
+      onIntersection(
+        $event,
+        findNavigationSection(aboutSectionLabels.boardMembers)
+      )
+    "
+  >
+    <app-board-members> </app-board-members>
+  </div>
 
   <div
-          inViewport
-          (inViewportAction)="onIntersection($event, findNavigationSection(aboutSectionLabels.ourFounder))">
-    <app-founder>
-    </app-founder>
+    inViewport
+    (inViewportAction)="
+      onIntersection(
+        $event,
+        findNavigationSection(aboutSectionLabels.ourFounder)
+      )
+    "
+  >
+    <app-founder> </app-founder>
   </div>
 </div>
