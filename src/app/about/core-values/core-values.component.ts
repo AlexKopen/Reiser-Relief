@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CoreValue } from '../../shared/models/home-core-value.model';
-import { CORE_VALUES } from '../../shared/constants/core-values.constant';
+import {Component, OnInit} from '@angular/core';
+import {CoreValue} from '../../shared/models/home-core-value.model';
+import {CORE_VALUES} from '../../shared/constants/core-values.constant';
 
 @Component({
   selector: 'app-core-values',

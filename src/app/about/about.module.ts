@@ -6,6 +6,7 @@ import { CoreValuesComponent } from './core-values/core-values.component';
 import { BoardMembersComponent } from './board-members/board-members.component';
 import { FounderComponent } from './founder/founder.component';
 import { PageHeaderModule } from '../shared/modules/page-header/page-header.module';
+import { InViewportModule } from 'ng-in-viewport';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PageHeaderModule } from '../shared/modules/page-header/page-header.modu
     RouterModule.forChild([
       { path: '', component: AboutComponent, pathMatch: 'full' }
     ]),
-    PageHeaderModule
+    PageHeaderModule,
+    InViewportModule
   ]
 })
 export class AboutModule {}

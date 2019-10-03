@@ -1,12 +1,31 @@
 <app-page-header [title]="'About Us'"></app-page-header>
 
+<ul>
+  <li *ngFor="let aboutNavigationSection of aboutSections"
+      [innerText]="aboutNavigationSection.title"
+  [ngClass]="{'active':navigationActive(aboutNavigationSection)}">
+  </li>
+</ul>
+
 <div class="page-wrapper">
-  <h2>Core Values</h2>
-  <app-core-values></app-core-values>
+  <div
+          inViewport
+          (inViewportAction)="onIntersection($event,findNavigationSection(aboutSectionLabels.coreValues))">
+    <app-core-values>
+    </app-core-values>
+  </div>
 
-  <h2>Board Members</h2>
-  <app-board-members></app-board-members>
+<div
+        inViewport
+        (inViewportAction)="onIntersection($event, findNavigationSection(aboutSectionLabels.boardMembers))">
+  <app-board-members>
+  </app-board-members>
+</div>
 
-  <h2>Our Founder</h2>
-  <app-founder></app-founder>
+  <div
+          inViewport
+          (inViewportAction)="onIntersection($event, findNavigationSection(aboutSectionLabels.ourFounder))">
+    <app-founder>
+    </app-founder>
+  </div>
 </div>
