@@ -6,20 +6,34 @@ h2 {
   margin-top: 1em !important;
 }
 
+$sub-menu-height: 60px;
+
 ul {
   list-style: none;
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 1;
   background: white;
   display: block;
   width: 100%;
   text-align: center;
+  height: $sub-menu-height;
+  background: $dark-contrast-color;
 }
 
 li {
   display: inline-block;
+  line-height: $sub-menu-height;
+  font-size: 23px;
+  margin-right: 100px !important;
+  color: $white;
+
+  &:hover {
+    cursor: pointer;
+    color: $light-theme-color;
+  }
 }
 
 .active {
-  color: orange;
+  color: $light-theme-color;
 }
