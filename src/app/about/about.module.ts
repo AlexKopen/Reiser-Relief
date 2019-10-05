@@ -6,6 +6,7 @@ import { CoreValuesComponent } from './core-values/core-values.component';
 import { BoardMembersComponent } from './board-members/board-members.component';
 import { FounderComponent } from './founder/founder.component';
 import { PageHeaderModule } from '../shared/modules/page-header/page-header.module';
+import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PageHeaderModule } from '../shared/modules/page-header/page-header.modu
       { path: '', component: AboutComponent, pathMatch: 'full' },
       { path: ':sub-page', component: AboutComponent, pathMatch: 'full' }
     ]),
-    PageHeaderModule
+    PageHeaderModule,
+      SweetAlert2Module
   ]
 })
 export class AboutModule {}

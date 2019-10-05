@@ -1,7 +1,13 @@
 @import '../../shared/globals';
 
 #board-members-container {
-  margin: 2em 0;
+  margin: 1em 0 2em 0;
+}
+
+#member-selection {
+  text-align: center;
+  color: $gray-theme-color;
+  margin-bottom: 2em !important;
 }
 
 .board-member {
@@ -22,6 +28,10 @@
       margin-bottom: 0 !important;
     }
   }
+}
+
+.selectable-content {
+  cursor: pointer;
 }
 
 img {

@@ -1,18 +1,21 @@
 <div id="board-members-container">
   <div class="container">
+    <p id="member-selection">Select a member of our team to learn more!</p>
     <div class="row no-gutters">
       <div
         class="col-lg-3 col-md-4 board-member"
         *ngFor="let boardMember of boardMembers"
       >
-        <img
+<div class="selectable-content" (click)="setActiveBoardMember(boardMember)" [swal]="boardMemberDetails">
+  <img
           [src]="
             '../../assets/images/about/board/' + boardMember.headShotFileName
           "
           [alt]="boardMember.name"
-        />
-        <h3 class="name" [innerText]="boardMember.name"></h3>
-        <p class="position" [innerText]="boardMember.position"></p>
+  />
+  <h3 class="name" [innerText]="boardMember.name"></h3>
+  <p class="position" [innerText]="boardMember.position"></p>
+</div>
         <p class="email">
           <a
             [href]="'mailto:' + boardMember.email"
@@ -23,3 +26,7 @@
     </div>
   </div>
 </div>
+
+<swal #boardMemberDetails>
+    {{activeBoardMember | json}}
+</swal>

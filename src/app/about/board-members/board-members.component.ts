@@ -9,8 +9,13 @@ import { BOARD_MEMBERS } from '../../shared/constants/board-members.constant';
 })
 export class BoardMembersComponent implements OnInit {
   boardMembers: BoardMember[] = BOARD_MEMBERS;
+  activeBoardMember: BoardMember;
 
   constructor() {}
 
   ngOnInit() {}
+
+  setActiveBoardMember(boardMember: BoardMember): void {
+    this.activeBoardMember = boardMember;
+  }
 }

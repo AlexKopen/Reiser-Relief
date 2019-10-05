@@ -39,6 +39,11 @@ export class AboutComponent implements OnInit {
                 this.aboutSectionLabels.ourFounder
             );
             break;
+          default:
+            sectionToActivate = this.findNavigationSection(
+                this.aboutSectionLabels.coreValues
+            );
+            break;
         }
 
         this.aboutSections.map((aboutSection: NavigationSection) => {
