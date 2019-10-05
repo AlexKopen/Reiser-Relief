@@ -43,3 +43,7 @@ button {
 input {
   padding-left: 10px !important;
 }
+
+.hidden {
+  display: none;
+}

@@ -18,6 +18,11 @@ export class HeaderComponent implements OnInit {
     if (menuItem.toLowerCase() === 'home') {
       return '/';
     }
+
+    if (menuItem.toLowerCase() === 'about') {
+      return '/about/core-values';
+    }
+
     return '/' + menuItem.replace(' ', '-').toLowerCase();
   }
 

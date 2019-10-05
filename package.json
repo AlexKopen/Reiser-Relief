@@ -62,7 +62,6 @@
     "intersection-observer": "^0.7.0",
     "lodash": "^4.17.11",
     "ng-click-outside": "^4.0.0",
-    "ng-in-viewport": "^6.0.3",
     "ngx-stripe": "^7.4.3",
     "reflect-metadata": "^0.1.10",
     "rxjs": "6.3.3",
