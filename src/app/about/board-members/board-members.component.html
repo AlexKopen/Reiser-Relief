@@ -6,16 +6,20 @@
         class="col-lg-3 col-md-4 board-member"
         *ngFor="let boardMember of boardMembers"
       >
-<div class="selectable-content" (click)="setActiveBoardMember(boardMember)" [swal]="boardMemberDetails">
-  <img
-          [src]="
-            '../../assets/images/about/board/' + boardMember.headShotFileName
-          "
-          [alt]="boardMember.name"
-  />
-  <h3 class="name" [innerText]="boardMember.name"></h3>
-  <p class="position" [innerText]="boardMember.position"></p>
-</div>
+        <div
+          class="selectable-content"
+          (click)="setActiveBoardMember(boardMember)"
+          [swal]="boardMemberDetails"
+        >
+          <img
+            [src]="
+              '../../assets/images/about/board/' + boardMember.headShotFileName
+            "
+            [alt]="boardMember.name"
+          />
+          <h3 class="name" [innerText]="boardMember.name"></h3>
+          <p class="position" [innerText]="boardMember.position"></p>
+        </div>
         <p class="email">
           <a
             [href]="'mailto:' + boardMember.email"
@@ -27,6 +31,36 @@
   </div>
 </div>
 
-<swal #boardMemberDetails>
-    {{activeBoardMember | json}}
+<swal
+  #boardMemberDetails
+  [showCloseButton]="true"
+  [confirmButtonText]="'Close'"
+>
+  <div *swalPartial>
+    <div class="row">
+      <div class="col-sm-6 details-head-shot">
+        <img
+          [src]="
+            '../../assets/images/about/board/' +
+            activeBoardMember.headShotFileName
+          "
+          [alt]="activeBoardMember.name"
+        />
+      </div>
+      <div class="col-sm-6 details-info">
+        <h3 class="name" [innerText]="activeBoardMember.name"></h3>
+        <p class="position" [innerText]="activeBoardMember.position"></p>
+        <p class="email">
+          <a
+            [href]="'mailto:' + activeBoardMember.email"
+            [innerText]="activeBoardMember.email"
+          ></a>
+        </p>
+      </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <p class="description" [innerText]="activeBoardMember.bio"></p>
+  </div>
 </swal>

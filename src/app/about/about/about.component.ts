@@ -26,22 +26,22 @@ export class AboutComponent implements OnInit {
         switch (params['sub-page']) {
           case 'core-values':
             sectionToActivate = this.findNavigationSection(
-                this.aboutSectionLabels.coreValues
+              this.aboutSectionLabels.coreValues
             );
             break;
           case 'board-members':
             sectionToActivate = this.findNavigationSection(
-                this.aboutSectionLabels.boardMembers
+              this.aboutSectionLabels.boardMembers
             );
             break;
           case 'our-founder':
             sectionToActivate = this.findNavigationSection(
-                this.aboutSectionLabels.ourFounder
+              this.aboutSectionLabels.ourFounder
             );
             break;
           default:
             sectionToActivate = this.findNavigationSection(
-                this.aboutSectionLabels.coreValues
+              this.aboutSectionLabels.coreValues
             );
             break;
         }

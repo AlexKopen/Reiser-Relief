@@ -47,3 +47,11 @@ input {
 .hidden {
   display: none;
 }
+
+.separator {
+  margin: 0 auto;
+  margin-top: 1em;
+  height: 2px;
+  width: 95%;
+  background: #787878;
+}

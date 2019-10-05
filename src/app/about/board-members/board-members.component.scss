@@ -61,3 +61,48 @@ h3 {
     text-decoration: underline;
   }
 }
+
+::ng-deep .swal2-popup {
+  width: 95%;
+  display: flex;
+  max-width: 800px;
+}
+
+::ng-deep button.swal2-confirm {
+$height: 45px;
+  padding: 0;
+  height: 45px;
+  border-radius: 4px !important;
+  border: none !important;
+  background: $light-theme-color !important;
+  width: 100px;
+  line-height: $height;
+
+  &:hover {
+    background: $dark-theme-color !important;
+  }
+}
+
+.details-head-shot {
+  img {
+    margin: 0 auto;
+  }
+
+  @media only screen and (min-width: map-get($grid-breakpoints, sm)) {
+    flex: 0 0 275px;
+    padding: 0;
+  }
+}
+
+.details-info {
+  h3, p {
+    @media only screen and (min-width: map-get($grid-breakpoints, sm)) {
+      text-align: left !important;
+    }
+  }
+}
+
+.description {
+  text-align: left;
+  margin-top: 1em !important;
+}

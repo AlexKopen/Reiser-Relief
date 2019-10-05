@@ -6,7 +6,7 @@ import { CoreValuesComponent } from './core-values/core-values.component';
 import { BoardMembersComponent } from './board-members/board-members.component';
 import { FounderComponent } from './founder/founder.component';
 import { PageHeaderModule } from '../shared/modules/page-header/page-header.module';
-import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
       { path: ':sub-page', component: AboutComponent, pathMatch: 'full' }
     ]),
     PageHeaderModule,
-      SweetAlert2Module
+    SweetAlert2Module.forRoot()
   ]
 })
 export class AboutModule {}
