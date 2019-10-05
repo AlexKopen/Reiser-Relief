@@ -13,7 +13,7 @@ export const FAQS: FAQ[] = [
 
   new FAQ(
     'What airport do I fly into?',
-    '<p>Toussaint L’Ouverture International Airport (PAP) in Port Au Prince, Haiti.</p>'
+    "<p>Toussaint L'Ouverture International Airport (PAP) in Port Au Prince, Haiti.</p>"
   ),
 
   new FAQ(
@@ -63,7 +63,7 @@ export const FAQS: FAQ[] = [
 
   new FAQ(
     'Do I need to bring my own food?',
-    '<p>Team members buy snacks in the US and carry them to Haiti in our luggage. We eat snacks while on the go for lunch and share all of our food. Typical items are beef sticks, granola bars, nuts, dried fruit, and crackers. Please don’t bring anything containing chocolate. It will melt! If you have special dietary needs you are welcome to bring your own food. Haitian staff members cook meals in the guesthouse kitchen.</p>'
+    "<p>Team members buy snacks in the US and carry them to Haiti in our luggage. We eat snacks while on the go for lunch and share all of our food. Typical items are beef sticks, granola bars, nuts, dried fruit, and crackers. Please don't bring anything containing chocolate. It will melt! If you have special dietary needs you are welcome to bring your own food. Haitian staff members cook meals in the guesthouse kitchen.</p>"
   ),
 
   new FAQ(
