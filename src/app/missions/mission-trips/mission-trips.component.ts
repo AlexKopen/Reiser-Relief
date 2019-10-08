@@ -1,8 +1,9 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MissionTrip } from '../../shared/models/mission-trip.model';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { first } from 'rxjs/internal/operators';
+import { first, map } from 'rxjs/internal/operators';
 import { isPlatformBrowser } from '@angular/common';
+import { MissionsService } from '../../shared/services/missions.service';
 
 @Component({
   selector: 'app-mission-trips',
@@ -11,43 +12,32 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class MissionTripsComponent implements OnInit {
   missionTrips: MissionTrip[];
+  dataFetched = false;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private db: AngularFirestore
+    private missionsService: MissionsService
   ) {}
 
   ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.fetchTrips();
-    }
-  }
-
-  fetchTrips(): void {
-    const currentDate = new Date();
-    const dateFormatted =
-      currentDate.getFullYear() +
-      '-' +
-      ('0' + (currentDate.getMonth() + 1)).slice(-2) +
-      '-' +
-      ('0' + currentDate.getDate()).slice(-2);
-
-    this.db
-      .collection<MissionTrip>('mission-trips', ref =>
-        ref.where('date', '>=', dateFormatted)
-      )
-      .valueChanges()
-      .pipe(first())
-      .subscribe(missionTrips => {
+    this.missionsService.missionTrips$.subscribe(
+      (missionTrips: MissionTrip[]) => {
         this.missionTrips = missionTrips;
-      });
+      }
+    );
+
+    this.missionsService.missionsDataFetched$.subscribe(
+      (dataFetched: boolean) => {
+        this.dataFetched = dataFetched;
+      }
+    );
   }
 
   get tripsPopulated(): boolean {
     return this.missionTrips ? this.missionTrips.length > 0 : false;
   }
 
-  applicationText(missionTrip: MissionTrip) {
-    return missionTrip.full ? 'Trip is full' : '<a href="">Apply today<a>';
+  routerLink(missionTrip: MissionTrip): string {
+    return `/missions/apply/${missionTrip.id}`;
   }
 }

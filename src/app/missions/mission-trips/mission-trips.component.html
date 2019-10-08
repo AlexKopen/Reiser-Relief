@@ -1,23 +1,34 @@
-<table
-  *ngIf="tripsPopulated; else noTrips"
-  class="table table-striped table-bordered"
->
-  <thead>
-    <tr>
-      <th scope="col">Trip Date</th>
-      <th scope="col">Trip Leader</th>
-      <th scope="col">Trip Application</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let missionTrip of missionTrips">
-      <td [innerText]="missionTrip.date | date">Mark</td>
-      <td [innerText]="missionTrip.leader"></td>
-      <td [innerHtml]="applicationText(missionTrip)"></td>
-    </tr>
-  </tbody>
-</table>
+<ng-container *ngIf="dataFetched">
+  <table
+    *ngIf="tripsPopulated; else noTrips"
+    class="table table-striped table-bordered"
+  >
+    <thead>
+      <tr>
+        <th scope="col">Trip Date</th>
+        <th scope="col">Trip Leader</th>
+        <th scope="col">Trip Application</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let missionTrip of missionTrips">
+        <td [innerText]="missionTrip.date | date">Mark</td>
+        <td [innerText]="missionTrip.leader"></td>
+        <td>
+          <a
+            *ngIf="!missionTrip.full; else tripFull"
+            [routerLink]="routerLink(missionTrip)"
+            [innerText]="'Apply Today'"
+          ></a>
+          <ng-template #tripFull>
+            <span>Trip is full</span>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-<ng-template #noTrips>
-  <h3 id="no-trips">There are no upcoming trips</h3>
-</ng-template>
+  <ng-template #noTrips>
+    <h3 id="no-trips">There are no upcoming trips</h3>
+  </ng-template>
+</ng-container>
