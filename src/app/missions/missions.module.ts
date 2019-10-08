@@ -6,20 +6,24 @@ import { PageHeaderModule } from '../shared/modules/page-header/page-header.modu
 import { MissionTripsComponent } from './mission-trips/mission-trips.component';
 import { MissionTripDetailsComponent } from './mission-trip-details/mission-trip-details.component';
 import { FaqComponent } from './faq/faq.component';
+import { ApplyComponent } from './apply/apply.component';
+import { MissionsRoutingModule } from './missions-routing.module';
 
 @NgModule({
   declarations: [
     MissionsComponent,
     MissionTripsComponent,
     MissionTripDetailsComponent,
-    FaqComponent
+    FaqComponent,
+    ApplyComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild([
       { path: '', component: MissionsComponent, pathMatch: 'full' }
     ]),
-    PageHeaderModule
+    PageHeaderModule,
+    MissionsRoutingModule
   ]
 })
 export class MissionsModule {}

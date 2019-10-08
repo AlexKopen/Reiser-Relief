@@ -4,6 +4,7 @@ export const ROUTES = [
   '/about/board-members',
   '/about/our-founder',
   '/missions',
+  '/missions/apply',
   '/donate',
   '/events',
   '/contact'
