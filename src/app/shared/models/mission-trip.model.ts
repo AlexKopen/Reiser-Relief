@@ -3,4 +3,6 @@ export class MissionTrip {
   date: Date;
   leader: string;
   full: boolean;
+  nonRefundableDeposit: number;
+  additionalPayment: number;
 }

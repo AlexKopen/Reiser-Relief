@@ -1,7 +1,96 @@
 <app-page-header [title]="'Mission Trip Application'"></app-page-header>
 
-<div class="page-wrapper">
+<div class="page-wrapper" *ngIf="tripDataLoaded">
   <div class="container">
     <h2>Application Details</h2>
+
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Trip Date</th>
+          <th scope="col">Non-refundable Deposit</th>
+          <th scope="col">Additional Payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td [innerText]="activeMissionTrip.date | date"></td>
+          <td
+            [innerText]="activeMissionTrip.nonRefundableDeposit | currency"
+          ></td>
+          <td [innerText]="activeMissionTrip.additionalPayment | currency"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      In addition to the
+      {{ activeMissionTrip.nonRefundableDeposit | currency }} non-refundable
+      deposit, a final payment of
+      {{ activeMissionTrip.additionalPayment | currency }} is due 30 days prior
+      to departure, meaning the sum total (including room and board) is
+      {{
+        activeMissionTrip.additionalPayment +
+          activeMissionTrip.nonRefundableDeposit | currency
+      }}. This payment does not account for additional trip expenses.
+      <a [routerLink]="'/missions'">Please see our FAQ for more details</a>.
+      Until approved, applicants are not guaranteed a spot on a mission trip,
+      and applications are considered on a first-come, first-served basis.
+    </p>
+
+    <h2>Expectations</h2>
+    <p>
+      You will make it a high priority to attend pre-trip meetings. You are
+      willing to be uncomfortable, physically and emotionally. You will build
+      relationships, not things. You will connect, learn, transform and respond
+      to what God puts in front of you. You want to serve others and are open to
+      God using this trip to shape you. You agree that this trip is not about
+      you or your purpose but God's purpose for your life. You are willing to
+      hold babies, play with children, visit with elderly, go deep into the
+      poorest reaches of Haiti and put others first. You will be hot and dirty
+      at the end of each day. You understand that what you see and what you
+      experience can change your life. You will have the opportunity to attend
+      church, pray and share your faith. You agree to respect and extend God's
+      grace to your team members.
+    </p>
+
+    <h2>Personal Information</h2>
+
+    <form [formGroup]="applyForm">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            placeholder="First Name"
+            formControlName="firstName"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="middleName">Middle Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="middleName"
+            placeholder="Middle Name"
+            formControlName="middleName"
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            placeholder="Last Name"
+            formControlName="lastName"
+          />
+        </div>
+      </div>
+    </form>
+
+    <button (click)="submitApplication()">Submit Application</button>
   </div>
 </div>

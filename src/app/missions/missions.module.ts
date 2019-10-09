@@ -8,6 +8,7 @@ import { MissionTripDetailsComponent } from './mission-trip-details/mission-trip
 import { FaqComponent } from './faq/faq.component';
 import { ApplyComponent } from './apply/apply.component';
 import { MissionsRoutingModule } from './missions-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { MissionsRoutingModule } from './missions-routing.module';
       { path: '', component: MissionsComponent, pathMatch: 'full' }
     ]),
     PageHeaderModule,
-    MissionsRoutingModule
+    MissionsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MissionsModule {}

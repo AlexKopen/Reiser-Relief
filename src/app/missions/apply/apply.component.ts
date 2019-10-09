@@ -1,23 +1,64 @@
-import {
-  Component,
-  Inject,
-  OnDestroy,
-  OnInit,
-  PLATFORM_ID
-} from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MissionsService } from '../../shared/services/missions.service';
 import { MissionTrip } from '../../shared/models/mission-trip.model';
 import { isPlatformBrowser } from '@angular/common';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-apply',
   templateUrl: './apply.component.html',
   styleUrls: ['./apply.component.scss']
 })
-export class ApplyComponent implements OnInit, OnDestroy {
+export class ApplyComponent implements OnInit {
   applicationID: number;
   activeMissionTrip: MissionTrip;
+  tripDataLoaded = false;
+
+  applyForm: FormGroup = new FormGroup({
+    firstName: new FormControl(),
+    middleName: new FormControl(),
+    lastName: new FormControl(),
+    addressLine1: new FormControl(),
+    addressLine2: new FormControl(),
+    city: new FormControl(),
+    state: new FormControl(),
+    zip: new FormControl(),
+    homePhone: new FormControl(),
+    cellPhone: new FormControl(),
+    email: new FormControl(),
+    dobMonth: new FormControl(),
+    dobDay: new FormControl(),
+    dobYear: new FormControl(),
+    nationality: new FormControl(),
+    birthPlace: new FormControl(),
+    maidenName: new FormControl(),
+    maritalStatus: new FormControl(),
+    gender: new FormControl(),
+    shirtSize: new FormControl(),
+    passportNumber: new FormControl(),
+    passportIssueDateMonth: new FormControl(),
+    passportIssueDateDay: new FormControl(),
+    passportIssueDateYear: new FormControl(),
+    passportExpirationDateMonth: new FormControl(),
+    passportExpirationDateDay: new FormControl(),
+    passportExpirationDateYear: new FormControl(),
+    questionWhy: new FormControl(),
+    questionGifts: new FormControl(),
+    questionExpectations: new FormControl(),
+    questionConcerns: new FormControl(),
+    questionHealth: new FormControl(),
+    reference1Name: new FormControl(),
+    reference1Relationship: new FormControl(),
+    reference1Phone: new FormControl(),
+    reference1Email: new FormControl(),
+    reference2Name: new FormControl(),
+    reference2Relationship: new FormControl(),
+    reference2Phone: new FormControl(),
+    reference2Email: new FormControl(),
+    criminalHistory: new FormControl('', [Validators.required]),
+    waiver: new FormControl('', [Validators.required])
+  });
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -53,6 +94,8 @@ export class ApplyComponent implements OnInit, OnDestroy {
                     ) {
                       this.navigateToMissions();
                     }
+
+                    this.tripDataLoaded = true;
                   }
                 );
               }
@@ -67,8 +110,7 @@ export class ApplyComponent implements OnInit, OnDestroy {
     this.router.navigate(['/missions']);
   }
 
-  ngOnDestroy(): void {
-    this.missions.missionsDataFetched$.unsubscribe();
-    this.missions.missionTrips$.unsubscribe();
+  submitApplication(): void {
+    console.table(this.applyForm.value);
   }
 }
