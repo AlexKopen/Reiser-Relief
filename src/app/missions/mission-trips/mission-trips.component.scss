@@ -10,3 +10,8 @@ table {
   color: $gray-theme-color;
   font-size: 26px !important;
 }
+
+a {
+  color: $dark-theme-color;
+  text-decoration: underline;
+}

@@ -4,6 +4,10 @@ import { MissionsService } from '../../shared/services/missions.service';
 import { MissionTrip } from '../../shared/models/mission-trip.model';
 import { isPlatformBrowser } from '@angular/common';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { State } from '../../shared/models/state.model';
+import { STATES } from '../../shared/constants/states.constant';
+import { Month } from '../../shared/models/month.model';
+import { MONTHS } from '../../shared/constants/months.constant';
 
 @Component({
   selector: 'app-apply',
@@ -15,6 +19,8 @@ export class ApplyComponent implements OnInit {
   activeMissionTrip: MissionTrip;
   tripDataLoaded = false;
   submitted = false;
+  states: State[] = STATES;
+  months: Month[] = MONTHS;
 
   applyForm: FormGroup = new FormGroup({
     firstName: new FormControl(),
@@ -109,6 +115,25 @@ export class ApplyComponent implements OnInit {
 
   private navigateToMissions(): void {
     this.router.navigate(['/missions']);
+  }
+
+  get days(): string[] {
+    const days = [];
+    for (let i = 1; i <= 31; i++) {
+      days.push(`0${i}`.slice(-2));
+    }
+
+    return days;
+  }
+
+  get years(): string[] {
+    const currentYear = new Date().getFullYear();
+    const years = [];
+    for (let i = currentYear - 10; i >= currentYear - 90; i--) {
+      years.push(i);
+    }
+
+    return years;
   }
 
   get showCriminalHistoryWarning(): boolean {

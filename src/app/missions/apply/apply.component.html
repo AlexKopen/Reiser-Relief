@@ -60,7 +60,7 @@
       <h3>Name</h3>
       <fieldset>
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <input
               type="text"
               class="form-control"
@@ -69,7 +69,7 @@
             />
             <label for="firstName">First Name</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <input
               type="text"
               class="form-control"
@@ -78,7 +78,7 @@
             />
             <label for="middleName">Middle Name</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <input
               type="text"
               class="form-control"
@@ -107,27 +107,30 @@
             id="addressLine2"
             formControlName="addressLine2"
           />
-          <label for="addressLine1">Address Line 2</label>
+          <label for="addressLine2">Address Line 2</label>
         </div>
 
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <input
               type="text"
               class="form-control"
               id="city"
               formControlName="city"
             />
-            <label for="state">State</label>
+            <label for="city">City</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select id="state" class="form-control" formControlName="state">
-              <option selected>Choose...</option>
-              <option>...</option>
+              <option
+                *ngFor="let state of states"
+                [value]="state.state"
+                [innerText]="state.state"
+              ></option>
             </select>
             <label for="state">State</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <input
               type="text"
               class="form-control"
@@ -142,7 +145,7 @@
       <h3>Contact Information</h3>
       <fieldset>
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <input
               type="text"
               class="form-control"
@@ -151,7 +154,7 @@
             />
             <label for="homePhone">Home Phone</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <input
               type="text"
               class="form-control"
@@ -160,7 +163,7 @@
             />
             <label for="cellPhone">Cell Phone</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <input
               type="text"
               class="form-control"
@@ -175,28 +178,37 @@
       <h3>Date of Birth</h3>
       <fieldset>
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select
               id="dobMonth"
               class="form-control"
               formControlName="dobMonth"
             >
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option
+                *ngFor="let month of months"
+                [value]="month.numericalValue"
+                [innerText]="month.label"
+              ></option>
             </select>
             <label for="dobMonth">Month</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select id="dobDay" class="form-control" formControlName="dobDay">
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option
+                *ngFor="let day of days"
+                [value]="day"
+                [innerText]="day"
+              ></option>
             </select>
             <label for="dobDay">Day</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select id="dobYear" class="form-control" formControlName="dobYear">
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option
+                *ngFor="let year of years"
+                [value]="year"
+                [innerText]="year"
+              ></option>
             </select>
             <label for="dobYear">Year</label>
           </div>
@@ -206,7 +218,7 @@
       <h3>Citizenship Information</h3>
       <fieldset>
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <input
               type="text"
               class="form-control"
@@ -215,7 +227,7 @@
             />
             <label for="nationality">Nationality</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <input
               type="text"
               class="form-control"
@@ -224,7 +236,7 @@
             />
             <label for="birthPlace">Birth Place</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <input
               type="text"
               class="form-control"
@@ -236,32 +248,37 @@
         </div>
 
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select
               id="maritalStatus"
               class="form-control"
               formControlName="maritalStatus"
             >
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option value="Single">Single</option>
+              <option value="Engaged">Engaged</option>
+              <option value="Married">Married</option>
+              <option value="Separated">Separated</option>
+              <option value="Divorced">Divorced</option>
             </select>
             <label for="maritalStatus">Marital Status</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select id="gender" class="form-control" formControlName="gender">
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
             <label for="gender">Gender</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select
               id="shirtSize"
               class="form-control"
               formControlName="shirtSize"
             >
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+              <option value="Extra Large">Extra Large</option>
             </select>
             <label for="shirtSize">Shirt Size</label>
           </div>
@@ -282,36 +299,45 @@
 
         <h3>Passport Issue Date</h3>
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select
               id="passportIssueDateMonth"
               class="form-control"
               formControlName="passportIssueDateMonth"
             >
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option
+                *ngFor="let month of months"
+                [value]="month.numericalValue"
+                [innerText]="month.label"
+              ></option>
             </select>
             <label for="passportIssueDateMonth">Month</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select
               id="passportIssueDateDay"
               class="form-control"
               formControlName="passportIssueDateDay"
             >
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option
+                *ngFor="let day of days"
+                [value]="day"
+                [innerText]="day"
+              ></option>
             </select>
             <label for="passportIssueDateDay">Day</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select
               id="passportIssueDateYear"
               class="form-control"
               formControlName="passportIssueDateYear"
             >
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option
+                *ngFor="let year of years"
+                [value]="year"
+                [innerText]="year"
+              ></option>
             </select>
             <label for="passportIssueDateYear">Year</label>
           </div>
@@ -319,36 +345,45 @@
 
         <h3>Passport Expiration Date</h3>
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select
               id="passportExpirationDateMonth"
               class="form-control"
               formControlName="passportExpirationDateMonth"
             >
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option
+                *ngFor="let month of months"
+                [value]="month.numericalValue"
+                [innerText]="month.label"
+              ></option>
             </select>
             <label for="passportExpirationDateMonth">Month</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select
               id="passportExpirationDateDay"
               class="form-control"
               formControlName="passportExpirationDateDay"
             >
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option
+                *ngFor="let day of days"
+                [value]="day"
+                [innerText]="day"
+              ></option>
             </select>
             <label for="passportExpirationDateDay">Day</label>
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-lg-4">
             <select
               id="passportExpirationDateYear"
               class="form-control"
               formControlName="passportExpirationDateYear"
             >
-              <option value="jan">jan</option>
-              <option value="feb">feb</option>
+              <option
+                *ngFor="let year of years"
+                [value]="year"
+                [innerText]="year"
+              ></option>
             </select>
             <label for="passportExpirationDateYear">Year</label>
           </div>
@@ -419,7 +454,7 @@
       <h3>Person 1</h3>
       <fieldset>
         <div class="form-row">
-          <div class="form-group col-md-3">
+          <div class="form-group col-lg-3">
             <input
               type="text"
               class="form-control"
@@ -428,7 +463,7 @@
             />
             <label for="reference1Name">Name</label>
           </div>
-          <div class="form-group col-md-3">
+          <div class="form-group col-lg-3">
             <input
               type="text"
               class="form-control"
@@ -437,7 +472,7 @@
             />
             <label for="reference1Relationship">Relationship</label>
           </div>
-          <div class="form-group col-md-3">
+          <div class="form-group col-lg-3">
             <input
               type="text"
               class="form-control"
@@ -446,7 +481,7 @@
             />
             <label for="reference1Phone">Phone</label>
           </div>
-          <div class="form-group col-md-3">
+          <div class="form-group col-lg-3">
             <input
               type="text"
               class="form-control"
@@ -461,7 +496,7 @@
       <h3>Person 2</h3>
       <fieldset>
         <div class="form-row">
-          <div class="form-group col-md-3">
+          <div class="form-group col-lg-3">
             <input
               type="text"
               class="form-control"
@@ -470,7 +505,7 @@
             />
             <label for="reference2Name">Name</label>
           </div>
-          <div class="form-group col-md-3">
+          <div class="form-group col-lg-3">
             <input
               type="text"
               class="form-control"
@@ -479,7 +514,7 @@
             />
             <label for="reference2Relationship">Relationship</label>
           </div>
-          <div class="form-group col-md-3">
+          <div class="form-group col-lg-3">
             <input
               type="text"
               class="form-control"
@@ -488,7 +523,7 @@
             />
             <label for="reference2Phone">Phone</label>
           </div>
-          <div class="form-group col-md-3">
+          <div class="form-group col-lg-3">
             <input
               type="text"
               class="form-control"
