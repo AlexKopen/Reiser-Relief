@@ -509,7 +509,11 @@
             id="criminalHistory"
             formControlName="criminalHistory"
           />
-          <label class="form-check-label" for="criminalHistory">
+          <label
+            class="form-check-label"
+            for="criminalHistory"
+            [ngClass]="{ 'show-warning': showCriminalHistoryWarning }"
+          >
             I authorize the Minnesota (or state of my residence) Bureau of
             Criminal Apprehension to disclose all criminal history record
             information to Reiser Relief, Inc for the purpose of volunteering
@@ -519,7 +523,7 @@
         </div>
       </fieldset>
 
-      <h2>Agreement / Waiver and Release of Liability</h2>
+      <h2>Agreement/Waiver and Release of Liability</h2>
       <fieldset id="waiver-content">
         <p>
           A. As a condition of being permitted to travel with Reiser Relief on,
@@ -650,7 +654,11 @@
             id="waiver"
             formControlName="waiver"
           />
-          <label class="form-check-label" for="waiver">
+          <label
+            class="form-check-label"
+            for="waiver"
+            [ngClass]="{ 'show-warning': showWaiverWarning }"
+          >
             I have read, understood, and executed this waiver and release.
           </label>
         </div>
@@ -658,5 +666,10 @@
     </form>
 
     <button (click)="submitApplication()">Submit Application</button>
+    <p
+      [ngClass]="{ invisible: !showErrorMessage }"
+      [innerText]="errorMessageText"
+      id="warning-text"
+    ></p>
   </div>
 </div>

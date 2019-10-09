@@ -48,6 +48,10 @@ input {
   display: none;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .separator {
   margin: 0 auto;
   margin-top: 1em;

@@ -14,6 +14,7 @@ export class ApplyComponent implements OnInit {
   applicationID: number;
   activeMissionTrip: MissionTrip;
   tripDataLoaded = false;
+  submitted = false;
 
   applyForm: FormGroup = new FormGroup({
     firstName: new FormControl(),
@@ -110,7 +111,38 @@ export class ApplyComponent implements OnInit {
     this.router.navigate(['/missions']);
   }
 
+  get showCriminalHistoryWarning(): boolean {
+    return this.submitted && !this.applyForm.value.criminalHistory;
+  }
+
+  get showWaiverWarning(): boolean {
+    return this.submitted && !this.applyForm.value.waiver;
+  }
+
+  get showErrorMessage(): boolean {
+    return (
+      this.submitted &&
+      (this.showCriminalHistoryWarning || this.showWaiverWarning)
+    );
+  }
+
+  get errorMessageText(): string {
+    return `Please select the check box in ${
+      this.showCriminalHistoryWarning ? "'Criminal History'" : ''
+    }${
+      this.showCriminalHistoryWarning && this.showWaiverWarning ? ' and' : ''
+    }${
+      this.showWaiverWarning
+        ? " 'Agreement/Waiver and Release of Liability'"
+        : ''
+    }.`;
+  }
+
   submitApplication(): void {
-    console.table(this.applyForm.value);
+    this.submitted = true;
+
+    if (!this.showErrorMessage) {
+      console.table(this.applyForm.value);
+    }
   }
 }
