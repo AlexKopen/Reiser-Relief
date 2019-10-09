@@ -205,7 +205,7 @@
           <div class="form-group col-lg-4">
             <select id="dobYear" class="form-control" formControlName="dobYear">
               <option
-                *ngFor="let year of years"
+                *ngFor="let year of yearsBirth"
                 [value]="year"
                 [innerText]="year"
               ></option>
@@ -334,7 +334,7 @@
               formControlName="passportIssueDateYear"
             >
               <option
-                *ngFor="let year of years"
+                *ngFor="let year of yearsIssue"
                 [value]="year"
                 [innerText]="year"
               ></option>
@@ -380,7 +380,7 @@
               formControlName="passportExpirationDateYear"
             >
               <option
-                *ngFor="let year of years"
+                *ngFor="let year of yearsExpiration"
                 [value]="year"
                 [innerText]="year"
               ></option>

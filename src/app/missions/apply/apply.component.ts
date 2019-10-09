@@ -126,10 +126,30 @@ export class ApplyComponent implements OnInit {
     return days;
   }
 
-  get years(): string[] {
+  get yearsBirth(): string[] {
     const currentYear = new Date().getFullYear();
     const years = [];
     for (let i = currentYear - 10; i >= currentYear - 90; i--) {
+      years.push(i);
+    }
+
+    return years;
+  }
+
+  get yearsIssue(): string[] {
+    const currentYear = new Date().getFullYear();
+    const years = [];
+    for (let i = currentYear; i >= currentYear - 10; i--) {
+      years.push(i);
+    }
+
+    return years;
+  }
+
+  get yearsExpiration(): string[] {
+    const currentYear = new Date().getFullYear();
+    const years = [];
+    for (let i = currentYear + 10; i >= currentYear; i--) {
       years.push(i);
     }
 
