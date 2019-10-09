@@ -54,41 +54,607 @@
       grace to your team members.
     </p>
 
-    <h2>Personal Information</h2>
-
     <form [formGroup]="applyForm">
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <label for="firstName">First Name</label>
+      <h2>Personal Information</h2>
+
+      <h3>Name</h3>
+      <fieldset>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              formControlName="firstName"
+            />
+            <label for="firstName">First Name</label>
+          </div>
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="middleName"
+              formControlName="middleName"
+            />
+            <label for="middleName">Middle Name</label>
+          </div>
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              formControlName="lastName"
+            />
+            <label for="lastName">Last Name</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <h3>Address</h3>
+      <fieldset>
+        <div class="form-group">
           <input
             type="text"
             class="form-control"
-            id="firstName"
-            placeholder="First Name"
-            formControlName="firstName"
+            id="addressLine1"
+            formControlName="addressLine1"
           />
-        </div>
-        <div class="form-group col-md-4">
-          <label for="middleName">Middle Name</label>
+          <label for="addressLine1">Address Line 1</label>
+
           <input
             type="text"
             class="form-control"
-            id="middleName"
-            placeholder="Middle Name"
-            formControlName="middleName"
+            id="addressLine2"
+            formControlName="addressLine2"
           />
+          <label for="addressLine1">Address Line 2</label>
         </div>
-        <div class="form-group col-md-4">
-          <label for="lastName">Last Name</label>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              formControlName="city"
+            />
+            <label for="state">State</label>
+          </div>
+          <div class="form-group col-md-4">
+            <select id="state" class="form-control" formControlName="state">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+            <label for="state">State</label>
+          </div>
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="zip"
+              formControlName="zip"
+            />
+            <label for="zip">Zip Code</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <h3>Contact Information</h3>
+      <fieldset>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="homePhone"
+              formControlName="homePhone"
+            />
+            <label for="homePhone">Home Phone</label>
+          </div>
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="cellPhone"
+              formControlName="cellPhone"
+            />
+            <label for="cellPhone">Cell Phone</label>
+          </div>
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              formControlName="email"
+            />
+            <label for="email">Email</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <h3>Date of Birth</h3>
+      <fieldset>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <select
+              id="dobMonth"
+              class="form-control"
+              formControlName="dobMonth"
+            >
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="dobMonth">Month</label>
+          </div>
+          <div class="form-group col-md-4">
+            <select id="dobDay" class="form-control" formControlName="dobDay">
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="dobDay">Day</label>
+          </div>
+          <div class="form-group col-md-4">
+            <select id="dobYear" class="form-control" formControlName="dobYear">
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="dobYear">Year</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <h3>Citizenship Information</h3>
+      <fieldset>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="nationality"
+              formControlName="nationality"
+            />
+            <label for="nationality">Nationality</label>
+          </div>
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="birthPlace"
+              formControlName="birthPlace"
+            />
+            <label for="birthPlace">Birth Place</label>
+          </div>
+          <div class="form-group col-md-4">
+            <input
+              type="text"
+              class="form-control"
+              id="maidenName"
+              formControlName="maidenName"
+            />
+            <label for="maidenName">Maiden, Alias, or Former Name</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <select
+              id="maritalStatus"
+              class="form-control"
+              formControlName="maritalStatus"
+            >
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="maritalStatus">Marital Status</label>
+          </div>
+          <div class="form-group col-md-4">
+            <select id="gender" class="form-control" formControlName="gender">
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="gender">Gender</label>
+          </div>
+          <div class="form-group col-md-4">
+            <select
+              id="shirtSize"
+              class="form-control"
+              formControlName="shirtSize"
+            >
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="shirtSize">Shirt Size</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <h3>Passport Information</h3>
+      <fieldset>
+        <div class="form-group">
           <input
             type="text"
             class="form-control"
-            id="lastName"
-            placeholder="Last Name"
-            formControlName="lastName"
+            id="passportNumber"
+            formControlName="passportNumber"
           />
+          <label for="passportNumber">Passport Number</label>
         </div>
-      </div>
+
+        <h3>Passport Issue Date</h3>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <select
+              id="passportIssueDateMonth"
+              class="form-control"
+              formControlName="passportIssueDateMonth"
+            >
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="passportIssueDateMonth">Month</label>
+          </div>
+          <div class="form-group col-md-4">
+            <select
+              id="passportIssueDateDay"
+              class="form-control"
+              formControlName="passportIssueDateDay"
+            >
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="passportIssueDateDay">Day</label>
+          </div>
+          <div class="form-group col-md-4">
+            <select
+              id="passportIssueDateYear"
+              class="form-control"
+              formControlName="passportIssueDateYear"
+            >
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="passportIssueDateYear">Year</label>
+          </div>
+        </div>
+
+        <h3>Passport Expiration Date</h3>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <select
+              id="passportExpirationDateMonth"
+              class="form-control"
+              formControlName="passportExpirationDateMonth"
+            >
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="passportExpirationDateMonth">Month</label>
+          </div>
+          <div class="form-group col-md-4">
+            <select
+              id="passportExpirationDateDay"
+              class="form-control"
+              formControlName="passportExpirationDateDay"
+            >
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="passportExpirationDateDay">Day</label>
+          </div>
+          <div class="form-group col-md-4">
+            <select
+              id="passportExpirationDateYear"
+              class="form-control"
+              formControlName="passportExpirationDateYear"
+            >
+              <option value="jan">jan</option>
+              <option value="feb">feb</option>
+            </select>
+            <label for="passportExpirationDateYear">Year</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <h2>Questions</h2>
+      <fieldset>
+        <div class="form-group">
+          <label for="questionWhy">Why do you want to go on this trip?</label>
+          <textarea
+            class="form-control"
+            id="questionWhy"
+            formControlName="questionWhy"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="questionGifts"
+            >What gifts or strengths do you have that would add to the mission
+            experience?</label
+          >
+          <textarea
+            class="form-control"
+            id="questionGifts"
+            formControlName="questionGifts"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="questionExpectations"
+            >Please list three expectations for your mission experience.</label
+          >
+          <textarea
+            class="form-control"
+            id="questionExpectations"
+            formControlName="questionExpectations"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="questionConcerns"
+            >Do you have any concerns or fears about this experience? Please
+            explain.</label
+          >
+          <textarea
+            class="form-control"
+            id="questionConcerns"
+            formControlName="questionConcerns"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="questionHealth"
+            >Do you have any health issues that the team should know
+            about?</label
+          >
+          <textarea
+            class="form-control"
+            id="questionHealth"
+            formControlName="questionHealth"
+          ></textarea>
+        </div>
+      </fieldset>
+
+      <h2>References</h2>
+
+      <h3>Person 1</h3>
+      <fieldset>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <input
+              type="text"
+              class="form-control"
+              id="reference1Name"
+              formControlName="reference1Name"
+            />
+            <label for="reference1Name">Name</label>
+          </div>
+          <div class="form-group col-md-3">
+            <input
+              type="text"
+              class="form-control"
+              id="reference1Relationship"
+              formControlName="reference1Relationship"
+            />
+            <label for="reference1Relationship">Relationship</label>
+          </div>
+          <div class="form-group col-md-3">
+            <input
+              type="text"
+              class="form-control"
+              id="reference1Phone"
+              formControlName="reference1Phone"
+            />
+            <label for="reference1Phone">Phone</label>
+          </div>
+          <div class="form-group col-md-3">
+            <input
+              type="text"
+              class="form-control"
+              id="reference1Email"
+              formControlName="reference1Email"
+            />
+            <label for="reference1Email">Email</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <h3>Person 2</h3>
+      <fieldset>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <input
+              type="text"
+              class="form-control"
+              id="reference2Name"
+              formControlName="reference2Name"
+            />
+            <label for="reference2Name">Name</label>
+          </div>
+          <div class="form-group col-md-3">
+            <input
+              type="text"
+              class="form-control"
+              id="reference2Relationship"
+              formControlName="reference2Relationship"
+            />
+            <label for="reference2Relationship">Relationship</label>
+          </div>
+          <div class="form-group col-md-3">
+            <input
+              type="text"
+              class="form-control"
+              id="reference2Phone"
+              formControlName="reference2Phone"
+            />
+            <label for="reference2Phone">Phone</label>
+          </div>
+          <div class="form-group col-md-3">
+            <input
+              type="text"
+              class="form-control"
+              id="reference2Email"
+              formControlName="reference2Email"
+            />
+            <label for="reference2Email">Email</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <h2>Criminal History</h2>
+      <fieldset>
+        <div class="form-group">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="criminalHistory"
+            formControlName="criminalHistory"
+          />
+          <label class="form-check-label" for="criminalHistory">
+            I authorize the Minnesota (or state of my residence) Bureau of
+            Criminal Apprehension to disclose all criminal history record
+            information to Reiser Relief, Inc for the purpose of volunteering
+            with this agency. The expiration of this authorization shall be one
+            year from the date of my consent.
+          </label>
+        </div>
+      </fieldset>
+
+      <h2>Agreement / Waiver and Release of Liability</h2>
+      <fieldset id="waiver-content">
+        <p>
+          A. As a condition of being permitted to travel with Reiser Relief on,
+          and participate in, a mission trip to Haiti, the undersigned hereby:
+        </p>
+
+        <ul>
+          <li>
+            Agrees to assume all normal and foreseeable risks associated with
+            travel to, from and within the Country (including but not limited to
+            natural disasters, terrorism, political unrest, and contraction of
+            illness) and releases Reiser Relief from any responsibility of such
+            risks;
+          </li>
+          <li>
+            Acknowledges that the carriers, hotels and other suppliers (the
+            “suppliers”) providing services in connection with the missions trip
+            are independent contractors and are not agents, employees or
+            representatives of, or joint ventures with, Reiser Relief or its
+            affiliates and releases Reiser Relief from any responsibility for
+            the actions or omissions of such suppliers;
+          </li>
+          <li>
+            Agrees that Reiser Relief shall have no liability for any personal
+            injury, property damage or other loss, accident, delay,
+            inconvenience, or irregularity which may be caused by (a) any
+            wrongful, negligent or unauthorized acts or omissions on the part of
+            any of the suppliers or their agents, (b) any defect in or failure
+            of any vehicle, equipment or instrument owned, operated or otherwise
+            used by any supplier, or (c) any wrongful or negligent acts or
+            omissions on the part of any other party not under the control of
+            Reiser Relief;
+          </li>
+          <li>
+            Releases Reiser Relief, its officers, directors, employees, agents
+            or representatives from any claims whatsoever relating to the
+            mission trip to Haiti;
+          </li>
+          <li>
+            Agrees not to sue or otherwise hold Reiser Relief responsible for
+            any injury, damage, or loss resulting to the undersigned or the
+            undersigned's property in connection with the undersigned's
+            participation in the missions trip to the Country;
+          </li>
+          <li>
+            Accepts full responsibility for luggage and other belongings brought
+            on the missions trip by the undersigned;
+          </li>
+          <li>
+            Agrees to be responsible for any injuries, damages or losses caused
+            by the undersigned while the undersigned is traveling with
+            representatives of Reiser Relief or while the undersigned is in the
+            Country.
+          </li>
+        </ul>
+
+        <p>
+          B. The undersigned acknowledges that Reiser Relief has recommended
+          that the undersigned purchase trip, health, accident and baggage
+          insurance in connection with the missions trip, and that the
+          undersigned obtain a physical examination and proper inoculations
+          prior to going on the mission trip.
+        </p>
+
+        <p>
+          C. The undersigned acknowledges that he/she has been informed that
+          United States citizens traveling outside of the United States are
+          required to carry documentation of United States citizenship, which
+          may include a valid passport or notarized copy of the citizen's birth
+          certificate with a raised seal, and a valid picture I.D. (such as a
+          driver's license).
+        </p>
+
+        <p>
+          If you have any questions or cannot comply with any of the
+          Expectations or Release, please explain or contact us. We are excited
+          at the possibility of having you with us!
+        </p>
+
+        <p>
+          I plan to participate in a short-term mission trip to Haiti and the
+          planned activities and understand the actual itinerary and the actual
+          activities that I participate in during the short-term mission trip
+          may vary. I recognize the participation in the short-term mission trip
+          and its activities may be hazardous and dangerous, and I willingly
+          assume all risks associated with the short-term mission trip. I
+          acknowledge that I have been advised to seek my medical professional
+          to understand the potential for contracting disease or parasites or
+          suffering other adverse health consequences during my participation
+          the short-term mission trip. I understand that such diseases,
+          parasites or health conditions may cause or result in serious health
+          problems and may be fatal. I also realize that I will be serving in a
+          country less developed than the United States, one that may report
+          cases of diseases more frequently than in the United States such as
+          malaria, yellow fever, typhoid, Hepatitis A, Hepatitis B and/or other
+          diseases or illnesses. I am aware that Reiser Relief, strongly advises
+          me to obtain Tetanus Vaccinations and any other vaccinations,
+          inoculations, or immunizations recommended by the Center for Disease
+          Control or federal or Minnesota state health authorities. After
+          careful consideration of these risks, I have either received all
+          recommended vaccinations, inoculations, or immunizations from medical
+          professionals or I have declined to receive them due to my religious
+          beliefs, personal convictions, or medical contradictions. I agree that
+          my decision to decline receipt of any or all of the recommended
+          precautionary measures increases my risk of contracting disease.
+          Therefore, in consideration of the privilege to participate extended
+          to me by Reiser Relief, and on behalf of myself, executors,
+          administrators, successors and assigns, I do hereby waive, release and
+          forever discharge Reiser Relief, employees, directors, officers,
+          agents, representatives, and volunteers, from any and all actions,
+          omissions, causes, claims and/or damages arising from , relating to,
+          or resulting from my participation in the mission trip, including but
+          not limited to, injury, expense, cost, damage, loss, illness, or
+          death. I acknowledge that I have received good and valuable
+          consideration for signing this waiver and release. I expressly agree
+          that this release and waiver is intended to be as broad and inclusive
+          as permitted by the laws of the state of Minnesota and that I intend
+          this waiver to be binding on my family, estate, heirs, successors,
+          assigns, insurers, medical providers and personal representatives. If
+          any of this waiver and release is held invalid, it is agreed that the
+          balance shall continue in legal force and effect.
+        </p>
+
+        <div class="form-group">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="waiver"
+            formControlName="waiver"
+          />
+          <label class="form-check-label" for="waiver">
+            I have read, understood, and executed this waiver and release.
+          </label>
+        </div>
+      </fieldset>
     </form>
 
     <button (click)="submitApplication()">Submit Application</button>
