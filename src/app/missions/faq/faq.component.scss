@@ -1,37 +1,14 @@
 @import '../../shared/globals';
-$label-height: 55px;
-
-@mixin label($color) {
-  height: $label-height;
-  border-left: 3px solid $color;
-
-  p {
-    line-height: $label-height;
-    font-size: 3em;
-    color: $color;
-  }
-}
 
 .faq-item {
-  margin-top: 1em;
-}
-
-.question-label {
-  @include label($dark-theme-color);
-}
-
-.answer-label {
-  @include label($gray-theme-color);
+  margin: 2em 0;
 }
 
 .question-row {
   background: #f9f9f9f9;
 
   h3 {
-    line-height: $label-height;
+    font-size: 1.625rem !important;
+    line-height: 55px;
   }
 }
-
-//.answer-row {
-//  margin-top: 0.5em;
-//}

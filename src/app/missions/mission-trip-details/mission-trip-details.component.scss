@@ -15,7 +15,12 @@ h3, h4 {
 img {
   display: block;
   margin: 0 auto;
+  margin-bottom: 1em;
   max-width: 100%;
+
+  @media only screen and (min-width: map-get($grid-breakpoints, xl)) {
+    margin-bottom: 0;
+  }
 }
 
 p {

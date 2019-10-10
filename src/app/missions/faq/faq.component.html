@@ -1,18 +1,6 @@
 <div class="faq-item" *ngFor="let faq of faqs">
-  <div class="row question-row">
-    <div class="col-1 question-label">
-      <p>Q.</p>
-    </div>
-    <div class="col-11">
-      <h3 [innerText]="faq.question"></h3>
-    </div>
+  <div class="question-row">
+    <h3 [innerText]="faq.question"></h3>
   </div>
-  <div class="row answer-row">
-    <div class="col-1 answer-label">
-      <p>A.</p>
-    </div>
-    <div class="col-11">
-      <div [innerHTML]="faq.answer"></div>
-    </div>
-  </div>
+  <p [innerHTML]="faq.answer"></p>
 </div>
