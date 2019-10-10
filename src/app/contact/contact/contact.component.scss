@@ -41,7 +41,18 @@ textarea {
 }
 
 button {
+  display: block;
   width: 8em;
+  height: 2.5em;
+  background: $dark-theme-color;
+  color: $white;
+  border: 0;
+  border-radius: 4px;
+
+  &:hover {
+    background: $dark-theme-color;
+    color: $light-theme-color;
+  }
 }
 
 .social-row {
