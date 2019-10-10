@@ -21,6 +21,7 @@ export class ApplyComponent implements OnInit {
   submitted = false;
   states: State[] = STATES;
   months: Month[] = MONTHS;
+  showSubmittedMessage = false;
 
   applyForm: FormGroup = new FormGroup({
     firstName: new FormControl(),
@@ -187,6 +188,7 @@ export class ApplyComponent implements OnInit {
     this.submitted = true;
 
     if (!this.showErrorMessage) {
+      this.showSubmittedMessage = true;
       console.table(this.applyForm.value);
     }
   }
