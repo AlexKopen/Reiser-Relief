@@ -8,6 +8,8 @@ import { State } from '../../shared/models/state.model';
 import { STATES } from '../../shared/constants/states.constant';
 import { Month } from '../../shared/models/month.model';
 import { MONTHS } from '../../shared/constants/months.constant';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { EmailSubscribe } from '../../shared/models/email-subscribe.model';
 
 @Component({
   selector: 'app-apply',
@@ -15,7 +17,7 @@ import { MONTHS } from '../../shared/constants/months.constant';
   styleUrls: ['./apply.component.scss']
 })
 export class ApplyComponent implements OnInit {
-  applicationID: number;
+  tripID: number;
   activeMissionTrip: MissionTrip;
   tripDataLoaded = false;
   submitted = false;
@@ -72,17 +74,18 @@ export class ApplyComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private missions: MissionsService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private db: AngularFirestore
   ) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.activatedRoute.params.subscribe(parameters => {
-        const applicationID = parameters['id'];
-        if (applicationID === undefined) {
+        const tripID = parameters['id'];
+        if (tripID === undefined) {
           this.navigateToMissions();
         } else {
-          this.applicationID = applicationID;
+          this.tripID = tripID;
 
           this.missions.missionsDataFetched$.subscribe(
             (dataFetched: boolean) => {
@@ -91,7 +94,7 @@ export class ApplyComponent implements OnInit {
                   (missionTrips: MissionTrip[]) => {
                     this.activeMissionTrip = missionTrips.find(
                       (missionTrip: MissionTrip) => {
-                        return missionTrip.id === this.applicationID;
+                        return missionTrip.id === this.tripID;
                       }
                     );
 
@@ -189,7 +192,12 @@ export class ApplyComponent implements OnInit {
 
     if (!this.showErrorMessage) {
       this.showSubmittedMessage = true;
-      console.table(this.applyForm.value);
+
+      this.applyForm.value.tripID = this.tripID;
+      this.db
+        .collection<EmailSubscribe>('applications')
+        .add(this.applyForm.value)
+        .then(() => {});
     }
   }
 }
