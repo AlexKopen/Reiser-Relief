@@ -51,8 +51,7 @@ export class DonateComponent implements OnInit, AfterViewInit {
     addressLine2: new FormControl(''),
     city: new FormControl('', [Validators.required]),
     state: new FormControl('', [Validators.required]),
-    zip: new FormControl('', [Validators.required]),
-    phone: new FormControl('', [Validators.required])
+    zip: new FormControl('', [Validators.required])
   });
 
   constructor(
@@ -163,7 +162,6 @@ export class DonateComponent implements OnInit, AfterViewInit {
             this.donationAmount,
             this.donorAddress,
             this.addressForm.value.name,
-            this.addressForm.value.phone,
             this.addressForm.value.email,
             result.token
           );

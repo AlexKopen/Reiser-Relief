@@ -6,7 +6,6 @@ export class Donation {
   amount: number;
   address: DonationAddress;
   name: string;
-  phone: string;
   email: string;
   token: any;
 
@@ -15,7 +14,6 @@ export class Donation {
     amount: number,
     address: DonationAddress,
     name: string,
-    phone: string,
     email: string,
     token: any
   ) {
@@ -23,7 +21,6 @@ export class Donation {
     this.amount = amount;
     this.address = address;
     this.name = name;
-    this.phone = phone;
     this.email = email;
     this.token = token;
   }

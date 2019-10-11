@@ -20,10 +20,9 @@ exports.stripecharge = functions.firestore
         address: {
           line1: donation.address.line1,
           line2: donation.address.line2,
-          country: 'USA',
-          state: donation.address.state
-        },
-        phone: donation.phone
+          state: donation.address.state,
+          postal_code: donation.address.zip
+        }
       },
       function(err: any, customer: any) {
         if (donation.frequency === DonationFrequency.OneTime) {
