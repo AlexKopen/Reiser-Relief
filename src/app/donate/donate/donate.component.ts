@@ -1,4 +1,10 @@
-import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Inject,
+  OnInit,
+  PLATFORM_ID
+} from '@angular/core';
 import { Element as StripeElement, Elements, StripeService } from 'ngx-stripe';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { DonationLevel } from '../../shared/enums/donation-level.enum';
@@ -56,8 +62,7 @@ export class DonateComponent implements OnInit, AfterViewInit {
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -185,9 +190,11 @@ export class DonateComponent implements OnInit, AfterViewInit {
   }
 
   get donationLevelError(): boolean {
-    return     this.selectedDonationLevel === undefined ||
-        this.donationAmount === undefined ||
-        this.donationAmount <= 0;
+    return (
+      this.selectedDonationLevel === undefined ||
+      this.donationAmount === undefined ||
+      this.donationAmount <= 0
+    );
   }
 
   get cardError(): boolean {

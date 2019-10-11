@@ -189,7 +189,7 @@
             <div class="form-group">
               <label for="zip">Zip Code</label>
               <input
-                      appNumberPress
+                appNumberPress
                 type="text"
                 class="form-control"
                 id="zip"
@@ -219,10 +219,18 @@
       <h4>Donation Level: {{ donationAmount | currency }}</h4>
 
       <p id="error-message" *ngIf="this.formSubmitted">
-        <span [ngClass]="{'hidden': !allPaymentError}">Please complete all payment information.<br></span>
-        <span [ngClass]="{'hidden': !emailError}">Pleas enter a valid email address.<br></span>
-        <span [ngClass]="{'hidden': !donationLevelError}">Please select a donation level.<br></span>
-        <span [ngClass]="{'hidden': !cardError}">Please enter a valid card number.<br></span>
+        <span [ngClass]="{ hidden: !allPaymentError }"
+          >Please complete all payment information.<br
+        /></span>
+        <span [ngClass]="{ hidden: !emailError }"
+          >Pleas enter a valid email address.<br
+        /></span>
+        <span [ngClass]="{ hidden: !donationLevelError }"
+          >Please select a donation level.<br
+        /></span>
+        <span [ngClass]="{ hidden: !cardError }"
+          >Please enter a valid card number.<br
+        /></span>
       </p>
 
       <button (click)="submitPayment()">
