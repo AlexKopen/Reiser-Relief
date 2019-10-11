@@ -22,7 +22,8 @@ exports.stripecharge = functions.firestore
           line2: donation.address.line2,
           country: 'USA',
           state: donation.address.state
-        }
+        },
+        phone: donation.phone
       },
       function(err: any, customer: any) {
         if (donation.frequency === DonationFrequency.OneTime) {

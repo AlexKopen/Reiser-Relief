@@ -106,7 +106,6 @@
                 class="form-control"
                 id="name"
                 name="name"
-                placeholder="Enter name"
                 formControlName="name"
               />
             </div>
@@ -119,7 +118,6 @@
                 class="form-control"
                 id="email"
                 name="email"
-                placeholder="Enter email"
                 formControlName="email"
               />
             </div>
@@ -135,7 +133,6 @@
                 class="form-control"
                 id="addressLine1"
                 name="addressLine1"
-                placeholder="Enter Line 1 of Address"
                 formControlName="addressLine1"
               />
             </div>
@@ -148,7 +145,6 @@
                 class="form-control"
                 id="addressLine2"
                 name="addressLine2"
-                placeholder="Enter Line 2 of Address"
                 formControlName="addressLine2"
               />
             </div>
@@ -164,7 +160,6 @@
                 class="form-control"
                 id="city"
                 name="city"
-                placeholder="Enter City"
                 formControlName="city"
               />
             </div>
@@ -194,11 +189,11 @@
             <div class="form-group">
               <label for="zip">Zip Code</label>
               <input
+                      appNumberPress
                 type="text"
                 class="form-control"
                 id="zip"
                 name="zip"
-                placeholder="Enter Zip Code"
                 formControlName="zip"
               />
             </div>
@@ -211,7 +206,6 @@
                 class="form-control"
                 id="phone"
                 name="phone"
-                placeholder="Enter Phone Number"
                 formControlName="phone"
               />
             </div>
@@ -224,7 +218,12 @@
       <h4>Donation Frequency: {{ selectedDonationFrequency }}</h4>
       <h4>Donation Level: {{ donationAmount | currency }}</h4>
 
-      <p id="error-message" [innerText]="errorMessage"></p>
+      <p id="error-message" *ngIf="this.formSubmitted">
+        <span [ngClass]="{'hidden': !allPaymentError}">Please complete all payment information.<br></span>
+        <span [ngClass]="{'hidden': !emailError}">Pleas enter a valid email address.<br></span>
+        <span [ngClass]="{'hidden': !donationLevelError}">Please select a donation level.<br></span>
+        <span [ngClass]="{'hidden': !cardError}">Please enter a valid card number.<br></span>
+      </p>
 
       <button (click)="submitPayment()">
         Submit Payment

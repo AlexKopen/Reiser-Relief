@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { PageHeaderModule } from '../shared/modules/page-header/page-header.module';
 import { NgxStripeModule } from 'ngx-stripe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NumberPressDirective } from '../number-press.directive';
+import { NumberPressDirective } from '../shared/directives/number-press.directive';
 
 @NgModule({
   declarations: [DonateComponent, NumberPressDirective],

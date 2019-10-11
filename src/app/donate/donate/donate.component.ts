@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import { Element as StripeElement, Elements, StripeService } from 'ngx-stripe';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { DonationLevel } from '../../shared/enums/donation-level.enum';
@@ -14,13 +14,14 @@ import { DONATION_LEVELS_ONE_TIME } from '../../shared/constants/donation-levels
 import { DONATION_LEVELS_MONTHLY } from '../../shared/constants/donation-levels/donation-levels-monthly.constant';
 import { DONATION_LEVELS_QUARTERLY } from '../../shared/constants/donation-levels/donation-levels-quarterly.constant';
 import { DONATION_LEVELS_ANNUALLY } from '../../shared/constants/donation-levels/donation-levels-annually.constant';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-donate',
   templateUrl: './donate.component.html',
   styleUrls: ['./donate.component.scss']
 })
-export class DonateComponent implements OnInit {
+export class DonateComponent implements OnInit, AfterViewInit {
   elements: Elements;
   card: StripeElement;
 
@@ -29,7 +30,8 @@ export class DonateComponent implements OnInit {
   donorAddress: DonationAddress;
   selectedDonationLevel: DonationLevel;
   showOtherAmount = false;
-  formInvalid = false;
+  formSubmitted = false;
+  invalidCardNumber = false;
   showThanks = false;
 
   customDonationAmount: number;
@@ -38,7 +40,7 @@ export class DonateComponent implements OnInit {
 
   addressForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
     addressLine1: new FormControl('', [Validators.required]),
     addressLine2: new FormControl(''),
     city: new FormControl('', [Validators.required]),
@@ -50,32 +52,38 @@ export class DonateComponent implements OnInit {
   constructor(
     private stripeService: StripeService,
     private db: AngularFirestore,
-    private router: Router
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
-    this.stripeService.elements().subscribe(elements => {
-      this.elements = elements;
-      // Only mount the element the first time
-      if (!this.card) {
-        this.card = this.elements.create('card', {
-          style: {
-            base: {
-              iconColor: '#00514d',
-              color: '#000',
-              lineHeight: '40px',
-              fontWeight: 300,
-              fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-              fontSize: '18px',
-              '::placeholder': {
-                color: '#6e777f'
+  }
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.stripeService.elements().subscribe(elements => {
+        this.elements = elements;
+        // Only mount the element the first time
+        if (!this.card) {
+          this.card = this.elements.create('card', {
+            style: {
+              base: {
+                iconColor: '#00514d',
+                color: '#000',
+                lineHeight: '40px',
+                fontWeight: 300,
+                fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                fontSize: '18px',
+                '::placeholder': {
+                  color: '#6e777f'
+                }
               }
             }
-          }
-        });
-        this.card.mount('#card-element');
-      }
-    });
+          });
+          this.card.mount('#card-element');
+        }
+      });
+    }
   }
 
   get donationLevels(): any[] {
@@ -131,9 +139,9 @@ export class DonateComponent implements OnInit {
   }
 
   submitPayment(): void {
-    this.formInvalid = false;
+    this.formSubmitted = true;
 
-    if (this.addressForm.valid) {
+    if (this.addressForm.valid && this.selectedDonationLevel !== undefined) {
       this.donorAddress = new DonationAddress(
         this.addressForm.value.city,
         this.addressForm.value.state,
@@ -162,29 +170,28 @@ export class DonateComponent implements OnInit {
             .add(donationToSend)
             .then(() => {});
         } else if (result.error) {
-          console.log(result.error.message);
+          this.invalidCardNumber = true;
         }
       });
-    } else {
-      this.formInvalid = true;
     }
   }
 
-  get errorMessage(): string {
-    let errorMessage = '';
-    if (this.formInvalid) {
-      errorMessage += 'Please complete all payment information';
+  get allPaymentError(): boolean {
+    return !this.addressForm.valid;
+  }
 
-      if (
-        this.selectedDonationLevel === undefined ||
+  get emailError(): boolean {
+    return !this.addressForm.get('email').valid;
+  }
+
+  get donationLevelError(): boolean {
+    return     this.selectedDonationLevel === undefined ||
         this.donationAmount === undefined ||
-        this.donationAmount <= 0
-      ) {
-        errorMessage += ' and choose a donation level';
-      }
-    }
+        this.donationAmount <= 0;
+  }
 
-    return errorMessage;
+  get cardError(): boolean {
+    return this.invalidCardNumber;
   }
 
   home(): void {

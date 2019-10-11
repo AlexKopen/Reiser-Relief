@@ -127,10 +127,6 @@ form {
 }
 
 #error-message {
-  $height: 50px;
-
-  height: $height;
-  line-height: $height;
   color: $error-red;
   text-align: center;
 }
