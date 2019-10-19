@@ -17,16 +17,22 @@ ul {
   display: block;
   width: 100%;
   text-align: center;
-  height: $sub-menu-height;
   background: $dark-contrast-color;
+
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+    height: $sub-menu-height;
+  }
 }
 
 li {
-  display: inline-block;
   line-height: $sub-menu-height;
   font-size: 23px;
-  margin-right: 100px !important;
   color: $white;
+
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+    margin-right: 100px !important;
+    display: inline-block;
+  }
 
   &:hover {
     cursor: pointer;
