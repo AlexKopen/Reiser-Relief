@@ -22,7 +22,7 @@
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint ng-universal-demo",
-    "build:client-and-server-bundles": "ng build --prod && ng run ng-universal-demo:server:production",
+    "build:client-and-server-bundles": "ng build -configuration production && ng run ng-universal-demo:server:production",
     "build:client-and-server-bundles-develop": "ng build --configuration test && ng run ng-universal-demo:server:production",
     "build:prerender": "npm run build:client-and-server-bundles && npm run compile:server && npm run generate:prerender",
     "build:prerender-develop": "npm run build:client-and-server-bundles-develop && npm run compile:server && npm run generate:prerender",

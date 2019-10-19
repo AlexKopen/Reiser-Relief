@@ -13,7 +13,13 @@ jobs:
           command: cd functions && npm install
       - run:
           name: Universal Build
-          command: npm run build:prerender-develop
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "develop" ]; then
+              npm run build:prerender-develop
+            fi
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              npm run build:prerender
+            fi
       - run:
           name: Firebase Deploy
           command: |
