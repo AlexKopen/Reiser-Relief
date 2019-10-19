@@ -18,10 +18,9 @@ jobs:
           name: Firebase Deploy
           command: |
             if [ "${CIRCLE_BRANCH}" == "develop" ]; then
-              ./node_modules/.bin/firebase use reiser-relief-test
+              npm run set-firebase-environment-to-test
               ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN_TEST"
             fi
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ./node_modules/.bin/firebase use reiser-relief
               ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN_PROD"
             fi

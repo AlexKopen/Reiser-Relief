@@ -34,7 +34,7 @@
     "deploy": "firebase deploy",
     "build-and-deploy": "npm run build:prerender && firebase deploy",
     "build-and-deploy-develop": "npm run build:prerender-develop && firebase deploy",
-    "set-firebase-environment": "node set-firebase-environment.js"
+    "set-firebase-environment-to-test": "node set-firebase-environment.js"
   },
   "pre-commit": [],
   "private": true,
