@@ -137,12 +137,6 @@ $boardMembers = array(
         'bio' => 'I live in Forest Lake, MN with my husband Greg and my three school aged children. I joined the Board in 2012 shortly after my uncle, Father Reiser, passed away. My service started with a desire to carry on my uncle’s legacy. It has since expanded to a passion to follow God’s command to go and serve.'
     ),
     array(
-        'image' => 'james_lanigan',
-        'name' => 'James Lanigan',
-        'title' => 'Co-Vice President',
-        'bio' => 'I live in Ramsey, MN with my wife Jennifer and our two children. I attended the Church of the Epiphany (Founded by Father Reiser in 1964) for nine excellent years and have many fond memories of Father Reiser. My first mission trip to Haiti was in January, 2015, where I witnessed firsthand the devastating conditions experienced by the poor in the country.'
-    ),
-    array(
         'image' => 'jerry_welle',
         'name' => 'Jerry Welle',
         'title' => 'Treasurer',
