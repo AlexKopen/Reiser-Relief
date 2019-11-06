@@ -1,1 +1,1 @@
-export const MENU_ITEMS = ['Home', 'About', 'Missions', 'Contact', 'Donate'];
+export const MENU_ITEMS = ['Home', 'About', 'Missions', 'Events', 'Contact', 'Donate'];
