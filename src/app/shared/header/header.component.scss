@@ -14,6 +14,12 @@ img {
   }
 }
 
+#logo {
+  @media only screen and (min-width: map-get($grid-breakpoints, md)) {
+    flex: 0 0 275px;;
+  }
+}
+
 #menu-items-container {
   flex: 0 0 45px;
 
@@ -34,10 +40,6 @@ ul {
     display: block;
     line-height: 73px;
     text-align: right;
-  }
-
-  @media only screen and (min-width: map-get($grid-breakpoints, lg)) {
-    text-align: left;
   }
 
   li {

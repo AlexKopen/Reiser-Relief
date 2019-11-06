@@ -1,6 +1,22 @@
-<div class="container">
-  <p>
-    events works!
-  </p>
+<app-page-header [title]="'Events'"></app-page-header>
 
+<div class="container">
+  <div class="row">
+    <div class="col-xl-2">
+      <p class="menu-title">Upcoming Events</p>
+      <ul>
+        <li *ngFor="let socialEvent of upcomingEvents" [innerText]="socialEvent.title" (click)="setActiveEvent(socialEvent)" [ngClass]="{'active': socialEventActive(socialEvent)}"></li>
+      </ul>
+      <p class="menu-title">Past Events</p>
+      <ul>
+        <li *ngFor="let socialEvent of pastEvents" [innerText]="socialEvent.title" (click)="setActiveEvent(socialEvent)" [ngClass]="{'active': socialEventActive(socialEvent)}"></li>
+      </ul>
+    </div>
+    <div class="col-xl-10">
+      <ng-container *ngIf="activeEvent">
+        <h3 [innerText]="activeEvent.title"></h3>
+        <p [innerHTML]="activeEvent.content"></p>
+      </ng-container>
+    </div>
+  </div>
 </div>
