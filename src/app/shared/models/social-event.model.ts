@@ -5,7 +5,13 @@ export class SocialEvent {
   url: string;
   content: string;
 
-  constructor(date: Date, location: string, title: string, url: string, content: string) {
+  constructor(
+    date: Date,
+    location: string,
+    title: string,
+    url: string,
+    content: string
+  ) {
     this.date = date;
     this.location = location;
     this.title = title;

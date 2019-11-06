@@ -1,9 +1,9 @@
-import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
-import {AngularFirestore} from '@angular/fire/firestore';
-import {isPlatformBrowser} from '@angular/common';
-import {NewsPost} from '../../shared/models/news-post.model';
-import {first} from 'rxjs/internal/operators';
-import {SocialEvent} from '../../shared/models/social-event.model';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { isPlatformBrowser } from '@angular/common';
+import { NewsPost } from '../../shared/models/news-post.model';
+import { first } from 'rxjs/internal/operators';
+import { SocialEvent } from '../../shared/models/social-event.model';
 
 @Component({
   selector: 'app-events',
@@ -15,26 +15,23 @@ export class EventsComponent implements OnInit {
   activeEvent: SocialEvent;
 
   constructor(
-      @Inject(PLATFORM_ID) private platformId: Object,
-      private db: AngularFirestore
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private db: AngularFirestore
   ) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.db
-          .collection<NewsPost>('events', ref =>
-              ref.orderBy('date', 'desc')
-          )
-          .valueChanges()
-          .pipe(first())
-          .subscribe((socialEvents: SocialEvent[]) => {
-            this.socialEvents = socialEvents;
-            if (this.socialEvents.length > 0) {
-              this.activeEvent = this.socialEvents[0];
-            }
-          });
+        .collection<NewsPost>('events', ref => ref.orderBy('date', 'desc'))
+        .valueChanges()
+        .pipe(first())
+        .subscribe((socialEvents: SocialEvent[]) => {
+          this.socialEvents = socialEvents;
+          if (this.socialEvents.length > 0) {
+            this.activeEvent = this.socialEvents[0];
+          }
+        });
     }
-
   }
 
   get upcomingEvents(): SocialEvent[] {
