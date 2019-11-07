@@ -31,3 +31,11 @@ p {
   display: block;
   margin-left: 2em;
 }
+
+#blog-posts {
+  text-align: center;
+
+  a {
+    color: $black;
+  }
+}
