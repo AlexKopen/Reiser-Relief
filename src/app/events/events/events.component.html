@@ -3,24 +3,28 @@
 <div class="container">
   <div class="row">
     <div class="col-xl-2">
-      <p class="menu-title">Upcoming Events</p>
-      <ul>
-        <li
-          *ngFor="let socialEvent of upcomingEvents"
-          [innerText]="socialEvent.title"
-          (click)="setActiveEvent(socialEvent)"
-          [ngClass]="{ active: socialEventActive(socialEvent) }"
-        ></li>
-      </ul>
-      <p class="menu-title">Past Events</p>
-      <ul>
-        <li
-          *ngFor="let socialEvent of pastEvents"
-          [innerText]="socialEvent.title"
-          (click)="setActiveEvent(socialEvent)"
-          [ngClass]="{ active: socialEventActive(socialEvent) }"
-        ></li>
-      </ul>
+      <ng-container *ngIf="upcomingEvents.length > 0">
+        <p class="menu-title">Upcoming Events</p>
+        <ul>
+          <li
+                  *ngFor="let socialEvent of upcomingEvents"
+                  [innerText]="socialEvent.title"
+                  (click)="setActiveEvent(socialEvent)"
+                  [ngClass]="{ active: socialEventActive(socialEvent) }"
+          ></li>
+        </ul>
+      </ng-container>
+      <ng-container *ngIf="pastEvents.length > 0">
+        <p class="menu-title">Past Events</p>
+        <ul>
+          <li
+                  *ngFor="let socialEvent of pastEvents"
+                  [innerText]="socialEvent.title"
+                  (click)="setActiveEvent(socialEvent)"
+                  [ngClass]="{ active: socialEventActive(socialEvent) }"
+          ></li>
+        </ul>
+      </ng-container>
     </div>
     <div class="col-xl-10">
       <ng-container *ngIf="activeEvent">
