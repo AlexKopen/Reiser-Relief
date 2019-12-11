@@ -37,7 +37,7 @@ export class EventsComponent implements OnInit {
   get upcomingEvents(): SocialEvent[] {
     return this.socialEvents.filter((socialEvent: SocialEvent) => {
       return new Date(socialEvent.date).getTime() > Date.now();
-    });
+                              });
   }
 
   get pastEvents(): SocialEvent[] {
