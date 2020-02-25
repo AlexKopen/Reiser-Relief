@@ -8,12 +8,12 @@ var menu = (function () {
   }
 
   function windowResize() {
-    if (Modernizr.mq('(max-width: 767px)')) {
+    if (Modernizr.mq('(max-width: 1023px)')) {
       $('header ul').css('display', 'none');
     }
 
     $(window).on('resize', function () {
-      if (!Modernizr.mq('(max-width: 767px)')) {
+      if (!Modernizr.mq('(max-width: 1023px)')) {
         $('header ul').css('display', 'inline-block');
       } else {
         $('header ul').css('display', 'none');

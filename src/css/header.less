@@ -4,13 +4,13 @@ header {
 		#header-container {
 			@header-height: 50px;
 			@logo-width: 241px;
-			@medium-screen-logo-padding: 15px;
+			@large-screen-logo-padding: 15px;
 			padding-top: @header-padding;
 			padding-right: @header-padding;
 			position: relative;
 			text-align: right;
 
-			@media @medium-screen {
+			@media @large-screen {
 				padding: 0;
 				text-align: center;
 			}
@@ -20,9 +20,9 @@ header {
 				top: @header-padding;
 				left: @header-padding;
 
-				@media @medium-screen {
+				@media @large-screen {
 					left: 50%;
-					top: -@header-height - @medium-screen-logo-padding;
+					top: -@header-height - @large-screen-logo-padding;
 					margin-left: -@logo-width/2;
 				}
 			}
@@ -30,9 +30,9 @@ header {
 			#drop-down-menu-container {
 				display: none;
 				background: @dark-theme-color;
-				margin-top: @header-height + (@medium-screen-logo-padding * 2);
+				margin-top: @header-height + (@large-screen-logo-padding * 2);
 
-				@media @medium-screen {
+				@media @large-screen {
 					display: block;
 				}
 
@@ -59,7 +59,7 @@ header {
 			ul {
 				line-height: @header-height;
 
-				@media @medium-screen {
+				@media @large-screen {
 					margin: 0;
 					background: @dark-theme-color;
 					width: 100%;
@@ -69,7 +69,7 @@ header {
 				li {
 					padding-bottom: 0;
 
-					@media @medium-screen {
+					@media @large-screen {
 						display: list-item;
 						border-bottom: 1px solid @separator-color;
 						@menu-item-height: 40px;
@@ -89,7 +89,7 @@ header {
 						.vertical-separator {
 							color: @light-theme-color;
 
-							@media @medium-screen {
+							@media @large-screen {
 								display: none;
 							}
 						}
@@ -101,12 +101,12 @@ header {
 							&:hover {
 								background-color: @white;
 
-								@media @medium-screen {
+								@media @large-screen {
 									background-color: @light-theme-color;
 								}
 							}
 
-							@media @medium-screen {
+							@media @large-screen {
 								color: @white;
 							}
 						}
@@ -114,7 +114,7 @@ header {
 						&:hover {
 							color: @light-theme-color;
 
-							@media @medium-screen {
+							@media @large-screen {
 								color: @black;
 							}
 						}
