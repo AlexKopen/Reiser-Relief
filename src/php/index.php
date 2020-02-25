@@ -160,12 +160,6 @@ $boardMembers = array(
         'bio' => 'I live in White Bear Lake, MN with my husband, Jerry, who is the treasurer of Reiser Relief. We have three grown children and 6 grandchildren. We belong to St. Mary of the Lake Church, which was Father Reiser’s first assignment as a priest. My first mission trip to Haiti was in 2010. In 2014, Ann Brau and myself brought Father Ralph Talbot on his first mission trip to Haiti. Since then, Father Talbot and St. Mary of the Lake Church have become very involved in Reiser Relief and have supported several projects in Haiti. I help manage the relationship between St. Mary of the Lake Church and Reiser Relief. I have been on the Board since 2017.'
     ),
     array(
-        'image' => 'brian_olson',
-        'name' => 'Brian Olson',
-        'title' => 'Board Member',
-        'bio' => 'I live in Dayton, MN with my wife Angela and together we have four children. I knew Father Reiser for many years while attending Epiphany Catholic School and he was also a good friend to both of my parents. I was able to visit Haiti in the early part of 2016 and was deeply touched by the overall strength and perseverance of the Haitian people despite the many obstacles they face. Since then, I have resolved to assist Reiser Relief’s ministry to the poor in Haiti in whatever capacity I can.'
-    ),
-    array(
         'image' => 'bernie_maciej',
         'name' => 'Bernie Maciej',
         'title' => 'Board Member',
