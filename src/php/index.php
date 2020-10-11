@@ -420,6 +420,10 @@ $app->get('/ministries', function () use ($app) {
     return $app->redirect('/about');
 });
 
+$app->get('/gala', function () use ($app) {
+    return $app->redirect('/events');
+});
+
 $pages = [
     '',
     'about',
