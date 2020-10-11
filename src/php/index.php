@@ -65,6 +65,13 @@ $app->get('/', function () use ($app, $callAPI) {
         'Title' => 'Home',
         'SlideShowImages' => array(
             array(
+                'Url' => 'event-slide.jpg',
+                'Alt' => 'Gala 2020',
+                'Header' => 'You\'re Invited!',
+                'Description' => 'Virtual Gala<br>November 12, 2020<br>Stay tuned for more information',
+                'Link' => '/events'
+            ),
+            array(
                 'Url' => 'work-slide.jpg',
                 'Alt' => 'Core Values',
                 'Header' => 'Our Impact',
