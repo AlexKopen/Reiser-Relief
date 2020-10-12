@@ -118,3 +118,204 @@
   text-align: center;
   font-weight: normal;
 }
+
+
+.page-section-header {
+  text-align: center;
+}
+
+button {
+  display: block !important;
+  margin: @small-top-margin auto 0 !important;
+}
+
+  #donation-container {
+    min-height: 550px;
+
+    text-align: center;
+
+    p, label {
+      color: @gray;
+
+      &#donation-value-info {
+        font-size: 14px;
+        line-height: 24px;
+        margin-top: 15px;
+
+        span {
+          font-style: italic;
+        }
+      }
+    }
+
+    ul {
+      margin: 0 auto @large-top-margin;
+
+      li {
+        display: inline-block;
+        border: 1px solid @light-theme-color;
+        border-radius: 5px;
+        color: @light-theme-color;
+        cursor: pointer;
+        margin-left: 5px;
+        margin-bottom: 10px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+
+        &.active, &:hover {
+          background: @light-theme-color;
+          color: @white;
+        }
+      }
+
+      &#frequency-list {
+        li {
+          @item-height: 35px;
+          height: @item-height;
+          width: 90px;
+          line-height: @item-height;
+        }
+      }
+
+      &.donation-level {
+        li {
+          @item-height: 55px;
+          height: @item-height;
+          width: 120px;
+          line-height: @item-height;
+        }
+      }
+    }
+
+    .donation-level {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    .error {
+      visibility: hidden;
+      color: @dark-error-color;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+
+#donate-other {
+  margin-top: @small-top-margin;
+  text-align: center;
+
+  img {
+    margin: 0 auto;
+  }
+
+  #give-mn {
+    margin-bottom: @small-top-margin;
+  }
+
+  .other-heading {
+    text-align: center;
+    margin-top: @small-top-margin;
+  }
+}
+
+#first-step {
+  display: block;
+}
+
+#second-step {
+  display: none;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+
+  input, select {
+    width: 95%;
+    display: block;
+
+    &.full-width {
+      width: 98%;
+
+      @media @medium-screen {
+        width: 100%;
+      }
+    }
+
+    @media @medium-screen {
+      width: 100%;
+    }
+  }
+}
+
+.subsection {
+  margin-top: @small-top-margin;
+}
+
+form {
+  margin-top: @small-top-margin;
+
+  .StripeElement {
+    background-color: white;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
+}
+
+#button-container {
+  text-align: center;
+
+  button {
+    display: inline-block;
+  }
+}
+
+#donation-loading {
+  display: none;
+
+  img {
+    display: block;
+    margin: @large-top-margin auto 0;
+  }
+}
+
+input, select {
+  height: 42px;
+  margin: .25em 0;
+  padding: .5em .6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background: @white;
+}
+
+h3 {
+  margin-top: @small-top-margin;
+}
+
+.paypal-link {
+  cursor: pointer;
+}
+

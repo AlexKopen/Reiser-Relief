@@ -21,12 +21,188 @@
                     <br>
                     <img
                             src="/resources/images/events/fg-2020-2.jpg" alt="Virtual Gala 2020">
+                    <br>
+                    <div class="pure-g">
+                        <div class="pure-u-1-1 pure-u-md-5-6">
+                            <div id="donation-container">
+                                <div id="first-step">
+                                    <div id="donation-form">
+                                        <p>Choose Your Donation Frequency</p>
+                                        <ul id="frequency-list">
+                                            <li>One-Time</li>
+                                            <li class="active">Monthly</li>
+                                            <li>Quarterly</li>
+                                            <li>Annually</li>
+                                        </ul>
+                                        <p>Choose a Donation Level</p>
+                                        <ul class="donation-level" id="one-time-level">
+                                            <li>$100</li>
+                                            <li>$150</li>
+                                            <li>$250</li>
+                                            <li>$500</li>
+                                            <li>$1000</li>
+                                        </ul>
+                                        <ul class="donation-level active" id="monthly-level">
+                                            <li>$38</li>
+                                            <li>$50</li>
+                                            <li>$75</li>
+                                            <li>$150</li>
+                                            <li>$250</li>
+                                        </ul>
+                                        <ul class="donation-level" id="quarterly-level">
+                                            <li>$150</li>
+                                            <li>$250</li>
+                                            <li>$500</li>
+                                            <li>$750</li>
+                                            <li>$1000</li>
+                                        </ul>
+                                        <ul class="donation-level" id="annually-level">
+                                            <li>$250</li>
+                                            <li>$500</li>
+                                            <li>$750</li>
+                                            <li>$1000</li>
+                                            <li>$3000</li>
+                                        </ul>
 
+                                        <p>Or Enter Your Own Amount</p>
+                                        <input type="text" class="pure-input" id="custom-amount">
 
+                                        <button type="submit" class="pure-button" id="continue">Continue</button>
+                                        <p id="donation-value-info">
+                                            $38/month will support one primary student for an entire year<br>
+                                            $150/month will support one college student for an entire year<br>
+                                            <span>Sponsors will be able to exchange letters with a primary and/or college student</span>
+                                        </p>
+                                        <p class="error">Please Select a Donation Level or Enter a Custom Amount</p>
+                                    </div>
+                                </div>
+                                <div id="second-step">
+                                    <h3><strong>Review</strong></h3>
+                                    <div class="pure-g">
+                                        <div class="pure-u-1-1 pure-u-md-1-2">
+                                            <p id="donation-frequency-review"></p>
+                                        </div>
+                                        <div class="pure-u-1-1 pure-u-md-1-2">
+                                            <p id="donation-amount-review"></p>
+                                        </div>
+                                    </div>
+                                    <h3><strong>Additional Payment Info</strong></h3>
+                                    <p>Address</p>
+                                    <div class="pure-g">
+                                        <div class="pure-u-1-1">
+                                            <input type="text" class="pure-input full-width" id="cardholder-address-1"
+                                                   placeholder="Address Line 1">
+                                        </div>
+                                    </div>
+                                    <div class="pure-g">
+                                        <div class="pure-u-1-1">
+                                            <input type="text" class="pure-input full-width" id="cardholder-address-2"
+                                                   placeholder="Address Line 2">
+                                        </div>
+                                    </div>
+                                    <div class="pure-g">
+                                        <div class="pure-u-1-1 pure-u-md-1-3">
+                                            <input type="text" class="pure-input" id="cardholder-city" placeholder="City">
+                                        </div>
+                                        <div class="pure-u-1-1 pure-u-md-1-3">
+                                            <select class='pure-input' id="cardholder-state" class="pure-u-23-24" name="state">
+                                                <option value="AL">Alabama</option>
+                                                <option value="AK">Alaska</option>
+                                                <option value="AZ">Arizona</option>
+                                                <option value="AR">Arkansas</option>
+                                                <option value="CA">California</option>
+                                                <option value="CO">Colorado</option>
+                                                <option value="CT">Connecticut</option>
+                                                <option value="DE">Delaware</option>
+                                                <option value="DC">District of Columbia</option>
+                                                <option value="FL">Florida</option>
+                                                <option value="GA">Georgia</option>
+                                                <option value="HI">Hawaii</option>
+                                                <option value="ID">Idaho</option>
+                                                <option value="IL">Illinois</option>
+                                                <option value="IN">Indiana</option>
+                                                <option value="IA">Iowa</option>
+                                                <option value="KS">Kansas</option>
+                                                <option value="KY">Kentucky</option>
+                                                <option value="LA">Louisiana</option>
+                                                <option value="ME">Maine</option>
+                                                <option value="MD">Maryland</option>
+                                                <option value="MA">Massachusetts</option>
+                                                <option value="MI">Michigan</option>
+                                                <option value="MN" selected>Minnesota</option>
+                                                <option value="MS">Mississippi</option>
+                                                <option value="MO">Missouri</option>
+                                                <option value="MT">Montana</option>
+                                                <option value="NE">Nebraska</option>
+                                                <option value="NV">Nevada</option>
+                                                <option value="NH">New Hampshire</option>
+                                                <option value="NJ">New Jersey</option>
+                                                <option value="NM">New Mexico</option>
+                                                <option value="NY">New York</option>
+                                                <option value="NC">North Carolina</option>
+                                                <option value="ND">North Dakota</option>
+                                                <option value="OH">Ohio</option>
+                                                <option value="OK">Oklahoma</option>
+                                                <option value="OR">Oregon</option>
+                                                <option value="PA">Pennsylvania</option>
+                                                <option value="RI">Rhode Island</option>
+                                                <option value="SC">South Carolina</option>
+                                                <option value="SD">South Dakota</option>
+                                                <option value="TN">Tennessee</option>
+                                                <option value="TX">Texas</option>
+                                                <option value="UT">Utah</option>
+                                                <option value="VT">Vermont</option>
+                                                <option value="VA">Virginia</option>
+                                                <option value="WA">Washington</option>
+                                                <option value="WV">West Virginia</option>
+                                                <option value="WI">Wisconsin</option>
+                                                <option value="WY">Wyoming</option>
+                                            </select>
+                                        </div>
+                                        <div class="pure-u-1-1 pure-u-md-1-3">
+                                            <input type="text" class="pure-input" id="cardholder-zip" placeholder="Zip">
+                                        </div>
+                                    </div>
+                                    <div class="pure-g">
+                                        <div class="pure-u-1-1 pure-u-md-1-2 subsection">
+                                            <p>Full Name</p>
+                                            <input type="text" class="pure-input" id="cardholder-name">
+                                        </div>
+                                        <div class="pure-u-1-1 pure-u-md-1-2 subsection">
+                                            <p>Email Address</p>
+                                            <input type="text" class="pure-input" id="cardholder-email">
+                                        </div>
+                                    </div>
+                                    <form action="/donation-submit" method="post" id="payment-form">
+                                        <div class="form-row">
+                                            <label for="card-element">
+                                                Credit or debit card
+                                            </label>
+                                            <div id="card-element">
+                                                <!-- A Stripe Element will be inserted here. -->
+                                            </div>
 
-                    <img
-                            src="/resources/images/events/MikeJoncas.jpg" alt="Mike Joncas">
-                    <p>Father Jan Michael Joncas will perform his one of his newest hymns, <a target="_blank" class="plain-link" href="https://drive.google.com/file/d/1JqQysBQ8KmajKBiZezCnm6CWD1JUW0KS/view?usp=sharing">"A Place Called Home"</a></p>
+                                            <!-- Used to display form errors. -->
+                                            <div id="card-errors" role="alert"></div>
+                                        </div>
+                                    </form>
+                                    <div id="button-container">
+                                        <button class="pure-button" id="donate-back">Go Back</button>
+                                        <button class="pure-button" id="donate-submit">Submit Payment</button>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div id="donation-loading">
+                                    <img src="/resources/images/common/loading-icon.gif" alt="Loading">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pure-u-1-1 pure-u-md-1-6">
+
+                            <img
+                                    src="/resources/images/events/MikeJoncas.jpg" alt="Mike Joncas">
+                            <p>Father Jan Michael Joncas will perform his one of his newest hymns, <a target="_blank" class="plain-link" href="https://drive.google.com/file/d/1JqQysBQ8KmajKBiZezCnm6CWD1JUW0KS/view?usp=sharing">"A Place Called Home"</a>.</p>
+                        </div>
                 </div>
             </div>
             <div class="individual-event">
