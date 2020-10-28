@@ -68,8 +68,8 @@ $app->get('/', function () use ($app, $callAPI) {
                 'Url' => 'event-slide.jpg',
                 'Alt' => 'Gala 2020',
                 'Header' => 'You\'re Invited!',
-                'Description' => 'Virtual Gala<br>November 12, 2020<br>Stay tuned for more information',
-                'Link' => '/events'
+                'Description' => 'Virtual Gala<br>November 12, 2020<br><span class="hide-text-on-small">Click this slide for more information</span>',
+                'Link' => '/gala'
             ),
             array(
                 'Url' => 'work-slide.jpg',
@@ -203,6 +203,15 @@ $app->get('/events', function () use ($app, $EventsTitle) {
     return $app['twig']->render('events/events.twig', array(
         'Title' => $EventsTitle,
         'DisplayTitle' => $EventsTitle,
+    ));
+});
+
+$GalaTitle = 'Virtual Gala 2020';
+
+$app->get('/gala', function () use ($app, $GalaTitle) {
+    return $app['twig']->render('gala/gala.twig', array(
+        'Title' => $GalaTitle,
+        'DisplayTitle' => $GalaTitle,
     ));
 });
 
@@ -400,6 +409,10 @@ if (!$app['debug']) {
 }
 
 //Redirects
+//$app->get('/gala', function () use ($app) {
+//    return $app->redirect('/events');
+//});
+
 $app->get('/about', function () use ($app) {
     return $app->redirect('/about/core-values');
 });
