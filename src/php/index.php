@@ -133,7 +133,7 @@ $boardMembers = array(
     array(
         'image' => 'joyce_getchell',
         'name' => 'Joyce Getchell',
-        'title' => 'Co-Vice President',
+        'title' => 'Vice President',
         'bio' => 'I live in Forest Lake, MN with my husband Greg and my three school aged children. I joined the Board in 2012 shortly after my uncle, Father Reiser, passed away. My service started with a desire to carry on my uncle’s legacy. It has since expanded to a passion to follow God’s command to go and serve.'
     ),
     array(
