@@ -121,7 +121,7 @@ $boardMembers = array(
         'name' => 'Will Jude',
         'title' => 'Executive Director',
         'email' => 'willjude@reiserrelief.org',
-        'bio' => 'Will Jude graduated from St. John’s University with a bachelor’s degree in political science and communication. His involvement in Haiti extends over six years and includes work in the country’s poorest slum areas. Prior to joining Reiser Relief, Will served as the director of Just 4 Them Inc. Will enjoys spending time with family and friends and participating in activities at his local Catholic church. Will became Reiser Relief’s Executive Director in 2018.'
+        'bio' => 'Will Jude graduated from St. John’s University with a bachelor’s degree in political science. His involvement in Haiti extends over six years and includes work in the country’s poorest slum areas. Prior to joining Reiser Relief, Will served as the director of Just 4 Them Inc. He is a member of St. John the Baptist Parish in New Brighton, MN, and became Reiser Relief’s Executive Director in 2018.'
     ),
     array(
         'image' => 'ann_brau',
