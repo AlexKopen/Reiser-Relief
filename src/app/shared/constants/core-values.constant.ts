@@ -10,7 +10,7 @@ export const CORE_VALUES = [
   new CoreValue(
     'Elder Care',
     'care.jpg',
-    'Elder and Disabled Cared',
+    'Elder Care',
     "Fr. Bernard Reiser's first project in Haiti was to construct the Village of Jesus (Village de Jesus), a care facility for abandoned elderly women in Leogane. There are currently 40 women who are lovingly cared for by the Haitian Sisters of the Companion of Jesus at this facility."
   ),
   new CoreValue(

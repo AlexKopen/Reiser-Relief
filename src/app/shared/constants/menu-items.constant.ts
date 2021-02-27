@@ -1,8 +1,9 @@
 export const MENU_ITEMS = [
-  'Home',
-  'About',
-  'Missions',
-  'Events',
-  'Contact',
-  'Donate'
+    'Home',
+    'About',
+    'Missions',
+    'Contact',
+    'Donate',
+    'Newsletters',
+    'Gala'
 ];

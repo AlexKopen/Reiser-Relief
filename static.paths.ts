@@ -5,8 +5,8 @@ export const ROUTES = [
   '/about/board-members',
   '/about/our-founder',
   '/missions',
-  '/events',
   '/donate',
-  '/events',
-  '/contact'
+  '/contact',
+  '/newsletters',
+  '/gala',
 ];

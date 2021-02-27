@@ -15,13 +15,13 @@
     <app-core-values></app-core-values>
   </div>
 
-  <div [ngClass]="{ hidden: !sectionActive(aboutSectionLabels.boardMembers) }">
-    <h2 [innerText]="aboutSectionLabels.boardMembers"></h2>
-    <app-board-members></app-board-members>
-  </div>
-
   <div [ngClass]="{ hidden: !sectionActive(aboutSectionLabels.ourFounder) }">
     <h2 [innerText]="aboutSectionLabels.ourFounder"></h2>
     <app-founder></app-founder>
+  </div>
+
+  <div [ngClass]="{ hidden: !sectionActive(aboutSectionLabels.boardMembers) }">
+    <h2 [innerText]="aboutSectionLabels.boardMembers"></h2>
+    <app-board-members></app-board-members>
   </div>
 </div>

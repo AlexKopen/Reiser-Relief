@@ -1,5 +1,5 @@
 export enum AboutSections {
-  coreValues = 'Core Values',
+  coreValues = 'Impact',
   boardMembers = 'Board Members',
   ourFounder = 'Our Founder'
 }

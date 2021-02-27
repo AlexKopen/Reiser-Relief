@@ -1,0 +1,36 @@
+@import '../../shared/globals';
+
+#page-info {
+
+  #page-info-heading {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    padding-bottom: 45px !important;
+    color: $dark-theme-color;
+    margin: 45px auto 0 !important;
+    font-size: 25px;
+  }
+
+  #page-info-details {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    padding-bottom: 45px;
+    color: #666;
+    margin: 0 auto;
+  }
+}
+
+iframe {
+  display: block;
+  margin: 0 auto 10px;
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+}
+
+.news-item {
+  max-width: 1000px;
+  height: 1050px;
+}
