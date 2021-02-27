@@ -19,11 +19,11 @@
     color: $gray-theme-color;
 
     &.description {
-      margin: 1.5em 0 !important;
+      margin: 1.5em 0.10em !important;
       height: auto;
 
       @media only screen and (min-width: map-get($grid-breakpoints, md)) {
-        height: 72px;
+        height: 115px;
       }
     }
 

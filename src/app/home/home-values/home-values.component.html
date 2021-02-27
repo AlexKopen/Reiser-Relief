@@ -1,0 +1,16 @@
+<div class="container">
+    <h3>Core Values</h3>
+    <div id="core-values" class="row no-gutters">
+        <div class="col-md" *ngFor="let value of coreValues">
+            <a href="/about/core-values">
+                <img class="home-core-value"
+                     [src]="'../../../assets/images/about/core-values/' +
+                value.imageFileName
+                "
+                     [alt]="value.altText">
+                <h2 [innerText]="value.title"></h2>
+
+            </a>
+        </div>
+    </div>
+</div>
