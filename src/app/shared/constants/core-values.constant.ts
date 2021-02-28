@@ -24,5 +24,5 @@ export const CORE_VALUES = [
     'agriculture.jpg',
     'Agriculture',
     'We support the Haitian economy by purchasing locally produced food in collaboration with our partner ministries. This food is used to feed children at our schools and homes for elderly and disabled adults. This practice protects the livelihood of small family farms and ensures nutritious, balanced meals our students and residents. We also organize seed and livestock distribution for poor families who live in the areas where our rural ministries are located.'
-  ),
+  )
 ];

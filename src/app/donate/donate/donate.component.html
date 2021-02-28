@@ -2,232 +2,59 @@
 
 <div class="page-wrapper">
   <div class="container">
-    <ng-container *ngIf="!showThanks; else thanksTemplate">
-      <p id="info">
-        Your donation will provide clean water, food, education and care to the
-        poor in Haiti. Reiser Relief Inc. is a 501(c)(3) ministry. Donations are
-        tax exempt as allowed by law.
-      </p>
+    <p id="info">
+      Your donation will provide clean water, food, education and care to the
+      poor in Haiti. Reiser Relief Inc. is a 501(c)(3) ministry. Donations are
+      tax exempt as allowed by law.
+    </p>
 
-      <iframe
-        src="https://www.youtube.com/embed/JR0DUX1ItSw"
-        frameborder="0"
-        allowfullscreen
-      >
-      </iframe>
+    <iframe
+      src="https://www.youtube.com/embed/JR0DUX1ItSw"
+      frameborder="0"
+      allowfullscreen
+    >
+    </iframe>
 
-      <h2 id="donate-today">Donate Today</h2>
+    <h2 id="donate-today">Donate Today</h2>
 
-      <h3>By Mail or Corporate Grants</h3>
-      <div class="row">
-        <div class="col-lg">
-          <div class="row mail-or-grant">
-            <div class="col icon-column">
-              <div class="icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-            </div>
-            <div class="col">
-              <p>
-                Make checks payable to "Reiser Relief"<br />
-                Reiser Relief Inc.<br />
-                PO Box 48096<br />
-                Coon Rapids, MN 55448
-              </p>
+    <h3>By Mail or Corporate Grants</h3>
+    <div class="row">
+      <div class="col-lg">
+        <div class="row mail-or-grant">
+          <div class="col icon-column">
+            <div class="icon">
+              <i class="fas fa-envelope"></i>
             </div>
           </div>
-        </div>
-        <div class="col-lg">
-          <div class="row mail-or-grant">
-            <div class="col icon-column">
-              <div class="icon">
-                <i class="fas fa-hand-holding-heart"></i>
-              </div>
-            </div>
-            <div class="col">
-              <p>
-                Many companies support employee philanthropy by offering
-                matching gift programs. Please check with your HR department to
-                see if your employer will match your gift to Reiser Relief Inc.
-                Reiser Relief Inc. Federal Tax ID EIN: 87-0778133
-              </p>
-            </div>
+          <div class="col">
+            <p>
+              Make checks payable to "Reiser Relief"<br />
+              Reiser Relief Inc.<br />
+              PO Box 48096<br />
+              Coon Rapids, MN 55448
+            </p>
           </div>
         </div>
       </div>
-
-      <h3>Online</h3>
-
-      <h4>Choose a Donation Frequency</h4>
-
-      <ul>
-        <li
-          *ngFor="let donationFrequency of donationFrequencies"
-          [innerText]="donationFrequency"
-          (click)="donationFrequencyClick(donationFrequency)"
-          [ngClass]="{ active: frequencyActive(donationFrequency) }"
-        ></li>
-      </ul>
-
-      <h4>Choose a Donation Level</h4>
-
-      <ul>
-        <li
-          *ngFor="let donationLevel of donationLevels"
-          (click)="donationLevelClick(donationLevel)"
-          [innerText]="donationLevelLabel(donationLevel)"
-          [ngClass]="{ active: levelActive(donationLevel) }"
-        ></li>
-      </ul>
-
-      <div class="row" id="other-amount" *ngIf="showOtherAmount">
-        <div class="col" id="dollar-sign">
-          <p><i class="fas fa-dollar-sign"></i></p>
-        </div>
-        <div class="col">
-          <input
-            appNumberPress
-            pattern="[0-9]*"
-            type="text"
-            class="form-control"
-            [(ngModel)]="customDonationAmount"
-          />
+      <div class="col-lg">
+        <div class="row mail-or-grant">
+          <div class="col icon-column">
+            <div class="icon">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+          </div>
+          <div class="col">
+            <p>
+              Many companies support employee philanthropy by offering matching
+              gift programs. Please check with your HR department to see if your
+              employer will match your gift to Reiser Relief Inc. Reiser Relief
+              Inc. Federal Tax ID EIN: 87-0778133
+            </p>
+          </div>
         </div>
       </div>
+    </div>
 
-      <h4>Provide Payment Information</h4>
-      <form [formGroup]="addressForm">
-        <div class="row">
-          <div class="col-lg">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="name"
-                name="name"
-                formControlName="name"
-              />
-            </div>
-          </div>
-          <div class="col-lg">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                formControlName="email"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg">
-            <div class="form-group">
-              <label for="addressLine1">Address Line 1</label>
-              <input
-                type="text"
-                class="form-control"
-                id="addressLine1"
-                name="addressLine1"
-                formControlName="addressLine1"
-              />
-            </div>
-          </div>
-          <div class="col-lg">
-            <div class="form-group">
-              <label for="addressLine2">Address Line 2</label>
-              <input
-                type="text"
-                class="form-control"
-                id="addressLine2"
-                name="addressLine2"
-                formControlName="addressLine2"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg">
-            <div class="form-group">
-              <label for="city">City</label>
-              <input
-                type="text"
-                class="form-control"
-                id="city"
-                name="city"
-                formControlName="city"
-              />
-            </div>
-          </div>
-          <div class="col-lg">
-            <div class="form-group">
-              <label for="state">State</label>
-              <select
-                type="text"
-                class="form-control"
-                id="state"
-                name="state"
-                formControlName="state"
-              >
-                <option
-                  *ngFor="let state of states"
-                  [value]="state.abbreviation"
-                  [innerText]="state.state"
-                ></option>
-              </select>
-            </div>
-          </div>
-          <div class="col-lg">
-            <div class="form-group">
-              <label for="zip">Zip Code</label>
-              <input
-                appNumberPress
-                type="text"
-                class="form-control"
-                id="zip"
-                name="zip"
-                formControlName="zip"
-              />
-            </div>
-          </div>
-        </div>
-      </form>
-
-      <div id="card-element" class="field"></div>
-
-      <h4>Donation Frequency: {{ selectedDonationFrequency }}</h4>
-      <h4>Donation Level: {{ donationAmount | currency }}</h4>
-
-      <p id="error-message" *ngIf="this.formSubmitted">
-        <span [ngClass]="{ hidden: !allPaymentError }"
-          >Please complete all payment information.<br
-        /></span>
-        <span [ngClass]="{ hidden: !emailError }"
-          >Pleas enter a valid email address.<br
-        /></span>
-        <span [ngClass]="{ hidden: !donationLevelError }"
-          >Please select a donation level.<br
-        /></span>
-        <span [ngClass]="{ hidden: !cardError }"
-          >Please enter a valid card number.<br
-        /></span>
-      </p>
-
-      <button (click)="submitPayment()">
-        Submit Payment
-      </button>
-    </ng-container>
-
-    <ng-template #thanksTemplate>
-      <h3 id="thanks-message">
-        Thank you! A confirmation email will be sent shortly.
-      </h3>
-      <p id="home" (click)="home()">Back to Home</p>
-    </ng-template>
+    <app-payment></app-payment>
   </div>
 </div>

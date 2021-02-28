@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { CoreValuesComponent } from './core-values/core-values.component';
 import { BoardMembersComponent } from './board-members/board-members.component';
 import { FounderComponent } from './founder/founder.component';
-import { PageHeaderModule } from '../shared/modules/page-header/page-header.module';
+import { SharedComponentsModule } from '../shared/modules/shared-modules/shared-components.module';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
       { path: '', component: AboutComponent, pathMatch: 'full' },
       { path: ':sub-page', component: AboutComponent, pathMatch: 'full' }
     ]),
-    PageHeaderModule,
+    SharedComponentsModule,
     SweetAlert2Module.forRoot()
   ]
 })

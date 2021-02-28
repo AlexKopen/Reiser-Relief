@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CoreValue} from "../../shared/models/home-core-value.model";
-import {CORE_VALUES} from "../../shared/constants/core-values.constant";
+import { CoreValue } from '../../shared/models/home-core-value.model';
+import { CORE_VALUES } from '../../shared/constants/core-values.constant';
 
 @Component({
   selector: 'app-home-values',
@@ -10,9 +10,7 @@ import {CORE_VALUES} from "../../shared/constants/core-values.constant";
 export class HomeValuesComponent implements OnInit {
   coreValues: CoreValue[] = CORE_VALUES;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

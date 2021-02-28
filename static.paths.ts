@@ -8,5 +8,5 @@ export const ROUTES = [
   '/donate',
   '/contact',
   '/newsletters',
-  '/gala',
+  '/gala'
 ];

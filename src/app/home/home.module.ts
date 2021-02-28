@@ -7,7 +7,7 @@ import { HomeCardsComponent } from './home-cards/home-cards.component';
 import { NewsletterSubscribeComponent } from './newsletter-subscribe/newsletter-subscribe.component';
 import { NewsPostsComponent } from './news-posts/news-posts.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {HomeValuesComponent} from "./home-values/home-values.component";
+import { HomeValuesComponent } from './home-values/home-values.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import {HomeValuesComponent} from "./home-values/home-values.component";
     HomeCardsComponent,
     NewsletterSubscribeComponent,
     NewsPostsComponent,
-    HomeValuesComponent,
+    HomeValuesComponent
   ],
   imports: [
     CommonModule,
