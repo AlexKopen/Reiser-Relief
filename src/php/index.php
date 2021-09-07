@@ -65,6 +65,13 @@ $app->get('/', function () use ($app, $callAPI) {
         'Title' => 'Home',
         'SlideShowImages' => array(
             array(
+                'Url' => 'earthquake-slide.jpg',
+                'Alt' => 'Earthquake Relief',
+                'Header' => 'Earthquake Relief',
+                'Description' => 'Click to donate',
+                'Link' => '/donate'
+            ),
+            array(
                 'Url' => 'event-slide.jpg',
                 'Alt' => 'Gala 2020',
                 'Header' => '2020 Virtual Gala',
