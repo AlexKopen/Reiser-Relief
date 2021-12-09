@@ -38,3 +38,4 @@ View the site at [http://localhost:8000](http://localhost:8000)
 [Silex](http://silex.sensiolabs.org/) is used for the micro-framework with [Twig](http://twig.sensiolabs.org/) as its template engine.
 
 Gulp is used to continuously watch for changes to image, JavaScript, Less, PHP, and Twig files in the ```src``` directory.  Any modification to these files will be immediately reflected in the ```dist``` directory.
+
