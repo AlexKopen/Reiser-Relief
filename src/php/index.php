@@ -65,32 +65,11 @@ $app->get('/', function () use ($app, $callAPI) {
         'Title' => 'Home',
         'SlideShowImages' => array(
             array(
-                'Url' => 'giving-tuesday.jpg',
-                'Alt' => 'Giving Tuesday 2021',
-                'Header' => 'Giving Tuesday',
-                'Description' => 'November 30, 2021<br>A global day of giving that unites countries worldwide',
-                'Link' => '/donate'
-            ),
-            array(
-                'Url' => 'earthquake-slide.jpg',
-                'Alt' => 'Earthquake Relief',
-                'Header' => 'Earthquake Relief',
-                'Description' => 'Click to donate',
-                'Link' => '/donate'
-            ),
-            array(
                 'Url' => 'work-slide.jpg',
                 'Alt' => 'Core Values',
                 'Header' => 'Our Impact',
                 'Description' => 'Learn how we improve the lives of those we serve',
                 'Link' => '/about'
-            ),
-            array(
-                'Url' => 'missions-slide.jpg',
-                'Alt' => 'Missions',
-                'Header' => 'Missions',
-                'Description' => 'Live out God\'s call to serve by applying for a mission trip to Haiti',
-                'Link' => '/missions'
             ),
             array(
                 'Url' => 'support-slide.jpg',
