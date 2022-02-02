@@ -14,9 +14,7 @@ services:
       WORDPRESS_DB_NAME: exampledb
     volumes:
       - wordpress:/var/www/html
-      - type: bind
-        source: ./themes
-        target: /var/www/html/wp-content/themes/
+      - ./src:/var/www/html/wp-content/themes/Reiser
 
   db:
     image: mysql:5.7
