@@ -1,11 +1,2 @@
-node_modules/
-dist/
-.vscode/
-src/php/silex/
-.DS_Store
-composer.lock
-npm-debug.log
 .idea/
-admin/
-package-lock.json
-settings.yaml
+themes/twenty.*
